@@ -19,6 +19,8 @@ All team members are expected to contribute equally to the document and list the
 
 One page overall introduction including sections 1.1 and 1.2.
 
+Test commit
+
 ### Client
 
 Identify the client and their contact details
