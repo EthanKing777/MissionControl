@@ -23,7 +23,8 @@ Test commit
 
 ### Client
 
-Identify the client and their contact details
+Andre Geldenhuis is a rocket enthusiast who has experience building and launching rockets, and is a member of the New Zealand Rocketry Association.
+Contact: Andre.Geldenhuis@vuw.ac.nz
 
 ### 1.1 Purpose
 
