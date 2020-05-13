@@ -19,8 +19,6 @@ All team members are expected to contribute equally to the document and list the
 
 One page overall introduction including sections 1.1 and 1.2.
 
-Test commit
-
 ### Client
 
 Andre Geldenhuis is a rocket enthusiast who has experience building and launching rockets, and is a member of the New Zealand Rocketry Association.
@@ -28,7 +26,7 @@ Contact: Andre.Geldenhuis@vuw.ac.nz
 
 ### 1.1 Purpose
 
-One sentence describing the purpose of the system (9.5.1)
+The purpose of the mission control software is to enusre the conditions for launch are safe, and display data from the rocket.
 
 ### 1.2 Scope
 
