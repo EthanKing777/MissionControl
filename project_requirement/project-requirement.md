@@ -30,7 +30,20 @@ The purpose of the mission control software is to enusre the conditions for laun
 
 ### 1.2 Scope
 
-One paragraph describing the scope of the system (9.5.2)
+**Develop mission control software that will:**
+
+* Be able to run on a laptop in a field.
+* Send a message to the rocket when launch is imminent.
+* Display data from the rocket including:
+    - Current software state.
+    - Current location.
+    - Current altitude.
+* Provide go/no go functionality which includes:
+    - Collecting current local weather conditions.
+    - Altering launch rod angle.
+* Integrate with the simulation team to:
+    - Provide weather information.
+    - Determine an upwind trajectory to minimise landing distance from launch site.
 
 ### 1.3 Product overview 
 #### 1.3.1 Product perspective
