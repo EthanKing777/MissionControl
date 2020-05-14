@@ -26,7 +26,7 @@ Contact: Andre.Geldenhuis@vuw.ac.nz
 
 ### 1.1 Purpose
 
-The purpose of the mission control software is to enusre the conditions for launch are safe, and display data from the rocket.
+The purpose of the mission control software is to enusre conditions for launch are safe, and display data from a rocket in flight.
 
 ### 1.2 Scope
 
