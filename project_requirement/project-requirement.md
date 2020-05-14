@@ -17,19 +17,37 @@ All team members are expected to contribute equally to the document and list the
 
 ## 1. Introduction
 
-One page overall introduction including sections 1.1 and 1.2.
+Amateur rockets are flown regularly worldwide. These rockets are typically flown with off the shelf rocket motors with widely available propellant reloads. These rockets often exceed the speed of sound, altitudes above 30 km are not unheard of. These rockets are almost never controlled, they are stable due to passive aerodynamic features. 
+
+While passively stable rockets are reasonably simple and reliable if well designed, they are susceptible to a variety of disturbances, particularly early in flight. Unexpected winds can cause the rocket to weathercock; flexibility in the launch tower/rail can cause railwhip, imparting a random launch angle to the rocket; the thrust from the rocket motor is also never perfectly symmetrical.
+
+This project is a continuation of a project from 2018. This year the project is broken into hardware and software components. The project will be all opensource/openhardware and as such will need to use opensource tools to make it accessible to the community E.g Kicad instead of Altium for PCB designs. The hardware component is to design an avionics board that can provide telemetry from the rocket, log data from sensors and control the rocket by gimballing a motor. The software components are to design a mission control that runs on a laptop at the launch site as well as some software to statistically predict the rockets flight and software to help design the control parameters for the avionics.
 
 ### Client
 
-Identify the client and their contact details
+Andre Geldenhuis is a rocket enthusiast who has experience building and launching rockets, and is a member of the New Zealand Rocketry Association.
+Contact: Andre.Geldenhuis@vuw.ac.nz
 
 ### 1.1 Purpose
 
-One sentence describing the purpose of the system (9.5.1)
+The purpose of the mission control software is to enusre conditions for launch are safe, and display data from a rocket in flight.
 
 ### 1.2 Scope
 
-One paragraph describing the scope of the system (9.5.2)
+**Mission control software that will:**
+
+* Be able to run on a laptop in a field.
+* Send a message to the rocket when launch is imminent.
+* Display data from the rocket including:
+    - Current software state.
+    - Current location.
+    - Current altitude.
+* Provide go/no go functionality which includes:
+    - Collecting current local weather conditions.
+    - Altering launch rod angle.
+* Integrate with the simulation team to:
+    - Provide weather information.
+    - Determine an upwind trajectory to minimise landing distance from launch site.
 
 ### 1.3 Product overview 
 #### 1.3.1 Product perspective
