@@ -76,7 +76,18 @@ h) Site adaptation requirements.
 
 #### 1.3.2 Product functions
 
-One page summary of the main functions of the product (9.5.4), briefly characterising the minimum viable product.
+The minimum viable product of the mission control software is characterised as:
+
+ - Being able to run on a laptop at the rocket launch site.
+ - Being able to communicate with the rocket hardware.
+ - Displaying relevant data (software state, location of the rocket, altitude of the rocket).
+ - Integrating with the monte-carlo rocket simulation and using weather reports to determine probable landing location. If the predicted location is not within the defined bounds then the mission control software should signal that the launch should be aborted.
+ - Communicate with the rocket to let it know a launch is imminent, allowing the avionics team to arm the parachute ejection charges.
+
+ The functionality of the mission control software will be extended by implementing:
+
+- Suggesting the ideal launch rod angle to ensure the rocket stays within the defined bounds.
+- Using current wind reports and the monte-carlo simulation to determine the optimal upwind trajectory that the rocket should follow to minimise the distance of the landing location from the launch site.
 
 #### 1.3.3 User characteristics   
 
