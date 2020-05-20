@@ -34,27 +34,13 @@ One paragraph describing the scope of the system (9.5.2)
 ### 1.3 Product overview 
 #### 1.3.1 Product perspective
 
-One page defining the system's relationship to other related products
-(9.5.3. but not the subsections in the standard.)
+In order to create a Mission Control software capable of safely executing a successful launch of the model rocket, the Mission Control system will need to rely on information provided by the Avionics Engineering teams and the Simulation teams. The Mission Control system should also possess the capability to transmit data required by other teams as the need occurs.  
 
-> **9.5.3 Product perspective** <br>
-> Define the system's relationship to other related products. 
-> 
-> If the product is an element of a larger system, then relate the requirements of that larger system to the functionality of the product covered by the software requirements specification.
-> 
-> If the product is an element of a larger system, then identify the interfaces between the product covered by the software requirements specification and the larger system of which the product is an element. 
->
-> A block diagram showing the major elements of the larger system, interconnections, and external interfaces can be helpful.
-> 
-> Describe how the software operates within the following constraints:  
-a) System interfaces;  
-b) User interfaces;  
-c) Hardware interfaces;  
-d) Software interfaces;  
-e) Communications interfaces;  
-f) Memory;  
-g) Operations;  
-h) Site adaptation requirements.
+The architecture of the various interfaces is still a work in progress, but conceptually, it would facilitate a mode of data transmission that is easy to execute and compatible across all platforms of the avionics teams and the simulation teams. For example; we have explored the idea of using a radio modulation scheme such as <a href="https://www.semtech.com/products/wireless-rf/lora-transceivers" target="_top">LoRA</a> to retrieve and store sensor data emmitted by the rocket. In this scenario, the communication interface should be capable of requesting the avionics system for the sensor data, and should also be capable of transmitting the extracted information back to the avionics system or simulation system if there is a need to do so.
+
+Memory contstraints have not yet been specified for this system, but we will focus on minimizing or avoiding exhaustive processes where possible, to conform with the primary and secondary memory characteristics of our system. 
+
+The operational constraints as well as the Site adaptation requirements are still under discussion. These requirements will be updated as development progresses.
 
 #### 1.3.2 Product functions
 
