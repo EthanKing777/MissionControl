@@ -18,35 +18,35 @@ All team members are expected to contribute equally to the document and list the
 #Table of Contents:
 
 1.  Introduction    
-    1.1 Purpose 
-    1.2 Scope
-    1.3 Product Overview
-        1.3.1 Product Perspective 
-        1.3.2 Product Function 
-        1.3.3 User Characteristics 
-        1.3.4 Limitation 
-2 References 
-3 Specific Requirements
-    3.1 External Interfaces 
-    3.2 Functions 
-    3.3 Usability Requirements 
-    3.4 Performance Requirments 
-    3.5 Logical Database Requirments
-    3.6 Design Constraints
-    3.7 Non-functional System Attributes
-    3.8 Physical and Environmental Requirements
-    3.9 Supporting Information
-4 Verification
-5 Development Schedule
-    5.1 Schedule
-    5.2 Budget
-    5.3 Risks
-    5.4 Health and Safety
-        5.4.1 Safety Plan
-6 Appendices
-    6.1 Assumptions and Dependencies
-    6.2 Acronyms and Abbreviations
-7 Contributions
+    * 1.1 Purpose 
+    * 1.2 Scope
+    * 1.3 Product Overview
+        * 1.3.1 Product Perspective 
+        * 1.3.2 Product Function 
+        * 1.3.3 User Characteristics 
+        * 1.3.4 Limitation 
+2. References 
+3. Specific Requirements
+    * 3.1 External Interfaces 
+    * 3.2 Functions 
+    * 3.3 Usability Requirements 
+    * 3.4 Performance Requirments 
+    * 3.5 Logical Database Requirments
+    * 3.6 Design Constraints
+    * 3.7 Non-functional System Attributes
+    * 3.8 Physical and Environmental Requirements
+    * 3.9 Supporting Information
+4. Verification
+5. Development Schedule
+    * 5.1 Schedule
+    * 5.2 Budget
+    * 5.3 Risks
+    * 5.4 Health and Safety
+        * 5.4.1 Safety Plan
+6. Appendices
+    * 6.1 Assumptions and Dependencies
+    * 6.2 Acronyms and Abbreviations
+7. Contributions
     
 
 
