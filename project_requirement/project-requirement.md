@@ -134,102 +134,86 @@ OpenRocket?
 
 This section will be completed at a later time.
 
-### 3.1 External interfaces
+### 3.1 External interfaces  
+**Radio Antenna**  <br />
+The radio antenna will be used to do minimal communication to the rocket for locating and small amounts of debugging. The antenna will act to provide the communication to and from the rocket on a continuous basis. This will transmit the GPS information from the rocket as well as data on the rocket’s performance for later evaluation. Performance data will include the gimbal states, inertial measurements, servos power inputs and coordinates from GPS.  
+**SD Card**  <br />
+The SD card will act as a Blackbox to the rocket to store the data collected over the flight for later diagnosis. The data will be either stored in a CVS or text file. This data will include the inertial measurement unit output, GPS and gimbal position at the end of every control loop. The write rate of this SD will need to be fast enough to keep up with the data flow from each control loop and not impact the speed of the microcontroller.   
+**Inertial Measurement Unit**  <br />
+The Inertial Measurement Unit (IMU) will measure the change in both linear and rotation acceleration of the rocket. The output from this will be stored on the SD card. This data will be used for controlling the gimbal position.   
+**Gimbal**  <br />
+The gimbal is used for inflight adjustments to correct the rockets course up. The gimbal acts to adjust the motors nozzle direction which in turn changes the relative thrust of the rockets to correct its direction up. The servos will act to move the gimbals position by adjusting the pit and yaw. The adjustments needed are computed in the processor onboard from the flight data.  
+**Servos**  <br />
+The servos will receive the computational instructions from the onboard processor to alter the rockets course by adjusting the gimbals position. There will be two servos for adjustments, one yaw and other for pit. The data given to the servos will specify the amount of degrees to rotate the gimbal by. The end position of the gimbal is output back.  
 
-**Radio Antenna**<br />
- The radio antenna will be used to do minimal communication to the rocket for locating and small amounts of debugging. The antenna will act to provide the communication to and from the rocket on a continuous basis. This will transmit the GPS information from the rocket as well as data on the rocket’s performance for later evaluation. Performance data will include the gimbal states, inertial measurements, servos power inputs and coordinates from GPS.<br />
-**SD Card**<br />
-The SD card will act as a Blackbox to the rocket to store the data collected over the flight for later diagnosis. The data will be either stored in a CVS or text file. This data will include the inertial measurement unit output, GPS and gimbal position at the end of every control loop. The write rate of this SD will need to be fast enough to keep up with the data flow from each control loop and not impact the speed of the microcontroller.<br /> 
-**Inertial Measurement Unit**<br /> 
-The Inertial Measurement Unit (IMU) will measure the change in both linear and rotation acceleration of the rocket. The output from this will be stored on the SD card. This data will be used for controlling the gimbal position.<br /> 
-**Gimbal**<br />
-The gimbal is used for inflight adjustments to correct the rockets course up. The gimbal acts to adjust the motors nozzle direction which in turn changes the relative thrust of the rockets to correct its direction up. The servos will act to move the gimbals position by adjusting the pit and yaw. The adjustments needed are computed in the processor onboard from the flight data.<br />
-**Servos**<br />
-The servos will receive the computational instructions from the onboard processor to alter the rockets course by adjusting the gimbals position. There will be two servos for adjustments, one yaw and other for pit. The data given to the servos will specify the amount of degrees to rotate the gimbal by. The end position of the gimbal is output back.<br />
+### 3.2 Functions  
+**Stakeholder requirements** 
 
+	Avionics package shall fit entirely into a 29mm airframe rocket vehicle.  
+	Avionics package will interface with the gimbal.  
+	Avionics package will guide the rockets course.  
+	Avionics package blueprints and information will be published to the clients GitHub as open source.  
+	The avionics package logical database will be human readable in the form of a text file.  
+  
+**Use Case**  <br />
+The purpose of the avionics package is the guide the rocket. For it to be able to do this it needs in be installed, configured, calibrated and then launched. After the flight the clients will also want to look over the flight data to diagnose what happened. So gives 5 main uses: installation, configuration, calibration, launch, and diagnosis.  
+**Installation**  <br />
+For the rocket, the avionics package must be easy to install for ease of use. So will need the package to be spatially efficient as well as simply made as to make it even easier to use.  
+**Configuration**  <br />
+The rocket should be easy  to configure for both the hardware and software. This part should only need like 10 minutes to have it fully ready.   
+**Calibration**  <br />
+Before launch, all final changes will be made so the rocket is fully prepared for take-off. This will mean all final checks on parts like the SD card working to collect data and such. Will also have tests of the gimbal moving right and if the data is being correctly used. Will also be when all sensors are adjusted if needed too.  
+**Launch**  <br />
+Once launch begins the rocket will be fully under its own control so all systems will be operations to give it a successful flight. once at maximum height the rocket will switch to a safety state to allow it to safely go back to earth.   
+**Diagnosis**  <br />
+After flight, the rockets data will be collected to look over for what happened in the flight. This will be all used to help future flight for the rocket.  
+  
+  
+### 3.3 Usability Requirements  
+In this project the rocket’s software will need to be able to keep up with what the rocket can do mainly. This will mean the efficiency of the software has to be enough to keep up with the control loops and not have any losses in recording data. The software will also have to be reasonably accurate  to correctly control the rocket during its flight up too. So for the project it will mean we need to be able to quickly read all the incoming data from the external interfaces onboard and received data too over the radio. This will then have to process efficiently to be output to the rocket controls as well as to the SD card and radio back to ground. On the ground the software will need to be able to be constantly updated at the speed the rocket sends off the data.   
 
-### 3.2 Functions
+### 3.4 Performance requirements  
+**In this section I am quite unsure of what numbers we should use so just using theirs** 
+  
+During the rockets flight the rocket will be traveling at quite a high speed so the avionics package will need to be able to keep up with it. This will mean that the system will have to do a control loop every time the rocket travels a metre. This will allow enough time for the adjustments to be made to allow for a smoother flight. If this was slower the system will be working with too old of information and not be able to correctly correct continuously. Next the radio will need a range of 80m without line of sight to allow for easy collection. As 80m will likely be as far as the rocket will travel horizontally from launch pad. The GPS then from the rocket will need to be accurate to within 10m to allow use to even find the rocket after it lands.  
+The rocket will allow have to be made durable enough to survive the flight and landing or else it will ruin the cost efficiency of the rocket. The components will need to be able to withstand acceleration of 200 metres per second per second. All components within must be able stay in positions within too as to not damage it. As we want this to be able to withstand 10 flights at least.  
+  
+### 3.5 Logical database requirements  
+**Microcontroller Driver**  <br />
+This will handle general initialization and is responsible for communicating to every component. Also, for storing the flight data to the SD card.  
+Inertial Measurement Unit Driver  
+This reads from the Inertial Measurement Unit. This allows the microcontroller to access the data about the accelerometer, gyro, and magnetometer.   
+**GPS Driver**  <br />
+This connects to the GPS module. Will feed the GPS data to the microcontroller. Is vital for finding rocket after landing.  
+**Sd Card Driver**  <br />
+Will log the flight data from the rocket during flight. This will store everything from time to position to position of gimbal. Will used to later diagnose what happened during flight.  
+**Radio Driver**  <br />
+The radio is used to communicate to the ground control team. This is mainly used to send the location of the rocket for easy collection. This is also used to send commands over to the rocket (such as a kill command).  
 
-<!-- This is typically the longest subsection in the document. List up to fifty use cases (in order of priority for development), and for at least top ten focal use cases, write a short goal statement and use case body (up to seven pages).  Identify the use cases that comprise a minimum viable product. -->
+### 3.6 Design constraints  
+**Radio antenna and GPS system unit**  <br />
+The radio must comply with all New Zealand regulation relating to radio communication. This means there are frequencies we are not able to use. Also due to other interference we will be quite limited on what frequencies we can use or else it could become illegal and corrupted. Also for the GPS it will need to use the legally allowed frequencies.  
+**Open Source**  <br />
+As the client specified all the final product must be open source. After project is finished all code must be released.  
+**Physically constraints**  
+Again, the rocket must comply with New Zealand aviation laws:  
+	Rocket cannot have more than 125g of propellant.  
+	Rocket cannot produce more than 320 newton second of impulse.  
+	Rocket must use slow burning propellant.  
+	The rocket needs to be made from light weight materials such as plastic and wood.  
+	Rocket cannot have any part of body fashioned from metal.  
+	Rocket cannot exceed a weight of 1.5kg.  
+	The rocket must not use a aerial firework as an ingredient to create its own jet.  
 
-This section will be completed at a later time.
+### 3.7 Nonfunctional system attributes  
+svkjuuhjgb  
 
-### 3.3 Usability Requirements
+### 3.8 Physical and Environmental Requirements  
+This section will be completed at a later time.  
 
-<!-- See 9.5.12. for most systems this will be around one page. -->
+### 3.9 Supporting information  
+see 9.5.19.  
 
-This section will be completed at a later time.
-
-<!-- > **9.5.12 Usability requirements**<br>
-> Define usability (quality in use) requirements. Usability requirements and objectives for the software system include measurable effectiveness, efficiency, and satisfaction criteria in specific contexts of use. -->
-
-### 3.4 Performance requirements
-
-<!-- See 9.5.13. for most systems this will be around one page. Hardware projects also see section 9.4.6.
-
-> **9.5.13 Performance requirements** <br>
-> Specify both the static and the dynamic numerical requirements placed on the software or on human interaction with the software as a whole. 
-> 
-> Static numerical requirements may include the following:
-> 
-> a) The number of terminals to be supported;  
-> b) The number of simultaneous users to be supported;  
-> c) Amount and type of information to be handled.
-> 
-> Static numerical requirements are sometimes identified under a separate section entitled Capacity.
-> 
-> Dynamic numerical requirements may include, for example, the numbers of transactions and tasks and the amount of data to be processed within certain time periods for both normal and peak workload conditions. The performance requirements should be stated in measurable terms.
-> 
->  For example, "_95 % of the transactions shall be processed in less than 1 second._" rather than, "An operator shall not have to wait for the transaction to complete."
-> 
-> NOTE Numerical limits applied to one specific function are normally specified as part of the processing subparagraph description of that function. -->
-
-This section will be completed at a later time.
-
-### 3.5 Logical database requirements
-
-<!-- See 9.5.14. for most systems, a focus on d) and e) is appropriate, such as an object-oriented domain analysis. You should provide an overview domain model (e.g.  a UML class diagram of approximately ten classes) and write a brief description of the responsibilities of each class in the model (3 pages).
-
-You should use right tools, preferabley PlantUML, to draw your URL diagrams which can be easily embedded into a Mardown file (PlantUML is also supported by GitLab and Foswiki). -->
-
-This section will be completed at a later time.
-
-### 3.6 Design constraints
-
-<!-- see 9.5.15 and 9.5.16. for most systems, this will be around one page.
-
-> 9.5.15 Design constraints<br>
-> Specify constraints on the system design imposed by external standards, regulatory requirements, or project limitations.
-> 
-> 9.5.16 Standards compliance<br>
-> Specify the requirements derived from existing standards or regulations, including:
-> 
-> a) Report format;<br>
-> b) Data naming;<br>
-> c) Accounting procedures;<br>
-> d) Audit tracing.
-> 
-> For example, this could specify the requirement for software to trace processing activity. Such traces are needed for some applications to meet minimum regulatory or financial standards. An audit trace requirement may, for example, state that all changes to a payroll database shall be recorded in a trace file with before and after values. -->
-
-This section will be completed at a later time.
-
-### 3.7 Nonfunctional system attributes
-
-<!-- Present the systemic (aka nonfunctional) requirements of the product (see ISO/IEC 25010).
-List up to twenty systemic requirements / attributes.
-Write a short natural language description of the top nonfunctional requirements (approx. five pages).-->
-
-This section will be completed at a later time.
-
-### 3.8 Physical and Environmental Requirements 
-
-<!-- For systems with hardware components, identify the physical characteristics of that hardware (9.4.10) and environment conditions in which it must operate (9.4.11).  Depending on the project, this section may be from one page up to 5 pages. -->
-
-This section will be completed at a later time.
-
-### 3.9 Supporting information
-
-see 9.5.19. 
 
 ## 4. Verification
 
