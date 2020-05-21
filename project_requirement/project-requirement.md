@@ -241,11 +241,8 @@ This section will be completed at a later time.
 
 Identify dates for key project deliverables: 
 
-**Architectural Prototype** <br />
-The architectrural prototype will be completed by 8 June 2020
-
 **Minimum Viable Product** <br />
-The minimum viable product which is specified in part 1.3.2 will completed by 3 August 2020
+The minimum viable product which is specified in part 1.3.2 will completed by 25 September 2020
 
 **Further Releases** <br />
 The final product will be completed by  6 November 2020
