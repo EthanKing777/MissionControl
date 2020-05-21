@@ -137,7 +137,7 @@ This section will be completed at a later time.
 ### 3.1 External interfaces
 
 3.1 External interfaces
-Radio Antenna
+*Radio Antenna
 The radio antenna will be used to do minimal communication to the rocket for locating and small amounts of debugging. The antenna will act to provide the communication to and from the rocket on a continuous basis. This will transmit the GPS information from the rocket as well as data on the rocket’s performance for later evaluation. Performance data will include the gimbal states, inertial measurements, servos power inputs and coordinates from GPS.
 SD Card
 The SD card will act as a Blackbox to the rocket to store the data collected over the flight for later diagnosis. The data will be either stored in a CVS or text file. This data will include the inertial measurement unit output, GPS and gimbal position at the end of every control loop. The write rate of this SD will need to be fast enough to keep up with the data flow from each control loop and not impact the speed of the microcontroller. 
