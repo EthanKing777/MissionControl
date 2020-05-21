@@ -130,32 +130,34 @@ OpenRocket?
 
 ## 3. Specific requirements  
 
-20 pages outlining the requirements of the system. You should apportion these pages across the following subsections to focus on the most important parts of your product.
+<!-- 20 pages outlining the requirements of the system. You should apportion these pages across the following subsections to focus on the most important parts of your product. -->
 
 This section will be completed at a later time.
 
 ### 3.1 External interfaces
 
-See 9.5.10. for most systems this will be around one page.
-
+<!-- See 9.5.10. for most systems this will be around one page. -->
+ 
 This section will be completed at a later time.
 
 ### 3.2 Functions
 
-This is typically the longest subsection in the document. List up to fifty use cases (in order of priority for development), and for at least top ten focal use cases, write a short goal statement and use case body (up to seven pages).  Identify the use cases that comprise a minimum viable product.
-
-### 3.3 Usability Requirements
-
-See 9.5.12. for most systems this will be around one page.
+<!-- This is typically the longest subsection in the document. List up to fifty use cases (in order of priority for development), and for at least top ten focal use cases, write a short goal statement and use case body (up to seven pages).  Identify the use cases that comprise a minimum viable product. -->
 
 This section will be completed at a later time.
 
-> **9.5.12 Usability requirements**<br>
-> Define usability (quality in use) requirements. Usability requirements and objectives for the software system include measurable effectiveness, efficiency, and satisfaction criteria in specific contexts of use.
+### 3.3 Usability Requirements
+
+<!-- See 9.5.12. for most systems this will be around one page. -->
+
+This section will be completed at a later time.
+
+<!-- > **9.5.12 Usability requirements**<br>
+> Define usability (quality in use) requirements. Usability requirements and objectives for the software system include measurable effectiveness, efficiency, and satisfaction criteria in specific contexts of use. -->
 
 ### 3.4 Performance requirements
 
-See 9.5.13. for most systems this will be around one page. Hardware projects also see section 9.4.6.
+<!-- See 9.5.13. for most systems this will be around one page. Hardware projects also see section 9.4.6.
 
 > **9.5.13 Performance requirements** <br>
 > Specify both the static and the dynamic numerical requirements placed on the software or on human interaction with the software as a whole. 
@@ -172,19 +174,21 @@ See 9.5.13. for most systems this will be around one page. Hardware projects als
 > 
 >  For example, "_95 % of the transactions shall be processed in less than 1 second._" rather than, "An operator shall not have to wait for the transaction to complete."
 > 
-> NOTE Numerical limits applied to one specific function are normally specified as part of the processing subparagraph description of that function.
+> NOTE Numerical limits applied to one specific function are normally specified as part of the processing subparagraph description of that function. -->
 
 This section will be completed at a later time.
 
 ### 3.5 Logical database requirements
 
-See 9.5.14. for most systems, a focus on d) and e) is appropriate, such as an object-oriented domain analysis. You should provide an overview domain model (e.g.  a UML class diagram of approximately ten classes) and write a brief description of the responsibilities of each class in the model (3 pages).
+<!-- See 9.5.14. for most systems, a focus on d) and e) is appropriate, such as an object-oriented domain analysis. You should provide an overview domain model (e.g.  a UML class diagram of approximately ten classes) and write a brief description of the responsibilities of each class in the model (3 pages).
 
-You should use right tools, preferabley PlantUML, to draw your URL diagrams which can be easily embedded into a Mardown file (PlantUML is also supported by GitLab and Foswiki).
+You should use right tools, preferabley PlantUML, to draw your URL diagrams which can be easily embedded into a Mardown file (PlantUML is also supported by GitLab and Foswiki). -->
+
+This section will be completed at a later time.
 
 ### 3.6 Design constraints
 
-see 9.5.15 and 9.5.16. for most systems, this will be around one page.
+<!-- see 9.5.15 and 9.5.16. for most systems, this will be around one page.
 
 > 9.5.15 Design constraints<br>
 > Specify constraints on the system design imposed by external standards, regulatory requirements, or project limitations.
@@ -197,19 +201,21 @@ see 9.5.15 and 9.5.16. for most systems, this will be around one page.
 > c) Accounting procedures;<br>
 > d) Audit tracing.
 > 
-> For example, this could specify the requirement for software to trace processing activity. Such traces are needed for some applications to meet minimum regulatory or financial standards. An audit trace requirement may, for example, state that all changes to a payroll database shall be recorded in a trace file with before and after values.
+> For example, this could specify the requirement for software to trace processing activity. Such traces are needed for some applications to meet minimum regulatory or financial standards. An audit trace requirement may, for example, state that all changes to a payroll database shall be recorded in a trace file with before and after values. -->
+
+This section will be completed at a later time.
 
 ### 3.7 Nonfunctional system attributes
 
-Present the systemic (aka nonfunctional) requirements of the product (see ISO/IEC 25010).
+<!-- Present the systemic (aka nonfunctional) requirements of the product (see ISO/IEC 25010).
 List up to twenty systemic requirements / attributes.
-Write a short natural language description of the top nonfunctional requirements (approx. five pages).
+Write a short natural language description of the top nonfunctional requirements (approx. five pages).-->
 
 This section will be completed at a later time.
 
 ### 3.8 Physical and Environmental Requirements 
 
-For systems with hardware components, identify the physical characteristics of that hardware (9.4.10) and environment conditions in which it must operate (9.4.11).  Depending on the project, this section may be from one page up to 5 pages.
+<!-- For systems with hardware components, identify the physical characteristics of that hardware (9.4.10) and environment conditions in which it must operate (9.4.11).  Depending on the project, this section may be from one page up to 5 pages. -->
 
 This section will be completed at a later time.
 
@@ -219,7 +225,7 @@ see 9.5.19.
 
 ## 4. Verification
 
-3 pages outlining how you will verify that the product meets the most important specific requirements. The format of this section should parallel section 3 of your document (see 9.5.18). Wherever possible (especially systemic requirements) you should indicate testable acceptance criteria.
+<!-- 3 pages outlining how you will verify that the product meets the most important specific requirements. The format of this section should parallel section 3 of your document (see 9.5.18). Wherever possible (especially systemic requirements) you should indicate testable acceptance criteria. -->
 
 This section will be completed at a later time.
 
@@ -325,7 +331,7 @@ A one page statement of contributions, including a list of each member of the gr
 
 
 
-## Formatting Rules 
+<!-- ## Formatting Rules 
 
  * Write your document using [Markdown](https://gitlab.ecs.vuw.ac.nz/help/user/markdown#gitlab-flavored-markdown-gfm) and ensure you commit your work to your team's GitLab repository.
  * Major sections should be separated by a horizontal rule.
@@ -339,6 +345,6 @@ The presentation will be based on how easy it is to read, correct spelling, gram
 
 The content will be assessed according to its clarity, consistency, relevance, critical engagement and a demonstrated understanding of the material in the course. We look for evidence these traits are represented and assess the level of performance against these traits. While being comprehensive and easy to understand, this document must be reasonably concise too. You will be affected negatively by writing a report with too many pages (far more than what has been suggested for each section above).
 
-We aim to evaluate ENGR301 documents and projects as if they were real projects rather than academic exercises &mdash; especially as they are real projects with real clients. The best way to get a good mark in a document is to do the right thing for your project, your client, and your team. We encourage you to raise questions with your tutor or course staff, as soon as possible, so you can incorporate their feedback into your work.
+We aim to evaluate ENGR301 documents and projects as if they were real projects rather than academic exercises &mdash; especially as they are real projects with real clients. The best way to get a good mark in a document is to do the right thing for your project, your client, and your team. We encourage you to raise questions with your tutor or course staff, as soon as possible, so you can incorporate their feedback into your work. -->
 
 ---
