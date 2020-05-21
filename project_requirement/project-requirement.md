@@ -311,7 +311,7 @@ A one page statement of contributions, including a list of each member of the gr
 | Henry Pettit | cell | 
 | Nirari Awas | cell |
 | Ruvindu Wijeratne | cell | 
-| Thomas Rainford | cell |
+| Thomas Rainford | 1.0, 1.1, 1.2 |
 
 
 
