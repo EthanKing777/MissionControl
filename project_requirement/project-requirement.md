@@ -136,9 +136,18 @@ This section will be completed at a later time.
 
 ### 3.1 External interfaces
 
-<!-- See 9.5.10. for most systems this will be around one page. -->
- 
-This section will be completed at a later time.
+3.1 External interfaces
+Radio Antenna
+The radio antenna will be used to do minimal communication to the rocket for locating and small amounts of debugging. The antenna will act to provide the communication to and from the rocket on a continuous basis. This will transmit the GPS information from the rocket as well as data on the rocket’s performance for later evaluation. Performance data will include the gimbal states, inertial measurements, servos power inputs and coordinates from GPS.
+SD Card
+The SD card will act as a Blackbox to the rocket to store the data collected over the flight for later diagnosis. The data will be either stored in a CVS or text file. This data will include the inertial measurement unit output, GPS and gimbal position at the end of every control loop. The write rate of this SD will need to be fast enough to keep up with the data flow from each control loop and not impact the speed of the microcontroller. 
+Inertial Measurement Unit
+The Inertial Measurement Unit (IMU) will measure the change in both linear and rotation acceleration of the rocket. The output from this will be stored on the SD card. This data will be used for controlling the gimbal position. 
+Gimbal
+The gimbal is used for inflight adjustments to correct the rockets course up. The gimbal acts to adjust the motors nozzle direction which in turn changes the relative thrust of the rockets to correct its direction up. The servos will act to move the gimbals position by adjusting the pit and yaw. The adjustments needed are computed in the processor onboard from the flight data.
+Servos
+The servos will receive the computational instructions from the onboard processor to alter the rockets course by adjusting the gimbals position. There will be two servos for adjustments, one yaw and other for pit. The data given to the servos will specify the amount of degrees to rotate the gimbal by. The end position of the gimbal is output back.
+
 
 ### 3.2 Functions
 
