@@ -13,26 +13,80 @@ All team members are expected to contribute equally to the document and list the
 <div style="page-break-after: always;"></div>
 
 # ENGR 301 Project *NN* Project Proposal and Requirements Document
-#### Author list, a comma-separated list of the names of each member of the team.
+#### Author list: Alex Jackson, Chris Burt, Ethan King, Henry Pettit, Nirari Awas, Ruvindu Wijeratne, Thomas Rainford
+
+#Table of Contents:
+
+1.  Introduction    
+    * 1.1 Purpose 
+    * 1.2 Scope
+    * 1.3 Product Overview
+        * 1.3.1 Product Perspective 
+        * 1.3.2 Product Function 
+        * 1.3.3 User Characteristics 
+        * 1.3.4 Limitation 
+2. References 
+3. Specific Requirements
+    * 3.1 External Interfaces 
+    * 3.2 Functions 
+    * 3.3 Usability Requirements 
+    * 3.4 Performance Requirments 
+    * 3.5 Logical Database Requirments
+    * 3.6 Design Constraints
+    * 3.7 Non-functional System Attributes
+    * 3.8 Physical and Environmental Requirements
+    * 3.9 Supporting Information
+4. Verification
+5. Development Schedule
+    * 5.1 Schedule
+    * 5.2 Budget
+    * 5.3 Risks
+    * 5.4 Health and Safety
+        * 5.4.1 Safety Plan
+6. Appendices
+    * 6.1 Assumptions and Dependencies
+    * 6.2 Acronyms and Abbreviations
+7. Contributions
+    
+
+
+
 
 ## 1. Introduction
 
-One page overall introduction including sections 1.1 and 1.2.
+Amateur rockets are flown regularly worldwide. These rockets are typically flown with off the shelf rocket motors with widely available propellant reloads. These rockets often exceed the speed of sound, altitudes above 30 km are not unheard of. These rockets are almost never controlled, they are stable due to passive aerodynamic features. 
+
+While passively stable rockets are reasonably simple and reliable if well designed, they are susceptible to a variety of disturbances, particularly early in flight. Unexpected winds can cause the rocket to weathercock; flexibility in the launch tower/rail can cause railwhip, imparting a random launch angle to the rocket; the thrust from the rocket motor is also never perfectly symmetrical.
+
+This project is a continuation of a project from 2018. This year the project is broken into hardware and software components. The project will be all opensource/openhardware and as such will need to use opensource tools to make it accessible to the community E.g Kicad instead of Altium for PCB designs. The hardware component is to design an avionics board that can provide telemetry from the rocket, log data from sensors and control the rocket by gimballing a motor. The software components are to design a mission control that runs on a laptop at the launch site as well as some software to statistically predict the rockets flight and software to help design the control parameters for the avionics.
 
 ### Client
 
-Identify the client and their contact details
+Andre Geldenhuis is a rocket enthusiast who has experience building and launching rockets, and is a member of the New Zealand Rocketry Association.
+Contact: Andre.Geldenhuis@vuw.ac.nz
 
 ### 1.1 Purpose
 
-One sentence describing the purpose of the system (9.5.1)
+The purpose of the mission control software is to enusre conditions for launch are safe, and display data from a rocket in flight.
 
 ### 1.2 Scope
 
-One paragraph describing the scope of the system (9.5.2)
+**Mission control software that will:**
+
+* Be able to run on a laptop in a field.
+* Send a message to the rocket when launch is imminent.
+* Display data from the rocket including:
+    - Current software state.
+    - Current location.
+    - Current altitude.
+* Provide go/no go functionality which includes:
+    - Collecting current local weather conditions.
+    - Altering launch rod angle.
+* Integrate with the simulation team to:
+    - Provide weather information.
+    - Determine an upwind trajectory to minimise landing distance from launch site.
 
 ### 1.3 Product overview 
-#### 1.3.1 Product perspective
 
 In order to create a Mission Control software capable of safely executing a successful launch of the model rocket, the Mission Control system will need to rely on information provided by the Avionics Engineering teams and the Simulation teams. The Mission Control system should also possess the capability to transmit data required by other teams as the need occurs.  
 
@@ -44,19 +98,31 @@ The operational constraints as well as the Site adaptation requirements are stil
 
 #### 1.3.2 Product functions
 
-One page summary of the main functions of the product (9.5.4), briefly characterising the minimum viable product.
+TO DO: One page summary of the main functions of the product (9.5.4), briefly characterising the minimum viable product.
+Display the current software state
+Display the current location and altitude
+Indicate to avionics whether launch is imminent
+No/go functionality (integrating with Monte-carlo)
+Suggesting launch rod changes
+Extension: current wind profile included in Monte-carlo
+
+
 
 #### 1.3.3 User characteristics   
 
-One page identifying the main classes of users and their characteristics (9.5.5) 
+TO DO: One page identifying the main classes of users and their characteristics (9.5.5)
+Contact Andre? Who's actually going to use the program
 
 #### 1.3.4 Limitations
 
 One page on the limitations on the product (9.5.6)
+The system can't operate in too extreme weather (high wind or rain) due to the impractical launch of the rocket and electronics could get damaged.
+The communications of the rocket will be limited to the hardware used by the avionics team.
 
 ## 2. References
 
-References to other documents or standards. Follow the IEEE Citation  Reference scheme, available from the [IEEE website](https://www.ieee.org/) (please use the search box). (1 page, longer if required)
+References to other documents or standards. Follow the IEEE Citation  Reference scheme, available from the IEEE website (please use the search box). (1 page, longer if required)
+OpenRocket?
 
 ## 3. Specific requirements  
 
@@ -163,18 +229,29 @@ Identify the ten most important project risks to achieving project goals: their 
 
 If the project will involve any work outside the ECS laboratories, i.e. off-campus activities, these should be included in the following section.
 
+| Risk | Risk Type | Likelihood | Impact | Mitigation Strategies |
+| ------ | ------ | ------ | ------ | ------ |
+| COVID 19 | Health and Safety | 2 | 5 | All team members will follow government and univeristy advice/requirments. Working from home and personal devices where possible. If use of shared devices/ resources are needed then team members must ensure that correct levels of PPE and personal hygine and followed|
+| Rocket entering restricted airspace  | legal, Health and Saefty | 1 | 5 | The launch site will be carefully chosen by the client. The Client will be able to use the mission control software to gather information about wind speed/ direction, possible landing zone, recommendations to launch parameters and other information that will impact the clients choice of launch location. |   
+| Weather Conditions moving the rocket out of the predicted landed zone  | Enviromental | 5  | 5 | The mission control software will be able to pull weather data in advance of the lanuch. If any of the weather paramenters are outside of the recommended ranges provided by the CAA regulations 101 launch will be aborted.|   
+| Occupational Over Use  | Health and Safety | 3 | 3 | Team members must take breaks to avoid any computer use related health issues. e.g. Eye strain, repetitive strain injury etc|   
+| Engine ignites prematurely | Health and Safety | 2 | 4 | During stoarge and transport, the engine will be kept separte from heat/ electrical sources. The mission Control safety lock will be only disabled only when the go singal has been given. |   
+| Fire casued by rocket launch/landing | Health and Safety | 2 | 5 | The launch chosen in advance will be an open field. The local fire risk will be checked before hand, and if the level for the chosen area is HIGH or above the launch will be canceled or moved to another area with a lower fire danger leve. |   
+
+
+
 ### 5.4 Health and Safety
 
 Document here project requirements for Health and Safety. All teams must state in this section:
 
-1. How teams will manage computer-related risks such as Occupational Over Use, Cable management, etc.  
+All team members must take regular breaks to reduce the risks of Occupational Over Use, e.g. eye strain, repetitive strain injuries etc. Strict Cable management will be practiced at all work sites. Ensuring electronics are connected to mains or surge protected extenders, cables are run and routed out of the way of high foot traffic areas and ensuring that all Emergency exit are clear at all times.
+Range and reliability testing on the LO-RA modules may be required, as such this will be undertaken at Victoria Univeristy Kelburn campus and around the Wellington CBD. If use of these test sites are required then all team members will follow health and safety, radio protcols and traffic laws etc from the govering body for said areas.  
+As we are creating mission control software, the need to gather user feedback and test usability may be required. If so all test users will give their consent for their use and comments on the software to be observed and recorded in a testing log. To ensure that user testing meets the Ethical Approval of the univeristy, ECS department and to ensure the privacy of the test users, a redacted verison of the results will be inclued in the project documents only if needed. 
 
-2. Whether project work requires work or testing at any external (off-campus) workplaces/sites. If so, state the team's plans for receiving a Health and Safety induction for the external workplaces/sites. If the team has already received such an induction, state the date it was received. 
+Discussions/briefing with Roger Cliffe (Victoria Univeristy of Wellington Safety Officer):
 
-3. Whether project work requires the team test with human or animal subjects? If so, explain why there is no option but for the team to perform this testing, and state the team's plans for receiving Ethics Approval _prior_ to testing.
-
-Also document in this section any additional discussions with the School Safety Officer regarding Health and Safety risks. Give any further information on relevant health and safety regulations, risks, and mitigations, etc.
-
+Date: 8 May 2020 - Briefing on the Health and Safety Act 2015
+This was a mandatory lecture were the Health and Safety Act of 2015 and what it imolementations are for us.Safety Plans and Risk management strategies were also discused, e.g. a Risk Matrix.
 
 #### 5.4.1 Safety Plans
 
@@ -200,15 +277,33 @@ _If the project is purely software and requires no contact risks involving physi
 
 One page on assumptions and dependencies (9.5.7).
 
+
+*  Our hardware will use a LoRa radio transceiver and a teensy microcontroller along with a signal receiver dongle.
+*  The launch will follow guidelines of the CAA pertaining to launch conditions
+*  The success of mission control will depend on correct and accurate simulations of launches based on various conditions
+*  Our software will depend on the correct units being transmitted via the avionics hardware. Therefore the hardware and software need to assume the same units of data.
+
 ### 6.2 Acronyms and abbreviations
 
-One page glossary _as required_.
+CAA (Civil Aviation Authority): Responsible for the rues that govern managing the risks arounds aviation systems
+NOTAM (Notice to Airmen): Notice issued by Airways NZ to alert aircraft of an event within the airspace
 
 ## 7. Contributions
 
 A one page statement of contributions, including a list of each member of the group and what they contributed to this document.
 
----
+| Team Memeber | Contribution |
+| ------ | ------ |
+| Alex Jackson  | cell |
+| Chris Burt  | cell | 
+| Ethan King | Table of Content, 5.3, 5.4  |
+| Henry Pettit | cell | 
+| Nirari Awas | cell |
+| Ruvindu Wijeratne | cell | 
+| Thomas Rainford | cell |
+
+
+
 
 ## Formatting Rules 
 
