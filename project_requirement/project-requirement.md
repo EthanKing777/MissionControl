@@ -13,7 +13,44 @@ All team members are expected to contribute equally to the document and list the
 <div style="page-break-after: always;"></div>
 
 # ENGR 301 Project *NN* Project Proposal and Requirements Document
-#### Author list, a comma-separated list of the names of each member of the team.
+#### Author list: Alex Jackson, Chris Burt, Ethan King, Henry Pettit, Nirari Awas, Ruvindu Wijeratne, Thomas Rainford
+
+#Table of Contents:
+
+1.  Introduction    
+    * 1.1 Purpose 
+    * 1.2 Scope
+    * 1.3 Product Overview
+        * 1.3.1 Product Perspective 
+        * 1.3.2 Product Function 
+        * 1.3.3 User Characteristics 
+        * 1.3.4 Limitation 
+2. References 
+3. Specific Requirements
+    * 3.1 External Interfaces 
+    * 3.2 Functions 
+    * 3.3 Usability Requirements 
+    * 3.4 Performance Requirments 
+    * 3.5 Logical Database Requirments
+    * 3.6 Design Constraints
+    * 3.7 Non-functional System Attributes
+    * 3.8 Physical and Environmental Requirements
+    * 3.9 Supporting Information
+4. Verification
+5. Development Schedule
+    * 5.1 Schedule
+    * 5.2 Budget
+    * 5.3 Risks
+    * 5.4 Health and Safety
+        * 5.4.1 Safety Plan
+6. Appendices
+    * 6.1 Assumptions and Dependencies
+    * 6.2 Acronyms and Abbreviations
+7. Contributions
+    
+
+
+
 
 ## 1. Introduction
 
@@ -50,11 +87,13 @@ The purpose of the mission control software is to enusre conditions for launch a
     - Determine an upwind trajectory to minimise landing distance from launch site.
 
 ### 1.3 Product overview 
+
+The Following subsections explain and give information on the Perspectives, Functions, User Characteristics and Limitations of the project.
+
 #### 1.3.1 Product perspective
 
-One page defining the system's relationship to other related products
-(9.5.3. but not the subsections in the standard.)
-
+TODO: One page defining the system's relationship to other related products
+We use the simulation group's software to run simulations to inform avionics.
 > **9.5.3 Product perspective** <br>
 > Define the system's relationship to other related products. 
 > 
@@ -101,10 +140,13 @@ The client has specified that they would like the mission control software to be
 #### 1.3.4 Limitations
 
 One page on the limitations on the product (9.5.6)
+The system can't operate in too extreme weather (high wind or rain) due to the impractical launch of the rocket and electronics could get damaged.
+The communications of the rocket will be limited to the hardware used by the avionics team.
 
 ## 2. References
 
-References to other documents or standards. Follow the IEEE Citation  Reference scheme, available from the [IEEE website](https://www.ieee.org/) (please use the search box). (1 page, longer if required)
+References to other documents or standards. Follow the IEEE Citation  Reference scheme, available from the IEEE website (please use the search box). (1 page, longer if required)
+OpenRocket?
 
 ## 3. Specific requirements  
 
@@ -211,18 +253,29 @@ Identify the ten most important project risks to achieving project goals: their 
 
 If the project will involve any work outside the ECS laboratories, i.e. off-campus activities, these should be included in the following section.
 
+| Risk | Risk Type | Likelihood | Impact | Mitigation Strategies |
+| ------ | ------ | ------ | ------ | ------ |
+| COVID 19 | Health and Safety | 2 | 5 | All team members will follow government and univeristy advice/requirments. Working from home and personal devices where possible. If use of shared devices/ resources are needed then team members must ensure that correct levels of PPE and personal hygine and followed|
+| Rocket entering restricted airspace  | legal, Health and Saefty | 1 | 5 | The launch site will be carefully chosen by the client. The Client will be able to use the mission control software to gather information about wind speed/ direction, possible landing zone, recommendations to launch parameters and other information that will impact the clients choice of launch location. |   
+| Weather Conditions moving the rocket out of the predicted landed zone  | Enviromental | 5  | 5 | The mission control software will be able to pull weather data in advance of the lanuch. If any of the weather paramenters are outside of the recommended ranges provided by the CAA regulations 101 launch will be aborted.|   
+| Occupational Over Use  | Health and Safety | 3 | 3 | Team members must take breaks to avoid any computer use related health issues. e.g. Eye strain, repetitive strain injury etc|   
+| Engine ignites prematurely | Health and Safety | 2 | 4 | During stoarge and transport, the engine will be kept separte from heat/ electrical sources. The mission Control safety lock will be only disabled only when the go singal has been given. |   
+| Fire casued by rocket launch/landing | Health and Safety | 2 | 5 | The launch chosen in advance will be an open field. The local fire risk will be checked before hand, and if the level for the chosen area is HIGH or above the launch will be canceled or moved to another area with a lower fire danger leve. |   
+
+
+
 ### 5.4 Health and Safety
 
 Document here project requirements for Health and Safety. All teams must state in this section:
 
-1. How teams will manage computer-related risks such as Occupational Over Use, Cable management, etc.  
+All team members must take regular breaks to reduce the risks of Occupational Over Use, e.g. eye strain, repetitive strain injuries etc. Strict Cable management will be practiced at all work sites. Ensuring electronics are connected to mains or surge protected extenders, cables are run and routed out of the way of high foot traffic areas and ensuring that all Emergency exit are clear at all times.
+Range and reliability testing on the LO-RA modules may be required, as such this will be undertaken at Victoria Univeristy Kelburn campus and around the Wellington CBD. If use of these test sites are required then all team members will follow health and safety, radio protcols and traffic laws etc from the govering body for said areas.  
+As we are creating mission control software, the need to gather user feedback and test usability may be required. If so all test users will give their consent for their use and comments on the software to be observed and recorded in a testing log. To ensure that user testing meets the Ethical Approval of the univeristy, ECS department and to ensure the privacy of the test users, a redacted verison of the results will be inclued in the project documents only if needed. 
 
-2. Whether project work requires work or testing at any external (off-campus) workplaces/sites. If so, state the team's plans for receiving a Health and Safety induction for the external workplaces/sites. If the team has already received such an induction, state the date it was received. 
+Discussions/briefing with Roger Cliffe (Victoria Univeristy of Wellington Safety Officer):
 
-3. Whether project work requires the team test with human or animal subjects? If so, explain why there is no option but for the team to perform this testing, and state the team's plans for receiving Ethics Approval _prior_ to testing.
-
-Also document in this section any additional discussions with the School Safety Officer regarding Health and Safety risks. Give any further information on relevant health and safety regulations, risks, and mitigations, etc.
-
+Date: 8 May 2020 - Briefing on the Health and Safety Act 2015
+This was a mandatory lecture were the Health and Safety Act of 2015 and what it imolementations are for us.Safety Plans and Risk management strategies were also discused, e.g. a Risk Matrix.
 
 #### 5.4.1 Safety Plans
 
@@ -248,15 +301,33 @@ _If the project is purely software and requires no contact risks involving physi
 
 One page on assumptions and dependencies (9.5.7).
 
+
+*  Our hardware will use a LoRa radio transceiver and a teensy microcontroller along with a signal receiver dongle.
+*  The launch will follow guidelines of the CAA pertaining to launch conditions
+*  The success of mission control will depend on correct and accurate simulations of launches based on various conditions
+*  Our software will depend on the correct units being transmitted via the avionics hardware. Therefore the hardware and software need to assume the same units of data.
+
 ### 6.2 Acronyms and abbreviations
 
-One page glossary _as required_.
+CAA (Civil Aviation Authority): Responsible for the rues that govern managing the risks arounds aviation systems
+NOTAM (Notice to Airmen): Notice issued by Airways NZ to alert aircraft of an event within the airspace
 
 ## 7. Contributions
 
 A one page statement of contributions, including a list of each member of the group and what they contributed to this document.
 
----
+| Team Memeber | Contribution |
+| ------ | ------ |
+| Alex Jackson  | cell |
+| Chris Burt  | cell | 
+| Ethan King | Table of Content, 5.3, 5.4  |
+| Henry Pettit | cell | 
+| Nirari Awas | cell |
+| Ruvindu Wijeratne | cell | 
+| Thomas Rainford | cell |
+
+
+
 
 ## Formatting Rules 
 
