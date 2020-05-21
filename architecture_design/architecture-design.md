@@ -35,13 +35,32 @@ One page overall introduction including sections 1.1 and 1.2 (ISO/IEC/IEEE 42010
 
 Identify the client and their contact details.
 
+Andre Geldenhuis is a rocket enthusiast who has experience building and launching rockets, and is a member of the New Zealand Rocketry Association.
+Contact: Andre.Geldenhuis@vuw.ac.nz
+
+
 ### 1.1 Purpose
 
 One sentence describing the purpose of the system.
 
+The purpose of the mission control software is to enusre conditions for launch are safe, and display data from a rocket in flight.
+
 ### 1.2 Scope
 
 One paragraph describing the scope of the system.
+
+* Be able to run on a laptop in a field.
+* Send a message to the rocket when launch is imminent.
+* Display data from the rocket including:
+    - Current software state.
+    - Current location.
+    - Current altitude.
+* Provide go/no go functionality which includes:
+    - Collecting current local weather conditions.
+    - Altering launch rod angle.
+* Integrate with the simulation team to:
+    - Provide weather information.
+    - Determine an upwind trajectory to minimise landing distance from launch site.
 
 ### 1.3 Changes to requirements
 
