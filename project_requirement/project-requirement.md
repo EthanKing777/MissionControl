@@ -82,7 +82,7 @@ The minimum viable product of the mission control software is characterised as:
  - Being able to communicate with the rocket hardware.
  - Displaying relevant data (software state, location of the rocket, altitude of the rocket).
  - Integrating with the monte-carlo rocket simulation and using weather reports to determine probable landing location. If the predicted location is not within the defined bounds then the mission control software should signal that the launch should be aborted.
- - Communicate with the rocket to let it know a launch is imminent, allowing the avionics team to arm the parachute ejection charges.
+ - Communicate with the rocket to let it know a launch is imminent, allowing the avionics to arm the parachute ejection charges.
 
  The functionality of the mission control software will be extended by implementing:
 
@@ -91,7 +91,12 @@ The minimum viable product of the mission control software is characterised as:
 
 #### 1.3.3 User characteristics   
 
-One page identifying the main classes of users and their characteristics (9.5.5) 
+The client has specified that they would like the mission control software to be open source. This means that the mission control software will be available to the entire amateur rocket community. A consequence of this is that there are no strict limitations on the education level, disabilities, and experience of the end user. However, given the context of a mission control software designed to be used in conjunction with an amateur rocket, it can be reasonably assumed that the end user:
+
+ - Has an understanding of how to integrate the mission control software with the rocket hardware.
+ - Has the technical expertise to operate a laptop that has the mission control software installed.
+ - Is able to understand the readings and suggestions from the software.
+ - Is able to utilise readings and suggestions from the software to influence launch factors.
 
 #### 1.3.4 Limitations
 
