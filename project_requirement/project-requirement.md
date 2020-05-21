@@ -253,9 +253,10 @@ The final product will be completed by  6 November 2020
 
 ### 5.2 Budget
 
-Present a budget for the project (table), and justify each budget item (one paragraph per item, one page overall). 
+At this stage, we do not require a budgetary allocation as we do not have any forecasted expenses. The mission control system will rely on equipment and tools belonging to
+the Avionics team and the Simulation team, and we currently do not plan on purchasing any resources or tools. 
 
-This section will be completed at a later time.
+If the need arises in the future, we intend on requesting an allocation from the customer in the form of a formal request. 
 
 ### 5.3 Risks 
 
@@ -333,7 +334,7 @@ A one page statement of contributions, including a list of each member of the gr
 | Ethan King | Table of Content, 5.3, 5.4  |
 | Henry Pettit | cell | 
 | Nirari Awas | 1.3.2, 1.3.3 |
-| Ruvindu Wijeratne | cell | 
+| Ruvindu Wijeratne | 1.3.1, 5.2 | 
 | Thomas Rainford | 1.0, 1.1, 1.2 |
 
 
