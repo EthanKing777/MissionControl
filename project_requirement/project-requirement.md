@@ -296,10 +296,11 @@ _If the project is purely software and requires no contact risks involving physi
 One page on assumptions and dependencies (9.5.7).
 
 
-*  Our hardware will use a LoRa radio transceiver and a teensy microcontroller along with a signal receiver dongle.
+*  Our hardware will use a LoRa radio transceiver and a teensy microcontroller along with a signal receiver dongle
 *  The launch will follow guidelines of the CAA pertaining to launch conditions
 *  The success of mission control will depend on correct and accurate simulations of launches based on various conditions
-*  Our software will depend on the correct units being transmitted via the avionics hardware. Therefore the hardware and software need to assume the same units of data.
+*  Our software will depend on the correct units being transmitted via the avionics hardware. Therefore the hardware and software need to assume the same units of data
+*  The computers used will have adequate power prior to the launch
 
 ### 6.2 Acronyms and abbreviations
 
