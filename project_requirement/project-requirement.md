@@ -126,9 +126,14 @@ The client has specified that they would like the mission control software to be
 
 #### 1.3.4 Limitations
 
-One page on the limitations on the product (9.5.6)
-The system can't operate in too extreme weather (high wind or rain) due to the impractical launch of the rocket and electronics could get damaged.
-The communications of the rocket will be limited to the hardware used by the avionics team.
+Limitations on the product are : <br />
+  * The system won't be able to operate in extreme weather beacasue the electronics could be damaged in the wet with both the rocket and the laptop that the mission conrol software is operating on (assuming that both of these aren't water resistant). Overhanging cloud could affect comunication with the rockets GPS. Casuing errors, which may lead to losing the rockets where abouts or directing the rocket onto a bad flight path.
+
+  * When the rocket is flying, the mission control software is communicating the rocket via radio comunications. These radio communications are limited to rignal range and sttrength, which can be affected by step hills in the nearby area. Which could cause errors in path updates and adjustments.
+  
+  * There is a limit with data being sent to the rocket and receive being receive. Radio waves can only travel a such a speed that there will be a slight delay of on the data being sent to the rocket as well as data being sent back from the rockets. Also depending on the hardware operating the mission control software there could be slight delays in processing information that has come from the rocket, which also applies for the data being processed on the rocket itself.  
+  
+  * The communications of the rocket will be limited to the hardware used by the avionics team.
 
 ## 2. References
 
@@ -236,13 +241,14 @@ This section will be completed at a later time.
 
 Identify dates for key project deliverables: 
 
-1. architectural prototype
-1. minimum viable product
-1. further releases
+**Architectural Prototype** <br />
+The architectrural prototype will be completed by 8 June 2020
 
-This section will be completed at a later time.
+**Minimum Viable Product** <br />
+The minimum viable product which is specified in part 1.3.2 will completed by 3 August 2020
 
-(1 page).
+**Further Releases** <br />
+The final product will be completed by  6 November 2020
 
 
 ### 5.2 Budget
@@ -323,7 +329,7 @@ A one page statement of contributions, including a list of each member of the gr
 | Team Memeber | Contribution |
 | ------ | ------ |
 | Alex Jackson  | 6.1 |
-| Chris Burt  | cell | 
+| Chris Burt  | 1.3.4, 5.1 | 
 | Ethan King | Table of Content, 5.3, 5.4  |
 | Henry Pettit | cell | 
 | Nirari Awas | 1.3.2, 1.3.3 |
