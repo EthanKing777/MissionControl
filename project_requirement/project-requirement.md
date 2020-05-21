@@ -12,7 +12,7 @@ All team members are expected to contribute equally to the document and list the
 
 <div style="page-break-after: always;"></div>
 
-# ENGR 301 Project *NN* Project Proposal and Requirements Document
+# ENGR 301 Project *Mission Control Software* Project Proposal and Requirements Document
 #### Author list: Alex Jackson, Chris Burt, Ethan King, Henry Pettit, Nirari Awas, Ruvindu Wijeratne, Thomas Rainford
 
 #Table of Contents:
