@@ -139,9 +139,13 @@ OpenRocket?
 
 20 pages outlining the requirements of the system. You should apportion these pages across the following subsections to focus on the most important parts of your product.
 
+This section will be completed at a later time.
+
 ### 3.1 External interfaces
 
-See 9.5.10. for most systems this will be around one page. 
+See 9.5.10. for most systems this will be around one page.
+
+This section will be completed at a later time.
 
 ### 3.2 Functions
 
@@ -150,6 +154,8 @@ This is typically the longest subsection in the document. List up to fifty use c
 ### 3.3 Usability Requirements
 
 See 9.5.12. for most systems this will be around one page.
+
+This section will be completed at a later time.
 
 > **9.5.12 Usability requirements**<br>
 > Define usability (quality in use) requirements. Usability requirements and objectives for the software system include measurable effectiveness, efficiency, and satisfaction criteria in specific contexts of use.
@@ -175,6 +181,7 @@ See 9.5.13. for most systems this will be around one page. Hardware projects als
 > 
 > NOTE Numerical limits applied to one specific function are normally specified as part of the processing subparagraph description of that function.
 
+This section will be completed at a later time.
 
 ### 3.5 Logical database requirements
 
@@ -205,10 +212,13 @@ Present the systemic (aka nonfunctional) requirements of the product (see ISO/IE
 List up to twenty systemic requirements / attributes.
 Write a short natural language description of the top nonfunctional requirements (approx. five pages).
 
+This section will be completed at a later time.
 
 ### 3.8 Physical and Environmental Requirements 
 
 For systems with hardware components, identify the physical characteristics of that hardware (9.4.10) and environment conditions in which it must operate (9.4.11).  Depending on the project, this section may be from one page up to 5 pages.
+
+This section will be completed at a later time.
 
 ### 3.9 Supporting information
 
@@ -217,6 +227,8 @@ see 9.5.19.
 ## 4. Verification
 
 3 pages outlining how you will verify that the product meets the most important specific requirements. The format of this section should parallel section 3 of your document (see 9.5.18). Wherever possible (especially systemic requirements) you should indicate testable acceptance criteria.
+
+This section will be completed at a later time.
 
 ## 5. Development schedule.
 
@@ -228,11 +240,16 @@ Identify dates for key project deliverables:
 1. minimum viable product
 1. further releases
 
+This section will be completed at a later time.
+
 (1 page).
+
 
 ### 5.2 Budget
 
 Present a budget for the project (table), and justify each budget item (one paragraph per item, one page overall). 
+
+This section will be completed at a later time.
 
 ### 5.3 Risks 
 
@@ -287,7 +304,6 @@ _If the project is purely software and requires no contact risks involving physi
 ### 6.1 Assumptions and dependencies 
 
 One page on assumptions and dependencies (9.5.7).
-
 
 *  Our hardware will use a LoRa radio transceiver and a teensy microcontroller along with a signal receiver dongle
 *  The launch will follow guidelines of the CAA pertaining to launch conditions
