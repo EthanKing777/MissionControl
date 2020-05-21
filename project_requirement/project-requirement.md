@@ -317,7 +317,7 @@ A one page statement of contributions, including a list of each member of the gr
 | Chris Burt  | cell | 
 | Ethan King | Table of Content, 5.3, 5.4  |
 | Henry Pettit | cell | 
-| Nirari Awas | cell |
+| Nirari Awas | 1.3.2, 1.3.3 |
 | Ruvindu Wijeratne | cell | 
 | Thomas Rainford | 1.0, 1.1, 1.2 |
 
