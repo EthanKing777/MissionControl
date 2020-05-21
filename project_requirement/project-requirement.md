@@ -140,6 +140,8 @@ Limitations on the product are : <br />
 References to other documents or standards. Follow the IEEE Citation  Reference scheme, available from the IEEE website (please use the search box). (1 page, longer if required)
 OpenRocket?
 
+“Keeping New Zealand  skies safe and secure  ,” CAA and Avsec. [Online]. Available: https://www.aviation.govt.nz/. [Accessed: 10-May-2020].
+
 ## 3. Specific requirements  
 
 20 pages outlining the requirements of the system. You should apportion these pages across the following subsections to focus on the most important parts of your product.
@@ -262,12 +264,12 @@ If the project will involve any work outside the ECS laboratories, i.e. off-camp
 
 | Risk | Risk Type | Likelihood | Impact | Mitigation Strategies |
 | ------ | ------ | ------ | ------ | ------ |
-| COVID 19 | Health and Safety | 2 | 5 | All team members will follow government and univeristy advice/requirments. Working from home and personal devices where possible. If use of shared devices/ resources are needed then team members must ensure that correct levels of PPE and personal hygine and followed|
-| Rocket entering restricted airspace  | legal, Health and Saefty | 1 | 5 | The launch site will be carefully chosen by the client. The Client will be able to use the mission control software to gather information about wind speed/ direction, possible landing zone, recommendations to launch parameters and other information that will impact the clients choice of launch location. |   
-| Weather Conditions moving the rocket out of the predicted landed zone  | Enviromental | 5  | 5 | The mission control software will be able to pull weather data in advance of the lanuch. If any of the weather paramenters are outside of the recommended ranges provided by the CAA regulations 101 launch will be aborted.|   
+| COVID 19 | Health and Safety | 2 | 5 | All team members will follow government and univeristy advice/requirements. Working from home and personal devices where possible. If use of shared devices/resources are needed then team members must ensure that correct levels of PPE and personal hygine and followed|
+| Rocket entering restricted airspace  | legal, Health and Safety | 1 | 5 | The launch site will be carefully chosen by the client. The Client will be able to use the mission control software to gather information about wind speed/direction, possible landing zone, recommendations to launch parameters and other information that will impact the clients choice of launch location. |   
+| Weather Conditions moving the rocket out of the predicted landed zone  | Environmental | 5  | 5 | The mission control software will be able to pull weather data in advance of the lanuch. If any of the weather paramenters are outside of the recommended ranges provided by the CAA regulations 101 launch will be aborted.|   
 | Occupational Over Use  | Health and Safety | 3 | 3 | Team members must take breaks to avoid any computer use related health issues. e.g. Eye strain, repetitive strain injury etc|   
-| Engine ignites prematurely | Health and Safety | 2 | 4 | During stoarge and transport, the engine will be kept separte from heat/ electrical sources. The mission Control safety lock will be only disabled only when the go singal has been given. |   
-| Fire casued by rocket launch/landing | Health and Safety | 2 | 5 | The launch chosen in advance will be an open field. The local fire risk will be checked before hand, and if the level for the chosen area is HIGH or above the launch will be canceled or moved to another area with a lower fire danger leve. |   
+| Engine ignites prematurely | Health and Safety | 2 | 4 | During stoarge and transport, the engine will be kept separate from heat/electrical sources. The mission Control safety lock will be only disabled only when the go singal has been given. |   
+| Fire caused by rocket launch/landing | Health and Safety | 2 | 5 | The launch chosen in advance will be an open field. The local fire risk will be checked before hand, and if the level for the chosen area is HIGH or above the launch will be canceled or moved to another area with a lower fire danger level. |   
 
 
 
