@@ -306,7 +306,7 @@ A one page statement of contributions, including a list of each member of the gr
 
 | Team Memeber | Contribution |
 | ------ | ------ |
-| Alex Jackson  | cell |
+| Alex Jackson  | 6.1 |
 | Chris Burt  | cell | 
 | Ethan King | Table of Content, 5.3, 5.4  |
 | Henry Pettit | cell | 
