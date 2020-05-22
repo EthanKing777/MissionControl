@@ -2,7 +2,7 @@
 
 ## Proof-of-Concept
 
-The aim of an architectural proof-of-concept (spike or walking skeleton) is to demonstrate the technical feasibility of your chosen architecture, to mitigate technical and project risks, and to plan and validate your technical and team processes (e.g., build systems, story breakdown, Kanban boards, acceptance testing, deployment).
+<!--The aim of an architectural proof-of-concept (spike or walking skeleton) is to demonstrate the technical feasibility of your chosen architecture, to mitigate technical and project risks, and to plan and validate your technical and team processes (e.g., build systems, story breakdown, Kanban boards, acceptance testing, deployment).
 
 A walking skeleton is an initial technical attempt that will form the architectural foundation of your product. Since a walking skeleton is expected to be carried into your product, it must be completed to the quality standards expected for your final product. A walking skeleton should demonstrate all the technologies your program will rely on "end-to-end" &mdash; from the user interface down to the hardware.
 
@@ -22,26 +22,28 @@ The document should contain the sections listed below, and conform to the format
 All team members are expected to contribute equally to the document and list their contributions in the last section of the document (please make sure that your continued contribution to this document can be traced in GitLab). You should work on your document in your team's GitLab repository in a directory called "M2_Architecture". If more than one team member has contributed to a particular commit, all those team member IDs should be included in the first line of the git commit message. ``git blame``, ``git diff``, file histories, etc. will be tools used to assess individual contributions, so everyone is encouraged to contribute individually (your contribution should be made to many sections of the document, rather than focusing on just a single section), commit early and commit often.
 
 ---
+--> 
 
-# ENGR 301 Project *NN* Architectural Design and Proof-of-Concept
+# ENGR 301 Project *Mission Control Software* Architectural Design and Proof-of-Concept
 
-**Authors:** a comma-separated list of the names of each member of the team.
+**Authors:** Alex Jackson, Chris Burt, Ethan King, Henry Pettit, Nirari Awas, Ruvindu Wijeratne, Thomas Rainford
 
 ## 1. Introduction
 
-One page overall introduction including sections 1.1 and 1.2 (ISO/IEC/IEEE 42010:2011(E) clause 5.2)
+Amateur rockets are flown regularly worldwide. These rockets are typically flown with off the shelf rocket motors with widely available propellant reloads. These rockets often exceed the speed of sound, altitudes above 30 km are not unheard of. These rockets are almost never controlled, they are stable due to passive aerodynamic features. 
+
+While passively stable rockets are reasonably simple and reliable if well designed, they are susceptible to a variety of disturbances, particularly early in flight. Unexpected winds can cause the rocket to weathercock; flexibility in the launch tower/rail can cause railwhip, imparting a random launch angle to the rocket; the thrust from the rocket motor is also never perfectly symmetrical.
+
+This project is a continuation of a project from 2018. This year the project is broken into hardware and software components. The project will be all opensource/openhardware and as such will need to use opensource tools to make it accessible to the community E.g Kicad instead of Altium for PCB designs. The hardware component is to design an avionics board that can provide telemetry from the rocket, log data from sensors and control the rocket by gimballing a motor. The software components are to design a mission control that runs on a laptop at the launch site as well as some software to statistically predict the rockets flight and software to help design the control parameters for the avionics.
+
 
 ### Client
-
-Identify the client and their contact details.
 
 Andre Geldenhuis is a rocket enthusiast who has experience building and launching rockets, and is a member of the New Zealand Rocketry Association.
 Contact: Andre.Geldenhuis@vuw.ac.nz
 
 
 ### 1.1 Purpose
-
-One sentence describing the purpose of the system.
 
 The purpose of the mission control software is to enusre conditions for launch are safe, and display data from a rocket in flight.
 
@@ -68,7 +70,7 @@ If the requirement have changed significantly since the requirements document, o
 
 ## 2. References
 
-References to other documents or standards. Follow the IEEE Citation Reference scheme, available from the [IEEE website](https://ieee-dataport.org/sites/default/files/analysis/27/IEEE%20Citation%20Guidelines.pdf) (PDF; 20 KB). (1 page, longer if required)
+“Keeping New Zealand  skies safe and secure  ,” CAA and Avsec. [Online]. Available: https://www.aviation.govt.nz/. [Accessed: 10-May-2020].
 
 ## 3. Architecture
 
@@ -135,19 +137,29 @@ Schedules must be justified and supported by evidences; they must be either dire
 
 ### 5.1 Schedule
 
-Identify dates for key project deliverables:
 
 1. prototype(s).
 1. first deployment to the client.
 1. further improvements required or specified by the client.
 
-(1 page).
+
+Identify dates for key project deliverables: 
+
+**Minimum Viable Product** <br />
+The minimum viable product which is specified in part 1.3.2 will completed by 25 September 2020
+
+**Further Releases** <br />
+The final product will be completed by  6 November 2020
+
 
 ### 5.2 Budget and Procurement
 
 #### 5.2.1 Budget
 
-Present a budget for the project (as a table), showing the amount of expenditure the project requires and the date(s) on which it will be incurred. Substantiate each budget item by reference to fulfilment of project goals (one paragraph per item).
+At this stage, we do not require a budgetary allocation as we do not have any forecasted expenses. The mission control system will rely on equipment and tools belonging to
+the Avionics team and the Simulation team, and we currently do not plan on purchasing any resources or tools. 
+
+If the need arises in the future, we intend on requesting an allocation from the customer in the form of a formal request. 
 
 (1 page). 
 
@@ -158,11 +170,31 @@ Present a table of goods or services that will be required to deliver project go
 
 ### 5.3 Risks 
 
-Identify the ten most important project risks: their type, likelihood, impact, and mitigation strategies (3 pages).
+Identify the ten most important project risks to achieving project goals: their type, likelihood, impact, and mitigation strategies (3 pages).
+
+If the project will involve any work outside the ECS laboratories, i.e. off-campus activities, these should be included in the following section.
+
+| Risk | Risk Type | Likelihood | Impact | Mitigation Strategies |
+| ------ | ------ | ------ | ------ | ------ |
+| COVID 19 | Health and Safety | 2 | 5 | All team members will follow government and univeristy advice/requirements. Working from home and personal devices where possible. If use of shared devices/resources are needed then team members must ensure that correct levels of PPE and personal hygine and followed|
+| Rocket entering restricted airspace  | legal, Health and Safety | 1 | 5 | The launch site will be carefully chosen by the client. The Client will be able to use the mission control software to gather information about wind speed/direction, possible landing zone, recommendations to launch parameters and other information that will impact the clients choice of launch location. |   
+| Weather Conditions moving the rocket out of the predicted landed zone  | Environmental | 5  | 5 | The mission control software will be able to pull weather data in advance of the lanuch. If any of the weather paramenters are outside of the recommended ranges provided by the CAA regulations 101 launch will be aborted.|   
+| Occupational Over Use  | Health and Safety | 3 | 3 | Team members must take breaks to avoid any computer use related health issues. e.g. Eye strain, repetitive strain injury etc|   
+| Engine ignites prematurely | Health and Safety | 2 | 4 | During stoarge and transport, the engine will be kept separate from heat/electrical sources. The mission Control safety lock will be only disabled only when the go singal has been given. |   
+| Fire caused by rocket launch/landing | Health and Safety | 2 | 5 | The launch chosen in advance will be an open field. The local fire risk will be checked before hand, and if the level for the chosen area is HIGH or above the launch will be canceled or moved to another area with a lower fire danger level. |   
 
 ### 5.4 Health and Safety
 
-Document here project requirements for Health and Safety.
+Document here project requirements for Health and Safety. All teams must state in this section:
+
+All team members must take regular breaks to reduce the risks of Occupational Over Use, e.g. eye strain, repetitive strain injuries etc. Strict Cable management will be practiced at all work sites. Ensuring electronics are connected to mains or surge protected extenders, cables are run and routed out of the way of high foot traffic areas and ensuring that all Emergency exit are clear at all times.
+Range and reliability testing on the LO-RA modules may be required, as such this will be undertaken at Victoria Univeristy Kelburn campus and around the Wellington CBD. If use of these test sites are required then all team members will follow health and safety, radio protcols and traffic laws etc from the govering body for said areas.  
+As we are creating mission control software, the need to gather user feedback and test usability may be required. If so all test users will give their consent for their use and comments on the software to be observed and recorded in a testing log. To ensure that user testing meets the Ethical Approval of the univeristy, ECS department and to ensure the privacy of the test users, a redacted verison of the results will be inclued in the project documents only if needed. 
+
+Discussions/briefing with Roger Cliffe (Victoria Univeristy of Wellington Safety Officer):
+
+Date: 8 May 2020 - Briefing on the Health and Safety Act 2015
+This was a mandatory lecture were the Health and Safety Act of 2015 and what it imolementations are for us.Safety Plans and Risk management strategies were also discused, e.g. a Risk Matrix.
 
 #### 5.4.1 Safety Plans
 
@@ -173,19 +205,33 @@ Safety Plans may be required for some projects, depending on project requirement
 
 ### 6.1 Assumptions and dependencies 
 
-One page on assumptions and dependencies (9.5.7) 
+  Our hardware will use a LoRa radio transceiver and a teensy microcontroller along with a signal receiver dongle
+*  The launch will follow guidelines of the CAA pertaining to launch conditions
+*  The success of mission control will depend on correct and accurate simulations of launches based on various conditions
+*  Our software will depend on the correct units being transmitted via the avionics hardware. Therefore the hardware and software need to assume the same units of data
+*  The computers used will have adequate power prior to the launch
 
 ### 6.2 Acronyms and abbreviations
 
-One page glossary as required 
+CAA (Civil Aviation Authority): Responsible for the rues that govern managing the risks arounds aviation systems
+NOTAM (Notice to Airmen): Notice issued by Airways NZ to alert aircraft of an event within the airspace
+
 
 ## 7. Contributions
 
-An one page statement of contributions, including a list of each member of the group and what they contributed to this document.
 
+| Team Memeber | Contribution |
+| ------ | ------ |
+| Alex Jackson  | 6.1 |
+| Chris Burt  |  5.1 | 
+| Ethan King | 5.3, 5.4  |
+| Henry Pettit | cell | 
+| Nirari Awas |1.1, 1.0 |
+| Ruvindu Wijeratne | 5.2, Table of Content | 
+| Thomas Rainford | 1.0, 1.1, 1.2 |
 ---
 
-## Formatting Rules 
+<!--## Formatting Rules 
 
  * Write your document using [Markdown](https://gitlab.ecs.vuw.ac.nz/help/user/markdown#gitlab-flavored-markdown-gfm) in your team's GitLab repository.
  * Major sections should be separated by a horizontal rule.
@@ -204,3 +250,4 @@ The presentation will be based on how easy it is to read, correct spelling, gram
 The content will be assessed according to its clarity, consistency, relevance, critical engagement and a demonstrated understanding of the material in the course. We look for evidence these traits are represented and assess the level of performance against these traits. Inspection of the GitLab Group is the essential form of assessing this document. While being comprehensive and easy to understand, this document must be reasonably concise too. You will be affected negatively by writing a report with too many pages (far more than what has been suggested for each section above).
 
 ---
+--> 
