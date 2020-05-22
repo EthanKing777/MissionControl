@@ -84,9 +84,24 @@ This means that you should refer to information (e.g. risks, requirements, model
 
 ### 3.1 Stakeholders
 
-See ISO/IEC/IEEE 42010 clause 5.3 and ISO/IEC/IEEE 12207 clause 6.4.4.3(2).
-
-For most systems this will be about 2 pages, including a table mapping concerns to stakeholder.
+| Name | Position | Project Role | Contact Information |
+|:----:|:--------:|:------------:|:-------------------:|
+|Andre Geldenhuis|Research Software Engineer|Client|andre.geldenhuis@vuw.ac.nz|
+|Aaron Chen|Course Coordinator|Administration|aaron.chen@ecs.vuw.ac.nz|
+|Craig Anslow|Course Lecturer|Administration|craig.anslow@ecs.vuw.ac.nz|
+|Chansocheat Chheang|Tutor|Senior Manager|chansocheatchheang@gmail.com|
+|Christopher Burt|Student|Developer|cvburt08@gmail.com|
+|Ethan King|Student|Developer|ethank.842@gmail.com|
+|Alexander Jackson|Student|Developer|wellyboyjacko@gmail.com|
+|Thomas Rainford|Student|Developer|thomas@rainfords.net|
+|Henry Pettit|Student|Developer|henry.g.c.pettit@outlook.com|
+|Nirari Awas|Student|Developer|awasnira@ecs.vuw.ac.nz|
+|Ruvindu|Student|Developer|ruvindu.w@gmail.com|
+|Roger Cliffe|Support Staff|Health & Safety|ecs-safety@ecs.vuw.ac.nz|
+|Stuart Marshall|Head of School|Health & Safety Reports|stuart.marshall@vuw.ac.nz|
+|Software Technicians|Support Staff|Resources/ Configuration Changes Support|jobs@ecs.vuw.ac.nz|
+|Software Technicians|Support Staff|Problems/ Bugs Support|bugs@ecs.vuw.ac.nz|
+|Electronics Technicians|Support Staff|Electronic Components Support|electronics@ecs.vuw.ac.nz|
 
 ### 3.2 Architectural Viewpoints
 (1 page, 42010 5.4) 
