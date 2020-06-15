@@ -105,7 +105,6 @@ This means that you should refer to information (e.g. risks, requirements, model
 |Electronics Technicians|Support Staff|Electronic Components Support|electronics@ecs.vuw.ac.nz|
 
 ### 3.2 Architectural Viewpoints
-(1 page, 42010 5.4) 
 
 <!-- Identify the architectural viewpoints you will use to present your system's architecture. Write one sentence to outline each viewpoint. Show which viewpoint frames which architectural concern.
 --> 
