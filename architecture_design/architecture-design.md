@@ -176,12 +176,17 @@ the Avionics team and the Simulation team, and we currently do not plan on purch
 
 If the need arises in the future, we intend on requesting an allocation from the customer in the form of a formal request. 
 
+
 (1 page). 
 
 #### 5.2.2 Procurement
 
-Present a table of goods or services that will be required to deliver project goals and specify how they are to be procured (e.g. from the School or from an external organisation). These may be software applications, libraries, training or other infrastructure, including open source software. Justify and substantiate procurement with reference to fulfilment of project goals, one paragraph per item.
-(1 page).
+<!-- Present a table of goods or services that will be required to deliver project goals and specify how they are to be procured (e.g. from the School or from an external organisation). These may be software applications, libraries, training or other infrastructure, including open source software. Justify and substantiate procurement with reference to fulfilment of project goals, one paragraph per item.
+(1 page). -->
+
+| Component | Purchasing team | Cost | Procurer |
+| ------ | ------ | ------ | ------ |
+| LORA module | Avinonics | $20 - $40 | External Vendor |
 
 ### 5.3 Risks 
 
