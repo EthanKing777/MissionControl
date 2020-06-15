@@ -106,8 +106,20 @@ This means that you should refer to information (e.g. risks, requirements, model
 ### 3.2 Architectural Viewpoints
 (1 page, 42010 5.4) 
 
-Identify the architectural viewpoints you will use to present your system's architecture. Write one sentence to outline each viewpoint. Show which viewpoint frames which architectural concern.
+<!-- Identify the architectural viewpoints you will use to present your system's architecture. Write one sentence to outline each viewpoint. Show which viewpoint frames which architectural concern.
+--> 
 
+**Logical:** Is used to break down the system into key concepts and explaining the functionality of the system as a whole and of each key concept to end-users. 
+
+**Development:** Describes the architecture of the software development cycle and addresses concerns of how software is being managed. 
+
+**Process:** Describes dynamic and non-functional system requirments and explain how these concepts from the logical viewpoint fit within the project as a whole. 
+             Examples of dymanic and non-functional requirments are: performance, the integrtors between parts of the system.
+             
+**Physical:** Describes how our Mission Control software is going to be mapped and interact with the hardware components from different teams and discussing scalability, performance, reliability, etc of the system.
+
+**Senarios:** Describes interaction between users, processes, users and the system, software and hardware etc and compiled into use cases. This allows us to carry out a qualitative review of our architectures. 
+ 
 ### 4. Architectural Views
 
 (5 sub-sections of 2 pages each sub-section, per 42010, 5.5, 5.6, with reference to Annex F of both 12207 and 15288) 
@@ -249,7 +261,7 @@ NOTAM (Notice to Airmen): Notice issued by Airways NZ to alert aircraft of an ev
 | Nirari Awas |1.1, 1.0 |
 | Ruvindu Wijeratne | 5.2, Table of Content | 
 | Thomas Rainford | 1.0, 1.1, 1.2 |
----
+
 
 <!--## Formatting Rules 
 
