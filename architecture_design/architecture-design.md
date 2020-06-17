@@ -149,7 +149,13 @@ Each architectural view should include at least one architectural model. If arch
 
 ### 4.3 Process
 
-The process architecture can be viewed as mutiple levels of abstraction, were each level describes a different concern. At the highest level the process architecture demonstrates the independently executing networks of processes distributed accross a range of hardware resources connected via a LAN or a WAN. A process is a group of tasks that form an executable program. Processes represent a section of the process architecture which can be controlled. These processes can be replicated for improved load processing and availibility. This is particularly usefull for implementing a system which requires concurrency and parallelism.
+The process architecture can be viewed as mutiple levels of abstraction, were each level describes a different concern. At the highest level the process architecture demonstrates the independently executing networks of processes distributed accross a range of hardware resources connected via a LAN or a WAN.
+
+A process is a group of tasks that form an executable program. Processes represent a section of the process architecture which can be controlled. These processes can be replicated for improved load processing and availibility. This is particularly usefull for implementing a system which requires concurrency and parallelism.
+
+The diagram used to demonstrate the process view for this project will use a UML activity diagram. This diagram shows the process which the software will follow.
+
+![UML Activity diagram](architecture_design/state-diagram.PNG)
 
 
 
