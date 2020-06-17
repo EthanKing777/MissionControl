@@ -1,38 +1,27 @@
-package Parsers.CSV.parser;
+package parser;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVParser;
+import org.apache.commons.csv.CSVRecord;
+
+import java.io.*;
+import java.util.ArrayList;
 
 public class CSV_PARSER{
-    public static void main(String[] args) {
-        String csvFile = "Data/Open Rocket Export/test 1.csv";
-        BufferedReader reader = null;
-        String spliter = ",";
-
-        try {
-            reader = new BufferedReader(new FileReader(csvFile));
-            String currentLine ="";
-            while ((currentLine = reader.readLine()) != null) {
-
-                String[] value = currentLine.split(spliter);
-
-                System.out.println("Time: " + value[0]);
-
-            }
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (reader != null) {
-                try {
-                    reader.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
+    public static void main(String[] args) throws IOException {
+        InputStream csvFile =  new FileInputStream ("Data/Open Rocket Export/test 1.csv");
+        InputStreamReader input = new InputStreamReader(csvFile);
+        CSVParser csvParser = CSVFormat.EXCEL.withFirstRecordAsHeader().parse(input);
+        ArrayList<String> header = new ArrayList<>();
+        for(CSVRecord record : csvParser) {
+            if(record.getRecordNumber() == 3){
+                for(String value : record){
+                    header.add(value);
                 }
+            }
+            System.out.println(header + "   ");
+            for(String value : record){
+                System.out.print(value +"   ");
             }
         }
 
