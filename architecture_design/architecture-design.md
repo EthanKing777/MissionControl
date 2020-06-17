@@ -157,7 +157,7 @@ The diagram used to demonstrate the process view for this project will use a UML
 
 ![UML Activity diagram](architecture_design/state-diagram.PNG)
 
-
+*Figure x: UML Activity diagram for misson control system*
 
 ### 4.4 Physical 
 ...
