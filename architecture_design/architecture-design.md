@@ -142,8 +142,9 @@ As appropriate you should include the following viewpoints:
 Each architectural view should include at least one architectural model. If architectural models are shared across views, refer back to the first occurrence of that model in your document, rather than including a separate section for the architectural models.
 
 ### 4.1 Logical
-...
-
+The logical view presents the communicational and functional responsibilities of the system. In this case, CRC cards along with connections between them show the logical view of our system. An advantage of using CRC cards is because considering the early stages of research we are in, these boxes are subject to change. 
+However, when these classes are implemented the CRC cards can be converted into class diagrams that will show specifics about fields and methods. This diagram does not constrain the architecture to a particular medium which leaves it open to scalability. 
+[Imgur](https://i.imgur.com/ckNukat.png)
 ### 4.2 Development
 ...
 
