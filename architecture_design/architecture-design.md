@@ -412,6 +412,8 @@ where possible. If use of shared devices/resources are needed then team members 
 PPE and personal hygiene are followed.
 
 
+**As our project is purely software, we have only added the launch site safety plan as a precaution in cause we need to be present at the launch.**
+
 ## 6. Appendices
 
 ### 6.1 Assumptions and dependencies 
@@ -441,7 +443,7 @@ ATC: Air Traffic Control
 | ------ | ------ |
 | Alex Jackson  | 6.1, 4.1 |
 | Chris Burt  |  5.1,4.5 | 
-| Ethan King | 5.3, 5.4, 4.2 |
+| Ethan King | 5.3, 5.4, 4.2, 5.4.1 |
 | Henry Pettit | cell | 
 | Nirari Awas |1.1, 1.0 |
 | Ruvindu Wijeratne | 5.2, Table of Content | 
