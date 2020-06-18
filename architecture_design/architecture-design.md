@@ -124,9 +124,9 @@ This means that you should refer to information (e.g. risks, requirements, model
 
 **Senarios:** Describes interaction between users, processes, users and the system, software and hardware etc and compiled into use cases. This allows us to carry out a qualitative review of our architectures. 
  
-### 4. Architectural Views
+## 4. Architectural Views
 
-(5 sub-sections of 2 pages each sub-section, per 42010, 5.5, 5.6, with reference to Annex F of both 12207 and 15288) 
+<!--(5 sub-sections of 2 pages each sub-section, per 42010, 5.5, 5.6, with reference to Annex F of both 12207 and 15288) 
 
 Describe your system's architecture in a series of architectural views, each view corresponding to one viewpoint.
 
@@ -144,7 +144,7 @@ As appropriate you should include the following viewpoints:
  * Hardware Architecture
 
 Each architectural view should include at least one architectural model. If architectural models are shared across views, refer back to the first occurrence of that model in your document, rather than including a separate section for the architectural models.
-
+--> 
 ### 4.1 Logical
 The logical view presents the communicational and functional responsibilities of the system. In this case, CRC cards along with connections between them show the logical view of our system. An advantage of using CRC cards is because considering the early stages of research we are in, these boxes are subject to change. 
 However, when these classes are implemented the CRC cards can be converted into class diagrams that will show specifics about fields and methods. This diagram does not constrain the architecture to a particular medium which leaves it open to scalability. 
