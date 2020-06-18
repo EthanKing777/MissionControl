@@ -332,7 +332,7 @@ NOTAM (Notice to Airmen): Notice issued by Airways NZ to alert aircraft of an ev
 | Ethan King | 5.3, 5.4, 4.2 |
 | Henry Pettit | cell | 
 | Nirari Awas |1.1, 1.0 |
-| Ruvindu Wijeratne | 5.2, Table of Content | 
+| Ruvindu Wijeratne | 5.2, 4.4 | 
 | Thomas Rainford | 1.0, 1.1, 1.2 |
 
 
