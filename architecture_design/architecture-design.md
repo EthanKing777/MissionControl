@@ -159,6 +159,10 @@ The diagram used to demonstrate the process view for this project will use a UML
 
 *Figure x: UML Activity diagram for misson control system*
 
+Issues:
+
+* An issue within this view is the ability to periodically make a request to the weather API and render the data, while continuing the process. API calls take time so for the system to be able to continue to run threw the process the call must be made asynchronusly. Then the rendering of the data must be done asychronously for other processes of the system to continue to operate.
+
 ### 4.4 Physical 
 ...
 
