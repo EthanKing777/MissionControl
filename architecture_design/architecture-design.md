@@ -161,11 +161,11 @@ The diagram used to demonstrate the process view for this project will use a UML
 
 Issues:
 
-* Asynchronicity: An issue within this view is the ability to periodically make a request to the weather API and render the data, while continuing the process. API calls take time so for the system to be able to continue to run threw the process, the call must be made asynchronusly. Then the rendering of the data must be done asychronously for other processes of the system to continue to operate.
+* Asynchronicity: This is the ability to periodically make a request to the weather API and render the data, while continuing the process. API calls take time so for the system to be able to continue to run threw the process, the call must be made asynchronusly. Then the rendering of the data must be done asychronously for other processes of the system to continue to operate.
 
-* Request/Response failure.
+* Request failure: This issue refers to the data flow through the backend of the system. One function of the backend is to request weather data from an external API. It is possible that this request could fail either at the systems end or the external API's end. It is unlikely that the external API would fail as it is well known and trusted, however, it is entirely possible to fail at the systems end. The failure could originate from a poor or no internet connection, or it could originate from a bad request which would be the cause of incorrect input from the user.  
 
-* Conection to the rocket.
+* Wireless communication: This issue refers to the communication between the mission control system and the rocket which must be achieved wirelessly. 
 
 ### 4.4 Physical 
 ...
