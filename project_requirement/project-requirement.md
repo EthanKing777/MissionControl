@@ -36,8 +36,6 @@
     
 
 
-
-
 ## 1. Introduction
 
 Amateur rockets are flown regularly worldwide. These rockets are typically flown with off the shelf rocket motors with widely available propellant reloads. These rockets often exceed the speed of sound, altitudes above 30 km are not unheard of. These rockets are almost never controlled, they are stable due to passive aerodynamic features. 
@@ -123,10 +121,11 @@ Limitations on the product are : <br />
 
 ## 2. References
 
-References to other documents or standards. Follow the IEEE Citation  Reference scheme, available from the IEEE website (please use the search box). (1 page, longer if required)
-OpenRocket?
+*  “Keeping New Zealand  skies safe and secure  ,” CAA and Avsec. [Online]. Available: https://www.aviation.govt.nz/. [Accessed: 10-May-2020].
 
-“Keeping New Zealand  skies safe and secure  ,” CAA and Avsec. [Online]. Available: https://www.aviation.govt.nz/. [Accessed: 10-May-2020].
+*  "ISO/IEC/IEEE 42010:2011(E) (Revision of ISO/IEC 42010:2007 and IEEE Std 1471-2000)", Ieeexplore-ieee-org.helicon.vuw.ac.nz, 2011. [Online]. Available: https://ieeexplore-ieee-org.helicon.vuw.ac.nz/stamp/stamp.jsp?tp=&arnumber=6129467. [Accessed: 15- Jun- 2020].
+
+*  P. Kruchten, "Architectural Blueprints—The “4+1” View Model of Software Architecture", Cs.ubc.ca, 1995. [Online]. Available: https://www.cs.ubc.ca/~gregor/teaching/papers/4+1view-architecture.pdf. [Accessed: 18- Jun- 2020].
 
 ## 3. Specific requirements  
 
@@ -260,34 +259,92 @@ If the project will involve any work outside the ECS laboratories, i.e. off-camp
 
 ### 5.4 Health and Safety
 
-Document here project requirements for Health and Safety. All teams must state in this section:
+<!-- Document here project requirements for Health and Safety.   All teams must state in this section: -->
 
 All team members must take regular breaks to reduce the risks of Occupational Over Use, e.g. eye strain, repetitive strain injuries etc. Strict Cable management will be practiced at all work sites. Ensuring electronics are connected to mains or surge protected extenders, cables are run and routed out of the way of high foot traffic areas and ensuring that all Emergency exit are clear at all times.
 Range and reliability testing on the LO-RA modules may be required, as such this will be undertaken at Victoria Univeristy Kelburn campus and around the Wellington CBD. If use of these test sites are required then all team members will follow health and safety, radio protcols and traffic laws etc from the govering body for said areas.  
 As we are creating mission control software, the need to gather user feedback and test usability may be required. If so all test users will give their consent for their use and comments on the software to be observed and recorded in a testing log. To ensure that user testing meets the Ethical Approval of the univeristy, ECS department and to ensure the privacy of the test users, a redacted verison of the results will be inclued in the project documents only if needed. 
 
-Discussions/briefing with Roger Cliffe (Victoria Univeristy of Wellington Safety Officer):
+**Discussions/briefing with Roger Cliffe (Victoria Univeristy of Wellington Safety Officer):**
 
 Date: 8 May 2020 - Briefing on the Health and Safety Act 2015
 This was a mandatory lecture were the Health and Safety Act of 2015 and what it imolementations are for us.Safety Plans and Risk management strategies were also discused, e.g. a Risk Matrix.
 
 #### 5.4.1 Safety Plans
 
-Safety Plans may be required for some projects, depending on project requirements. Safety Plan templates are available on the course Health & Safety page. Two questions all teams must answer are:
+**Launch Site Safety:** 
 
-**Do project requirements involve anything that can cause serious harm or death?**  
-Examples: building/modifying devices using voltages > 60 V, chemicals, large moving machinery, flying devices, bodies of water.
+As required by the CAA NZ Regulations Part 101.155 the rocket launch will not take place within 4 km of an aerodrome
+unless the following is met:
+*  The Rocket does not fly above 400 feet AGL.
+*  At uncontrolled aerodromes, operates with agreement from the aerodrome operator.
+*  At controlled aerodromes, operates with authorisation from ATC.
+*  Is not operated on or over any active aircraft movement areas.
+*  Is not operated on or over any active runway strip areas.
 
-If so, you will have to write a separate Safety Plan as part of project requirements, and the Safety Plan must be referenced in this section. For health and safety risks involving serious harm or death, you must first contact the School Safety Officer and Course Coordinator first to discuss the Safety Plan and project requirements.
+The rocket launch will not take place between 4 and 8 km of an aerodrome if the rocket will fly above 400 feet AGL.
+This is to ensure the safety of the rocket operators, personnel at the aerodromes and members of the general public 
+traveling to/ from the aerodrome and in the surrounding areas. 
 
-**Do project requirements involve anything that can cause harm or injury?**  
-Examples: building/modifying things with voltages <= 60V, small moving machinery, wearable devices.
+As required by the CAA NZ Regulations 101.157 and 101.159 the launch will not take place if any of the following 
+are true: 
+*  It is night-time
+*  There are clouds or obscuring phenomena of more than four-eights coverage.
+*  The horizontal visibility is less than 8 km.
+*  The rocket will operate in a cloud.
+*  Heavy precipitation
+*  High wind speeds (Upper wind speed limit TBC after further discussions with Avionics teams and client). 
 
-If so, you will have to write a separate Safety Plan as part of project requirements, and the Safety Plan must be referenced in this section. For health and safety risks involving harm or injury, you should write a draft of the Safety Plan before contacting the School Safety Officer and Course Coordinator to discuss the Safety Plan and project requirements.
+The Launch will be supervised by Andre Geldenhuis. As Andre is an experienced model rocketeer, he will be responsible
+for launching the rocket, disarming the charges/ ignition switches if the launch is aborted/ the need arises. As the 
+Rocket motor is classified as a Class 1 dangerous good under the Land Transport rule: Dangerous Goods 2005, 
+transportation of the motors to and from the launch site will be under taken by Andre as he is experienced in safe 
+methods of carrying out this procedure. 
 
-If a safety plan is required, list in this section the date the School Safety officer accepted your Health and Safety plan (if accepted by submission date).
+Once a launch site has been identified and chosen, per CAA regulations part 101.161. the following information 
+will be submitted to the NZ NOTAM office at least 24 hours before launch: 
+1. Their name, address, and telephone number or, where there are multiple participants at a single event, the name, 
+address, and telephone number of the person whose duties include coordination of the launch data estimates 
+required by paragraphs (2), (3), and (4) of this rule and co-ordinating the launch event.]
+2. The estimated number of rockets to be operated.
+3. The estimated size and the estimated weight of each rocket.
+4. The estimated highest altitude or flight level to which each rocket will be operated.
+5. The location of the operation. 
+6. The date, time, and duration of the operation. 
+7. Any other relevant information requested by the person to whom notification is given.
 
-_If the project is purely software and requires no contact risks involving physical harm, then state "Project requirements do not involve risk of death, serious harm, harm or injury." in this section._
+Prior to launch the launch site will be checked for any hazards and mitigation strategies will put in place that 
+follow the NZ Rocketry Association Safety code (exact mitigations to be confirmed once launch site is confirmed). 
+A countdown will be used in order to notify all participants and people in the launch area that the launch is 
+imminent. This countdown can be halted at the request of anyone in the launch area. If the motor fails to ignite 
+or misfires, safety interlocks will be re-engaged, and Andre will disarm the rocket after waiting 90 secs before 
+approaching the rocket. Andre will determine when the all clear is given. 
+
+The Rocket trajectory will be calculated to be as vertical as possible to reduce the change of the rocket traveling 
+too far from the launch site/ entering airspace where the risks are greater.
+
+All participants at the launch site must wear the necessary PPE.
+
+**Software Development Safety:**
+
+All team members must take regular breaks to reduce the risks of Occupational Overuse, e.g. eye strain, repetitive 
+strain injuries etc. Strict Cable management will be practiced at all work sites. Ensuring electronics are connected 
+to mains or surge protected extenders, cables are run and routed out of the way of high foot traffic areas and
+ensuring that all Emergency exit are clear at all times.
+
+Range and reliability testing on the LO-RA modules may be required, as such this will be undertaken at Victoria 
+University Kelburn campus and around the Wellington CBD. If use of these test sites is required then all team 
+members will follow health and safety, radio protocols and traffic laws etc from the governing body for said areas.  
+
+**COVID 19 related Safety:**
+
+All team members will follow government and university advice/requirements. Working from home and personal devices 
+where possible. If use of shared devices/resources are needed then team members must ensure that correct levels of 
+PPE and personal hygiene are followed.
+
+**As our project is purely software, we have only added the launch site safety plan as a precaution in cause we need to be present at the launch.**
+
+<!-- _If the project is purely software and requires no contact risks involving physical harm, then state "Project requirements do not involve risk of death, serious harm, harm or injury." in this section._ -->
 
 
 ## 6. Appendices
@@ -304,7 +361,12 @@ One page on assumptions and dependencies (9.5.7).
 ### 6.2 Acronyms and abbreviations
 
 CAA (Civil Aviation Authority): Responsible for the rues that govern managing the risks arounds aviation systems
+
 NOTAM (Notice to Airmen): Notice issued by Airways NZ to alert aircraft of an event within the airspace
+
+AGL: Above Ground Level
+
+ATC: Air Traffic Control
 
 ## 7. Contributions
 
@@ -314,7 +376,7 @@ A one page statement of contributions, including a list of each member of the gr
 | ------ | ------ |
 | Alex Jackson  | 6.1 |
 | Chris Burt  | 1.3.4, 5.1 | 
-| Ethan King | Table of Content, 5.3, 5.4  |
+| Ethan King | Table of Content, 5.3, 5.4, 5.4.1 |
 | Henry Pettit | 3 | 
 | Nirari Awas | 1.3.2, 1.3.3 |
 | Ruvindu Wijeratne | 1.3.1, 5.2 | 
