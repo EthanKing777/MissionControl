@@ -286,9 +286,10 @@ For operation, the launch shall not happen in winds exceeding 30km/h. The rocket
 
 ### 3.9 Supporting information
 
-With the project being made open source it will mean the project can be forever be updated with new methods and techniques. This will allow for a great longevity of the project and be far more useful to people in the rocket community to use. 
-We want this to be able to be open to anyone to use and for them to be able to understand what is happening in the avionics system.
-see 9.5.19. 
+The mission control software aims to assist the amateur rocket community by creating an interface where data from the rocket can be displayed. The data can be manipulated and used to influence the launch factors, such as the launch location and indicating if the launch should proceed at all. The main use for the software is to provide an interface for rocket communication, and an interface which aggregates information from other sources, such as probable landing locations from rocket simulation software, and weather information from an external weather forecast source.
+
+To allow users to adjust the software to their needs, and extend the functionality of the software, the project is entirely open source. An open-source project benefits the amateur rocket community as it allows the software to be freely adapted to their needs. As a consequence of being open source, the project can continue to be developed by the community for the foreseeable future. Another consequence of being open source is that the project is entirely free and accessible. 
+
 
 ## 4. Verification
 
@@ -454,7 +455,7 @@ A one page statement of contributions, including a list of each member of the gr
 | Chris Burt  | 1.3.4, 5.1 | 
 | Ethan King | Table of Content, 5.3, 5.4, 5.4.1 |
 | Henry Pettit | 3 | 
-| Nirari Awas | 1.3.2, 1.3.3 |
+| Nirari Awas | 1.3.2, 1.3.3, 3.9 |
 | Ruvindu Wijeratne | 1.3.1, 5.2 | 
 | Thomas Rainford | 1.0, 1.1, 1.2 |
 
