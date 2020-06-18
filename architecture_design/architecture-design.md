@@ -177,6 +177,16 @@ APIs from external sources. It also makes comparisons and conclusions based on t
 |David has set up the launch and is ready <br> to launch|The system will display a 'launch' tab, which David will <br>click to prepare for launch|
 |David will be prompted to enter the parameters <br> of the flight|The system will take the parameters of the flight such as the launch rod angle <br> and will calculate a spread of landing sites based off the local weather.<br> If the landing site is safe for launch the system will respond with 'go'|
 |David will then know it is safe to launch the rocket| |
+
+**Use Case 3:** Mark is just about to launch his amateur rocket and wants to be able to track its flight. Mark can use the software to connect to his rocket via LoRa to track its flight path.
+
+|User|System|
+|----|------|
+|Mark sets up his amateur rocket for launch <br> and wants to connect his rocket to the system|The system will have a 'connect rocket' button which Mark will click to connect<br> the rocket|
+|Mark goes through the rocket connection instructions|The system will attempt to connect to Marks rocket, and<br> will indicate to him when it has done so|
+|Mark will then click the 'launch' button| The system will go through the go / no go safety check and will indicate mark<br> when to launch|
+|Mark will are the parachute and ejection charges<br> and will launch|The system will communicate with the rocket via LoRa to gather information<br> of the flight and display a flight path|  
+
 ## 5. Development Schedule
 
 _For each subsection, make clear what (if anything) has changed from the requirements document._ If unchanged, these sections should be copied over from the requirements document, not simply cross-referenced.
