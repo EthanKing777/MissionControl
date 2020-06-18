@@ -163,7 +163,12 @@ APIs from external sources. It also makes comparisons and conclusions based on t
 ...
 
 ### 4.5 Scenarios
-...
+**Use Case 1:** Mary is currently at the launch site of her amateur rocket. Before she launches her rocket she wants to check where her rocket will potentially land. Mary can go to the 'landing site' tab in the software, and see a spread of potential landing spots based on local parameters. 
+
+|User|System|
+|----|------|
+| Mary wants to see potential <br> landing sites| The system will display a 'landing site' tab, which Mary will <br>click to see the flight parameters window|
+| Mary enter the parameters of the flight| The system will take the parameters of the flight such as the launch rod angle <br> and will calculate a spread of landing sites based off <br> the local weather, and will display the spread to the window|
 
 ## 5. Development Schedule
 
