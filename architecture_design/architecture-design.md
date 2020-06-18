@@ -159,8 +159,9 @@ the application, Good GIT practices such as creating and tracking epics, milesto
 Breaking the application down in to modules allows different developers to work on different parts of application independently of other “sub-teams” as 
 well as reducing the amount of dependency they have to one another, so modules should be fairly easy to add, update, remove as necessarily without majorly 
 effecting other parts of the mission control application.  
-    
-INSERT DIAGRAM HERE
+
+![Example of modularization diagram](https://gitlab.ecs.vuw.ac.nz/course-work/engr300/2020/group11/group-11/-/blob/Project-req-section-4.2/Images/Example_of_modulariazrion_diagram.png)
+
 Example of modularization of different aspects of the application
     
 **Good Git practices:**
@@ -194,7 +195,8 @@ interact with, will it affect any other modules (existing or planned) etc.
 Using a layered style for development allows us to break down different aspects of the application in to “layers”. This allows us to practise the idea 
 that every layer has a responsibility and everything in that layer can depend on everything else in there, therefore as a whole reducing dependency.     
     
-INSERT DIGARM HERE
+![Example of layered style of development](https://gitlab.ecs.vuw.ac.nz/course-work/engr300/2020/group11/group-11/-/blob/Project-req-section-4.2/Images/Layered_style_of_development_diagram.png)
+
 Example of a layered style of development (Work in Progress) 
     
 **Agile and Scrum:**
