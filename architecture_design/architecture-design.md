@@ -167,9 +167,16 @@ APIs from external sources. It also makes comparisons and conclusions based on t
 
 |User|System|
 |----|------|
-| Mary wants to see potential <br> landing sites| The system will display a 'landing site' tab, which Mary will <br>click to see the flight parameters window|
-| Mary enter the parameters of the flight| The system will take the parameters of the flight such as the launch rod angle <br> and will calculate a spread of landing sites based off <br> the local weather, and will display the spread to the window|
+|Mary wants to see potential landing <br> sites|The system will display a 'landing site' tab, which Mary will <br>click to see the flight parameters window|
+|Mary enters the parameters of the flight|The system will take the parameters of the flight such as the launch rod angle <br> and will calculate a spread of landing sites based off <br> the local weather, and will display the spread to the window|
 
+**Use Case 2:** David wants to make sure that his amateur rocket is safe to launch before doing so. David can use the go / no go feature of the software to give clearance for the launch, before launching.
+
+|User|System|
+|----|------|
+|David has set up the launch and is ready <br> to launch|The system will display a 'launch' tab, which David will <br>click to prepare for launch|
+|David will be prompted to enter the parameters <br> of the flight|The system will take the parameters of the flight such as the launch rod angle <br> and will calculate a spread of landing sites based off the local weather.<br> If the landing site is safe for launch the system will respond with 'go'|
+|David will then know it is safe to launch the rocket| |
 ## 5. Development Schedule
 
 _For each subsection, make clear what (if anything) has changed from the requirements document._ If unchanged, these sections should be copied over from the requirements document, not simply cross-referenced.
