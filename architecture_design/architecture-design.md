@@ -189,11 +189,18 @@ APIs from external sources. It also makes comparisons and conclusions based on t
 
 **Use Case 4:** Emily has launched her amateur rocket and it seems to be flying well until suddenly the rocket turns horizontal and is flying uncontrollably. Emily would like to abort the flight so she can retrieve her rocket safely.
 
-|User|Sytem|
+|User|System|
 |----|-----|
 |Emily's amateur rocket has started flying sideways|The system will be displaying an 'abort' button|
 |Emily clicks the 'abort' button|The system will communicate to the rocket to cut the thruster and deploy the <br> parachute imidiately|
 |Emily will collect the rocket from where it softly lands| |
+
+**Use Case 5:** Amanda wants to check the current weather and the forecast at her launch site. So she goes the weather tab of the mission control software to see the weather information on her launch site.
+
+|User|System|
+|----|------|
+|Amanda wants to check the weather data of her launch <br> site|The system will display a 'weather' tab, which Amanda will click|
+|Amanda will enter the location of her launch site|The system will display information about the current weather status, as well as show <br> a forecast for the weather status of her launch site|
 
 ## 5. Development Schedule
 
