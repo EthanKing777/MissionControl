@@ -187,6 +187,14 @@ APIs from external sources. It also makes comparisons and conclusions based on t
 |Mark will then click the 'launch' button| The system will go through the go / no go safety check and will indicate mark<br> when to launch|
 |Mark will are the parachute and ejection charges<br> and will launch|The system will communicate with the rocket via LoRa to gather information<br> of the flight and display a flight path|  
 
+**Use Case 4:** Emily has launched her amateur rocket and it seems to be flying well until suddenly the rocket turns horizontal and is flying uncontrollably. Emily would like to abort the flight so she can retrieve her rocket safely.
+
+|User|Sytem|
+|----|-----|
+|Emily's amateur rocket has started flying sideways|The system will be displaying an 'abort' button|
+|Emily clicks the 'abort' button|The system will communicate to the rocket to cut the thruster and deploy the <br> parachute imidiately|
+|Emily will collect the rocket from where it softly lands| |
+
 ## 5. Development Schedule
 
 _For each subsection, make clear what (if anything) has changed from the requirements document._ If unchanged, these sections should be copied over from the requirements document, not simply cross-referenced.
