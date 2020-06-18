@@ -196,23 +196,99 @@ The radio must comply with all New Zealand regulation relating to radio communic
 As the client specified all the final product must be open source. After project is finished all code must be released.  
 **Physically constraints**  
 Again, the rocket must comply with New Zealand aviation laws:  
-	Rocket cannot have more than 125g of propellant.  
-	Rocket cannot produce more than 320 newton second of impulse.  
-	Rocket must use slow burning propellant.  
-	The rocket needs to be made from light weight materials such as plastic and wood.  
-	Rocket cannot have any part of body fashioned from metal.  
-	Rocket cannot exceed a weight of 1.5kg.  
-	The rocket must not use a aerial firework as an ingredient to create its own jet.  
+-	Rocket cannot have more than 125g of propellant.  
+-	Rocket cannot produce more than 320 newton second of impulse.  
+-	Rocket must use slow burning propellant.  
+-	The rocket needs to be made from light weight materials such as plastic and wood.  
+-	Rocket cannot have any part of body fashioned from metal.  
+-	Rocket cannot exceed a weight of 1.5kg.  
+-	The rocket must not use a aerial firework as an ingredient to create its own jet.  
 
-### 3.7 Nonfunctional system attributes  
-svkjuuhjgb  
+### 3.7 Nonfunctional system attributes
 
-### 3.8 Physical and Environmental Requirements  
-This section will be completed at a later time.  
+**Open source**
+As the program is made to become an open source avionics package at end of the project. This means all the things used to make the system will need to be also open source so any rocket enthusiast can pick up the package and use it. This will include all coding software and hardware used.
 
-### 3.9 Supporting information  
-see 9.5.19.  
+**Reliable (fault tolerance)**
+The rocket will need to be made with the idea that not everything will work perfectly on the day of flight. So, the system will be made with a capacity to handle any errors. This will be in all parts of the system from communication to use of gimbal.
 
+**Cost effective**
+These systems are made for enthusiast and not NASA, so the package will be made with cost as an obstacle. So, we need to make it so it will work with cheaper options and not cost thousands to dollars to use.
+
+**Ease of deployment**
+As this is meant to be used by other people not involved with the development, we need to make it all easy to setup. We want it to be a simple pick up and put in sort of system so others can use it easily.
+
+**Safety**
+We are working with a powerful rocket so safety will be a big aspect of the production. We want the rocket to be able to go safely and if something goes wrong for the rocket to not injure someone or be destroyed. So measures will have to put in place along with the error tolerances to ensure it is safe to use.
+
+**High performance**
+As the rocket will be very fast the package must be able to keep up with the rocket. So, the software must be made to keep up with the rocket as well as the gimbal and such being able to react fast enough to the changes in the rocket. This will also have to be balanced with safe and readable coding. 
+
+**Coding standards**
+This package is not made to be only used by the teams developing them so the system will need to make as such that other people will be able to understand the coding. To help this we will use the general coding standards, so the styles are all similar and readable to other people.
+
+**Cross platform use**
+The whole system will have to be written in a few languages no matter how it is done as open rocket is in java and the LORA is done in C. So, the whole thing must be written in such a way that any platform can interact with it without fault. This will also be extended to the device with is run on too as mac, windows and Linux can have issues running the same thing. This will need to be addressed especially if we are using low level languages like C.
+
+**Testing**
+The package  must be able to fully testable without flight. This will mean simulations or grounded flight. As it such a dangerous system we need to be able to safely to do all the testing without risking safety. We will use such things as unit tests for the software but will likely need more advanced methods for whole systems.
+
+**Integration with other parts**
+As this will be open to anyone to use, we must consider that not everyone will use the same parts for the rocket so we must be able to take this into account somehow.
+
+**Efficient coding**
+The code must be made with speed in mind in order to keep up with the rocket. This will mean a large constraints loops and expensive operations.
+
+**Scalable to different sized rockets**
+We want this to be able to be used by another rocket and not just the one we are making for. So, we need to have this able to scale up to larger rockets.
+
+**Communication integrity**
+The communication between the rocket and ground is important so it also important that the correct message is send and received. For this we will need to implement redundancy and check to ensure we are getting the right messages.
+
+**Reporting**
+The avionics package must be able must be able to report what is always happening  for later analysis. This is also for the mission control so that we can see no errors are occurring too.
+
+### 3.8 Physical and Environmental Requirements 
+
+**The following criteria regarding rockets build:**
+-	Weight: 60g excluding the C-motor; 79g including C-motor and framework around.
+-	Dimensions: the height of MVP 1 is of a broad cone shape with radius= 9cm, height= 9cm.
+-	Inside the cone, there is a holder with encapsulates the C-motor and is like that of a cylinder with radius= 0.1cm and height= 7cm.
+-	Volume: MVP stage 1 includes only the rockets first stage which has a approximate volume of 763.41cm^3.
+
+**Physical components:**
+-	C-motor: low powered rocket motor capable of 14.1 newtons of thrust.
+-	Teensy 3.2: microcontroller on board the rocket. Used to control the Gimbal.
+-	MPU 9520 IMU: located within the rocket, connected to the Teensy.
+-	RFM96W Radio: located on the base station for receiving any information sent from rocket.
+-	Teensy 3.6: microcontroller used at the base station.
+-	A2200A GPS: located on the Teensy 3.6.
+
+The avionics package is required to collect data from the flight which includes all gimbal data and location data. This will be sent over a wireless channel to the ground team for research and recovery purposes. 
+
+The rocket is required to be able to be flown in all conditions listed under 9.4.11 of the IEEE standards [insert reference stuff]. As well as complying with the CAA weather regulations (specifically subpart D of CAA part 101 rules)[insert reference stuff]. Regulations state:
+-	A rocket shall not operate within 4km of an aerodrome boundary.
+-	A rocket shall not be flown if cloud coverage is extensive, as well as if visibility is below 8km.
+
+The rockets control system must be able to correct rocket in winds up to 30km/h. As up to this speed the flight will continue as planned.
+
+The residents in the local area require that the rocket will not pose a threat to them. So, avionics package must be reliable and safe to use in the local areas.
+
+The rocket must be open source so any rocket lovers can use and edit this to their liking.
+
+The engineering department of Victoria requires that we follow all the guidelines set out by them.
+
+The local council requires that the rocket can operate without violating any of the laws or regulations for the area. Also, that no damage happens too.
+
+The Civil Aviation Authority requires us to follow all their regulation relating to rockets. These are all set out by CAA regulations part 101 [insert reference] 
+
+For operation, the launch shall not happen in winds exceeding 30km/h. The rocket shall not be flown at night. The rocket shall not be launched if cloud coverage is greater than 50%.
+
+### 3.9 Supporting information
+
+With the project being made open source it will mean the project can be forever be updated with new methods and techniques. This will allow for a great longevity of the project and be far more useful to people in the rocket community to use. 
+We want this to be able to be open to anyone to use and for them to be able to understand what is happening in the avionics system.
+see 9.5.19. 
 
 ## 4. Verification
 
