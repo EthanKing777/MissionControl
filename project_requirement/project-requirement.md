@@ -315,7 +315,7 @@ A one page statement of contributions, including a list of each member of the gr
 | Alex Jackson  | 6.1 |
 | Chris Burt  | 1.3.4, 5.1 | 
 | Ethan King | Table of Content, 5.3, 5.4  |
-| Henry Pettit | cell | 
+| Henry Pettit | 3 | 
 | Nirari Awas | 1.3.2, 1.3.3 |
 | Ruvindu Wijeratne | 1.3.1, 5.2 | 
 | Thomas Rainford | 1.0, 1.1, 1.2 |
