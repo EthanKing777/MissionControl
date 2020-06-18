@@ -71,6 +71,7 @@ If the requirement have changed significantly since the requirements document, o
 ## 2. References
 
 “Keeping New Zealand  skies safe and secure  ,” CAA and Avsec. [Online]. Available: https://www.aviation.govt.nz/. [Accessed: 10-May-2020].
+"ISO/IEC/IEEE 42010:2011(E) (Revision of ISO/IEC 42010:2007 and IEEE Std 1471-2000)", Ieeexplore-ieee-org.helicon.vuw.ac.nz, 2011. [Online]. Available: https://ieeexplore-ieee-org.helicon.vuw.ac.nz/stamp/stamp.jsp?tp=&arnumber=6129467. [Accessed: 15- Jun- 2020].
 
 ## 3. Architecture
 
@@ -104,7 +105,6 @@ This means that you should refer to information (e.g. risks, requirements, model
 |Electronics Technicians|Support Staff|Electronic Components Support|electronics@ecs.vuw.ac.nz|
 
 ### 3.2 Architectural Viewpoints
-(1 page, 42010 5.4) 
 
 <!-- Identify the architectural viewpoints you will use to present your system's architecture. Write one sentence to outline each viewpoint. Show which viewpoint frames which architectural concern.
 --> 
@@ -154,8 +154,66 @@ The backend contains the deployment software of the localhost that the frontend 
 APIs from external sources. It also makes comparisons and conclusions based on the data such as upwind trajectory and landing zone information that can be passed on to other people. 
 
 ### 4.2 Development
-...
+The Development view presents the responsibilities surrounding the development cycle and it’s management, including module/ functional programming, ensuring that the 
+design of the application and it’s tests are consistent, performance is as expected and maintained and that all developers and testers are using GIT, branching, issue
+tracking appropriately to better improve the development of the application. This view is concerned with it the Developers, testers and possible the ECS software 
+technicians and effects all software areas of the project. 
 
+There are many risks associated with the development viewpoint that we hope to combat via good development practices, such as too much or too little details in 
+planning, developers not being committed or lazy. The development practices we are implementing are but are not limited to a clear modularization of
+the application, Good GIT practices such as creating and tracking epics, milestones, issues, and each being tracked and distributed among the developers.
+
+**modularization of the Application:**
+
+Breaking the application down in to modules allows different developers to work on different parts of application independently of other “sub-teams” as 
+well as reducing the amount of dependency they have to one another, so modules should be fairly easy to add, update, remove as necessarily without majorly 
+effecting other parts of the mission control application.  
+
+![Example of modularization diagram](https://gitlab.ecs.vuw.ac.nz/course-work/engr300/2020/group11/group-11/-/blob/Project-req-section-4.2/Images/Example_of_modulariazrion_diagram.png)
+
+Example of modularization of different aspects of the application
+    
+**Good Git practices:**
+
+Good Git practices include but are not limited to:
+    
+*  Branching 
+   
+*   Boards
+   
+*   Epics, Milestones, Issues
+    
+
+Branching allows developers to create/update/remove modules and ensure their safety by storing them, not just locally but also independently of the master branch.  
+Allowing developers to push safety what they have done, without effecting the master, keeping code that has not been fully integrated/ buggy code out of the way of 
+others. Branching allows us to review new modules/ changed modules before it is placed in the master and we can either reject the merge request or approve it if there 
+are no issues. 
+
+The use of Epics, Milestones and Issues allows us to modularization of the application into manageable tasks, that can be completed, tracked, and maintained easily. 
+This also helps with a consistent development styles, Consistent development style, Layered Style of development and planning sprints. 
+    
+**Consistent development style:**
+
+Allows all developers to have a clear understanding of the system fits together and is going to integrate with the avionics and simulation  teams. This is 
+achieved by the modularization the application, so components and processes are grouped in a meaningful, clear, and useful way. This also allows different 
+teams on the team to quickly support on an issue if needed. Interactions between the different modules will all follow the same idea. During the planning of 
+creating/updating/ removing modules, key things to discuss and think about are: What does this module add overall, what existing modules does this need to 
+interact with, will it affect any other modules (existing or planned) etc. 
+    
+**Layered Style of development:**
+Using a layered style for development allows us to break down different aspects of the application in to “layers”. This allows us to practise the idea 
+that every layer has a responsibility and everything in that layer can depend on everything else in there, therefore as a whole reducing dependency.     
+    
+![Example of layered style of development](https://gitlab.ecs.vuw.ac.nz/course-work/engr300/2020/group11/group-11/-/blob/Project-req-section-4.2/Images/Layered_style_of_development_diagram.png)
+
+Example of a layered style of development (Work in Progress) 
+    
+**Agile and Scrum:**
+
+Allows us to manage the team in a more effective way, allowing us to break bigger parts of the application down into more manageable chucks, monitor and keep 
+up to date with what other members of the team are working on and give support if needed, regular stand-ups and retrospectives allows all members of the team be 
+caught up to date and allows members to take responsibility for the issues that have been assigned to them.  During our sprint planning sessions, a scrum leader is 
+chosen, issues are created/ moved from backlog and assigned to team members  that’s are needed for the current milestone’s goal.
 ### 4.3 Process
 ...
 
