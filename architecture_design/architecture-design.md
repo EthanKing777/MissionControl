@@ -70,8 +70,12 @@ If the requirement have changed significantly since the requirements document, o
 
 ## 2. References
 
-“Keeping New Zealand  skies safe and secure  ,” CAA and Avsec. [Online]. Available: https://www.aviation.govt.nz/. [Accessed: 10-May-2020].
-"ISO/IEC/IEEE 42010:2011(E) (Revision of ISO/IEC 42010:2007 and IEEE Std 1471-2000)", Ieeexplore-ieee-org.helicon.vuw.ac.nz, 2011. [Online]. Available: https://ieeexplore-ieee-org.helicon.vuw.ac.nz/stamp/stamp.jsp?tp=&arnumber=6129467. [Accessed: 15- Jun- 2020].
+
+*  “Keeping New Zealand  skies safe and secure  ,” CAA and Avsec. [Online]. Available: https://www.aviation.govt.nz/. [Accessed: 10-May-2020].
+
+*  "ISO/IEC/IEEE 42010:2011(E) (Revision of ISO/IEC 42010:2007 and IEEE Std 1471-2000)", Ieeexplore-ieee-org.helicon.vuw.ac.nz, 2011. [Online]. Available: https://ieeexplore-ieee-org.helicon.vuw.ac.nz/stamp/stamp.jsp?tp=&arnumber=6129467. [Accessed: 15- Jun- 2020].
+
+*  P. Kruchten, "Architectural Blueprints—The “4+1” View Model of Software Architecture", Cs.ubc.ca, 1995. [Online]. Available: https://www.cs.ubc.ca/~gregor/teaching/papers/4+1view-architecture.pdf. [Accessed: 18- Jun- 2020].
 
 ## 3. Architecture
 
@@ -171,7 +175,7 @@ Breaking the application down in to modules allows different developers to work 
 well as reducing the amount of dependency they have to one another, so modules should be fairly easy to add, update, remove as necessarily without majorly 
 effecting other parts of the mission control application.  
 
-![Example of modularization diagram](https://gitlab.ecs.vuw.ac.nz/course-work/engr300/2020/group11/group-11/-/blob/Project-req-section-4.2/Images/Example_of_modulariazrion_diagram.png)
+![Example of modularization diagram](https://gitlab.ecs.vuw.ac.nz/course-work/engr300/2020/group11/group-11/-/blob/master/Images/Example_of_modulariazrion_diagram.png)
 
 figure x Example of modularization of different aspects of the application
     
@@ -206,7 +210,7 @@ interact with, will it affect any other modules (existing or planned) etc.
 Using a layered style for development allows us to break down different aspects of the application in to “layers”. This allows us to practise the idea 
 that every layer has a responsibility and everything in that layer can depend on everything else in there, therefore as a whole reducing dependency.     
     
-![Example of layered style of development](https://gitlab.ecs.vuw.ac.nz/course-work/engr300/2020/group11/group-11/-/blob/Project-req-section-4.2/Images/Layered_style_of_development_diagram.png)
+![Example of layered style of development](https://gitlab.ecs.vuw.ac.nz/course-work/engr300/2020/group11/group-11/-/blob/master/Images/Layered_style_of_development_diagram.png)
 
 figure x Example of a layered style of development (Work in Progress) 
     
@@ -323,9 +327,9 @@ NOTAM (Notice to Airmen): Notice issued by Airways NZ to alert aircraft of an ev
 
 | Team Memeber | Contribution |
 | ------ | ------ |
-| Alex Jackson  | 6.1 |
+| Alex Jackson  | 6.1, 4.1 |
 | Chris Burt  |  5.1 | 
-| Ethan King | 5.3, 5.4  |
+| Ethan King | 5.3, 5.4, 4.2 |
 | Henry Pettit | cell | 
 | Nirari Awas |1.1, 1.0 |
 | Ruvindu Wijeratne | 5.2, Table of Content | 
