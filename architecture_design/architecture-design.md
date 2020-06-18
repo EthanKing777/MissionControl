@@ -271,7 +271,7 @@ If the need arises in the future, we intend on requesting an allocation from the
 
 | Component | Purchasing team | Cost | Procurer |
 | ------ | ------ | ------ | ------ |
-| LORA module | Avinonics | $20 - $40 | External Vendor |
+| LORA module | Avinonics | $20 - $40 (TBC) | External Vendor |
 
 ### 5.3 Risks 
 
