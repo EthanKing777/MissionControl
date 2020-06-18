@@ -147,6 +147,8 @@ However, when these classes are implemented the CRC cards can be converted into 
 
 ![Imgur](https://i.imgur.com/ckNukat.png)
 
+figure x
+
 The frontend is where all the graphical elements will be displayed to the mission control team. This includes textual and graphical elements being updated in real time based on variables changing within the rocket.
 Simulations within Monte Carlo will also be presented here as static graphs after requesting and processing time.
 
@@ -171,7 +173,7 @@ effecting other parts of the mission control application.
 
 ![Example of modularization diagram](https://gitlab.ecs.vuw.ac.nz/course-work/engr300/2020/group11/group-11/-/blob/Project-req-section-4.2/Images/Example_of_modulariazrion_diagram.png)
 
-Example of modularization of different aspects of the application
+figure x Example of modularization of different aspects of the application
     
 **Good Git practices:**
 
@@ -206,7 +208,7 @@ that every layer has a responsibility and everything in that layer can depend on
     
 ![Example of layered style of development](https://gitlab.ecs.vuw.ac.nz/course-work/engr300/2020/group11/group-11/-/blob/Project-req-section-4.2/Images/Layered_style_of_development_diagram.png)
 
-Example of a layered style of development (Work in Progress) 
+figure x Example of a layered style of development (Work in Progress) 
     
 **Agile and Scrum:**
 
