@@ -365,7 +365,7 @@ NOTAM (Notice to Airmen): Notice issued by Airways NZ to alert aircraft of an ev
 | Team Memeber | Contribution |
 | ------ | ------ |
 | Alex Jackson  | 6.1, 4.1 |
-| Chris Burt  |  5.1 | 
+| Chris Burt  |  5.1,4.5 | 
 | Ethan King | 5.3, 5.4, 4.2 |
 | Henry Pettit | cell | 
 | Nirari Awas |1.1, 1.0 |
