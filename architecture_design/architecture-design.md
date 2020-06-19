@@ -108,6 +108,17 @@ This means that you should refer to information (e.g. risks, requirements, model
 |Software Technicians|Support Staff|Problems/ Bugs Support|bugs@ecs.vuw.ac.nz|
 |Electronics Technicians|Support Staff|Electronic Components Support|electronics@ecs.vuw.ac.nz|
 
+
+Clients Requirments from the mission control software: 
+*  Must be able to able to display weather information, rocket's current state and the results of simulations in a graphical user interface. 
+*  That  the software is structured into modules. 
+*  The Mission control software must be able to transmit a go/no-go signal to the rocket for launch. 
+
+School of Engineering and Computer Science Reuirments: 
+*  That the project follows all ECS guidelines
+*  Members of the team follow all health and safety requirements set out by ECS, the Univerity, Univerity's health and safety officers, any local/ national laws around Rocketry.
+
+
 ### 3.2 Architectural Viewpoints
 
 <!-- Identify the architectural viewpoints you will use to present your system's architecture. Write one sentence to outline each viewpoint. Show which viewpoint frames which architectural concern.
@@ -460,7 +471,7 @@ ATC: Air Traffic Control
 | ------ | ------ |
 | Alex Jackson  | 6.1, 4.1 |
 | Chris Burt  |  5.1,4.5 | 
-| Ethan King | 5.3, 5.4, 4.2, 5.4.1 |
+| Ethan King | 5.3, 5.4, 4.2, 5.4.1, 3.2 |
 | Henry Pettit | cell | 
 | Nirari Awas |1.1, 1.0 |
 | Ruvindu Wijeratne | 5.2, Table of Content | 
