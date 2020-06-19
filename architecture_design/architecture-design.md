@@ -153,7 +153,7 @@ The process architecture can be viewed as mutiple levels of abstraction, were ea
 
 A process is a group of tasks that form an executable program. Processes represent a section of the process architecture which can be controlled. These processes can be replicated for improved load processing and availibility. This is particularly usefull for implementing a system which requires concurrency and parallelism.
 
-The diagram used to demonstrate the process view for this project will use a UML activity diagram. This diagram shows the process which the software will follow.
+The diagram used to demonstrate the process view for this system will use a UML activity diagram. This diagram shows the process of which the software will follow.
 
 ![UML Activity diagram](architecture_design/state-diagram.PNG)
 
