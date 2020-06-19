@@ -9,8 +9,7 @@ build:
     - Shell
   script:
     - echo "static analysis"
-    - exit 1
-  allow_failure: true
+    
 
 unittest:
   stage: Test
@@ -18,8 +17,7 @@ unittest:
     - Shell
   script:
     - echo "test"
-    - exit 1
-  allow_failure: true
+    
 
 deploy:
   stage: Deploy
@@ -27,5 +25,4 @@ deploy:
     - Shell
   script:
     - echo "deploy"
-    - exit 1
-  allow_failure: true
+    
