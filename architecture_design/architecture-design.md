@@ -221,7 +221,24 @@ up to date with what other members of the team are working on and give support i
 caught up to date and allows members to take responsibility for the issues that have been assigned to them.  During our sprint planning sessions, a scrum leader is 
 chosen, issues are created/ moved from backlog and assigned to team members  that’s are needed for the current milestone’s goal.
 ### 4.3 Process
-...
+
+The process architecture can be viewed as mutiple levels of abstraction, were each level describes a different concern. At the highest level the process architecture demonstrates the independently executing networks of processes distributed accross a range of hardware resources connected via a LAN or a WAN.
+
+A process is a group of tasks that form an executable program. Processes represent a section of the process architecture which can be controlled. These processes can be replicated for improved load processing and availibility. This is particularly usefull for implementing a system which requires concurrency and parallelism.
+
+The diagram used to demonstrate the process view for this system will use a UML activity diagram. This diagram shows the process of which the software will follow.
+
+![UML Activity diagram](architecture_design/state-diagram.PNG)
+
+*Figure x: UML Activity diagram for misson control system*
+
+Issues:
+
+* Asynchronicity: This is the ability to periodically make a request to the weather API and render the data, while continuing the process. API calls take time so for the system to be able to continue to run threw the process, the call must be made asynchronusly. Then the rendering of the data must be done asychronously for other processes of the system to continue to operate.
+
+* Request failure: This issue refers to the data flow through the backend of the system. One function of the backend is to request weather data from an external API. It is possible that this request could fail either at the systems end or the external API's end. It is unlikely that the external API would fail as it is well known and trusted, however, it is entirely possible to fail at the systems end. The failure could originate from a poor or no internet connection, or it could originate from a bad request which would be the cause of incorrect input from the user.  
+
+* Wireless communication: This issue refers to the communication between the mission control system and the rocket which must be achieved wirelessly.  There are some obvious concerns with wireless communication such as unreliability and range. The mission control system must recieve data from the rocket through a wireless connection and display it to the user. It is critical the location of the rocket is broadcast and recieved in the event the rocket does not follow the intended path.
 
 ### 4.4 Physical 
 ...
