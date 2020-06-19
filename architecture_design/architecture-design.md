@@ -224,7 +224,19 @@ chosen, issues are created/ moved from backlog and assigned to team members  tha
 ...
 
 ### 4.4 Physical 
-...
+
+The physical view provides an overview of how the software maps to the hardware of the system. The mission control package will pull weather data from an API to determine
+whether it is safe to launch under the current weather conditions. This weather data will be shared with the simulation package in order to determine the landing area and
+the direction of the rocket. The mission control software will parse this simulation data to determine if the simulated results match the expected results. 
+
+The mission control package will communicate with the avionics package to obtain flight data of the rocket. This data will be used to map the flight path of the rocket, which 
+in turn will be used for post-flight analysis. 
+
+If it is deemed unsafe to launch the rocket, the control software will communicate to the avionics package so a kill-switch signal could be transmitted to the rocket.
+
+At this stage, there is only one use case for downlink transmission. This is to address the concern of reliability. Ideally, the mission control package will possess the ability to transmit a kill-switch signal
+directly to the base station, eliminating the need to go through the avionics package in the event of a transmission failure between the two packages. 
+
 
 ### 4.5 Scenarios
 ...
