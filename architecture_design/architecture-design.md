@@ -165,7 +165,7 @@ Issues:
 
 * Request failure: This issue refers to the data flow through the backend of the system. One function of the backend is to request weather data from an external API. It is possible that this request could fail either at the systems end or the external API's end. It is unlikely that the external API would fail as it is well known and trusted, however, it is entirely possible to fail at the systems end. The failure could originate from a poor or no internet connection, or it could originate from a bad request which would be the cause of incorrect input from the user.  
 
-* Wireless communication: This issue refers to the communication between the mission control system and the rocket which must be achieved wirelessly. 
+* Wireless communication: This issue refers to the communication between the mission control system and the rocket which must be achieved wirelessly.  There are some obvious concerns with wireless communication such as unreliability and range. The mission control system must recieve data from the rocket through a wireless connection and display it to the user. It is critical the location of the rocket is broadcast and recieved in the event the rocket does not follow the intended path.
 
 ### 4.4 Physical 
 ...
