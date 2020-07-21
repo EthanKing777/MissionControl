@@ -92,3 +92,5 @@ _minted*
 hs_err_pid*
 
 target
+
+*.iml
