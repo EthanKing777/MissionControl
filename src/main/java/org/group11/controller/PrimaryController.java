@@ -1,4 +1,4 @@
-package org.group11;
+package org.group11.controller;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
