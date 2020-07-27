@@ -4,39 +4,40 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.*?>
-<?import org.group11.controller.component.MainTab?>
+<?import org.group11.controller.component.DashboardTab?>
 <?scenebuilder-classpath-element ../../../../../../../target/classes?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="447.0" prefWidth="663.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <TabPane prefHeight="447.0" prefWidth="663.0" tabClosingPolicy="UNAVAILABLE">
-        <tabs>
-          <Tab text="Untitled Tab 1">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                <MainTab />
-              </AnchorPane>
-            </content>
-          </Tab>
-          <Tab text="Untitled Tab 2">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-            </content>
-          </Tab>
-            <Tab text="Untitled Tab">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-              </content>
-            </Tab>
-            <Tab text="Untitled Tab">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-              </content>
-            </Tab>
-        </tabs>
-         <VBox.margin>
-            <Insets />
-         </VBox.margin>
-      </TabPane>
-   </children>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="447.0"
+      prefWidth="663.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <TabPane prefHeight="447.0" prefWidth="663.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Dashboard">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <DashboardTab/>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Untitled Tab 2">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"/>
+                    </content>
+                </Tab>
+                <Tab text="Untitled Tab">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"/>
+                    </content>
+                </Tab>
+                <Tab text="Untitled Tab">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"/>
+                    </content>
+                </Tab>
+            </tabs>
+            <VBox.margin>
+                <Insets/>
+            </VBox.margin>
+        </TabPane>
+    </children>
 </Pane>

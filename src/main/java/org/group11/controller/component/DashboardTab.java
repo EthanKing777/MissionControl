@@ -6,18 +6,18 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
-public class MainTab extends AnchorPane {
+public class DashboardTab extends AnchorPane {
 
     @FXML
     private AnchorPane tab;
 
-    public MainTab() {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainTab.class.getResource("/org/group11/controller/component/tab.fxml"));
+    public DashboardTab() {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/org/group11/dashboard.fxml"));
 
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
-        fxmlLoader.setClassLoader(MainTab.class.getClassLoader());
+        fxmlLoader.setClassLoader(getClass().getClassLoader());
 
         try {
             fxmlLoader.load();
