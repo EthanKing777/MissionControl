@@ -2,8 +2,10 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
-<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.*?>
+<?import org.group11.controller.component.MainTab?>
+<?scenebuilder-classpath-element ../../../../../../../target/classes?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="447.0" prefWidth="663.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -11,7 +13,9 @@
         <tabs>
           <Tab text="Untitled Tab 1">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <MainTab />
+              </AnchorPane>
             </content>
           </Tab>
           <Tab text="Untitled Tab 2">
