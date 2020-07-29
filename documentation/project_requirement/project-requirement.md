@@ -303,7 +303,7 @@ This section will be completed at a later time.
 
 Identify dates for key project deliverables:
 
-**Interface and data parser prototype**
+**Interface and Data Parser Prototype** <br />
 This protoype will be completed by 7 August 2020 
 
 **Minimum Viable Product** <br />
