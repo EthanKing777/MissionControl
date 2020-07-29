@@ -301,7 +301,10 @@ This section will be completed at a later time.
 
 ### 5.1 Schedule
 
-Identify dates for key project deliverables: 
+Identify dates for key project deliverables:
+
+**Interface and data parser prototype**
+This protoype will be completed by 7 August 2020 
 
 **Minimum Viable Product** <br />
 The minimum viable product which is specified in part 1.3.2 will completed by 25 September 2020
