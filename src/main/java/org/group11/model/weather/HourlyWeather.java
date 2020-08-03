@@ -28,15 +28,15 @@ package org.group11.model.weather;
  **/
 public class HourlyWeather {
 
-    private double unixTime;
-    private double temperature;
-    private double pressure;
-    private double humidity;
-    private double windSpeed;
-    private double windDegrees; // meteorological
-    private CurrentWeather generalWeather;
+    private final double unixTime;
+    private final double temperature;
+    private final double pressure;
+    private final double humidity;
+    private final double windSpeed;
+    private final double windDegrees; // meteorological
+    private final GeneralWeather generalWeather;
 
-    public HourlyWeather(double unixTime, double temperature, double pressure, double humidity, double windSpeed, double windDegrees, CurrentWeather generalWeather) {
+    public HourlyWeather(double unixTime, double temperature, double pressure, double humidity, double windSpeed, double windDegrees, GeneralWeather generalWeather) {
         this.unixTime = unixTime;
         this.temperature = temperature;
         this.pressure = pressure;
@@ -85,7 +85,7 @@ public class HourlyWeather {
         return windDegrees;
     }
 
-    public CurrentWeather getGeneralWeather() {
+    public GeneralWeather getGeneralWeather() {
         return generalWeather;
     }
 }
