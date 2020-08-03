@@ -18,7 +18,7 @@ public class WeatherTabController {
 
 
     private static final String WEATHER_API = "https://api.openweathermap.org/data/2.5/onecall?units=metric";
-    private final static String API_KEY = "26b3148a49fb064524db01c060d26f3f";
+    private static final String API_KEY = "26b3148a49fb064524db01c060d26f3f";
 
     private double latitude;
     private double longitude;
@@ -27,7 +27,8 @@ public class WeatherTabController {
     }
 
     @FXML
-    public String fetchWeatherData() throws IOException {
+    public String fetchWeatherData(double latitude, double longitude) throws IOException {
+        updateLocation(latitude, longitude);
         return downloadWeatherData();
     }
 

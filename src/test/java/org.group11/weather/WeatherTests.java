@@ -13,7 +13,7 @@ public class WeatherTests {
         WeatherTabController weatherTabController = new WeatherTabController();
 
         try {
-            System.out.println(weatherTabController.fetchWeatherData());
+            System.out.println(weatherTabController.fetchWeatherData(41.0, -41.0));
         } catch (IOException e) {
             System.out.println("Something went wrong!! " + e);
         }
