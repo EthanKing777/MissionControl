@@ -51,7 +51,7 @@ public class CurrentWeather {
         this.humidity = humidity;
         this.windSpeed = windSpeed;
         this.windDegrees = windDegrees;
-        this.generalWeather = generalWeather
+        this.generalWeather = generalWeather;
 
     }
 
@@ -69,5 +69,32 @@ public class CurrentWeather {
         }
     }
 
+    public double getUnixTime() {
+        return unixTime;
+    }
+
+    public double getTemperature() {
+        return temperature;
+    }
+
+    public double getPressure() {
+        return pressure;
+    }
+
+    public double getHumidity() {
+        return humidity;
+    }
+
+    public double getWindSpeed() {
+        return windSpeed;
+    }
+
+    public double getWindDegrees() {
+        return windDegrees;
+    }
+
+    public GeneralWeather getGeneralWeather() {
+        return generalWeather;
+    }
 }
 

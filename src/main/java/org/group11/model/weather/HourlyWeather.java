@@ -27,4 +27,65 @@ package org.group11.model.weather;
  The hourly data is an array of each hour for 48 hours.
  **/
 public class HourlyWeather {
+
+    private double unixTime;
+    private double temperature;
+    private double pressure;
+    private double humidity;
+    private double windSpeed;
+    private double windDegrees; // meteorological
+    private CurrentWeather generalWeather;
+
+    public HourlyWeather(double unixTime, double temperature, double pressure, double humidity, double windSpeed, double windDegrees, CurrentWeather generalWeather) {
+        this.unixTime = unixTime;
+        this.temperature = temperature;
+        this.pressure = pressure;
+        this.humidity = humidity;
+        this.windSpeed = windSpeed;
+        this.windDegrees = windDegrees;
+        this.generalWeather = generalWeather;
+
+    }
+
+    /**
+     * Contains basic weather information.
+     */
+    private static class GeneralWeather {
+
+        private String main;
+        private String description;
+
+        public GeneralWeather(String main, String description) {
+            this.main = main;
+            this.description = description;
+        }
+    }
+
+    public double getUnixTime() {
+        return unixTime;
+    }
+
+    public double getTemperature() {
+        return temperature;
+    }
+
+    public double getPressure() {
+        return pressure;
+    }
+
+    public double getHumidity() {
+        return humidity;
+    }
+
+    public double getWindSpeed() {
+        return windSpeed;
+    }
+
+    public double getWindDegrees() {
+        return windDegrees;
+    }
+
+    public CurrentWeather getGeneralWeather() {
+        return generalWeather;
+    }
 }
