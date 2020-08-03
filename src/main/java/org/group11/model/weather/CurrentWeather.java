@@ -30,8 +30,44 @@ package org.group11.model.weather;
     ]
  },
 
- The current weather data are the first lot of elements in the object. The next
+ The current weather data is the 'current' object. The next object
  element is the hourly array.
 **/
 public class CurrentWeather {
+
+    private double unixTime;
+    private double temperature;
+    private double pressure;
+    private double humidity;
+    private double windSpeed;
+    private double windDegrees; // meteorological
+    private GeneralWeather generalWeather;
+
+
+    public CurrentWeather(double unixTime, double temperature, double pressure, double humidity, double windSpeed, double windDegrees, GeneralWeather generalWeather) {
+        this.unixTime = unixTime;
+        this.temperature = temperature;
+        this.pressure = pressure;
+        this.humidity = humidity;
+        this.windSpeed = windSpeed;
+        this.windDegrees = windDegrees;
+        this.generalWeather = generalWeather
+
+    }
+
+    /**
+     * Contains basic weather information.
+     */
+    private static class GeneralWeather {
+
+        private String main;
+        private String description;
+
+        public GeneralWeather(String main, String description) {
+            this.main = main;
+            this.description = description;
+        }
+    }
+
 }
+
