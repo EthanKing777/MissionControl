@@ -103,13 +103,28 @@
                   </BorderPane>
                   <TableView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <columns>
-                        <TableColumn editable="false" prefWidth="75.0" text="Item" />
+                        <TableColumn editable="false" prefWidth="75.0" text="Property" />
                         <TableColumn prefWidth="75.0" text="Value" />
                      </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                   </TableView>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <top>
+                        <Label alignment="CENTER" prefHeight="35.0" prefWidth="320.0" text="Rocket Properties" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </top>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                     <center>
+                        <Label text="Double click a value to modify" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
                </children>
             </GridPane>
       </children>
