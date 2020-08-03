@@ -11,11 +11,10 @@ import java.net.URL;
 
 /**
  * Controller for the weather tab. This controller will
- * have access to a weather api to fetch weather data and controll
+ * have access to a weather api to fetch weather data and control
  * the GUI inside the weather tab.
  */
 public class WeatherTabController {
-
 
     private static final String WEATHER_API = "https://api.openweathermap.org/data/2.5/onecall?units=metric";
     private static final String API_KEY = "26b3148a49fb064524db01c060d26f3f";
@@ -29,6 +28,8 @@ public class WeatherTabController {
     @FXML
     public String fetchWeatherData(double latitude, double longitude) throws IOException {
         updateLocation(latitude, longitude);
+        parseWeatherData();
+
         return downloadWeatherData();
     }
 
