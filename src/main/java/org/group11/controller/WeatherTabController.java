@@ -9,23 +9,26 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+/**
+ * Controller for the weather tab. This controller will
+ * have access to a weather api to fetch weather data and controll
+ * the GUI inside the weather tab.
+ */
 public class WeatherTabController {
 
 
     private static final String WEATHER_API = "https://api.openweathermap.org/data/2.5/onecall?units=metric";
     private final static String API_KEY = "26b3148a49fb064524db01c060d26f3f";
 
-    private double lat; //Latitude
-    private double lng; //Longitude
+    private double latitude;
+    private double longitude;
 
     public WeatherTabController() {
     }
 
     @FXML
     public String fetchWeatherData() throws IOException {
-        String weatherData = downloadWeatherData();
-
-        return weatherData;
+        return downloadWeatherData();
     }
 
     private void parseWeatherData() {
@@ -33,14 +36,14 @@ public class WeatherTabController {
     }
 
     private String downloadWeatherData() throws IOException {
-        String requestURL = WEATHER_API + "&lat=" + lat + "&lon=" + lng + "&appid=" + API_KEY;
+        String requestURL = WEATHER_API + "&lat=" + latitude + "&lon=" + longitude + "&appid=" + API_KEY;
 
         HttpURLConnection connection = (HttpURLConnection) new URL(requestURL).openConnection();
 
         return readInputStream(connection.getInputStream());
     }
 
-    public String readInputStream(InputStream stream) throws IOException {
+    private String readInputStream(InputStream stream) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
         StringBuilder output = new StringBuilder();
         String currentLine;
@@ -53,9 +56,9 @@ public class WeatherTabController {
         return output.toString();
     }
 
-    public void updateLocation(double lat, double lng) {
-        this.lat = lat;
-        this.lng = lng;
+    private void updateLocation(double lat, double lng) {
+        this.latitude = lat;
+        this.longitude = lng;
     }
 
 

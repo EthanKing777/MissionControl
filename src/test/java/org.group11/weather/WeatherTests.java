@@ -1,8 +1,8 @@
 package org.group11.weather;
 
 import org.group11.controller.WeatherTabController;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 
@@ -17,8 +17,6 @@ public class WeatherTests {
         } catch (IOException e) {
             System.out.println("Something went wrong!! " + e);
         }
-
-        Assert.assertEquals("Hi", "Hi");
 
     }
 }
