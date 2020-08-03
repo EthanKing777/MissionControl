@@ -25,15 +25,30 @@ public class WeatherTabController {
     public WeatherTabController() {
     }
 
+    /**
+     * Fetches weather data from openweathermap API.
+     *
+     * @param latitude - Latitude of location.
+     * @param longitude - Longitude of location.
+     * @return - The weather data fetched.
+     * @throws IOException - Throws when can't connect to API.
+     */
     @FXML
     public String fetchWeatherData(double latitude, double longitude) throws IOException {
         updateLocation(latitude, longitude);
-        parseWeatherData();
 
-        return downloadWeatherData();
+        String weatherData = downloadWeatherData();
+        parseWeatherData(weatherData);
+
+        return weatherData;
     }
 
-    private void parseWeatherData() {
+    /**
+     * Parses the fetched weather data into weather model.
+     *
+     * @param weatherData - The weather data fetched.
+     */
+    private void parseWeatherData(String weatherData) {
 
 
     }
