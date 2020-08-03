@@ -65,71 +65,77 @@
             <Font size="18.0" />
           </font>
         </Label>
-            <GridPane alignment="CENTER" hgap="10.0" prefHeight="375.0" prefWidth="640.0">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints maxHeight="120.0" minHeight="4.0" prefHeight="55.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="263.0" minHeight="10.0" prefHeight="243.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
+            <VBox prefHeight="375.0" prefWidth="640.0" spacing="10.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="323.0" text="Reset weather information" GridPane.rowIndex="2" />
-                  <TableView prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
-                    <columns>
-                      <TableColumn editable="false" prefWidth="75.0" text="Item" />
-                      <TableColumn prefWidth="75.0" text="Value" />
-                    </columns>
-                     <columnResizePolicy>
-                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                     </columnResizePolicy>
-                  </TableView>
-                  <BorderPane prefHeight="200.0" prefWidth="200.0">
-                     <top>
-                        <Label alignment="CENTER" prefHeight="35.0" prefWidth="320.0" text="Weather Data" BorderPane.alignment="CENTER">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                     </top>
-                     <center>
-                        <Label text="Double click a value to modify" BorderPane.alignment="CENTER" />
-                     </center>
-                     <padding>
-                        <Insets bottom="10.0" />
-                     </padding>
-                  </BorderPane>
-                  <TableView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <columns>
-                        <TableColumn editable="false" prefWidth="75.0" text="Property" />
-                        <TableColumn prefWidth="75.0" text="Value" />
-                     </columns>
-                     <columnResizePolicy>
-                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                     </columnResizePolicy>
-                  </TableView>
-                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
-                     <top>
-                        <Label alignment="CENTER" prefHeight="35.0" prefWidth="320.0" text="Rocket Properties" BorderPane.alignment="CENTER">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                     </top>
-                     <padding>
-                        <Insets bottom="10.0" />
-                     </padding>
-                     <center>
-                        <Label text="Double click a value to modify" BorderPane.alignment="CENTER" />
-                     </center>
-                  </BorderPane>
+                  <GridPane alignment="CENTER" hgap="10.0" prefHeight="375.0" prefWidth="640.0" vgap="10.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="120.0" minHeight="4.0" prefHeight="55.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="263.0" minHeight="10.0" prefHeight="243.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="323.0" text="Reset weather information" GridPane.rowIndex="2" />
+                        <TableView prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                          <columns>
+                            <TableColumn editable="false" prefWidth="75.0" text="Item" />
+                            <TableColumn prefWidth="75.0" text="Value" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                           <top>
+                              <Label alignment="CENTER" prefHeight="35.0" prefWidth="320.0" text="Weather Data" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </top>
+                           <center>
+                              <Label text="Double click a value to modify" BorderPane.alignment="CENTER" />
+                           </center>
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
+                        </BorderPane>
+                        <TableView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <columns>
+                              <TableColumn editable="false" prefWidth="75.0" text="Property" />
+                              <TableColumn prefWidth="75.0" text="Value" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                           <top>
+                              <Label alignment="CENTER" prefHeight="35.0" prefWidth="320.0" text="Rocket Properties" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </top>
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
+                           <center>
+                              <Label text="Double click a value to modify" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="323.0" text="Reset" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     </children>
+                  </GridPane>
+                  <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="615.0" text="Submit" />
                </children>
                <padding>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </padding>
-            </GridPane>
+            </VBox>
       </children>
     </AnchorPane>
   </children>
