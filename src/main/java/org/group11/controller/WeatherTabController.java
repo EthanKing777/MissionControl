@@ -1,11 +1,11 @@
 package org.group11.controller;
 
 import javafx.fxml.FXML;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -48,9 +48,15 @@ public class WeatherTabController {
      *
      * @param weatherData - The weather data fetched.
      */
-    private void parseWeatherData(String weatherData) {
+    private void parseWeatherData(String weatherData)  {
+        try {
+            Object obj = new JSONParser().parse(weatherData);
+            JSONObject mainObject = (JSONObject) obj;
 
 
+        } catch (ParseException e) {
+            System.out.println("Parse Exception! " + e);
+        }
     }
 
     private String downloadWeatherData() throws IOException {
