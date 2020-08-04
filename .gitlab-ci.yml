@@ -12,12 +12,12 @@ stages:
   - test
   - deploy
 
-project_build
+project_build:
   stage: project_build
     script:
       - mvn clean compile -V -e -f pom.xml
 
-project_test
+project_test:
   stage: project_test
     script:
       - mvn install -V -e -f pom.xml
