@@ -48,7 +48,7 @@ test:
   artifacts:
     when: always
     paths:
-    # <ADD FIle Paths To reports>
+    #  ADD FIle Paths To reports
 
 
 deploy:
