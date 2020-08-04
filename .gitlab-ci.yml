@@ -12,19 +12,19 @@ stages:
   - test
   - deploy
 
-project_build:
-  stage: project_build
-  tags:
-    - Shell
-  script:
-      - mvn clean compile -V -e -f pom.xml
+#project_build:
+#  stage: project_build
+#  tags:
+#    - Shell
+#  script:
+#      - mvn clean compile -V -e -f pom.xml
 
-project_test:
-  stage: project_test
-  tags:
-    - Shell
-  script:
-      - mvn install -V -e -f pom.xml
+#project_test:
+#  stage: project_test
+#  tags:
+#    - Shell
+#  script:
+#      - mvn install -V -e -f pom.xml
 
 build:
   stage: build
@@ -46,6 +46,7 @@ test:
   tags:
     - Shell
   script:
+    - mvn install -V -e -f pom.xml
     - echo "Starting Testing"
     - echo "Test report is below:"
     - mvn verify -e -f pom.xml
