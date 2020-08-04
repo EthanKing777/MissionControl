@@ -61,7 +61,7 @@ shell_test:
 
 
 docker_test:
-  stage: shell_test
+  stage: docker_test
   tags:
     - docker
   script:
