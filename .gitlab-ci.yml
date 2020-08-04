@@ -6,7 +6,6 @@ cache:
     - .m2/repository
 
 stages:
-  - docker_test
   - shell_build
   - shell_test
   - docker_build
@@ -53,7 +52,7 @@ shell_test:
     - echo "Starting Testing"
     - echo "Test report is below:"
     - mvn verify -e -f pom.xml
-    # - mvn test - Issues with the mvn test command
+    - mvn test - Issues with the mvn test command
   artifacts:
     when: always
     paths:
