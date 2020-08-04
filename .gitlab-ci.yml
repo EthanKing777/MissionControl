@@ -33,7 +33,7 @@ shared_runner_test:
   tags: 
     - Shell
   script: 
-    -echo "Shared Runner Test"
+    - echo "Shared Runner Test"
 
 
 docker_test:
