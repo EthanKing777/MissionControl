@@ -117,5 +117,7 @@ public class WeatherTabController {
         this.longitude = lng;
     }
 
-
+    public WeatherData getWeatherData() {
+        return weatherData;
+    }
 }
