@@ -53,7 +53,7 @@ test:
 
 
 deploy:
-  stage: Deploy
+  stage: deploy
   tags:
     - Shell
   script:
