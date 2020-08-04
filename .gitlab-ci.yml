@@ -31,7 +31,7 @@ stages:
 shared_runner_test:
   stage: shared_runner_test
   tags: 
-    - shell
+    - Shell
   script: 
     -echo "Shared Runner Test"
 
@@ -48,6 +48,7 @@ build:
   tags:
     - Shell
   script:
+    - echo "Local Runner"
     - mvn verify
     - echo "Building Project"
     - mkdir build
