@@ -31,7 +31,7 @@ build:
   tags:
     - Shell
   script:
-    - mvn -verify
+    - mvn verify
     - echo "Building Project"
     - mkdir build
     - touch build/info.txt
