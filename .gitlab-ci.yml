@@ -8,8 +8,8 @@ cache:
 stages:
   - shared_runner_test
   - docker_test
-  - project_build
-  - project_test
+#  - project_build
+#  - project_test
   - build
   - test
   - deploy
@@ -46,10 +46,10 @@ docker_test:
 build:
   stage: build
   tags:
-    - Shell
+    - shell
   script:
     - echo "Local Runner"
-    - mvn verify
+    - mvn -verify
     - echo "Building Project"
     - mkdir build
     - touch build/info.txt
@@ -62,7 +62,7 @@ build:
 test:
   stage: test
   tags:
-    - Shell
+    - shell
   script:
     - mvn install -V -e -f pom.xml
     - echo "Starting Testing"
@@ -78,7 +78,7 @@ test:
 deploy:
   stage: deploy
   tags:
-    - Shell
+    - shell
   script:
     - echo "deploy"
     
