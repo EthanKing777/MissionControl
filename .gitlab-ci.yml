@@ -6,6 +6,7 @@ cache:
     - .m2/repository
 
 stages:
+  - shared_runner_test
   - docker_test
   - project_build
   - project_test
@@ -26,6 +27,15 @@ stages:
 #    - Shell
 #  script:
 #      - mvn install -V -e -f pom.xml
+
+shared_runner_test:
+  stage: shared_runner_test
+  tags: 
+    - shell
+  script: 
+    -echo "Shared Runner Test"
+
+
 docker_test:
   stage: docker_test
   tags: 
