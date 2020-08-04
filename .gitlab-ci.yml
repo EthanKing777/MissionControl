@@ -52,7 +52,7 @@ shell_test:
     - echo "Starting Testing"
     - echo "Test report is below:"
     - mvn verify -e -f pom.xml
-    - mvn test - Issues with the mvn test command
+    - mvn test -e
   artifacts:
     when: always
     paths:
