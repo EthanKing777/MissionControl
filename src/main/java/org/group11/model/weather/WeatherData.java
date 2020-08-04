@@ -1,18 +1,16 @@
 package org.group11.model.weather;
 
-import org.json.simple.JSONObject;
-
 import java.util.List;
 
 public class WeatherData {
 
-    private final List<JSONObject> hourlyData;
+    private final List<HourlyWeather> hourlyData;
 
-    public WeatherData(List<JSONObject> hourlyData) {
+    public WeatherData(List<HourlyWeather> hourlyData) {
         this.hourlyData = hourlyData;
     }
 
-    public List<JSONObject> getHourlyData() {
+    public List<HourlyWeather> getHourlyData() {
         return hourlyData;
     }
 }

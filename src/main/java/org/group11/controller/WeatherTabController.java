@@ -1,6 +1,7 @@
 package org.group11.controller;
 
 import javafx.fxml.FXML;
+import org.group11.model.weather.HourlyWeather;
 import org.group11.model.weather.WeatherData;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -62,9 +63,26 @@ public class WeatherTabController {
 
             // Iterate through hourly array and store in WeatherData class.
             JSONArray hourlyArray = (JSONArray) mainObject.get("hourly");
-            List<JSONObject> hourlyData = new ArrayList<>();
-            for (Object o : hourlyArray) {
-                hourlyData.add((JSONObject) o);
+            List<HourlyWeather> hourlyData = new ArrayList<>();
+            for(int i = 0; i < hourlyArray.size(); i++) {
+                JSONObject hour = (JSONObject) hourlyArray.get(i);
+                JSONArray hourGeneralWeather = (JSONArray) hour.get("weather");
+                JSONObject firstGeneral = (JSONObject) hourGeneralWeather.get(0);
+
+                // Create hourly weather instance.
+                HourlyWeather hourlyWeather = new HourlyWeather(
+                        (long) hour.get("dt"),
+                        (double) hour.get("temp"),
+                        (long) hour.get("pressure"),
+                        (long) hour.get("humidity"),
+                        (double) hour.get("wind_speed"),
+                        (long) hour.get("wind_deg"),
+                        new HourlyWeather.GeneralWeather(
+                                firstGeneral.get("main").toString(),
+                                firstGeneral.get("description").toString())
+                        );
+
+                hourlyData.add(hourlyWeather);
             }
             this.weatherData = new WeatherData(hourlyData);
 

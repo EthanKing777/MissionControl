@@ -28,15 +28,15 @@ package org.group11.model.weather;
  **/
 public class HourlyWeather {
 
-    private final double unixTime;
+    private final long unixTime;
     private final double temperature;
-    private final double pressure;
-    private final double humidity;
+    private final long pressure;
+    private final long humidity;
     private final double windSpeed;
-    private final double windDegrees; // meteorological
+    private long windDegrees; // meteorological
     private final GeneralWeather generalWeather;
 
-    public HourlyWeather(double unixTime, double temperature, double pressure, double humidity, double windSpeed, double windDegrees, GeneralWeather generalWeather) {
+    public HourlyWeather(long unixTime, double temperature, long pressure, long humidity, double windSpeed, long windDegrees, GeneralWeather generalWeather) {
         this.unixTime = unixTime;
         this.temperature = temperature;
         this.pressure = pressure;
@@ -50,8 +50,7 @@ public class HourlyWeather {
     /**
      * Contains basic weather information.
      */
-    private static class GeneralWeather {
-
+    public static class GeneralWeather {
         private String main;
         private String description;
 
@@ -61,7 +60,7 @@ public class HourlyWeather {
         }
     }
 
-    public double getUnixTime() {
+    public long getUnixTime() {
         return unixTime;
     }
 
@@ -69,11 +68,11 @@ public class HourlyWeather {
         return temperature;
     }
 
-    public double getPressure() {
+    public long getPressure() {
         return pressure;
     }
 
-    public double getHumidity() {
+    public long getHumidity() {
         return humidity;
     }
 
@@ -81,7 +80,7 @@ public class HourlyWeather {
         return windSpeed;
     }
 
-    public double getWindDegrees() {
+    public long getWindDegrees() {
         return windDegrees;
     }
 
