@@ -31,7 +31,7 @@ stages:
 shared_runner_test:
   stage: shared_runner_test
   tags: 
-    - Shell
+    - shell
   script: 
     - echo "Shared Runner Test"
 
