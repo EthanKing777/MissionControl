@@ -33,14 +33,14 @@ docker_build:
     - docker
   script:
     - echo "Shared Runner Docker Build"
-#    - mvn -verify
-#    - echo "Building Project"
-#    - mkdir build
-#    - touch build/info.txt
-#    - mvn clean compile -V -e -f pom.xml
-#  artifacts:
-#    paths:
-#      - build/
+    - mvn -verify
+    - echo "Building Project"
+    - mkdir build
+    - touch build/info.txt
+    - mvn clean compile -V -e -f pom.xml
+  artifacts:
+    paths:
+      - build/
 
 shell_test:
   stage: shell_test
@@ -65,14 +65,14 @@ docker_test:
     - docker
   script:
     - echo "Shared Runner Shell Test"
-#    - mvn install -V -e -f pom.xml
-#    - echo "Starting Testing"
-#    - echo "Test report is below:"
-#    - mvn verify -e -f pom.xml
-#    # - mvn test - Issues with the mvn test command
-#  artifacts:
-#    when: always
-#    paths:
+    - mvn install -V -e -f pom.xml
+    - echo "Starting Testing"
+    - echo "Test report is below:"
+    - mvn verify -e -f pom.xml
+    - mvn test -e
+  artifacts:
+    when: always
+    paths:
 #    #  ADD FIle Paths To reports
 
 
