@@ -23,7 +23,7 @@ project_test
       - mvn install -V -e -f pom.xml
 
 build:
-  stage: ubild
+  stage: build
   tags:
     - Shell
   script:
