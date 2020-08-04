@@ -2,8 +2,8 @@ image: maven:latest-jdk-14
 
 #dependencies cache
 cache:
-    paths:
-        - .m2/repository
+  paths:
+    - .m2/repository
 
 stages:
   - project_build
@@ -12,15 +12,15 @@ stages:
   - test
   - deploy
 
-project_build 
+project_build
   stage: project_build
-  script:
-    #- mvn clean compile -V -e -f <ADD FILE PATH TO POM FILE>
+    script:
+      - mvn clean compile -V -e -f pom.xml
 
 project_test
   stage: project_test
     script:
-      # - mvn install -V -e -f <ADD FILE PATH TO POM FILE>
+      - mvn install -V -e -f pom.xml
 
 build:
   stage: ubild
@@ -31,11 +31,11 @@ build:
     - echo "Building Project"
     - mkdir build
     - touch build/info.txt
-    #- mvn clean compile -V -e -f <ADD FILE PATH TO POM FILE>
+    - mvn clean compile -V -e -f pom.xml
   artifacts:
     paths:
       - build/
-    
+
 
 test:
   stage: test
@@ -43,11 +43,11 @@ test:
     - Shell
   script:
     - echo "Starting Testing"
-    - echo "Test report is below:" 
-   # - mvn verify -e -f <ADD FILE PATH TO POM FILE>
+    - echo "Test report is below:"
+    - mvn verify -e -f pom.xml
   artifacts:
-    when: always 
-    paths: 
+    when: always
+    paths:
     # <ADD FIle Paths To reports>
 
 
