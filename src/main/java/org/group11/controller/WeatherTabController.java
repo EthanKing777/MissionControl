@@ -1,6 +1,8 @@
 package org.group11.controller;
 
 import javafx.fxml.FXML;
+import org.group11.model.weather.WeatherData;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -8,6 +10,8 @@ import org.json.simple.parser.ParseException;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Controller for the weather tab. This controller will
@@ -21,6 +25,8 @@ public class WeatherTabController {
 
     private double latitude;
     private double longitude;
+
+    private WeatherData weatherData;
 
     public WeatherTabController() {
     }
@@ -50,9 +56,17 @@ public class WeatherTabController {
      */
     private void parseWeatherData(String weatherData)  {
         try {
+            // parse fetched weather data.
             Object obj = new JSONParser().parse(weatherData);
             JSONObject mainObject = (JSONObject) obj;
 
+            // Iterate through hourly array and store in WeatherData class.
+            JSONArray hourlyArray = (JSONArray) mainObject.get("hourly");
+            List<JSONObject> hourlyData = new ArrayList<>();
+            for (Object o : hourlyArray) {
+                hourlyData.add((JSONObject) o);
+            }
+            this.weatherData = new WeatherData(hourlyData);
 
         } catch (ParseException e) {
             System.out.println("Parse Exception! " + e);
