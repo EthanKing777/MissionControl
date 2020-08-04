@@ -14,12 +14,12 @@ stages:
 
 project_build:
   stage: project_build
-    script:
+  script:
       - mvn clean compile -V -e -f pom.xml
 
 project_test:
   stage: project_test
-    script:
+  script:
       - mvn install -V -e -f pom.xml
 
 build:
