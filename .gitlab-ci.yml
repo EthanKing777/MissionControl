@@ -6,6 +6,7 @@ cache:
     - .m2/repository
 
 stages:
+  - docker_test
   - project_build
   - project_test
   - build
@@ -25,6 +26,12 @@ stages:
 #    - Shell
 #  script:
 #      - mvn install -V -e -f pom.xml
+docker_test:
+  stage: docker_test
+  tags: 
+    - docker
+  script: 
+    - echo "Shared Docker Running"
 
 build:
   stage: build
