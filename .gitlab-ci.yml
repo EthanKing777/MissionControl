@@ -6,49 +6,19 @@ cache:
     - .m2/repository
 
 stages:
-  - shared_runner_test
   - docker_test
-#  - project_build
-#  - project_test
-  - build
-  - test
+  - shell_build
+  - shell_test
+  - docker_build
+  - docker_test
   - deploy
 
-#project_build:
-#  stage: project_build
-#  tags:
-#    - Shell
-#  script:
-#      - mvn clean compile -V -e -f pom.xml
-
-#project_test:
-#  stage: project_test
-#  tags:
-#    - Shell
-#  script:
-#      - mvn install -V -e -f pom.xml
-
-shared_runner_test:
-  stage: shared_runner_test
-  tags: 
-    - shell
-  script: 
-    - echo "Shared Runner Test"
-
-
-docker_test:
-  stage: docker_test
-  tags: 
-    - docker
-  script: 
-    - echo "Shared Docker Running"
-
-build:
-  stage: build
+shell_build:
+  stage: shell_build
   tags:
     - shell
   script:
-    - echo "Local Runner"
+    - echo "Shared Runner Shell Build"
     - mvn -verify
     - echo "Building Project"
     - mkdir build
@@ -58,12 +28,27 @@ build:
     paths:
       - build/
 
+docker_build:
+  stage: docker_build
+  tags:
+    - docker
+  script:
+    - echo "Shared Runner Docker Build"
+#    - mvn -verify
+#    - echo "Building Project"
+#    - mkdir build
+#    - touch build/info.txt
+#    - mvn clean compile -V -e -f pom.xml
+#  artifacts:
+#    paths:
+#      - build/
 
-test:
-  stage: test
+shell_test:
+  stage: shell_test
   tags:
     - shell
   script:
+    - echo "Shared Runner Shell Test"
     - mvn install -V -e -f pom.xml
     - echo "Starting Testing"
     - echo "Test report is below:"
@@ -73,6 +58,23 @@ test:
     when: always
     paths:
     #  ADD FIle Paths To reports
+
+
+docker_test:
+  stage: shell_test
+  tags:
+    - docker
+  script:
+    - echo "Shared Runner Shell Test"
+#    - mvn install -V -e -f pom.xml
+#    - echo "Starting Testing"
+#    - echo "Test report is below:"
+#    - mvn verify -e -f pom.xml
+#    # - mvn test - Issues with the mvn test command
+#  artifacts:
+#    when: always
+#    paths:
+#    #  ADD FIle Paths To reports
 
 
 deploy:
