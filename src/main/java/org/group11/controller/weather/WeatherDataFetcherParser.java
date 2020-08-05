@@ -1,6 +1,5 @@
-package org.group11.controller;
+package org.group11.controller.weather;
 
-import javafx.fxml.FXML;
 import org.group11.model.weather.HourlyWeather;
 import org.group11.model.weather.WeatherData;
 import org.json.simple.JSONArray;
@@ -8,20 +7,20 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Controller for the weather tab. This controller will
- * have access to a weather api to fetch weather data and control
- * the GUI inside the weather tab.
+ * Allows the controller to fetch and parse the weather data.
+ * Has one public method for this task.
  */
-public class WeatherTabController {
-
-    /* Weather Tab Parameters */
+public class WeatherDataFetcherParser {
 
     private static final String WEATHER_API = "https://api.openweathermap.org/data/2.5/onecall?units=metric";
     private static final String API_KEY = "26b3148a49fb064524db01c060d26f3f";
@@ -29,45 +28,34 @@ public class WeatherTabController {
     private double latitude;
     private double longitude;
 
-    private WeatherData weatherData;
-
-    /*  Tab Parameters */
-
-
-    /*  Tab Parameters */
-
-    public WeatherTabController() {
+    public WeatherDataFetcherParser(double latitude, double longitude) {
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
-
-    /* ==== Weather Tab Methods ==== */
 
     /**
      * Fetches weather data from openweathermap API.
      *
-     * @param latitude  - Latitude of location.
-     * @param longitude - Longitude of location.
-     * @return - The weather data fetched.
      * @throws IOException - Throws when can't connect to API.
      */
-    @FXML
-    public String fetchWeatherData(double latitude, double longitude) throws IOException {
+    public WeatherData fetchWeatherData() throws IOException {
         updateLocation(latitude, longitude);
 
         String weatherData = downloadWeatherData();
-        parseWeatherData(weatherData);
 
-        return weatherData;
+        return parseWeatherData(weatherData);
     }
 
     /**
      * Parses the fetched weather data into weather model.
      *
-     * @param weatherData - The weather data fetched.
+     * @param weatherDataString - The weather data fetched.
      */
-    private void parseWeatherData(String weatherData) {
+    private WeatherData parseWeatherData(String weatherDataString) {
+        WeatherData weatherData = new WeatherData(null);
         try {
             // parse fetched weather data.
-            Object obj = new JSONParser().parse(weatherData);
+            Object obj = new JSONParser().parse(weatherDataString);
             JSONObject mainObject = (JSONObject) obj;
 
             // Iterate through hourly array and store in WeatherData class.
@@ -93,11 +81,13 @@ public class WeatherTabController {
 
                 hourlyData.add(hourlyWeather);
             }
-            this.weatherData = new WeatherData(hourlyData);
+            weatherData = new WeatherData(hourlyData);
 
         } catch (ParseException e) {
             System.out.println("Parse Exception! " + e);
         }
+
+        return weatherData;
     }
 
     private String downloadWeatherData() throws IOException {
@@ -126,12 +116,5 @@ public class WeatherTabController {
         this.longitude = lng;
     }
 
-    public WeatherData getWeatherData() {
-        return weatherData;
-    }
 
-    /* ====  Tab Methods ==== */
-
-
-    /* ====  Tab Methods ==== */
 }
