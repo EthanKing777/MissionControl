@@ -74,17 +74,13 @@ public class SimulationTabController {
 		//Populate the Acceleration graph
 		XYChart.Series <Number, Number> accelerationSeries = new XYChart.Series<Number,Number>();
 
-		accelerationSeries.getData().add(new XYChart.Data<Number,Number>(0,-8.8));
-		accelerationSeries.getData().add(new XYChart.Data<Number,Number>(0.1,-6.8));
-		accelerationSeries.getData().add(new XYChart.Data<Number,Number>(0.2,-4.9));
-		accelerationSeries.getData().add(new XYChart.Data<Number,Number>(0.3,-3.1));
-		accelerationSeries.getData().add(new XYChart.Data<Number,Number>(0.4,0.4));
-		accelerationSeries.getData().add(new XYChart.Data<Number,Number>(0.5,6.23));
-		accelerationSeries.getData().add(new XYChart.Data<Number,Number>(0.6,12.047));
-		accelerationSeries.getData().add(new XYChart.Data<Number,Number>(0.7,17.8));
-		accelerationSeries.getData().add(new XYChart.Data<Number,Number>(0.8,24.065));
-		accelerationSeries.getData().add(new XYChart.Data<Number,Number>(0.9,32.005));
-		accelerationSeries.getData().add(new XYChart.Data<Number,Number>(1,40.14));
+		List<Number>time = parser.getVariableData("time");;
+		List<Number>totalAcceleration = parser.getVariableData("total acceleration");;
+		
+		for(int i=0; i<time.size();i++){
+			accelerationSeries.getData().add(new XYChart.Data<Number,Number>(time.get(i),totalAcceleration.get(i)));
+		}
+		
 		accelerationSeries.setName("Acceleration");
 
 		accelerationChart.getData().add(accelerationSeries);
