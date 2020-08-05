@@ -13,7 +13,8 @@ public class SimulationDataParser {
 	
 	public SimulationDataParser() {
 		try {
-			File file = new File ("/Users/ruvindu/Desktop/test_1.csv");
+			//File file = new File ("/Users/ruvindu/Desktop/test_1.csv");
+			File file = new File ("test 1.csv");
 			Scanner scan = new Scanner (file);
 			headers = new String[14]; //There are 14 headers in the test_1.csv file
 			totalDataSet = new ArrayList <String> ();
