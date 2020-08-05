@@ -87,4 +87,17 @@ public class HourlyWeather {
     public GeneralWeather getGeneralWeather() {
         return generalWeather;
     }
+
+    @Override
+    public String toString() {
+        return "HourlyWeather{" +
+                "unixTime=" + unixTime +
+                ", temperature=" + temperature +
+                ", pressure=" + pressure +
+                ", humidity=" + humidity +
+                ", windSpeed=" + windSpeed +
+                ", windDegrees=" + windDegrees +
+                ", generalWeather=" + generalWeather +
+                '}';
+    }
 }

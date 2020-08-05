@@ -35,7 +35,7 @@ public class WeatherTabController {
     /**
      * Fetches weather data from openweathermap API.
      *
-     * @param latitude - Latitude of location.
+     * @param latitude  - Latitude of location.
      * @param longitude - Longitude of location.
      * @return - The weather data fetched.
      * @throws IOException - Throws when can't connect to API.
@@ -55,7 +55,7 @@ public class WeatherTabController {
      *
      * @param weatherData - The weather data fetched.
      */
-    private void parseWeatherData(String weatherData)  {
+    private void parseWeatherData(String weatherData) {
         try {
             // parse fetched weather data.
             Object obj = new JSONParser().parse(weatherData);
@@ -64,7 +64,7 @@ public class WeatherTabController {
             // Iterate through hourly array and store in WeatherData class.
             JSONArray hourlyArray = (JSONArray) mainObject.get("hourly");
             List<HourlyWeather> hourlyData = new ArrayList<>();
-            for(int i = 0; i < hourlyArray.size(); i++) {
+            for (int i = 0; i < hourlyArray.size(); i++) {
                 JSONObject hour = (JSONObject) hourlyArray.get(i);
                 JSONArray hourGeneralWeather = (JSONArray) hour.get("weather");
                 JSONObject firstGeneral = (JSONObject) hourGeneralWeather.get(0);
@@ -72,15 +72,15 @@ public class WeatherTabController {
                 // Create hourly weather instance.
                 HourlyWeather hourlyWeather = new HourlyWeather(
                         (long) hour.get("dt"),
-                        (double) hour.get("temp"),
+                        Double.parseDouble(hour.get("temp").toString()),
                         (long) hour.get("pressure"),
                         (long) hour.get("humidity"),
-                        (double) hour.get("wind_speed"),
+                        Double.parseDouble(hour.get("wind_speed").toString()),
                         (long) hour.get("wind_deg"),
                         new HourlyWeather.GeneralWeather(
                                 firstGeneral.get("main").toString(),
                                 firstGeneral.get("description").toString())
-                        );
+                );
 
                 hourlyData.add(hourlyWeather);
             }

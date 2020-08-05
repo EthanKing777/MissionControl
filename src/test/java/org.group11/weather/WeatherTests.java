@@ -1,7 +1,6 @@
 package org.group11.weather;
 
 import org.group11.controller.WeatherTabController;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
