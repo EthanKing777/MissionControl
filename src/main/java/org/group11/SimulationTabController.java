@@ -29,6 +29,11 @@ public class SimulationTabController {
     @FXML
     public void plotSimulationData(ActionEvent event) {
     	
+    	//Clear the pane at every press of the button 
+    	accelerationChart.getData().clear();
+    	velocityChart.getData().clear();
+    	milestonesTab.clear();
+    	
     	//Display Simulation Milestones
     	milestonesTab.setPromptText("Milestones");
     	for(int i=4;i<parser.getHeaders().length;i++) {
