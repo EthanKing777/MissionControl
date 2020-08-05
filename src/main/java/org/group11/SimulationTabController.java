@@ -22,21 +22,43 @@ public class SimulationTabController {
     
     @FXML
     public void plotSimulationData(ActionEvent event) {
-    	XYChart.Series <Number, Number> series = new XYChart.Series<Number,Number>();
     	
-    	series.getData().add(new XYChart.Data<Number,Number>(0,-8.8));
-    	series.getData().add(new XYChart.Data<Number,Number>(0.1,-6.8));
-    	series.getData().add(new XYChart.Data<Number,Number>(0.2,-4.9));
-    	series.getData().add(new XYChart.Data<Number,Number>(0.3,-3.1));
-    	series.getData().add(new XYChart.Data<Number,Number>(0.4,0.4));
-    	series.getData().add(new XYChart.Data<Number,Number>(0.5,6.23));
-    	series.getData().add(new XYChart.Data<Number,Number>(0.6,12.047));
-    	series.getData().add(new XYChart.Data<Number,Number>(0.7,17.8));
-    	series.getData().add(new XYChart.Data<Number,Number>(0.8,24.065));
-    	series.getData().add(new XYChart.Data<Number,Number>(0.9,32.005));
-    	series.getData().add(new XYChart.Data<Number,Number>(1,40.14));
+    	//Populate the Acceleration graph
+    	XYChart.Series <Number, Number> accelerationSeries = new XYChart.Series<Number,Number>();
     	
-    	accelerationChart.getData().add(series);
+    	accelerationSeries.getData().add(new XYChart.Data<Number,Number>(0,-8.8));
+    	accelerationSeries.getData().add(new XYChart.Data<Number,Number>(0.1,-6.8));
+    	accelerationSeries.getData().add(new XYChart.Data<Number,Number>(0.2,-4.9));
+    	accelerationSeries.getData().add(new XYChart.Data<Number,Number>(0.3,-3.1));
+    	accelerationSeries.getData().add(new XYChart.Data<Number,Number>(0.4,0.4));
+    	accelerationSeries.getData().add(new XYChart.Data<Number,Number>(0.5,6.23));
+    	accelerationSeries.getData().add(new XYChart.Data<Number,Number>(0.6,12.047));
+    	accelerationSeries.getData().add(new XYChart.Data<Number,Number>(0.7,17.8));
+    	accelerationSeries.getData().add(new XYChart.Data<Number,Number>(0.8,24.065));
+    	accelerationSeries.getData().add(new XYChart.Data<Number,Number>(0.9,32.005));
+    	accelerationSeries.getData().add(new XYChart.Data<Number,Number>(1,40.14));
+    	
+    	accelerationChart.getData().add(accelerationSeries);
+    	
+    	//Populate the Velocity Graph
+    	
+    	XYChart.Series <Number, Number> velocitySeries = new XYChart.Series<Number,Number>();
+    	
+    	velocitySeries.getData().add(new XYChart.Data<Number,Number>(0,0));
+    	velocitySeries.getData().add(new XYChart.Data<Number,Number>(0.1,0));
+    	velocitySeries.getData().add(new XYChart.Data<Number,Number>(0.2,0));
+    	velocitySeries.getData().add(new XYChart.Data<Number,Number>(0.3,0));
+    	velocitySeries.getData().add(new XYChart.Data<Number,Number>(0.4,0));
+    	velocitySeries.getData().add(new XYChart.Data<Number,Number>(0.5,0.0048032));
+    	velocitySeries.getData().add(new XYChart.Data<Number,Number>(0.6,0.067351));
+    	velocitySeries.getData().add(new XYChart.Data<Number,Number>(0.7,0.18787));
+    	velocitySeries.getData().add(new XYChart.Data<Number,Number>(0.8,0.3664));
+    	velocitySeries.getData().add(new XYChart.Data<Number,Number>(0.9,0.60716));
+    	velocitySeries.getData().add(new XYChart.Data<Number,Number>(1,0.92742));
+    	
+    	velocityChart.getData().add(velocitySeries);
+    	
+    	
     	    	
     }
 

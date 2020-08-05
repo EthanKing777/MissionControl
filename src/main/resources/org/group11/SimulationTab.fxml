@@ -14,16 +14,16 @@
           <NumberAxis side="BOTTOM" upperBound="0.1" fx:id="x" />
         </xAxis>
         <yAxis>
-          <NumberAxis fx:id="y" lowerBound="-7.0" side="LEFT" upperBound="40.0" />
+          <NumberAxis fx:id="y" side="LEFT" upperBound="40.0" />
         </yAxis>
       </LineChart>
-      <Button layoutX="291.0" layoutY="396.0" mnemonicParsing="false" onAction="#plotSimulationData" text="Click Me" />
+      <Button layoutX="270.0" layoutY="397.0" mnemonicParsing="false" onAction="#plotSimulationData" text="Populate Graph" textAlignment="CENTER" />
       <LineChart fx:id="velocityChart" layoutX="318.0" layoutY="28.0" prefHeight="350.0" prefWidth="300.0" title="Velocity">
          <xAxis>
             <NumberAxis side="BOTTOM" upperBound="0.1" fx:id="x1" />
          </xAxis>
          <yAxis>
-            <NumberAxis fx:id="y1" lowerBound="-7.0" side="LEFT" upperBound="40.0" />
+            <NumberAxis fx:id="y1" side="LEFT" upperBound="40.0" />
          </yAxis>
       </LineChart>
    </children>
