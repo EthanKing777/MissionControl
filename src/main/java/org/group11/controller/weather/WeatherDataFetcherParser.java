@@ -16,6 +16,10 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Allows the controller to fetch and parse the weather data.
+ * Has one public method for this task.
+ */
 public class WeatherDataFetcherParser {
 
     private static final String WEATHER_API = "https://api.openweathermap.org/data/2.5/onecall?units=metric";
@@ -77,7 +81,7 @@ public class WeatherDataFetcherParser {
 
                 hourlyData.add(hourlyWeather);
             }
-            weatherData =  new WeatherData(hourlyData);
+            weatherData = new WeatherData(hourlyData);
 
         } catch (ParseException e) {
             System.out.println("Parse Exception! " + e);

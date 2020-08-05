@@ -1,20 +1,12 @@
 package org.group11.controller;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import org.group11.controller.weather.WeatherDataFetcherParser;
 import org.group11.model.weather.HourlyWeather;
 import org.group11.model.weather.WeatherData;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
 import java.io.*;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
+
 
 /**
  * Controller for the weather tab. This controller will
@@ -24,11 +16,6 @@ import java.util.List;
 public class PrimaryController {
 
     /* Weather Tab Parameters */
-    @FXML
-    Button fetchData;
-
-    // Fetches and parses the weather data.
-    private WeatherDataFetcherParser weatherDataFetcherParser;
 
     // Gives access to the weather data.
     private WeatherData weatherData;
@@ -47,10 +34,11 @@ public class PrimaryController {
     @FXML
     public void getWeatherData() {
         // NOTE: The lat and lon values will be obtained from a form.
-        weatherDataFetcherParser = new WeatherDataFetcherParser(41.0, -41.0);
+        // Fetches and parses the weather data.
+        WeatherDataFetcherParser wdfp = new WeatherDataFetcherParser(41.0, -41.0);
 
         try {
-            weatherData = weatherDataFetcherParser.fetchWeatherData();
+            weatherData = wdfp.fetchWeatherData();
         } catch (IOException e) {
 
         }
@@ -59,7 +47,7 @@ public class PrimaryController {
 
     @FXML
     public void displayWeatherData() {
-        for(HourlyWeather hourlyWeather : weatherData.getHourlyData()) {
+        for (HourlyWeather hourlyWeather : weatherData.getHourlyData()) {
             System.out.println(hourlyWeather.toString());
         }
     }
