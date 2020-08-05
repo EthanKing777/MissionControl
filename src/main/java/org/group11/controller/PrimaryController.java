@@ -1,6 +1,7 @@
 package org.group11.controller;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import org.group11.controller.weather.WeatherDataFetcherParser;
 import org.group11.model.weather.HourlyWeather;
 import org.group11.model.weather.WeatherData;
@@ -23,6 +24,8 @@ import java.util.List;
 public class PrimaryController {
 
     /* Weather Tab Parameters */
+    @FXML
+    Button fetchData;
 
     // Fetches and parses the weather data.
     private WeatherDataFetcherParser weatherDataFetcherParser;
@@ -50,6 +53,14 @@ public class PrimaryController {
             weatherData = weatherDataFetcherParser.fetchWeatherData();
         } catch (IOException e) {
 
+        }
+        System.out.println("DONE");
+    }
+
+    @FXML
+    public void displayWeatherData() {
+        for(HourlyWeather hourlyWeather : weatherData.getHourlyData()) {
+            System.out.println(hourlyWeather.toString());
         }
     }
 
