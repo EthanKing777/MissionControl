@@ -1,6 +1,9 @@
 package org.group11;
 
 import javafx.fxml.FXML;
+
+import java.util.List;
+
 import javafx.event.ActionEvent;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
@@ -53,18 +56,14 @@ public class SimulationTabController {
 	private void populateVelocityGraph() {
 		//Populate the Velocity Graph
 		XYChart.Series <Number, Number> velocitySeries = new XYChart.Series<Number,Number>();
-
-		velocitySeries.getData().add(new XYChart.Data<Number,Number>(0,0));
-		velocitySeries.getData().add(new XYChart.Data<Number,Number>(0.1,0));
-		velocitySeries.getData().add(new XYChart.Data<Number,Number>(0.2,0));
-		velocitySeries.getData().add(new XYChart.Data<Number,Number>(0.3,0));
-		velocitySeries.getData().add(new XYChart.Data<Number,Number>(0.4,0));
-		velocitySeries.getData().add(new XYChart.Data<Number,Number>(0.5,0.0048032));
-		velocitySeries.getData().add(new XYChart.Data<Number,Number>(0.6,0.067351));
-		velocitySeries.getData().add(new XYChart.Data<Number,Number>(0.7,0.18787));
-		velocitySeries.getData().add(new XYChart.Data<Number,Number>(0.8,0.3664));
-		velocitySeries.getData().add(new XYChart.Data<Number,Number>(0.9,0.60716));
-		velocitySeries.getData().add(new XYChart.Data<Number,Number>(1,0.92742));
+		
+		List<Number>time = parser.getVariableData("time");;
+		List<Number>totalVelocity = parser.getVariableData("total velocity");;
+		
+		for(int i=0; i<time.size();i++){
+			velocitySeries.getData().add(new XYChart.Data<Number,Number>(time.get(i),totalVelocity.get(i)));
+		}
+		
 		velocitySeries.setName("Velocity");
 
 		velocityChart.getData().add(velocitySeries);
