@@ -6,6 +6,7 @@ import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.TextArea;
 import javafx.scene.layout.Pane;
 
 public class SimulationTabController {
@@ -15,13 +16,26 @@ public class SimulationTabController {
     
     @FXML
     private LineChart<Number,Number> velocityChart;
+    
+    @FXML
+    private TextArea milestonesTab;
+    
+    private SimulationDataParser parser;
 
     public SimulationTabController() {
-		// TODO Auto-generated constructor stub
+		parser = new SimulationDataParser();
 	}
     
     @FXML
     public void plotSimulationData(ActionEvent event) {
+    	
+    	//Display Simulation Milestones
+    	milestonesTab.setPromptText("Milestones");
+    	for(int i=4;i<parser.getHeaders().length;i++) {
+    		milestonesTab.appendText("- ");
+    		milestonesTab.appendText(parser.getHeaders()[i]);
+    		milestonesTab.appendText("\n");
+    	}
     	
     	//Populate the Acceleration graph
     	XYChart.Series <Number, Number> accelerationSeries = new XYChart.Series<Number,Number>();
@@ -37,11 +51,11 @@ public class SimulationTabController {
     	accelerationSeries.getData().add(new XYChart.Data<Number,Number>(0.8,24.065));
     	accelerationSeries.getData().add(new XYChart.Data<Number,Number>(0.9,32.005));
     	accelerationSeries.getData().add(new XYChart.Data<Number,Number>(1,40.14));
+    	accelerationSeries.setName("Acceleration");
     	
     	accelerationChart.getData().add(accelerationSeries);
     	
     	//Populate the Velocity Graph
-    	
     	XYChart.Series <Number, Number> velocitySeries = new XYChart.Series<Number,Number>();
     	
     	velocitySeries.getData().add(new XYChart.Data<Number,Number>(0,0));
@@ -55,6 +69,7 @@ public class SimulationTabController {
     	velocitySeries.getData().add(new XYChart.Data<Number,Number>(0.8,0.3664));
     	velocitySeries.getData().add(new XYChart.Data<Number,Number>(0.9,0.60716));
     	velocitySeries.getData().add(new XYChart.Data<Number,Number>(1,0.92742));
+    	velocitySeries.setName("Velocity");
     	
     	velocityChart.getData().add(velocitySeries);
     	
