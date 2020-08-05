@@ -21,6 +21,8 @@ import java.util.List;
  */
 public class WeatherTabController {
 
+    /* Weather Tab Parameters */
+
     private static final String WEATHER_API = "https://api.openweathermap.org/data/2.5/onecall?units=metric";
     private static final String API_KEY = "26b3148a49fb064524db01c060d26f3f";
 
@@ -29,8 +31,15 @@ public class WeatherTabController {
 
     private WeatherData weatherData;
 
+    /*  Tab Parameters */
+
+
+    /*  Tab Parameters */
+
     public WeatherTabController() {
     }
+
+    /* ==== Weather Tab Methods ==== */
 
     /**
      * Fetches weather data from openweathermap API.
@@ -120,4 +129,9 @@ public class WeatherTabController {
     public WeatherData getWeatherData() {
         return weatherData;
     }
+
+    /* ====  Tab Methods ==== */
+
+
+    /* ====  Tab Methods ==== */
 }
