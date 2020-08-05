@@ -1,11 +1,138 @@
 package org.group11.controller;
 
-import java.io.IOException;
 import javafx.fxml.FXML;
+import org.group11.model.weather.HourlyWeather;
+import org.group11.model.weather.WeatherData;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
+import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Controller for the weather tab. This controller will
+ * have access to a weather api to fetch weather data and control
+ * the GUI inside the weather tab.
+ */
 public class PrimaryController {
 
-//    @FXML
-//    private void switchToSecondary() throws IOException {
-//    }
+    /* Weather Tab Parameters */
+
+    private static final String WEATHER_API = "https://api.openweathermap.org/data/2.5/onecall?units=metric";
+    private static final String API_KEY = "26b3148a49fb064524db01c060d26f3f";
+
+    private double latitude;
+    private double longitude;
+
+    private WeatherData weatherData;
+
+    /*  Tab Parameters */
+
+
+    /*  Tab Parameters */
+
+    public PrimaryController() {
+    }
+
+    /* ==== Weather Tab Methods ==== */
+
+    /**
+     * Fetches weather data from openweathermap API.
+     *
+     * @param latitude  - Latitude of location.
+     * @param longitude - Longitude of location.
+     * @return - The weather data fetched.
+     * @throws IOException - Throws when can't connect to API.
+     */
+    @FXML
+    public String fetchWeatherData(double latitude, double longitude) throws IOException {
+        updateLocation(latitude, longitude);
+
+        String weatherData = downloadWeatherData();
+        parseWeatherData(weatherData);
+
+        return weatherData;
+    }
+
+    /**
+     * Parses the fetched weather data into weather model.
+     *
+     * @param weatherData - The weather data fetched.
+     */
+    private void parseWeatherData(String weatherData) {
+        try {
+            // parse fetched weather data.
+            Object obj = new JSONParser().parse(weatherData);
+            JSONObject mainObject = (JSONObject) obj;
+
+            // Iterate through hourly array and store in WeatherData class.
+            JSONArray hourlyArray = (JSONArray) mainObject.get("hourly");
+            List<HourlyWeather> hourlyData = new ArrayList<>();
+            for (int i = 0; i < hourlyArray.size(); i++) {
+                JSONObject hour = (JSONObject) hourlyArray.get(i);
+                JSONArray hourGeneralWeather = (JSONArray) hour.get("weather");
+                JSONObject firstGeneral = (JSONObject) hourGeneralWeather.get(0);
+
+                // Create hourly weather instance.
+                HourlyWeather hourlyWeather = new HourlyWeather(
+                        (long) hour.get("dt"),
+                        Double.parseDouble(hour.get("temp").toString()),
+                        (long) hour.get("pressure"),
+                        (long) hour.get("humidity"),
+                        Double.parseDouble(hour.get("wind_speed").toString()),
+                        (long) hour.get("wind_deg"),
+                        new HourlyWeather.GeneralWeather(
+                                firstGeneral.get("main").toString(),
+                                firstGeneral.get("description").toString())
+                );
+
+                hourlyData.add(hourlyWeather);
+            }
+            this.weatherData = new WeatherData(hourlyData);
+
+        } catch (ParseException e) {
+            System.out.println("Parse Exception! " + e);
+        }
+    }
+
+    private String downloadWeatherData() throws IOException {
+        String requestURL = WEATHER_API + "&lat=" + latitude + "&lon=" + longitude + "&appid=" + API_KEY;
+
+        HttpURLConnection connection = (HttpURLConnection) new URL(requestURL).openConnection();
+
+        return readInputStream(connection.getInputStream());
+    }
+
+    private String readInputStream(InputStream stream) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
+        StringBuilder output = new StringBuilder();
+        String currentLine;
+
+        //Read the entire input stream
+        while ((currentLine = reader.readLine()) != null) {
+            output.append(currentLine);
+        }
+
+        return output.toString();
+    }
+
+    private void updateLocation(double lat, double lng) {
+        this.latitude = lat;
+        this.longitude = lng;
+    }
+
+    public WeatherData getWeatherData() {
+        return weatherData;
+    }
+
+    /* ====  Tab Methods ==== */
+
+
+    /* ====  Tab Methods ==== */
 }
+
