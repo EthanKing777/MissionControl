@@ -267,7 +267,7 @@ directly to the base station, eliminating the need to go through the avionics pa
 
 
 ### 4.5 Scenarios
-**Use Case 1:** Mary is currently at the launch site of her amateur rocket. Before she launches her rocket she wants to check where her rocket will potentially land. Mary can go to the 'landing site' tab in the software, and see a spread of potential landing spots based on local parameters. 
+**Use Case 1:** Mary is currently at the launch site of her amateur rocket. Before she launches her rocket she wants to check where her rocket will potentially land. Mary can go to the 'Simulation' tab in the software, and see a spread of potential landing spots based on local parameters. 
 
 |User|System|
 |----|------|
@@ -278,18 +278,16 @@ directly to the base station, eliminating the need to go through the avionics pa
 
 |User|System|
 |----|------|
-|David has set up the launch and is ready <br> to launch|The system will display a 'launch' tab, which David will <br>click to prepare for launch|
+|David has set up the launch and is ready <br> to launch|The system will display a 'pre-launch' tab, which David will <br>click to prepare for launch|
 |David will be prompted to enter the parameters <br> of the flight|The system will take the parameters of the flight such as the launch rod angle <br> and will calculate a spread of landing sites based off the local weather.<br> If the landing site is safe for launch the system will respond with 'go'|
 |David will then know it is safe to launch the rocket| |
 
-**Use Case 3:** Mark is just about to launch his amateur rocket and wants to be able to track its flight. Mark can use the software to connect to his rocket via LoRa to track its flight path.
+**Use Case 3:** Mark is just about to launch his amateur rocket and wants to be able to track its flight. Mark can use the software to see the flight path of the rocket using the 'Create Simulation' tab.
 
 |User|System|
 |----|------|
-|Mark sets up his amateur rocket for launch <br> and wants to connect his rocket to the system|The system will have a 'connect rocket' button which Mark will click to connect<br> the rocket|
-|Mark goes through the rocket connection instructions|The system will attempt to connect to Marks rocket, and<br> will indicate to him when it has done so|
-|Mark will then click the 'launch' button| The system will go through the go / no go safety check and will indicate mark<br> when to launch|
-|Mark will are the parachute and ejection charges<br> and will launch|The system will communicate with the rocket via LoRa to gather information<br> of the flight and display a flight path|  
+|Mark sets up his amateur rocket for launch <br>  and want to see the potential flight path of the roket|The system will have a 'Create Simulation' tab which Mark will click on to <br> calcualte the rockets flight path|
+|Mark goes through the 'Create Simulation' tabs inputs <br> and enters the flights parameters | The system will calculate potential flight path and willdisplay the<br> flight path to the 'Simulation' tab|
 
 **Use Case 4:** Emily has launched her amateur rocket and it seems to be flying well until suddenly the rocket turns horizontal and is flying uncontrollably. Emily would like to abort the flight so she can retrieve her rocket safely.
 
