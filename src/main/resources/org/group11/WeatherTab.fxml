@@ -31,7 +31,7 @@
             <Text fill="#616161" layoutX="6.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last updated " />
             <Text fill="#616161" layoutX="87.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" text="##" />
             <Text fill="#616161" layoutX="114.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ago" />
-            <Button layoutX="277.0" layoutY="-10.0" maxWidth="200.0" mnemonicParsing="false" onAction="#displayWeatherData" prefHeight="35.0" prefWidth="145.0" text="Press Me To Test Contoller (Check Console for Output)" textAlignment="CENTER" wrapText="true">
+            <Button layoutX="257.0" layoutY="-6.0" maxWidth="200.0" mnemonicParsing="false" onAction="#displayWeatherData" prefHeight="35.0" prefWidth="186.0" text="Print Weather Data for the Past 48hrs (Check Console for Output)" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font size="10.0" />
                </font>
