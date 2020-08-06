@@ -162,7 +162,7 @@ However, when these classes are implemented the CRC cards can be converted into 
 
 ![Imgur](https://i.imgur.com/ckNukat.png)
 
-figure x
+Figure 1
 
 The frontend is where all the graphical elements will be displayed to the mission control team. This includes textual and graphical elements being updated in real time based on variables changing within the rocket.
 Simulations within Monte Carlo will also be presented here as static graphs after requesting and processing time.
@@ -188,7 +188,7 @@ effecting other parts of the mission control application.
 
 ![Example of modularization diagram](https://gitlab.ecs.vuw.ac.nz/course-work/engr300/2020/group11/group-11/-/blob/master/Images/Example_of_modulariazrion_diagram.png)
 
-figure x Example of modularization of different aspects of the application
+figure 2 Example of modularization of different aspects of the application
     
 **Good Git practices:**
 
@@ -223,7 +223,7 @@ that every layer has a responsibility and everything in that layer can depend on
     
 ![Example of layered style of development](https://gitlab.ecs.vuw.ac.nz/course-work/engr300/2020/group11/group-11/-/blob/master/Images/Layered_style_of_development_diagram.png)
 
-figure x Example of a layered style of development (Work in Progress) 
+figure 3 Example of a layered style of development (Work in Progress) 
     
 **Agile and Scrum:**
 
@@ -241,7 +241,7 @@ The diagram used to demonstrate the process view for this system will use a UML 
 
 ![UML Activity diagram](architecture_design/state-diagram.PNG)
 
-*Figure x: UML Activity diagram for misson control system*
+*Figure 4: UML Activity diagram for misson control system*
 
 Issues:
 
@@ -319,6 +319,9 @@ Schedules must be justified and supported by evidences; they must be either dire
 
 
 Identify dates for key project deliverables: 
+
+**Parsers and Interface Prototypes**<br />
+The Parsers and Interface  prototypes will be completed by 7 August 2020
 
 **Minimum Viable Product** <br />
 The minimum viable product which is specified in part 1.3.2 will completed by 25 September 2020
