@@ -38,7 +38,10 @@
                </content></Tab>
 
                       <!--   FLIGHT DATA TAB  -->
-                <Tab text="Flight Data" />
+                <Tab text="Flight Data">
+               <content>
+                  <fx:include source="FlightTab.fxml" />
+               </content></Tab>
 
                   </tabs>
         </TabPane>
