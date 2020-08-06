@@ -17,7 +17,10 @@
                </content></Tab>
 
                       <!--   CREATE/EDIT SIMULATION  TAB  -->
-                <Tab text="Create/Edit Simlation" />
+                <Tab text="Create/Edit Simlation">
+               <content>
+                  <fx:include source="simulation.fxml" />
+               </content></Tab>
 
                       <!--   SIMULATION DATA TAB  -->
                 <Tab text="Simulation Data" />
