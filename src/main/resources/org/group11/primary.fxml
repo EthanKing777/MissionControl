@@ -1,46 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
 <?scenebuilder-classpath-element ../../../../../../../target/classes?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="447.0" prefWidth="663.0"
-            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.group11.controller.PrimaryController">
-    <center>
-        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+<AnchorPane minHeight="10.0" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.group11.controller.WeatherTabController">
+   <children>
+        <TabPane prefHeight="700.0" prefWidth="700.0" tabClosingPolicy="UNAVAILABLE">
             <tabs>
 
-                <!--  DASHBOARD TAB  -->
-                <Tab text="Untitled Tab">
-                    <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                    </content>
-                </Tab>
+                      <!--  PRE-LAUNCH DASHBOARD TAB  -->
+                <Tab text="Pre-Launch Dashboard">
+               <content>
+                  <fx:include source="prelaunchscreen.fxml" />
+               </content></Tab>
 
-                <!--   TAB  -->
-                <Tab text="Untitled Tab">
-                    <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                    </content>
-                </Tab>
+                      <!--   CREATE/EDIT SIMULATION  TAB  -->
+                <Tab text="Create/Edit Simlation">
+               <content>
+                  <fx:include source="simulation.fxml" />
+               </content></Tab>
 
-                <!--   TAB  -->
-                <Tab text="Untitled Tab 1">
-                    <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                    </content>
-                </Tab>
+                      <!--   SIMULATION DATA TAB  -->
+                <Tab text="Simulation Data">
+               <content>
+                  <fx:include source="SimulationTab.fxml" />
+               </content></Tab>
 
-                <!--   TAB  -->
-                <Tab text="Untitled Tab 2">
-                    <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                    </content>
-                </Tab>
+                      <!--   WEATHER INFORMATION TAB  -->
+                <Tab text="Weather Information ">
+               <content>
+                  
+               </content>
+               <content>
+                  <fx:include source="WeatherTab.fxml" />
+               </content></Tab>
 
-            </tabs>
+                      <!--   FLIGHT DATA TAB  -->
+                <Tab text="Flight Data">
+               <content>
+                  <fx:include source="FlightTab.fxml" />
+               </content></Tab>
+
+                  </tabs>
         </TabPane>
-    </center>
-</BorderPane>
+   </children>
+</AnchorPane>

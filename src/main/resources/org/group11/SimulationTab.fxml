@@ -9,10 +9,10 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.group11.SimulationTabController">
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.group11.SimulationTabController">
    <children>
-      <Text fill="RED" layoutX="226.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rocket Status (Armed/Disarmed)" />
-      <LineChart fx:id="accelerationChart" layoutX="8.0" layoutY="28.0" prefHeight="350.0" prefWidth="300.0" title="Acceleration">
+      <Text fill="RED" layoutX="276.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rocket Status (Armed/Disarmed)" />
+      <LineChart fx:id="accelerationChart" layoutY="28.0" prefHeight="450.0" prefWidth="340.0" title="Acceleration">
         <xAxis>
           <NumberAxis label="Time (s)" side="BOTTOM" upperBound="0.1" fx:id="x" />
         </xAxis>
@@ -20,11 +20,11 @@
           <NumberAxis fx:id="y" label="(m/s2)" side="LEFT" upperBound="40.0" />
         </yAxis>
       </LineChart>
-      <Button layoutX="281.0" layoutY="371.0" mnemonicParsing="false" onAction="#plotSimulationData" text="Populate Graph" textAlignment="CENTER">
+      <Button layoutX="317.0" layoutY="500.0" mnemonicParsing="false" onAction="#plotSimulationData" text="Populate Graph" textAlignment="CENTER">
          <font>
             <Font size="10.0" />
          </font></Button>
-      <LineChart fx:id="velocityChart" layoutX="318.0" layoutY="28.0" prefHeight="350.0" prefWidth="300.0" title="Velocity">
+      <LineChart fx:id="velocityChart" layoutX="350.0" layoutY="28.0" prefHeight="450.0" prefWidth="340.0" title="Velocity">
          <xAxis>
             <NumberAxis label="Time (s)" side="BOTTOM" upperBound="0.1" fx:id="x1" />
          </xAxis>
@@ -32,8 +32,9 @@
             <NumberAxis fx:id="y1" label="(m/s)" side="LEFT" upperBound="40.0" />
          </yAxis>
       </LineChart>
-      <TextArea fx:id="milestonesTab" editable="false" layoutX="12.0" layoutY="395.0" prefHeight="41.0" prefWidth="608.0" promptText="Milestones" />
-      <Separator layoutX="315.0" layoutY="25.0" orientation="VERTICAL" prefHeight="345.0" prefWidth="6.0" />
-      <Separator layoutX="18.0" layoutY="24.0" prefHeight="4.0" prefWidth="597.0" />
+      <TextArea fx:id="milestonesTab" editable="false" layoutX="56.0" layoutY="550.0" prefHeight="65.0" prefWidth="608.0" promptText="Milestones" />
+      <Separator layoutX="355.0" layoutY="24.0" orientation="VERTICAL" prefHeight="450.0" prefWidth="6.0" />
+      <Separator layoutY="24.0" prefHeight="4.0" prefWidth="700.0" />
+      <Separator layoutY="474.0" prefHeight="4.0" prefWidth="700.0" />
    </children>
 </Pane>
