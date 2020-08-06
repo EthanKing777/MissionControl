@@ -11,7 +11,10 @@
             <tabs>
 
                       <!--  PRE-LAUNCH DASHBOARD TAB  -->
-                <Tab text="Pre-Launch Dashboard" />
+                <Tab text="Pre-Launch Dashboard">
+               <content>
+                  <fx:include source="prelaunchscreen.fxml" />
+               </content></Tab>
 
                       <!--   CREATE/EDIT SIMULATION  TAB  -->
                 <Tab text="Create/Edit Simlation" />
