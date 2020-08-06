@@ -1,7 +1,7 @@
 # ENGR 301 Project *Mission Control Software* Project Proposal and Requirements Document
 #### Author list: Alex Jackson, Chris Burt, Ethan King, Henry Pettit, Nirari Awas, Ruvindu Wijeratne, Thomas Rainford
 
-#Table of Contents:
+# Table of Contents:
 
 1.  Introduction    
     * 1.1 Purpose 
@@ -130,8 +130,6 @@ Limitations on the product are : <br />
 ## 3. Specific requirements  
 
 <!-- 20 pages outlining the requirements of the system. You should apportion these pages across the following subsections to focus on the most important parts of your product. -->
-
-This section will be completed at a later time.
 
 ### 3.1 External interfaces  
 **Radio Antenna**  <br />
