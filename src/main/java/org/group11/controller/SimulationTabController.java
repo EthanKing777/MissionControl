@@ -4,6 +4,8 @@ import javafx.fxml.FXML;
 
 import java.util.List;
 
+import org.group11.SimulationDataParser;
+
 import javafx.event.ActionEvent;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
