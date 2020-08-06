@@ -271,8 +271,8 @@ directly to the base station, eliminating the need to go through the avionics pa
 
 |User|System|
 |----|------|
-|Mary wants to see potential landing <br> sites|The system will display a 'landing site' tab, which Mary will <br>click to see the flight parameters window|
-|Mary enters the parameters of the flight|The system will take the parameters of the flight such as the launch rod angle <br> and will calculate a spread of landing sites based off <br> the local weather, and will display the spread to the window|
+|Mary wants to see potential landing <br> sites|The system will display a 'Create simulation' tab, which Mary will <br>click to see the flight parameters/ rocket info window|
+|Mary enters the parameters of the flight|The system will take the parameters of the flight such as the launch rod angle <br> and will calculate a spread of landing sites based off <br> the local weather, and will display the spread in the 'simulations' tab|
 
 **Use Case 2:** David wants to make sure that his amateur rocket is safe to launch before doing so. David can use the go / no go feature of the software to give clearance for the launch, before launching.
 
