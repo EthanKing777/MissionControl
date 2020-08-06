@@ -297,7 +297,7 @@ directly to the base station, eliminating the need to go through the avionics pa
 |Emily clicks the 'abort' button|The system will communicate to the rocket to cut the thruster and deploy the <br> parachute imidiately|
 |Emily will collect the rocket from where it lands| |
 
-**Use Case 5:** Amanda wants to check the current weather and the forecast at her launch site. So she goes the weather tab of the mission control software to see the weather information on her launch site.
+**Use Case 5:** Amanda wants to check the current weather and the forecast at her launch site. So she goes the 'weather' tab of the mission control software to see the weather information on her launch site.
 
 |User|System|
 |----|------|
