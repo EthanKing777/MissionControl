@@ -293,7 +293,126 @@ To allow users to adjust the software to their needs, and extend the functionali
 
 <!-- 3 pages outlining how you will verify that the product meets the most important specific requirements. The format of this section should parallel section 3 of your document (see 9.5.18). Wherever possible (especially systemic requirements) you should indicate testable acceptance criteria. -->
 
-This section will be completed at a later time.
+### 4.1 External Interfaces Verification
+
+#### 4.1.1 LORA radio module Verification
+We consider the LORA radio module to be verified if it is capable of transmitting the following values to the base station: 
+
+- TimeStamp
+- GPS Co-ords (Accurate within 10 meters) 
+-  Gimbal X and Y axis values
+-  IMU data
+-  Barometer Data
+-  Rocket State
+
+If all of the above can be correctly transmitted, within any conditions listed, then we consider the reqiurements set down by the client in regards to the radio transmitter met. 
+
+#### 4.1.2 SD Card Verification
+If the SD card is recoverable form the avionics package, the IMU data must be written in a human-readable format (most likely as a .cvs) and not have any data missing due to corruption or insufficient write speeds. If all data is present and in the format specificed then we consider the SD to be verified and have met the requirments set down by the client. 
+
+#### 4.1.3 Inertial Measurement Unit Verification
+As the accuracy of this unit is down to the Systems team, we consider this requirement to be met and verifed if the data we recieve is correctly and complete.
+
+#### 4.1.4 Gimbal Verification
+As the accuracy of this unit is down to the Systems team, we consider this requirement to be met and verifed if the data we recieve is correctly and complete.
+
+#### 4.1.5 Servos Verification
+As the accuracy of this unit is down to the Systems team, we consider this requirement to be met and verifed if the data we recieve is correctly and complete.
+
+### 4.2 Functions Verification
+
+### 4.3 Usability Verification
+
+For the Mission Control software, the system will have to be able to quickly process, run any calculations needed and display the flight data in a easy to understand/ readable format for the users.
+As we want the data displayed to be as "real-time" as possible the system will need to be updated at the same rate as data is transmitted from the rocket base station. 
+The client has also requested that the mission control software is capable of displaying weather data from an API, and is able to display simulation data exported from OpenRocket. 
+If the data displayed by the mission Control software is accurate, current and displayed in an easy to understand format, then we consider the usability requirements to be verified and met the client's requirements. 
+
+### 4.4 Performance Verification
+See Sections 4.7.2 & 4.3
+
+### 4.5 Logical Database Verification
+
+### 4.6 Design Constraints Verification
+
+#### 4.6.1 Radio Communication Constraints Verification
+As the LORA module must meet the requirements set down by in the Radio Commnications Regulations 2001, relevant authorities, local and national govering bodies. We consider the design constraints around the use of the LORA module to be verified and met, if the LORA module conpiles with all regulations set out by the below listed parties and documents. 
+
+#### 4.6.2 Open Source Costraints Verification
+As the Client has requested that Mission Control software be open source, any external software used in the project must also be open sourced. We consider this requirement to be verified and met if at the end of the project, all code is publicly realeased.
+
+### 4.7 Nonfunctional System Attributes Verification
+
+#### 4.7.1 Open Source attributes Verification
+See Section 4.6.2 
+
+#### 4.7.2 Reliable (Fault Tolerance) Verification
+
+As it is unlikely that the launch or launch conditions will be perfect, the system will be designed in such a way to handle errors safety without endangering the health and safety of the rocket operators. If the launch parameters aren't perfect but are within an acceptable range then the launch will go ahead but with the nessarily error handling and correction in place. If the parameters are outside of an acceptable range or an error can not be handled correctly and in a safe way, then the launch will be canceled.
+As long as the above protocol is followed then we consider the reliable/ fault tolerance to be verified and to meet the requirements. 
+
+#### 4.7.3 Cost Effective Verification
+
+As this project is designed to be used by enthusiasts, we consider the cost effective requirement to be met and verifed if the project cost stays within the project budget.
+
+#### 4.7.4 Ease of Deployment Verification
+
+We consider this requirement to be met and verified if the Mission Control software is able to be used and navigated by a model rocket enthusiast that wasn't involved in creation of the software.
+
+#### 4.7.5 Saftey Verification
+
+We consider the safety requirements to be met and verified if all safety protocols/ requiremnts from the following authorities are  met: (Note: the list from top down is ranked in order of authority)
+
+- National Government
+- National authorities on a specific matter (e.g CAA)
+- Local Government
+- authorities in charge of the chosen launch site (if private property)
+- authorities in charge of the launch (Andre Geldenhuis)
+- Victoria University of Wellington
+- The School of Engineering and Computer Science
+- Engr301/Engr302 lecturers and course co-ordinators
+- Senior Manager (Chansocheat Chheang)
+
+#### 4.7.6 High Performance Verification
+
+See Section 4.3
+
+#### 4.7.7 Coding Standards Verification
+
+We consider these requirements to be met and verifed if the Misson Control code follows the transmittion formats/ data orders/ coding standards agreed on during the inter-team meetings. See Inter-meeting index on the project wiki.
+
+#### 4.7.8 Cross Platform Verification
+
+We consider the Cross Platform requirements to be met and verified if the Mission Control software is capable of running on Windows 10, MacOS and Ubuntu.
+
+#### 4.7.9 Testing Verification
+
+We consider the testing requirements to be met and verifed if the componments and system as a whole can be tested and pass without an actual launch being needed.
+
+#### 4.7.10 System Integration Verification
+
+The System Intergration requirements are met and verifed if the Mision Control software is capable of correctly and reliablely reciving rocket data over a serial connection from the base station. Also the Mission Control software must be capable of transmitting/ writting simulation parameters to the simulation teams and recieving the results of the simulation back in return.
+
+#### 4.7.11 Efficient Coding Verification
+
+The efficient coding requirments are met and verified if the agreed format and order of information to and from the rocket is kept as agreed. This is to reduce the overhead on the rocket to mission control trasnmittion. For the agreed format and order see the inter-team meeting index in the project wiki.
+
+#### 4.7.12 Scalable Verification
+
+The scalable requiremnts are met and verifed if the mission control software is able to be used with other rockets, then the one we are devolping. This is done by having the rocket paratameters set by the PID and not pre-programmed.
+
+#### 4.7.13 Communication integrity Verification
+
+If the communication  between the base station and the mission control software is correct, complete and maintains integrity. Then we consider these requirements to be met and verifed.
+
+#### 4.7.14 Reporting Verification
+
+The Mission Control software must be able to display the current state of the rocket and report it to a file for later use. If this is done then we consider the reporting requirements to be met and verifed. 
+
+### 4.8 Physical and Enviromental Verification
+
+We consider these requirments to be met and veriefed if the rocket componments and launch conditionals meet and follow any regulations set out by the CAA. See Section 3.8
+
 
 ## 5. Development schedule.
 
