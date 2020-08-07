@@ -1,28 +1,127 @@
+#image: maven:latest
+image: maven:3.6.3-jdk-14
+
+#dependencies cache
+cache:
+  paths:
+    - .m2/repository
+
+#Pipeline Stages, breaks the tasks from commits and merge requests into jobs to be run by the runners
 stages:
-  - Build
-  - Test
-  - Deploy
+  #Shell stages are using the shared ecs runner 6d3ea156
+  - shell_build
+  - shell_test
+  #Docker stages are using the shared ecs runner 86774622
+  - docker_build
+  - docker_test
+#  - local_shell
+#  - local_test
+  - deploy
 
-build:
-  stage: Build
+#Run the shell build job, Uses the tag "shell" to assign the job to the shared ecs shell runner.
+#Runs any integration tests that maven finds, Clean compiles the project (removes any compiled and copied resources
+#from the previous jobs before compiling the current one.
+shell_build:
+  stage: shell_build
   tags:
-    - Shell
+    - shell
   script:
-    - echo "static analysis"
-    
+    - echo "Shared Runner Shell Build"
+    - mvn -verify
+    - echo "Building Project"
+    - mkdir build
+    - touch build/info.txt
+    - mvn clean compile -V -e -f pom.xml
+  artifacts:
+    paths:
+      - build/
 
-unittest:
-  stage: Test
+docker_build:
+  stage: docker_build
   tags:
-    - Shell
+    - docker
   script:
-    - echo "test"
-    
+    - echo "Shared Runner Docker Build"
+#    - mvn -verify
+#    - echo "Building Project"
+#    - mkdir build
+#    - touch build/info.txt
+#    - mvn clean compile -V -e -f pom.xml
+  artifacts:
+    paths:
+      - build/
+
+#creates a dependency tree based on the pom.xml file and sets up/downloads/compiles anything needed.
+#Runs any sunfire tests need.
+shell_test:
+  stage: shell_test
+  tags:
+    - shell
+  script:
+    - echo "Shared Runner Shell Test"
+    - mvn install -V -e -f pom.xml
+    - echo "Starting Testing"
+    - echo "Test report is below:"
+    - mvn verify -e -f pom.xml
+    - mvn test -e
+  artifacts:
+    when: always
+    paths:
+    #  ADD FIle Paths To reports
+
+
+docker_test:
+  stage: docker_test
+  tags:
+    - docker
+  script:
+    - echo "Shared Runner Shell Test"
+#    - mvn install -V -e -f pom.xml
+#    - echo "Starting Testing"
+#    - echo "Test report is below:"
+#    - mvn verify -e -f pom.xml
+#    - mvn test -e
+  artifacts:
+    when: always
+    paths:
+    #  ADD FIle Paths To reports
+
+#local_shell:
+#  stage: shell_build
+#  tags:
+#    - local
+#  script:
+#    - echo "Shared Runner Shell Build"
+#    - mvn -verify
+#    - echo "Building Project"
+#    - mkdir build
+#    - touch build/info.txt
+#    - mvn clean compile -V -e -f pom.xml
+#  artifacts:
+#    paths:
+#      - build/
+#
+#local_test:
+#  stage: shell_test
+#  tags:
+#    - local
+#  script:
+#    - echo "Shared Runner Shell Test"
+#    - mvn install -V -e -f pom.xml
+#    - echo "Starting Testing"
+#    - echo "Test report is below:"
+#    - mvn verify -e -f pom.xml
+#    - mvn test -e
+#  artifacts:
+#    when: always
+#    paths:
+#    #  ADD FIle Paths To reports
+
 
 deploy:
-  stage: Deploy
+  stage: deploy
   tags:
-    - Shell
+    - shell
   script:
     - echo "deploy"
     
