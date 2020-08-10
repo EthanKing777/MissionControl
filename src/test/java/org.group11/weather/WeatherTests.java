@@ -1,9 +1,7 @@
 package org.group11.weather;
 
-import org.group11.controller.PrimaryController;
+import org.group11.controller.fxcontrollers.PrimaryController;
 import org.junit.jupiter.api.Test;
-
-import java.io.IOException;
 
 public class WeatherTests {
 

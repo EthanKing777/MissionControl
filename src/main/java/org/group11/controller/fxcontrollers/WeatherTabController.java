@@ -1,8 +1,8 @@
-package org.group11.controller;
+package org.group11.controller.fxcontrollers;
 
 import java.io.IOException;
 
-import org.group11.controller.weather.WeatherDataFetcherParser;
+import org.group11.controller.WeatherDataFetcherParser;
 import org.group11.model.weather.HourlyWeather;
 import org.group11.model.weather.WeatherData;
 
