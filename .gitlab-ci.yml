@@ -32,7 +32,7 @@ shell_build:
     - mkdir build
     - touch build/info.txt
     - mvn clean compile -V -e -f pom.xml
-  coverage: '/Code coverage: \d+\.\d+/'
+  #coverage: '/Code coverage: \d+\.\d+/'
   artifacts:
     paths:
       - build/
