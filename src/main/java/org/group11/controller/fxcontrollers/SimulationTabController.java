@@ -1,18 +1,15 @@
-package org.group11.controller;
+package org.group11.controller.fxcontrollers;
 
 import javafx.fxml.FXML;
 
 import java.util.List;
 
-import org.group11.SimulationDataParser;
+import org.group11.controller.SimulationDataParser;
 
 import javafx.event.ActionEvent;
-import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
-import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.TextArea;
-import javafx.scene.layout.Pane;
 
 public class SimulationTabController {
 

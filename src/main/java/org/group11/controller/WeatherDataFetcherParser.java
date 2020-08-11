@@ -1,4 +1,4 @@
-package org.group11.controller.weather;
+package org.group11.controller;
 
 import org.group11.model.weather.HourlyWeather;
 import org.group11.model.weather.WeatherData;
