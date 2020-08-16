@@ -30,7 +30,7 @@ public class WeatherTabController {
     public void getWeatherData() {
         // NOTE: The lat and lon values will be obtained from a form.
         // Fetches and parses the weather data.
-        WeatherDataFetcherParser wdfp = new WeatherDataFetcherParser(41.0, -41.0);
+        WeatherDataFetcherParser wdfp = new WeatherDataFetcherParser(-41.0, 174.0);
 
         try {
             weatherData = wdfp.fetchWeatherData();
