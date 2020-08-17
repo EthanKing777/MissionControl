@@ -34,7 +34,7 @@
                   
                </content>
                <content>
-                  <fx:include source="WeatherTab.fxml" />
+                  <fx:include source="WeatherTabv2.fxml" />
                </content></Tab>
 
                       <!--   FLIGHT DATA TAB  -->

@@ -73,12 +73,14 @@ public class WeatherDataFetcherParser {
                         Double.parseDouble(hour.get("temp").toString()),
                         (long) hour.get("pressure"),
                         (long) hour.get("humidity"),
+                        Double.parseDouble(hour.get("clouds").toString()),
                         Double.parseDouble(hour.get("wind_speed").toString()),
                         (long) hour.get("wind_deg"),
                         new HourlyWeather.GeneralWeather(
                                 firstGeneral.get("main").toString(),
                                 firstGeneral.get("description").toString())
                 );
+
 
                 hourlyData.add(hourlyWeather);
             }

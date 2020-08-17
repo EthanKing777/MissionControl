@@ -5,12 +5,14 @@
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.group11.controller.WeatherTabController">
+<Pane fx:id="cloudCoveragePrecent" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.group11.controller.WeatherTabController">
    <children>
       <Text layoutX="14.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Local Weather Data">
          <font>
@@ -48,9 +50,9 @@
             <Text fx:id="CompassWest" fill="#616161" layoutX="-11.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="W" />
          </children>
       </Pane>
-      <Text fx:id="CompassSouth1" fill="#616161" layoutX="5.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wind Direction" />
-      <Text fx:id="CompassSouth11" fill="#616161" layoutX="17.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="53°" />
-      <Text fx:id="CompassSouth111" fill="#616161" layoutX="108.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NE" />
+      <Text fx:id="CompassSouth1" fill="#616161" layoutX="59.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wind Direction" />
+      <Text fx:id="windDir" fill="#616161" layoutX="17.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--°" />
+      <Text fx:id="windDirStr" fill="#616161" layoutX="108.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--" />
       <Text fx:id="CompassSouth112" fill="#616161" layoutX="59.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="==" />
       <LineChart layoutX="250.0" layoutY="92.0" prefHeight="288.0" prefWidth="466.0">
         <xAxis>
@@ -61,5 +63,9 @@
         </yAxis>
       </LineChart>
       <Text fx:id="CompassSouth1121" fill="#616161" layoutX="373.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wind Sppeds at Different alts" />
+      <Text fx:id="CompassSouth11" fill="#616161" layoutX="44.0" layoutY="302.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cloud Coverage" />
+      <Text fx:id="windDir1" fill="#616161" layoutX="17.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--%" />
+      <ImageView fx:id="cloudCoverageIcon" fitHeight="65.0" fitWidth="159.0" layoutX="98.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true">
+      </ImageView>
    </children>
 </Pane>
