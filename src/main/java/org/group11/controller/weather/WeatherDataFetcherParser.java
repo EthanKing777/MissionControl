@@ -62,8 +62,8 @@ public class WeatherDataFetcherParser {
             // Iterate through hourly array and store in WeatherData class.
             JSONArray hourlyArray = (JSONArray) mainObject.get("hourly");
             List<HourlyWeather> hourlyData = new ArrayList<>();
-            for (int i = 0; i < hourlyArray.size(); i++) {
-                JSONObject hour = (JSONObject) hourlyArray.get(i);
+            for (Object o : hourlyArray) {
+                JSONObject hour = (JSONObject) o;
                 JSONArray hourGeneralWeather = (JSONArray) hour.get("weather");
                 JSONObject firstGeneral = (JSONObject) hourGeneralWeather.get(0);
 
@@ -118,6 +118,4 @@ public class WeatherDataFetcherParser {
         this.latitude = lat;
         this.longitude = lng;
     }
-
-
 }

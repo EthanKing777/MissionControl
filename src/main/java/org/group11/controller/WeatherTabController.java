@@ -16,6 +16,9 @@ import javafx.fxml.FXML;
  */
 public class WeatherTabController {
 
+    private double lat;
+    private double log;
+
     @FXML
     private Polygon compassPoint;
 
@@ -29,7 +32,7 @@ public class WeatherTabController {
 
     
 	public WeatherTabController() {
-		getWeatherData();
+
 	}
 	
 	/* ==== Weather Tab Methods ==== */
@@ -37,7 +40,9 @@ public class WeatherTabController {
     public void getWeatherData() {
         // NOTE: The lat and lon values will be obtained from a form.
         // Fetches and parses the weather data.
-        WeatherDataFetcherParser wdfp = new WeatherDataFetcherParser(-41.0, 174.0);
+        System.out.println(lat);
+        System.out.println(log);
+        WeatherDataFetcherParser wdfp = new WeatherDataFetcherParser(lat, log);
 
         try {
             weatherData = wdfp.fetchWeatherData();
@@ -48,6 +53,7 @@ public class WeatherTabController {
 
     @FXML
     public void displayWeatherData() {
+        System.out.println("Lat: " + getLat()+  " Log: " + getLog());
     	System.out.println("*********  Start of WeatherTabController Output  ********* \n");
         for (HourlyWeather hourlyWeather : weatherData.getHourlyData()) {
             System.out.println(hourlyWeather.toString());
@@ -78,4 +84,19 @@ public class WeatherTabController {
         System.out.println("\n *********  End of WeatherTabController Output   **********");
     }
 
+    public void setLog(double log) {
+        this.log = log;
+    }
+
+    public double getLog() {
+        return log;
+    }
+
+    public double getLat() {
+        return lat;
+    }
+
+    public void setLat(double lat) {
+        this.lat = lat;
+    }
 }
