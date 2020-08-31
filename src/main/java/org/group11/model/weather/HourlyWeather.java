@@ -35,12 +35,14 @@ public class HourlyWeather {
     private final double windSpeed;
     private long windDegrees; // meteorological
     private final GeneralWeather generalWeather;
+    private final double cloud;
 
-    public HourlyWeather(long unixTime, double temperature, long pressure, long humidity, double windSpeed, long windDegrees, GeneralWeather generalWeather) {
+    public HourlyWeather(long unixTime, double temperature, long pressure, long humidity, double cloud, double windSpeed, long windDegrees, GeneralWeather generalWeather) {
         this.unixTime = unixTime;
         this.temperature = temperature;
         this.pressure = pressure;
         this.humidity = humidity;
+        this.cloud = cloud;
         this.windSpeed = windSpeed;
         this.windDegrees = windDegrees;
         this.generalWeather = generalWeather;
@@ -76,6 +78,8 @@ public class HourlyWeather {
         return humidity;
     }
 
+    public double getCloud(){return  cloud;}
+
     public double getWindSpeed() {
         return windSpeed;
     }
@@ -95,6 +99,7 @@ public class HourlyWeather {
                 ", temperature=" + temperature +
                 ", pressure=" + pressure +
                 ", humidity=" + humidity +
+                ", clouds=" + cloud +
                 ", windSpeed=" + windSpeed +
                 ", windDegrees=" + windDegrees +
                 ", generalWeather=" + generalWeather +
