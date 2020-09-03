@@ -60,7 +60,8 @@
          <children>
             <Pane layoutX="277.0" layoutY="70.0" prefHeight="219.0" prefWidth="214.0" style="-fx-border-color: black;">
                <children>
-                  <Text layoutX="70.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Landing Sites" underline="true" />
+               <WebView fx:id="mapView" layoutX="7.0" layoutY="32.0" prefHeight="179.0" prefWidth="200.0"/>
+                  <!-- <Text layoutX="70.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Landing Sites" underline="true" />
                   <ScatterChart layoutX="7.0" layoutY="32.0" prefHeight="179.0" prefWidth="200.0">
                     <xAxis>
                       <CategoryAxis side="BOTTOM" />
@@ -68,7 +69,7 @@
                     <yAxis>
                       <NumberAxis side="LEFT" />
                     </yAxis>
-                  </ScatterChart>
+                  </ScatterChart> -->
                </children>
             </Pane>
             <Button layoutX="550.0" layoutY="188.0" mnemonicParsing="false" onAction="#printArmButtonOutput" prefHeight="93.0" prefWidth="136.0" text="ARM" />
