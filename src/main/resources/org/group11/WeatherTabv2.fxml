@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.Double?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.LineChart?>
@@ -12,25 +19,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="cloudCoveragePrecent" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.group11.controller.WeatherTabController">
+<Pane fx:id="cloudCoveragePrecent" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.group11.controller.WeatherTabController">
    <children>
       <Text layoutX="14.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Local Weather Data">
          <font>
             <Font size="30.0" />
          </font>
       </Text>
-      <Pane layoutY="600.0" prefHeight="22.0" prefWidth="700.0">
-         <children>
-            <Text fill="#616161" layoutX="6.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last updated " />
-            <Text fill="#616161" layoutX="87.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" text="##" />
-            <Text fill="#616161" layoutX="114.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ago" />
-            <Button layoutX="257.0" layoutY="-6.0" maxWidth="200.0" mnemonicParsing="false" onAction="#displayWeatherData" prefHeight="35.0" prefWidth="186.0" text="Print Weather Data for the Past 48hrs (Check Console for Output)" textAlignment="CENTER" wrapText="true">
-               <font>
-                  <Font size="10.0" />
-               </font>
-            </Button>
-         </children>
-      </Pane>
+      <Pane layoutY="600.0" prefHeight="22.0" prefWidth="700.0" />
       <Text fill="RED" layoutX="415.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rocket Status (armed/disarmed)" />
       <Pane fx:id="compass" layoutX="34.0" layoutY="75.0" maxHeight="100.0" maxWidth="100" minHeight="50" minWidth="50">
          <children>
@@ -67,5 +63,17 @@
       <Text fx:id="windDir1" fill="#616161" layoutX="17.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--%" />
       <ImageView fx:id="cloudCoverageIcon" fitHeight="65.0" fitWidth="159.0" layoutX="98.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true">
       </ImageView>
+      <Pane layoutX="8.0" layoutY="543.0" prefHeight="79.0" prefWidth="700.0">
+         <children>
+            <Text fill="#616161" layoutX="14.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last updated " />
+            <Text fill="#616161" layoutX="98.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="##" />
+            <Text fill="#616161" layoutX="129.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ago" />
+            <Button layoutX="238.0" layoutY="19.0" maxWidth="200.0" mnemonicParsing="false" onAction="#displayWeatherData" prefHeight="35.0" prefWidth="186.0" text="Print Weather Data for the Past 48hrs (Check Console for Output)" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
    </children>
 </Pane>
