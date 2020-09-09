@@ -47,12 +47,13 @@ public class WeatherTabController {
         try {
             weatherData = wdfp.fetchWeatherData();
         } catch (IOException e) {
-
+            System.err.println(e + ":: Error when fetching weather data.");
         }
     }
 
     @FXML
     public void displayWeatherData() {
+        getWeatherData();
         System.out.println("Lat: " + getLat()+  " Log: " + getLog());
     	System.out.println("*********  Start of WeatherTabController Output  ********* \n");
         for (HourlyWeather hourlyWeather : weatherData.getHourlyData()) {
