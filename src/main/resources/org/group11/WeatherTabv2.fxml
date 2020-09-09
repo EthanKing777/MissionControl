@@ -27,8 +27,12 @@
          </font>
       </Text>
       <Pane layoutY="600.0" prefHeight="22.0" prefWidth="700.0" />
-      <Text fill="RED" layoutX="415.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rocket Status (armed/disarmed)" />
-      <Pane fx:id="compass" layoutX="34.0" layoutY="75.0" maxHeight="100.0" maxWidth="100" minHeight="50" minWidth="50">
+      <Text fill="RED" layoutX="379.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rocket Status (armed/disarmed)">
+       <font>
+           <Font name="System Bold" size="17.0" />
+       </font></Text>
+
+       <Pane fx:id="compass" layoutX="34.0" layoutY="75.0" maxHeight="100.0" maxWidth="100" minHeight="50" minWidth="50">
          <children>
             <Polygon fx:id="compassPoint" fill="DODGERBLUE" layoutX="50.0" layoutY="60.0" rotate="53.0" scaleX="0.2" scaleY="0.3" stroke="BLACK" strokeType="INSIDE">
               <points>
@@ -65,14 +69,10 @@
       </ImageView>
       <Pane layoutX="8.0" layoutY="543.0" prefHeight="79.0" prefWidth="700.0">
          <children>
-            <Text fill="#616161" layoutX="14.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last updated " />
-            <Text fill="#616161" layoutX="98.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="##" />
-            <Text fill="#616161" layoutX="129.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ago" />
-            <Button layoutX="238.0" layoutY="19.0" maxWidth="200.0" mnemonicParsing="false" onAction="#displayWeatherData" prefHeight="35.0" prefWidth="186.0" text="Print Weather Data for the Past 48hrs (Check Console for Output)" textAlignment="CENTER" wrapText="true">
-               <font>
-                  <Font size="10.0" />
-               </font>
-            </Button>
+             <Text fill="#616161" layoutX="14.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last updated " />
+             <Text fill="#616161" layoutX="93.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="##" />
+             <Text fill="#616161" layoutX="119.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ago" wrappingWidth="20.203125" />
+             <Button layoutX="257.0" layoutY="19.0" maxWidth="200.0" mnemonicParsing="false" onAction="#displayWeatherData" prefHeight="35.0" prefWidth="186.0" text="Fetch and Display Weather Data" textAlignment="CENTER" wrapText="true" />
          </children>
       </Pane>
    </children>
