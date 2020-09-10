@@ -13,6 +13,8 @@ import javafx.scene.text.Text;
 import org.group11.controller.weather.WeatherDataFetcherParser;
 import org.group11.model.weather.HourlyWeather;
 import org.group11.model.weather.WeatherData;
+import org.group11.model.config.configData;
+import org.group11.controller.configController;
 
 import javafx.fxml.FXML;
 
@@ -23,8 +25,10 @@ import javafx.fxml.FXML;
  */
 public class WeatherTabController {
 
-    private double lat;
-    private double log;
+    private configData configData;
+
+    private double LAT;
+    private double LOG;
 
     /* Weather Tab Parameters */
     @FXML
@@ -44,19 +48,18 @@ public class WeatherTabController {
     // Gives access to the weather data.
     private WeatherData weatherData;
 
-    
-	public WeatherTabController() {
 
+	public WeatherTabController() {
 	}
-	
+
 	/* ==== Weather Tab Methods ==== */
     @FXML
     public void getWeatherData() {
         // NOTE: The lat and lon values will be obtained from a form.
         // Fetches and parses the weather data.
-        System.out.println(lat);
-        System.out.println(log);
-        WeatherDataFetcherParser wdfp = new WeatherDataFetcherParser(lat, log);
+        this.LOG = configData.getLOG();
+        this.LAT = configData.getLAT();
+        WeatherDataFetcherParser wdfp = new WeatherDataFetcherParser(LAT, LOG);
 
         try {
             weatherData = wdfp.fetchWeatherData();
@@ -152,19 +155,16 @@ public class WeatherTabController {
     }
 
 
-    public void setLog(double log) {
-        this.log = log;
-    }
 
     public double getLog() {
-        return log;
+        return LOG;
     }
 
     public double getLat() {
-        return lat;
+        return LAT;
     }
 
-    public void setLat(double lat) {
-        this.lat = lat;
+    public void setConfigData(org.group11.model.config.configData configData) {
+        this.configData = configData;
     }
 }
