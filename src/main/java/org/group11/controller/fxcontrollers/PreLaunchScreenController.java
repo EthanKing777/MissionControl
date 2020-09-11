@@ -35,7 +35,8 @@ public class PreLaunchScreenController implements Initializable{
 	 @Override
    public void initialize(URL url, ResourceBundle rb) {
 	   webEngine=webView.getEngine();
-     webEngine.loadContent(html);
+     //webEngine.loadContent(html);
+	   webEngine.load("https://www.google.com");
 	 }
 
 	/**
@@ -84,7 +85,7 @@ public class PreLaunchScreenController implements Initializable{
 	    "    mapboxgl.accessToken = 'pk.eyJ1IjoiY3ZidXJ0MDgiLCJhIjoiY2tkcDdjaGE5MXprZjJycGR2N2FhN2Q3OSJ9.WHW0WMAG5hF6xhtehdo3EQ';\n" + 
 	    "    var map = new mapboxgl.Map({\n" + 
 	    "      container : 'map', // container id\n" + 
-	    "      style : 'mapbox://styles/mapbox/streets-v11', // style URL\n" + 
+	    "      style : 'mapbox://styles/mapbox/satellite-streets-v11', // style URL\n" + 
 	    "      center : [ -74.5, 40 ], // starting position [lng, lat]\n" + 
 	    "      zoom : 9\n" + 
 	    "    // starting zoom\n" + 
