@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-
+<!--  TEST COMMENT -->
 <VBox prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.group11.controller.configController">
   <children>
     <MenuBar prefHeight="29.0" prefWidth="422.0" VBox.vgrow="NEVER">
@@ -74,12 +74,12 @@
                   </Spinner>
                   <Spinner editable="true" layoutX="415.0" layoutY="185.0" prefHeight="25.0" prefWidth="56.0">
                      <valueFactory>
-                        <SpinnerValueFactory.IntegerSpinnerValueFactory max="60" min="0" />
+                        <SpinnerValueFactory.IntegerSpinnerValueFactory max="59" min="0" />
                      </valueFactory>
                   </Spinner>
                   <Spinner editable="true" layoutX="486.0" layoutY="185.0" prefHeight="25.0" prefWidth="56.0">
                      <valueFactory>
-                        <SpinnerValueFactory.IntegerSpinnerValueFactory max="60" min="0" />
+                        <SpinnerValueFactory.IntegerSpinnerValueFactory max="59" min="0" />
                      </valueFactory>
                   </Spinner>
                   <Text layoutX="63.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Launch Time" />
