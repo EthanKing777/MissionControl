@@ -86,12 +86,12 @@
                   </Spinner>
                   <Spinner editable="true" layoutX="415.0" layoutY="185.0" prefHeight="25.0" prefWidth="56.0">
                      <valueFactory>
-                        <SpinnerValueFactory.IntegerSpinnerValueFactory max="60" min="0" />
+                        <SpinnerValueFactory.IntegerSpinnerValueFactory max="59" min="0" />
                      </valueFactory>
                   </Spinner>
                   <Spinner editable="true" layoutX="486.0" layoutY="185.0" prefHeight="25.0" prefWidth="56.0">
                      <valueFactory>
-                        <SpinnerValueFactory.IntegerSpinnerValueFactory max="60" min="0" />
+                        <SpinnerValueFactory.IntegerSpinnerValueFactory max="59" min="0" />
                      </valueFactory>
                   </Spinner>
                   <Text layoutX="63.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Launch Time" />
