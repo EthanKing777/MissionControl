@@ -57,9 +57,7 @@ public class WeatherTabController {
     public void getWeatherData() {
         // NOTE: The lat and lon values will be obtained from a form.
         // Fetches and parses the weather data.
-        this.LOG = configData.getLOG();
-        this.LAT = configData.getLAT();
-        WeatherDataFetcherParser wdfp = new WeatherDataFetcherParser(LAT, LOG);
+        WeatherDataFetcherParser wdfp = new WeatherDataFetcherParser(0, 0);
 
         try {
             weatherData = wdfp.fetchWeatherData();
@@ -79,6 +77,7 @@ public class WeatherTabController {
         HourlyWeather hourlyWeather =  weatherData.getHourlyData().get(0);
         Double windDirDeg = (double) hourlyWeather.getWindDegrees();
         Double cloudCoverage = hourlyWeather.getCloud();
+        //cloudCoveragePer.setText(cloudCoverage + "%");
         compassPoint.setRotate(windDirDeg);
         windDir.setText(windDirDeg + "°");
         if(windDirDeg == 0 || windDirDeg == 360){
