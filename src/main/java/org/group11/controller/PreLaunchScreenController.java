@@ -1,6 +1,7 @@
 package org.group11.controller;
 
 import javafx.fxml.FXML;
+import org.group11.model.config.configData;
 
 public class PreLaunchScreenController {
 
