@@ -19,14 +19,17 @@ public class configController {
 
 	@FXML
 	public void saveConfig(ActionEvent event) {
-		System.out.println("\n Config - Test Button Pressed \n");
 		System.out.println(lat.getText());
 		System.out.println(log.getText());
+
+
+
+
 		WeatherTabController wtc = new WeatherTabController();
 		System.out.println(lat.getText());
 		System.out.println(log.getText());
 		wtc.setLat(Double.parseDouble(lat.getText()));
 		wtc.setLog(Double.parseDouble(log.getText()));
-		wtc.getWeatherData();
+		wtc.getWeatherData(); 
 	}
 }
