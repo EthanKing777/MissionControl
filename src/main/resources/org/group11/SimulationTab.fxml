@@ -13,7 +13,6 @@
 <?import javafx.scene.control.ScrollPane?>
 <VBox fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.group11.controller.SimulationTabController">
    <children>
-       <ScrollPane>
           <Text fill="RED" layoutX="276.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rocket Status (Armed/Disarmed)" />
           <LineChart fx:id="accelerationChart" layoutY="28.0" prefHeight="450.0" prefWidth="340.0" title="Acceleration">
             <xAxis>
@@ -39,6 +38,5 @@
           <Separator layoutX="355.0" layoutY="24.0" orientation="VERTICAL" prefHeight="450.0" prefWidth="6.0" />
           <Separator layoutY="24.0" prefHeight="4.0" prefWidth="700.0" />
           <Separator layoutY="474.0" prefHeight="4.0" prefWidth="700.0" />
-       </ScrollPane>
    </children>
 </VBox>

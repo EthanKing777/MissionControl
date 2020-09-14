@@ -57,7 +57,7 @@ public class WeatherTabController {
     public void getWeatherData() {
         // NOTE: The lat and lon values will be obtained from a form.
         // Fetches and parses the weather data.
-        WeatherDataFetcherParser wdfp = new WeatherDataFetcherParser(0, 0);
+        WeatherDataFetcherParser wdfp = new WeatherDataFetcherParser(LAT, LOG);
 
         try {
             weatherData = wdfp.fetchWeatherData();
@@ -165,5 +165,13 @@ public class WeatherTabController {
 
     public void setConfigData(org.group11.model.config.configData configData) {
         this.configData = configData;
+    }
+
+    public void setLAT(double LAT) {
+        this.LAT = LAT;
+    }
+
+    public void setLOG(double LOG) {
+        this.LOG = LOG;
     }
 }
