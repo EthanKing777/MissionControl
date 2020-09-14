@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Spinner;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.group11.App;
@@ -12,6 +14,9 @@ import org.group11.model.config.configData;
 
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.ZoneOffset;
 
 public class configController {
 
@@ -19,6 +24,12 @@ public class configController {
 	private TextField lat;
 	@FXML
 	private TextField log;
+
+	@FXML
+	private DatePicker datePicker;
+
+	@FXML
+	private Spinner hours, mins, secs;
 
 	private configData configData;
 
@@ -31,6 +42,14 @@ public class configController {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(App.class.getResource("WeatherTabv2.fxml"));
 
+		long launchDateEpoch = datePicker.getValue().toEpochSecond(LocalTime.NOON, ZoneOffset.MIN);
+		int launchHour = (int) hours.getValue();
+		int launchMin = (int) mins.getValue();
+		launchHour = (launchHour * 60) * 60;
+		int launchTimeSecs = launchHour + launchMin;
+		long LTS = launchTimeSecs;
+		System.out.println(launchDateEpoch + LTS);
+		System.out.println(System.currentTimeMillis()/1000);
 
 		Parent root = null;
 		try {
@@ -41,7 +60,7 @@ public class configController {
 		WeatherTabController wtc = loader.getController();
 			wtc.setLAT(getLat());
 			wtc.setLOG(getLog());
-			System.out.println(lat.getScene().getRoot());
+
 //			Stage stage = (Stage) lat.getScene().getRoot().getScene().getWindow();
 //
 //			stage.setScene(root.getScene());

@@ -10,7 +10,7 @@
 
 <Pane fx:id="cloudCoveragePrecent" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.group11.controller.WeatherTabController">
     <children>
-        <Text layoutX="14.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Local Weather Data">
+        <Text layoutX="14.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weather Data">
             <font>
                 <Font size="30.0" />
             </font>
@@ -54,10 +54,10 @@
         </LineChart>
         <Text fx:id="CompassSouth1121" fill="#616161" layoutX="389.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wind Sppeds at Different alts" />
         <Text fx:id="CompassSouth11" fill="#616161" layoutX="17.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cloud Coverage" />
-        <Text fx:id="windDir1" fill="#616161" layoutX="17.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--%" />
-        <ImageView fx:id="cloudCoverageIcon" fitHeight="65.0" fitWidth="159.0" layoutX="75.0" layoutY="322.0" pickOnBounds="true" preserveRatio="true">
+        <Text fx:id="cloudCoveragePer" fill="#616161" layoutX="17.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--%" />
+        <ImageView fx:id="cloudCoverageIcon" fitHeight="42.0" fitWidth="79.0" layoutX="171.0" layoutY="319.0" pickOnBounds="true" preserveRatio="true">
         </ImageView>
-        <Pane layoutX="-3.0" layoutY="354.0" prefHeight="200.0" prefWidth="719.0">
+        <Pane layoutY="355.0" prefHeight="200.0" prefWidth="719.0">
             <children>
                 <LineChart fx:id="windSpeedChart" animated="false" layoutX="14.0" layoutY="3.0" prefHeight="194.0" prefWidth="339.0" title="Wind Speed">
                     <xAxis>
@@ -75,6 +75,8 @@
                         <NumberAxis side="LEFT" />
                     </yAxis>
                 </LineChart>
+            <Text fx:id="CompassSouth111" fill="#616161" layoutX="-8.0" layoutY="116.0" rotate="-90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meters/Sec" />
+            <Text fx:id="CompassSouth1111" fill="#616161" layoutX="345.0" layoutY="105.0" rotate="-90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Degress" />
             </children>
         </Pane>
         <Pane layoutX="8.0" layoutY="543.0" prefHeight="79.0" prefWidth="700.0">
@@ -89,5 +91,6 @@
       <Text fx:id="latValue" fill="#616161" layoutX="189.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="---" />
       <Text fx:id="CompassSouth122" fill="#616161" layoutX="155.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LONG:" />
       <Text fx:id="longValue" fill="#616161" layoutX="196.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="---" />
+      <Text fx:id="cloudCoverage" fill="#616161" layoutX="65.0" layoutY="336.0" strokeType="OUTSIDE" strokeWidth="0.0" text="---" />
     </children>
 </Pane>
