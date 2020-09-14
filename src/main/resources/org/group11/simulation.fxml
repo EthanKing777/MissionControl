@@ -74,7 +74,7 @@
                     </rowConstraints>
                      <children>
                         <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="323.0" text="Reset weather information" GridPane.rowIndex="2" />
-                        <TableView fx:id="editWeatherTable" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                        <TableView fx:id="editWeatherTable" editable="true" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                           <columns>
                             <TableColumn fx:id="weatherIdCol" editable="false" prefWidth="75.0" text="Item" />
                             <TableColumn fx:id="weatherValueCol" prefWidth="75.0" text="Value" />
