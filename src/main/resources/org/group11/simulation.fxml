@@ -98,10 +98,10 @@
                               <Insets bottom="10.0" />
                            </padding>
                         </BorderPane>
-                        <TableView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <TableView fx:id="editSimulationTable" editable="true" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <columns>
-                              <TableColumn editable="false" prefWidth="75.0" text="Property" />
-                              <TableColumn prefWidth="75.0" text="Value" />
+                              <TableColumn fx:id="simulationIdCol" editable="false" prefWidth="75.0" text="Property" />
+                              <TableColumn fx:id="simulationValueCol" prefWidth="75.0" text="Value" />
                            </columns>
                            <columnResizePolicy>
                               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
