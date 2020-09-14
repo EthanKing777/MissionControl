@@ -73,7 +73,7 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="323.0" text="Reset weather information" GridPane.rowIndex="2" />
+                        <Button onAction="#resetWeatherData" mnemonicParsing="false" prefHeight="25.0" prefWidth="323.0" text="Reset weather information" GridPane.rowIndex="2" />
                         <TableView fx:id="editWeatherTable" editable="true" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                           <columns>
                             <TableColumn fx:id="weatherIdCol" editable="false" prefWidth="75.0" text="Item" />
@@ -122,7 +122,7 @@
                               <Label text="Double click a value to modify" BorderPane.alignment="CENTER" />
                            </center>
                         </BorderPane>
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="323.0" text="Reset" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Button onAction="#resetSimulationData" mnemonicParsing="false" prefHeight="25.0" prefWidth="323.0" text="Reset" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                      </children>
                   </GridPane>
                </children>

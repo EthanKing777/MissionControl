@@ -31,9 +31,28 @@ public class CreateEditSimulationController implements Initializable {
 	@FXML
 	private TableColumn<PropertyTableModel, String> simulationValueCol;
 
-	private ObservableList<PropertyTableModel> weatherTableProperties = FXCollections.observableArrayList();
-	private ObservableList<PropertyTableModel> simulationTableProperties = FXCollections.observableArrayList();
+	private ObservableList<PropertyTableModel> weatherTableProperties = getDefaultWeatherProperties();
+	private ObservableList<PropertyTableModel> simulationTableProperties = getDefaultSimulationProperties();
 
+	private static ObservableList<PropertyTableModel> getDefaultWeatherProperties() {
+		ObservableList<PropertyTableModel> properties = FXCollections.observableArrayList();
+
+		properties.add(new PropertyTableModel("Temperature", "10"));
+		properties.add(new PropertyTableModel("Wind (km/h)", "47"));
+		properties.add(new PropertyTableModel("Humidity", "77"));
+
+		return properties;
+	}
+
+	private static ObservableList<PropertyTableModel> getDefaultSimulationProperties() {
+		ObservableList<PropertyTableModel> properties = FXCollections.observableArrayList();
+
+		properties.add(new PropertyTableModel("Property 1", "15"));
+		properties.add(new PropertyTableModel("Property 2", "Strong"));
+		properties.add(new PropertyTableModel("Property 3", "31"));
+
+		return properties;
+	}
 
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -54,7 +73,18 @@ public class CreateEditSimulationController implements Initializable {
 	}
 
 	@FXML
+	public void resetWeatherData() {
+		this.weatherTableProperties.setAll(getDefaultWeatherProperties());
+	}
+
+	@FXML
+	public void resetSimulationData() {
+		this.simulationTableProperties.setAll(getDefaultSimulationProperties());
+	}
+
+	@FXML
 	public void printSubmitButtonOutput() {
-		System.out.println("\n CreateEditSimulationController - Submit Button Pressed \n");
+		weatherTableProperties.add(new PropertyTableModel("R", Math.random() + ""));
+		simulationTableProperties.add(new PropertyTableModel("R", Math.random() + ""));
 	}
 }
