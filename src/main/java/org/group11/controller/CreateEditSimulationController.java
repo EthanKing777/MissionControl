@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.TextFieldTableCell;
+import org.json.simple.JSONObject;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -77,7 +78,7 @@ public class CreateEditSimulationController implements Initializable {
 		ObservableList<PropertyTableModel> properties = FXCollections.observableArrayList();
 
 		properties.add(new PropertyTableModel("Temperature", "10"));
-		properties.add(new PropertyTableModel("Wind (km/h)", "47"));
+		properties.add(new PropertyTableModel("Wind", "47"));
 		properties.add(new PropertyTableModel("Humidity", "77"));
 
 		return properties;
@@ -139,11 +140,55 @@ public class CreateEditSimulationController implements Initializable {
 	}
 
 	/**
+	 * Parses the data stored in the table and creates a JSON string with all table properties.
+	 * @return A JSON string with a JSON object for each table.
+	 */
+	public String getJsonOutput() {
+		JSONObject container = new JSONObject(); //Contains the both the table objects
+		JSONObject weatherTableJson = new JSONObject();
+		JSONObject simulationTableJson = new JSONObject();
+
+		container.put("weather", weatherTableJson);
+		container.put("simulation", simulationTableJson);
+
+		//Add each property and value to the weather JSON object
+		for (PropertyTableModel weatherTableProperty : weatherTableProperties) {
+			weatherTableJson.put(weatherTableProperty.getPropertyId().getValue(),
+					weatherTableProperty.getPropertyValue().getValue());
+		}
+
+		//Add each property and value to the simulation JSON object
+		for (PropertyTableModel simulationTableProperty : simulationTableProperties) {
+			simulationTableJson.put(simulationTableProperty.getPropertyId().getValue(),
+					simulationTableProperty.getPropertyValue().getValue());
+		}
+
+		return container.toJSONString();
+	}
+
+	/**
 	 * Prints the properties stored in each table.
 	 */
 	@FXML
 	public void printSubmitButtonOutput() {
-		weatherTableProperties.add(new PropertyTableModel("R", Math.random() + ""));
-		simulationTableProperties.add(new PropertyTableModel("R", Math.random() + ""));
+		System.out.println("\nWeather table =======================\n");
+
+		for (PropertyTableModel weatherTableProperty : weatherTableProperties) {
+
+			System.out.println(weatherTableProperty.getPropertyId().getValue() + ": "
+					+ weatherTableProperty.getPropertyValue().getValue());
+		}
+
+		System.out.println("\n\nSimulation table =======================\n");
+
+		for (PropertyTableModel simulationTableProperty : simulationTableProperties) {
+			System.out.println(simulationTableProperty.getPropertyId().getValue() +
+					": " + simulationTableProperty.getPropertyValue().getValue());
+		}
+
+		System.out.println("\n\nJSON output =======================\n");
+
+		System.out.println(getJsonOutput());
+
 	}
 }
