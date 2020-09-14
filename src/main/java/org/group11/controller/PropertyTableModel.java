@@ -1,25 +1,45 @@
-package org.group11.controller;
+package org.group11.controller.fxcontrollers;
 
 import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
 
+/**
+ * Represents a table row that has a column for the property name, and column for the property value.
+ */
 public class PropertyTableModel {
-	private final StringProperty propertyId, propertyValue;
 
+	/**
+	 * The name of the property.
+	 */
+	private final SimpleStringProperty propertyId;
+
+	/**
+	 * The value of the property.
+	 */
+	private final SimpleStringProperty propertyValue;
+
+	/**
+	 * Constructor.
+	 * @param propertyId The name of the property.
+	 * @param propertyValue The value of the property.
+	 */
 	public PropertyTableModel(String propertyId, String propertyValue) {
 		this.propertyId = new SimpleStringProperty(propertyId);
 		this.propertyValue = new SimpleStringProperty(propertyValue);
 	}
 
-	public StringProperty getPropertyId() {
+	/**
+	 * Gets the name of the property.
+	 * @return A {@link SimpleStringProperty} that contains the name of the property.
+	 */
+	public SimpleStringProperty getPropertyId() {
 		return this.propertyId;
 	}
 
-	public StringProperty getPropertyValue() {
+	/**
+	 * Gets the value of the property.
+	 * @return A {@link SimpleStringProperty} that contains the value of the property.
+	 */
+	public SimpleStringProperty getPropertyValue() {
 		return this.propertyValue;
-	}
-
-	public void setPropertyValue(String propertyValue) {
-		this.propertyValue.set(propertyValue);
 	}
 }
