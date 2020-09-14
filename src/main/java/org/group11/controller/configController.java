@@ -41,11 +41,13 @@ public class configController {
 		WeatherTabController wtc = loader.getController();
 			wtc.setLAT(getLat());
 			wtc.setLOG(getLog());
+			System.out.println(lat.getScene().getRoot());
+//			Stage stage = (Stage) lat.getScene().getRoot().getScene().getWindow();
+//
+//			stage.setScene(root.getScene());
 
 			Stage stage = new Stage();
 			stage.setScene(new Scene(root));
-
-			stage.setTitle("TEST");
 			stage.show();
 
 

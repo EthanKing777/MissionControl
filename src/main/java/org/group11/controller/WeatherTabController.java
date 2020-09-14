@@ -35,7 +35,7 @@ public class WeatherTabController {
     private Polygon compassPoint;
 
     @FXML
-    private Text windDir, windDirStr, cloudCoveragePer;
+    private Text windDir, windDirStr, cloudCoveragePer, latValue, longValue;
 
     @FXML
     private LineChart<String, Double> windSpeedChart;
@@ -78,6 +78,8 @@ public class WeatherTabController {
         Double windDirDeg = (double) hourlyWeather.getWindDegrees();
         Double cloudCoverage = hourlyWeather.getCloud();
         //cloudCoveragePer.setText(cloudCoverage + "%");
+        latValue.setText(getLat() + "");
+        longValue.setText(getLog()+ "");
         compassPoint.setRotate(windDirDeg);
         windDir.setText(windDirDeg + "°");
         if(windDirDeg == 0 || windDirDeg == 360){
