@@ -35,7 +35,7 @@ public class WeatherTabController {
     private Polygon compassPoint;
 
     @FXML
-    private Text windDir, windDirStr, cloudCoveragePer;
+    private Text windDir, windDirStr, cloudCoveragePer, latValue, longValue, cloudCoverage;
 
     @FXML
     private LineChart<String, Double> windSpeedChart;
@@ -57,8 +57,6 @@ public class WeatherTabController {
     public void getWeatherData() {
         // NOTE: The lat and lon values will be obtained from a form.
         // Fetches and parses the weather data.
-        this.LOG = configData.getLOG();
-        this.LAT = configData.getLAT();
         WeatherDataFetcherParser wdfp = new WeatherDataFetcherParser(LAT, LOG);
 
         try {
@@ -78,7 +76,23 @@ public class WeatherTabController {
         }
         HourlyWeather hourlyWeather =  weatherData.getHourlyData().get(0);
         Double windDirDeg = (double) hourlyWeather.getWindDegrees();
-        Double cloudCoverage = hourlyWeather.getCloud();
+        Double cloudCoverageValue = hourlyWeather.getCloud();
+        if(cloudCoverageValue >= 0 && cloudCoverageValue <= 5){
+            cloudCoverage.setText("Clear");
+        }else if( cloudCoverageValue >= 6 && cloudCoverageValue <= 25 ){
+            cloudCoverage.setText("Mostly Clear");
+        }else if (cloudCoverageValue >= 26 && cloudCoverageValue <= 50){
+            cloudCoverage.setText("Partly Cloudy");
+        }else if(cloudCoverageValue >= 51 && cloudCoverageValue <= 69){
+            cloudCoverage.setText("Mostly Cloudy");
+        }else if(cloudCoverageValue >= 70 && cloudCoverageValue <= 87){
+            cloudCoverage.setText("Considerable Cloudiness");
+        }else {
+            cloudCoverage.setText("Overcast");
+        }
+        cloudCoveragePer.setText(cloudCoverageValue + "%");
+        latValue.setText(getLat() + "");
+        longValue.setText(getLog()+ "");
         compassPoint.setRotate(windDirDeg);
         windDir.setText(windDirDeg + "°");
         if(windDirDeg == 0 || windDirDeg == 360){
@@ -104,8 +118,6 @@ public class WeatherTabController {
 
         populateWindSpeedChart();
         populateWindDirectionChart();
-
-        //cloudCoveragePer.setText(cloudCoverage +"%");
         System.out.println("\n *********  End of WeatherTabController Output   **********");
     }
 
@@ -166,5 +178,17 @@ public class WeatherTabController {
 
     public void setConfigData(org.group11.model.config.configData configData) {
         this.configData = configData;
+    }
+
+    public void setLAT(double LAT) {
+        this.LAT = LAT;
+    }
+
+    public void setLOG(double LOG) {
+        this.LOG = LOG;
+    }
+
+    public void setTime(){
+
     }
 }
