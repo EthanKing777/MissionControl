@@ -115,10 +115,10 @@ public class SimulationTabController implements Initializable {
   public void initialize(URL url, ResourceBundle rb) {
     webEngine=webView.getEngine();
     //webEngine.loadContent(html);
-    webEngine.load("https://www.google.com");
+    webEngine.load("https://api.mapbox.com/styles/v1/mapbox/light-v10/static/-87.0186,32.4055,14/500x300?access_token=pk.eyJ1IjoiY3ZidXJ0MDgiLCJhIjoiY2tkODlvZzZwMmo5czJ4cXYxbnZndGpwMCJ9.etHL4afAuWgytTt8bfyWqA");
   }
 	
-	String html = "<!DOCTYPE html>\n" + 
+	String html =
       "<html>\n" + 
       "<head>\n" + 
       "<meta charset=\"utf-8\" />\n" + 
