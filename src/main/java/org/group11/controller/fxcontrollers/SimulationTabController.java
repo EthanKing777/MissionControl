@@ -115,46 +115,9 @@ public class SimulationTabController implements Initializable {
   public void initialize(URL url, ResourceBundle rb) {
     webEngine=webView.getEngine();
     //webEngine.loadContent(html);
-    webEngine.load("https://api.mapbox.com/styles/v1/mapbox/light-v10/static/-87.0186,32.4055,14/500x300?access_token=pk.eyJ1IjoiY3ZidXJ0MDgiLCJhIjoiY2tkODlvZzZwMmo5czJ4cXYxbnZndGpwMCJ9.etHL4afAuWgytTt8bfyWqA");
+    MapBox.setLatLng(-41.285099,174.776001);
+    webEngine.load(MapBox.generateApiCall("345" , "610","14"));
+    //webEngine.load("https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v11/static/174.776001,-41.285099,14/610x345@2x?access_token=pk.eyJ1IjoiY3ZidXJ0MDgiLCJhIjoiY2tkcDdjaGE5MXprZjJycGR2N2FhN2Q3OSJ9.WHW0WMAG5hF6xhtehdo3EQ");
   }
-	
-	String html =
-      "<html>\n" + 
-      "<head>\n" + 
-      "<meta charset=\"utf-8\" />\n" + 
-      "<title>Display a map</title>\n" + 
-      "<meta name=\"viewport\"\n" + 
-      "  content=\"initial-scale=1,maximum-scale=1,user-scalable=no\" />\n" + 
-      "<script src=\"https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js\"></script>\n" + 
-      "<link href=\"https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css\"\n" + 
-      "  rel=\"stylesheet\" />\n" + 
-      "<style>\n" + 
-      "body {\n" + 
-      "  margin: 0;\n" + 
-      "  padding: 0;\n" + 
-      "}\n" + 
-      "\n" + 
-      "#map {\n" + 
-      "  position: absolute;\n" + 
-      "  top: 0;\n" + 
-      "  bottom: 0;\n" + 
-      "  width: 100%;\n" + 
-      "}\n" + 
-      "</style>\n" + 
-      "</head>\n" + 
-      "<body>\n" + 
-      "  <div id=\"map\"></div>\n" + 
-      "  <script>\n" + 
-      "    mapboxgl.accessToken = 'pk.eyJ1IjoiY3ZidXJ0MDgiLCJhIjoiY2tkcDdjaGE5MXprZjJycGR2N2FhN2Q3OSJ9.WHW0WMAG5hF6xhtehdo3EQ';\n" + 
-      "    var map = new mapboxgl.Map({\n" + 
-      "      container : 'map', // container id\n" + 
-      "      style : 'mapbox://styles/mapbox/satellite-streets-v11', // style URL\n" + 
-      "      center : [ -74.5, 40 ], // starting position [lng, lat]\n" + 
-      "      zoom : 9\n" + 
-      "    // starting zoom\n" + 
-      "    });\n" + 
-      "  </script>\n" + 
-      "\n" + 
-      "</body>";
 
 }

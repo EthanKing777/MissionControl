@@ -56,7 +56,7 @@
                       <TextArea fx:id="milestonesTab" editable="false" layoutX="44.0" layoutY="491.0" prefHeight="65.0" prefWidth="608.0" promptText="Milestones" />
                       <Separator layoutX="346.0" layoutY="-11.0" orientation="VERTICAL" prefHeight="450.0" prefWidth="6.0" />
                       <Separator layoutX="-10.0" layoutY="437.0" prefHeight="4.0" prefWidth="700.0" />
-                  <WebView fx:id ="webView" layoutX="45.0" layoutY="602.0" prefHeight="346.0" prefWidth="609.0" />
+                  <WebView fx:id ="webView" layoutX="45.0" layoutY="602.0" prefHeight="345.0" prefWidth="610.0" />
                 </children>
             </AnchorPane>
         </content>

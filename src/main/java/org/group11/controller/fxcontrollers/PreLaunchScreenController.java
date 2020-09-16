@@ -36,7 +36,8 @@ public class PreLaunchScreenController implements Initializable{
    public void initialize(URL url, ResourceBundle rb) {
 	   webEngine=webView.getEngine();
      //webEngine.loadContent(html);
-	   webEngine.load("https://www.google.com");
+	   webEngine.load(MapBox.generateApiCall("212" , "217","3"));
+	   //webEngine.load("https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v11/static/174.776001,-41.285099,14/217x212@2x?access_token=pk.eyJ1IjoiY3ZidXJ0MDgiLCJhIjoiY2tkcDdjaGE5MXprZjJycGR2N2FhN2Q3OSJ9.WHW0WMAG5hF6xhtehdo3EQ");
 	 }
 
 	/**
