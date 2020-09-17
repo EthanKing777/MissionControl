@@ -1,11 +1,11 @@
 package org.group11.weather;
 
+import java.io.IOException;
+
 import org.group11.controller.PrimaryController;
 import org.group11.controller.weather.WeatherDataFetcherParser;
 import org.group11.model.weather.WeatherData;
 import org.junit.jupiter.api.Test;
-
-import java.io.IOException;
 
 public class WeatherTests {
 

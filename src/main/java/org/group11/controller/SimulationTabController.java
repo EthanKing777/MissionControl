@@ -1,20 +1,24 @@
 package org.group11.controller;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 
+import java.net.URL;
 import java.util.List;
+import java.util.ResourceBundle;
 
 import org.group11.SimulationDataParser;
 
 import javafx.event.ActionEvent;
-import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
-import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.TextArea;
-import javafx.scene.layout.Pane;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 
-public class SimulationTabController {
+public class SimulationTabController implements Initializable {
 
 	@FXML
 	private LineChart<Number,Number> accelerationChart;
@@ -24,6 +28,11 @@ public class SimulationTabController {
 
 	@FXML
 	private TextArea milestonesTab;
+	
+  @FXML
+  WebView webView;
+
+  private WebEngine webEngine;
 
 	private SimulationDataParser parser;
 
@@ -101,5 +110,14 @@ public class SimulationTabController {
 
 		accelerationChart.getData().add(accelerationSeries);
 	}
+	
+	@Override
+  public void initialize(URL url, ResourceBundle rb) {
+    webEngine=webView.getEngine();
+    //webEngine.loadContent(html);
+    MapBox.setLatLng(-41.285099,174.776001);
+    webEngine.load(MapBox.generateApiCall("345" , "610","14"));
+    //webEngine.load("https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v11/static/174.776001,-41.285099,14/610x345@2x?access_token=pk.eyJ1IjoiY3ZidXJ0MDgiLCJhIjoiY2tkcDdjaGE5MXprZjJycGR2N2FhN2Q3OSJ9.WHW0WMAG5hF6xhtehdo3EQ");
+  }
 
 }

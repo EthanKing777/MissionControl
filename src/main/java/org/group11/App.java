@@ -7,6 +7,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
 
+import org.group11.controller.MapBox;
+
 /**
  * JavaFX App
  */
@@ -36,6 +38,7 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
+        MapBox.setLatLng(0,0);
         launch(App.class);
     }
 

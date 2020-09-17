@@ -23,7 +23,7 @@ package org.group11.model.weather;
             ],
         "pop": 0
     },
-
+ ]
  The hourly data is an array of each hour for 48 hours.
  **/
 public class HourlyWeather {
@@ -33,7 +33,7 @@ public class HourlyWeather {
     private final long pressure;
     private final long humidity;
     private final double windSpeed;
-    private long windDegrees; // meteorological
+    private final long windDegrees; // meteorological
     private final GeneralWeather generalWeather;
     private final double cloud;
 
@@ -53,12 +53,20 @@ public class HourlyWeather {
      * Contains basic weather information.
      */
     public static class GeneralWeather {
-        private String main;
-        private String description;
+        private final String main;
+        private final String description;
 
         public GeneralWeather(String main, String description) {
             this.main = main;
             this.description = description;
+        }
+
+        @Override
+        public String toString() {
+            return "GeneralWeather{" +
+                    "main='" + main + '\'' +
+                    ", description='" + description + '\'' +
+                    '}';
         }
     }
 
