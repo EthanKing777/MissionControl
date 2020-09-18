@@ -1,10 +1,17 @@
 package org.group11.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
 
 /**
  * Controller for the flight tab.
@@ -13,8 +20,8 @@ import javafx.scene.control.TableView;
 public class FlightTabController {
 
 
-	@FXML private TableView<String> flightData;
-	@FXML private TableColumn<String, Double> dataType;
+	@FXML private TableView<PropertyTableModel> flightData;
+	@FXML private TableColumn<String, String> dataType;
 	@FXML private TableColumn<Double, Double> data;
 
 
@@ -29,25 +36,28 @@ public class FlightTabController {
 	//something needed here to get rocket data.
 
 
-	public FlightTabController(TableView<String> flightData, TableColumn dataType, TableColumn data) {
+	public FlightTabController() {
 		//something here to take the data from rocket
 		this.flightData = flightData;
 		this.dataType = dataType;
 		this.data = data;
 	}
 
-	/**
-	 * Needed to render the app without, any rocket data being parsed
-	 */
-	public FlightTabController() {
 
+	public void initialize(URL url, ResourceBundle rb) {
+		dataType.setCellValueFactory(new PropertyValueFactory<String, String>("data type"));
+		data.setCellValueFactory(new PropertyValueFactory<Double, Double>("data"));
+
+		flightData.setItems(populateFlightData());
 	}
 
-	@FXML
-	public void populateFlightData(ActionEvent event) {
-		flightData.getColumns().clear(); //clear it
-		//something to read the data and show it
-
+	public ObservableList<PropertyTableModel> populateFlightData(){
+		ObservableList<PropertyTableModel> property = FXCollections.observableArrayList();
+		property.add(new PropertyTableModel("speed", "100"));
+		property.add(new PropertyTableModel("height", "10"));
+		property.add(new PropertyTableModel("power", "55555"));
+		property.add(new PropertyTableModel("something else", "2"));
+		return property;
 	}
 
 	@FXML

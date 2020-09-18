@@ -1,23 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.SeparatorMenuItem?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.group11.controller.FlightTabController">
+<VBox prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.group11.controller.FlightTabController">
    <children>
       <MenuBar VBox.vgrow="NEVER">
          <menus>
@@ -103,10 +91,10 @@
                               <Label text="some time here" BorderPane.alignment="CENTER" />
                            </center>
                         </BorderPane>
-                        <TableView prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                        <TableView fx:id="flightData" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                           <columns>
-                            <TableColumn prefWidth="149.0" text="C1" />
-                            <TableColumn minWidth="0.0" prefWidth="145.0" text="C2" />
+                            <TableColumn fx:id="dataType" prefWidth="149.0" text="C1" />
+                            <TableColumn fx:id="data" minWidth="0.0" prefWidth="145.0" text="C2" />
                           </columns>
                         </TableView>
                         <Label alignment="CENTER" prefHeight="55.0" prefWidth="317.0" text="Flight Data">
