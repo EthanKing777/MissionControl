@@ -12,10 +12,6 @@ import java.io.*;
 public class PrimaryController {
 
     public PrimaryController() {
-        configController cc = new configController();
-        WeatherTabController wtc = new WeatherTabController();
-        FlightTabController ftc = new FlightTabController();
-        PreLaunchScreenController plsc = new PreLaunchScreenController();
     }
 
 }
