@@ -427,7 +427,7 @@ This protoype will be completed by 7 August 2020
 The minimum viable product which is specified in part 1.3.2 will completed by 25 September 2020
 
 **Further Releases** <br />
-The final product will be completed by  6 November 2020
+The final product will be completed and delivered by 24 October 2020
 
 
 ### 5.2 Budget
