@@ -1,4 +1,4 @@
-package org.group11.controller.fxcontrollers;
+package org.group11.controller;
 
 import javafx.fxml.FXML;
 

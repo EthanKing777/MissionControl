@@ -5,10 +5,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?scenebuilder-classpath-element ../../../../../../../target/classes?>
 
-<AnchorPane minHeight="10.0" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.group11.controller.fxcontrollers.PrimaryController">
+<AnchorPane minHeight="10.0" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.group11.controller.PrimaryController">
    <children>
         <TabPane prefHeight="700.0" prefWidth="700.0" tabClosingPolicy="UNAVAILABLE">
             <tabs>
+                <!-- Config TAB -->
+                <Tab text="Configuration">
+                    <content>
+                        <fx:include source="config.fxml" />
+                    </content></Tab>
 
                       <!--  PRE-LAUNCH DASHBOARD TAB  -->
                 <Tab text="Pre-Launch Dashboard">
@@ -34,7 +39,7 @@
                   
                </content>
                <content>
-                  <fx:include source="WeatherTab.fxml" />
+                  <fx:include source="WeatherTabv2.fxml" />
                </content></Tab>
 
                       <!--   FLIGHT DATA TAB  -->
