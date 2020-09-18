@@ -36,6 +36,13 @@ public class FlightTabController {
 		this.data = data;
 	}
 
+	/**
+	 * Needed to render the app without, any rocket data being parsed
+	 */
+	public FlightTabController() {
+
+	}
+
 	@FXML
 	public void populateFlightData(ActionEvent event) {
 		flightData.getColumns().clear(); //clear it
