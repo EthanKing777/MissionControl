@@ -94,6 +94,7 @@ This means that you should refer to information (e.g. risks, requirements, model
 |Andre Geldenhuis|Research Software Engineer|Client|andre.geldenhuis@vuw.ac.nz|
 |Aaron Chen|Course Coordinator|Administration|aaron.chen@ecs.vuw.ac.nz|
 |Craig Anslow|Course Lecturer|Administration|craig.anslow@ecs.vuw.ac.nz|
+|Jennifer Ferrira |Course Lecturer|Administration|craig.anslow@ecs.vuw.ac.nz|
 |Chansocheat Chheang|Tutor|Senior Manager|chansocheatchheang@gmail.com|
 |Christopher Burt|Student|Developer|cvburt08@gmail.com|
 |Ethan King|Student|Developer|ethank.842@gmail.com|
@@ -327,7 +328,7 @@ The Parsers and Interface  prototypes will be completed by 7 August 2020
 The minimum viable product which is specified in part 1.3.2 will completed by 25 September 2020
 
 **Further Releases** <br />
-The final product will be completed by  6 November 2020
+The final product will be completed by and delievered to the Client by 24 October 2020
 
 
 ### 5.2 Budget and Procurement
