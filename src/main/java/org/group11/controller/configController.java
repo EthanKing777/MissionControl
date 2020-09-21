@@ -57,6 +57,7 @@ public class configController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		MapBox.setLatLng(getLat(), getLog());
 		WeatherTabController wtc = loader.getController();
 			wtc.setLAT(getLat());
 			wtc.setLOG(getLog());

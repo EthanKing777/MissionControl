@@ -35,7 +35,7 @@ public class PreLaunchScreenController implements Initializable{
 	 @Override
    public void initialize(URL url, ResourceBundle rb) {
 	   webEngine=webView.getEngine();
-	   webEngine.load(MapBox.generateApiCall("212" , "217","3"));
+	   webEngine.load(MapBox.generateApiCall("212" , "217","0"));
 	 }
 
 	/**
