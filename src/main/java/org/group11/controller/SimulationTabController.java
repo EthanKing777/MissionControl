@@ -116,8 +116,7 @@ public class SimulationTabController implements Initializable {
 	 * Update the map by generating a new map api call
 	 */
 	public void updateMap() {
-	  //MapBox.setLatLng(-41.285099,174.776001);
-	  webEngine.load(MapBox.generateApiCall("345" , "610","7"));
+	  webEngine.load(MapBox.generateApiCall("345" , "610","12"));
 	}
 	
 	@Override
