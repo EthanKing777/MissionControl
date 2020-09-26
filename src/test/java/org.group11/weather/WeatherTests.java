@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 public class WeatherTests {
 
     @Test
-    public void testFetchingData()  {
+    public void testFetchingData() {
         try {
             WeatherDataFetcherParser wdfp = new WeatherDataFetcherParser(-0, -0);
             WeatherData weatherData = wdfp.fetchWeatherData();
@@ -28,10 +28,11 @@ public class WeatherTests {
     }
 
     @Test
-    public void invalidLat()  {
+    public void invalidLat() {
         try {
             WeatherDataFetcherParser wdfp = new WeatherDataFetcherParser(100, 0);
             WeatherData weatherData = wdfp.fetchWeatherData();
+            Assert.assertEquals(0, weatherData.getHourlyData().size());
         } catch (IOException e) {
             System.out.println(e + ":: Error Fetching WeatherData");
         }
@@ -39,8 +40,14 @@ public class WeatherTests {
 
     @Test
     public void invalidLong() throws IOException {
+        try {
             WeatherDataFetcherParser wdfp = new WeatherDataFetcherParser(0, 190);
             WeatherData weatherData = wdfp.fetchWeatherData();
+            Assert.assertEquals(0, weatherData.getHourlyData().size());
+        } catch (IOException e) {
+            System.out.println(e + ":: Error Fetching WeatherData");
+        }
+
     }
 
 }
