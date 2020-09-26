@@ -3,7 +3,6 @@ package org.group11.weather;
 import java.io.IOException;
 import java.util.List;
 
-import org.group11.controller.PrimaryController;
 import org.group11.controller.weather.WeatherDataFetcherParser;
 import org.group11.model.weather.HourlyWeather;
 import org.group11.model.weather.WeatherData;
@@ -47,7 +46,28 @@ public class WeatherTests {
         } catch (IOException e) {
             System.out.println(e + ":: Error Fetching WeatherData");
         }
+    }
 
+    @Test
+    public void latlongBoundariesValid() {
+        try {
+            WeatherDataFetcherParser wdfp = new WeatherDataFetcherParser(-90, 180);
+            WeatherData weatherData = wdfp.fetchWeatherData();
+            Assert.assertEquals(48, weatherData.getHourlyData().size());
+        } catch (IOException e) {
+            System.out.println(e + ":: Error Fetching WeatherData");
+        }
+    }
+
+    @Test
+    public void latlongBoundariesInvalid() {
+        try {
+            WeatherDataFetcherParser wdfp = new WeatherDataFetcherParser(91, -181);
+            WeatherData weatherData = wdfp.fetchWeatherData();
+            Assert.assertEquals(0, weatherData.getHourlyData().size());
+        } catch (IOException e) {
+            System.out.println(e + ":: Error Fetching WeatherData");
+        }
     }
 
 }
