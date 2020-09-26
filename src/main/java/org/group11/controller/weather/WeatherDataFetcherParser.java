@@ -1,4 +1,4 @@
-package org.group11.controller;
+package org.group11.controller.weather;
 
 import org.group11.model.weather.HourlyWeather;
 import org.group11.model.weather.WeatherData;
@@ -56,13 +56,14 @@ public class WeatherDataFetcherParser {
         try {
             // parse fetched weather data.
             Object obj = new JSONParser().parse(weatherDataString);
+            System.out.println(obj);
             JSONObject mainObject = (JSONObject) obj;
 
             // Iterate through hourly array and store in WeatherData class.
             JSONArray hourlyArray = (JSONArray) mainObject.get("hourly");
             List<HourlyWeather> hourlyData = new ArrayList<>();
-            for (int i = 0; i < hourlyArray.size(); i++) {
-                JSONObject hour = (JSONObject) hourlyArray.get(i);
+            for (Object o : hourlyArray) {
+                JSONObject hour = (JSONObject) o;
                 JSONArray hourGeneralWeather = (JSONArray) hour.get("weather");
                 JSONObject firstGeneral = (JSONObject) hourGeneralWeather.get(0);
 
@@ -72,12 +73,14 @@ public class WeatherDataFetcherParser {
                         Double.parseDouble(hour.get("temp").toString()),
                         (long) hour.get("pressure"),
                         (long) hour.get("humidity"),
+                        Double.parseDouble(hour.get("clouds").toString()),
                         Double.parseDouble(hour.get("wind_speed").toString()),
                         (long) hour.get("wind_deg"),
                         new HourlyWeather.GeneralWeather(
                                 firstGeneral.get("main").toString(),
                                 firstGeneral.get("description").toString())
                 );
+
 
                 hourlyData.add(hourlyWeather);
             }
@@ -115,6 +118,4 @@ public class WeatherDataFetcherParser {
         this.latitude = lat;
         this.longitude = lng;
     }
-
-
 }
