@@ -129,15 +129,20 @@ public class WeatherTabController {
 
         List<Double> allWindSpeeds = new ArrayList<>();
         List<Long> allHours = new ArrayList<>();
+        int count = 0; // Used to stop adding hours after 24.
         for(HourlyWeather hour : weatherData.getHourlyData()) {
             allWindSpeeds.add(hour.getWindSpeed());
             allHours.add(hour.getUnixTime());
+            if(count == 23) {
+                break;
+            }
+            count++;
         }
 
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.ENGLISH);
         for(int i = 0; i < allHours.size(); i++) {
             windSpeedSeries.getData().add(new XYChart.Data<>(sdf.format(allHours.get(i)*1000), allWindSpeeds.get(i)));
-            System.out.println(sdf.format(allHours.get(i)*1000) + " " + allWindSpeeds.get(i));
+            //System.out.println(sdf.format(allHours.get(i)*1000) + " " + allWindSpeeds.get(i));
         }
 
         windSpeedChart.setAnimated(false);
@@ -152,9 +157,14 @@ public class WeatherTabController {
 
         List<Long> allWindDirections = new ArrayList<>();
         List<Long> allHours = new ArrayList<>();
+        int count = 0;
         for(HourlyWeather hour : weatherData.getHourlyData()) {
             allWindDirections.add(hour.getWindDegrees());
             allHours.add(hour.getUnixTime());
+            if(count == 23) {
+                break;
+            }
+            count++;
         }
 
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.ENGLISH);
