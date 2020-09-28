@@ -9,7 +9,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class AirspaceMapTab implements Initializable {
+public class AirspaceController implements Initializable {
     @FXML
     WebView airspaceView;
 

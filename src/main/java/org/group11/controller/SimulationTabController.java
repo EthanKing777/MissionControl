@@ -3,6 +3,7 @@ package org.group11.controller;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -11,6 +12,8 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import javafx.scene.SnapshotParameters;
+import javafx.scene.image.WritableImage;
 import javafx.stage.FileChooser;
 import org.group11.SimulationDataParser;
 
@@ -22,6 +25,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import javafx.embed.swing.SwingFXUtils;
+
+import javax.imageio.ImageIO;
+
 
 public class SimulationTabController implements Initializable {
 
@@ -69,7 +76,7 @@ public class SimulationTabController implements Initializable {
 	private void populateMilestoneTab() throws IOException {
 		//Display Simulation Milestones
 		milestonesTab.setPromptText("Milestones");
-		File milesoneFile = new File("output/milestones/MilestoneLog.txt");
+		File milesoneFile = new File("output/Simulation Data/milestones/Milestone log.txt");
 		milesoneFile.createNewFile();
 		FileOutputStream outputStream = new FileOutputStream(milesoneFile);
 		for(int i=4;i<parser.getHeaders().length;i++) {
@@ -91,7 +98,7 @@ public class SimulationTabController implements Initializable {
 	/**
 	 * Populate the Velocity graph by plotting the Total Velocity data of the Rocket Simulation
 	 */
-	private void populateVelocityGraph() {
+	private void populateVelocityGraph() throws IOException {
 		XYChart.Series <Number, Number> velocitySeries = new XYChart.Series<Number,Number>();
 		
 		//Get the "Time" data
@@ -105,15 +112,18 @@ public class SimulationTabController implements Initializable {
 		}
 		
 		velocitySeries.setName("Velocity");
-
+		velocityChart.setAnimated(false);
 		velocityChart.getData().add(velocitySeries);
-
+		File velGraph = new File("output/Simulation Data/graphs/Velocity Grpah.png");
+		velGraph.createNewFile();
+		WritableImage img = velocityChart.snapshot(new SnapshotParameters(), null);
+		ImageIO.write(SwingFXUtils.fromFXImage(img, null), "PNG", velGraph);
 	}
 
 	/**
 	 * Populate the Acceleration graph by plotting the Total Acceleration data of the Rocket Simulation
 	 */
-	private void populateAccelerationGraph() {
+	private void populateAccelerationGraph() throws IOException {
 		XYChart.Series <Number, Number> accelerationSeries = new XYChart.Series<Number,Number>();
 
 		//Get the "Time" data
@@ -127,8 +137,13 @@ public class SimulationTabController implements Initializable {
 		}
 		
 		accelerationSeries.setName("Acceleration");
-
+		accelerationChart.setAnimated(false);
 		accelerationChart.getData().add(accelerationSeries);
+
+		File accGraph = new File("output/Simulation Data/graphs/Acceleration Grpah.png");
+		accGraph.createNewFile();
+		WritableImage img = velocityChart.snapshot(new SnapshotParameters(), null);
+		ImageIO.write(SwingFXUtils.fromFXImage(img, null), "PNG", accGraph);
 		updateMap();
 	}
 	
