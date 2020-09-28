@@ -69,7 +69,9 @@ public class SimulationTabController implements Initializable {
 	private void populateMilestoneTab() throws IOException {
 		//Display Simulation Milestones
 		milestonesTab.setPromptText("Milestones");
-		FileOutputStream outputStream = new FileOutputStream("src\\output\\milestones\\Milestone log.txt");
+		File milesoneFile = new File("output/milestones/MilestoneLog.txt");
+		milesoneFile.createNewFile();
+		FileOutputStream outputStream = new FileOutputStream(milesoneFile);
 		for(int i=4;i<parser.getHeaders().length;i++) {
 			String dash = "- ";
 			milestonesTab.appendText(dash);
