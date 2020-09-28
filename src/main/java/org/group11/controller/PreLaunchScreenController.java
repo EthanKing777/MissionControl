@@ -35,7 +35,7 @@ public class PreLaunchScreenController implements Initializable{
 	 @Override
    public void initialize(URL url, ResourceBundle rb) {
 	   webEngine=webView.getEngine();
-	   webEngine.load(MapBox.generateApiCall("212" , "217","3"));
+	   webEngine.load(MapBox.generateApiCall("212" , "217","0"));
 	 }
 
 	/**
@@ -44,6 +44,8 @@ public class PreLaunchScreenController implements Initializable{
 	@FXML
 	public void printArmButtonOutput() {
 		System.out.println("\n PreLaunchScreenController - ARM Button Pressed \n");
+		updateMap();
+		
 	}
 	
 	/**
@@ -53,6 +55,13 @@ public class PreLaunchScreenController implements Initializable{
 	public void printGoNoGoButtonOutput() {
 		System.out.println("\n PreLaunchScreenController - Go/No-Go Button Pressed \n");
 	}
+	
+	/**
+   * Update the map by generating a new map api call
+   */
+  public void updateMap() {
+    webEngine.load(MapBox.generateApiCall("212" , "217", "6"));
+  }
 	
      
 }

@@ -109,14 +109,21 @@ public class SimulationTabController implements Initializable {
 		accelerationSeries.setName("Acceleration");
 
 		accelerationChart.getData().add(accelerationSeries);
+		updateMap();
+	}
+	
+	/**
+	 * Update the map by generating a new map api call
+	 */
+	public void updateMap() {
+	  webEngine.load(MapBox.generateApiCall("345" , "610","12"));
 	}
 	
 	@Override
   public void initialize(URL url, ResourceBundle rb) {
-    webEngine=webView.getEngine();
-    //webEngine.loadContent(html);
-    MapBox.setLatLng(-41.285099,174.776001);
-    webEngine.load(MapBox.generateApiCall("345" , "610","14"));
+    webEngine=webView.getEngine();;
+    //MapBox.setLatLng(-41.285099,174.776001);
+    webEngine.load(MapBox.generateApiCall("345" , "610","0"));
     //webEngine.load("https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v11/static/174.776001,-41.285099,14/610x345@2x?access_token=pk.eyJ1IjoiY3ZidXJ0MDgiLCJhIjoiY2tkcDdjaGE5MXprZjJycGR2N2FhN2Q3OSJ9.WHW0WMAG5hF6xhtehdo3EQ");
   }
 
