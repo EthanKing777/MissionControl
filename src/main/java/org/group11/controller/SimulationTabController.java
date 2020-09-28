@@ -4,6 +4,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -43,7 +46,7 @@ public class SimulationTabController implements Initializable {
 	}
 
 	@FXML
-	public void plotSimulationData(ActionEvent event) {
+	public void plotSimulationData(ActionEvent event) throws IOException {
 		FileChooser fileChooser = new FileChooser();
 		File file = fileChooser.showOpenDialog(milestonesTab.getScene().getWindow());
 		parser = new SimulationDataParser(file);
@@ -63,13 +66,23 @@ public class SimulationTabController implements Initializable {
 	/**
 	 * Display the key milestones of the simulation in a TextField
 	 */
-	private void populateMilestoneTab() {
+	private void populateMilestoneTab() throws IOException {
 		//Display Simulation Milestones
 		milestonesTab.setPromptText("Milestones");
+		FileOutputStream outputStream = new FileOutputStream("src\\output\\milestones\\Milestone log.txt");
 		for(int i=4;i<parser.getHeaders().length;i++) {
-			milestonesTab.appendText("- ");
-			milestonesTab.appendText(parser.getHeaders()[i]);
-			milestonesTab.appendText("\n");
+			String dash = "- ";
+			milestonesTab.appendText(dash);
+			byte[] strToByte = dash.getBytes();
+			outputStream.write(strToByte);
+			String info = parser.getHeaders()[i];
+			strToByte = info.getBytes();
+			outputStream.write(strToByte);
+			milestonesTab.appendText(info);
+			String newLine = "\n";
+			strToByte = newLine.getBytes();
+			outputStream.write(strToByte);
+			milestonesTab.appendText(newLine);
 		}
 	}
 
