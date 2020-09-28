@@ -6,8 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Alert;
 import javafx.scene.shape.Polygon;
 import javafx.scene.text.Text;
 import org.group11.controller.weather.WeatherDataFetcherParser;
@@ -44,81 +47,100 @@ public class WeatherTabController {
     private LineChart<String, Long> windDirectionChart;
 
 
-
     // Gives access to the weather data.
     private WeatherData weatherData;
 
 
-	public WeatherTabController() {
-	}
+    public WeatherTabController() {
+    }
 
-	/* ==== Weather Tab Methods ==== */
+    /* ==== Weather Tab Methods ==== */
+
+    /**
+     * @return boolean - Return true if ready to display data, false otherwise.
+     */
     @FXML
-    public void getWeatherData() {
+    public boolean getWeatherData() {
         // NOTE: The lat and lon values will be obtained from a form.
         // Fetches and parses the weather data.
         WeatherDataFetcherParser wdfp = new WeatherDataFetcherParser(LAT, LOG);
 
         try {
             weatherData = wdfp.fetchWeatherData();
+            if (weatherData.getHourlyData().size() == 0) {
+                return false;
+            } else {
+                return true;
+            }
+
         } catch (IOException e) {
             System.err.println(e + ":: Error when fetching weather data.");
+            return false;
         }
     }
 
     @FXML
     public void displayWeatherData() {
-        getWeatherData();
-        System.out.println("Lat: " + getLat()+  " Log: " + getLog());
-    	System.out.println("*********  Start of WeatherTabController Output  ********* \n");
-        for (HourlyWeather hourlyWeather : weatherData.getHourlyData()) {
-            System.out.println(hourlyWeather.toString());
-        }
-        HourlyWeather hourlyWeather =  weatherData.getHourlyData().get(0);
-        Double windDirDeg = (double) hourlyWeather.getWindDegrees();
-        Double cloudCoverageValue = hourlyWeather.getCloud();
-        if(cloudCoverageValue >= 0 && cloudCoverageValue <= 5){
-            cloudCoverage.setText("Clear");
-        }else if( cloudCoverageValue >= 6 && cloudCoverageValue <= 25 ){
-            cloudCoverage.setText("Mostly Clear");
-        }else if (cloudCoverageValue >= 26 && cloudCoverageValue <= 50){
-            cloudCoverage.setText("Partly Cloudy");
-        }else if(cloudCoverageValue >= 51 && cloudCoverageValue <= 69){
-            cloudCoverage.setText("Mostly Cloudy");
-        }else if(cloudCoverageValue >= 70 && cloudCoverageValue <= 87){
-            cloudCoverage.setText("Considerable Cloudiness");
-        }else {
-            cloudCoverage.setText("Overcast");
-        }
-        cloudCoveragePer.setText(cloudCoverageValue + "%");
-        latValue.setText(getLat() + "");
-        longValue.setText(getLog()+ "");
-        compassPoint.setRotate(windDirDeg);
-        windDir.setText(windDirDeg + "°");
-        if(windDirDeg == 0 || windDirDeg == 360){
-            windDirStr.setText("N");
-        }else if (windDirDeg == 90){
-            windDirStr.setText("E");
-        }else if(windDirDeg == 180){
-            windDirStr.setText("S");
-        }else if(windDirDeg == 270){
-            windDirStr.setText("W");
-        }else if(windDirDeg > 0 & windDirDeg <90){
-            windDirStr.setText("NE");
-        }else if(windDirDeg > 90 && windDirDeg < 180){
-            windDirStr.setText("SE");
-        }else if(windDirDeg > 180 && windDirDeg < 270){
-            windDirStr.setText("SW");
-        }else if(windDirDeg > 270 && windDirDeg < 360){
-            windDirStr.setText("NW");
-        }
+        if (!getWeatherData()) {
+            Alert a = new Alert(Alert.AlertType.ERROR);
+            a.setTitle("Error");
+            a.setHeaderText("Invalid Latitude or Longitude value");
+            a.setContentText("Latitude range: -90 - 90\nLongitude range: -180 - 180");
+            a.showAndWait();
+        } else {
 
-        windDirectionChart.getData().clear();
-        windSpeedChart.getData().clear();
 
-        populateWindSpeedChart();
-        populateWindDirectionChart();
-        System.out.println("\n *********  End of WeatherTabController Output   **********");
+            System.out.println("Lat: " + getLat() + " Log: " + getLog());
+            System.out.println("*********  Start of WeatherTabController Output  ********* \n");
+            for (HourlyWeather hourlyWeather : weatherData.getHourlyData()) {
+                System.out.println(hourlyWeather.toString());
+            }
+            HourlyWeather hourlyWeather = weatherData.getHourlyData().get(0);
+            Double windDirDeg = (double) hourlyWeather.getWindDegrees();
+            Double cloudCoverageValue = hourlyWeather.getCloud();
+            if (cloudCoverageValue >= 0 && cloudCoverageValue <= 5) {
+                cloudCoverage.setText("Clear");
+            } else if (cloudCoverageValue >= 6 && cloudCoverageValue <= 25) {
+                cloudCoverage.setText("Mostly Clear");
+            } else if (cloudCoverageValue >= 26 && cloudCoverageValue <= 50) {
+                cloudCoverage.setText("Partly Cloudy");
+            } else if (cloudCoverageValue >= 51 && cloudCoverageValue <= 69) {
+                cloudCoverage.setText("Mostly Cloudy");
+            } else if (cloudCoverageValue >= 70 && cloudCoverageValue <= 87) {
+                cloudCoverage.setText("Considerable Cloudiness");
+            } else {
+                cloudCoverage.setText("Overcast");
+            }
+            cloudCoveragePer.setText(cloudCoverageValue + "%");
+            latValue.setText(getLat() + "");
+            longValue.setText(getLog() + "");
+            compassPoint.setRotate(windDirDeg);
+            windDir.setText(windDirDeg + "°");
+            if (windDirDeg == 0 || windDirDeg == 360) {
+                windDirStr.setText("N");
+            } else if (windDirDeg == 90) {
+                windDirStr.setText("E");
+            } else if (windDirDeg == 180) {
+                windDirStr.setText("S");
+            } else if (windDirDeg == 270) {
+                windDirStr.setText("W");
+            } else if (windDirDeg > 0 & windDirDeg < 90) {
+                windDirStr.setText("NE");
+            } else if (windDirDeg > 90 && windDirDeg < 180) {
+                windDirStr.setText("SE");
+            } else if (windDirDeg > 180 && windDirDeg < 270) {
+                windDirStr.setText("SW");
+            } else if (windDirDeg > 270 && windDirDeg < 360) {
+                windDirStr.setText("NW");
+            }
+
+            windDirectionChart.getData().clear();
+            windSpeedChart.getData().clear();
+
+            populateWindSpeedChart();
+            populateWindDirectionChart();
+            System.out.println("\n *********  End of WeatherTabController Output   **********");
+        }
     }
 
     /**
@@ -129,15 +151,20 @@ public class WeatherTabController {
 
         List<Double> allWindSpeeds = new ArrayList<>();
         List<Long> allHours = new ArrayList<>();
-        for(HourlyWeather hour : weatherData.getHourlyData()) {
+        int count = 0; // Used to stop adding hours after 24.
+        for (HourlyWeather hour : weatherData.getHourlyData()) {
             allWindSpeeds.add(hour.getWindSpeed());
             allHours.add(hour.getUnixTime());
+            if (count == 23) {
+                break;
+            }
+            count++;
         }
 
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.ENGLISH);
-        for(int i = 0; i < allHours.size(); i++) {
-            windSpeedSeries.getData().add(new XYChart.Data<>(sdf.format(allHours.get(i)*1000), allWindSpeeds.get(i)));
-            System.out.println(sdf.format(allHours.get(i)*1000) + " " + allWindSpeeds.get(i));
+        for (int i = 0; i < allHours.size(); i++) {
+            windSpeedSeries.getData().add(new XYChart.Data<>(sdf.format(allHours.get(i) * 1000), allWindSpeeds.get(i)));
+            //System.out.println(sdf.format(allHours.get(i)*1000) + " " + allWindSpeeds.get(i));
         }
 
         windSpeedChart.setAnimated(false);
@@ -152,20 +179,24 @@ public class WeatherTabController {
 
         List<Long> allWindDirections = new ArrayList<>();
         List<Long> allHours = new ArrayList<>();
-        for(HourlyWeather hour : weatherData.getHourlyData()) {
+        int count = 0;
+        for (HourlyWeather hour : weatherData.getHourlyData()) {
             allWindDirections.add(hour.getWindDegrees());
             allHours.add(hour.getUnixTime());
+            if (count == 23) {
+                break;
+            }
+            count++;
         }
 
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.ENGLISH);
-        for(int i = 0; i < allHours.size(); i++) {
-            windDirectionSeries.getData().add(new XYChart.Data<>(sdf.format(allHours.get(i)*1000), allWindDirections.get(i)));
+        for (int i = 0; i < allHours.size(); i++) {
+            windDirectionSeries.getData().add(new XYChart.Data<>(sdf.format(allHours.get(i) * 1000), allWindDirections.get(i)));
         }
 
         windDirectionChart.setAnimated(false);
         windDirectionChart.getData().add(windDirectionSeries);
     }
-
 
 
     public double getLog() {
@@ -188,7 +219,7 @@ public class WeatherTabController {
         this.LOG = LOG;
     }
 
-    public void setTime(){
+    public void setTime() {
 
     }
 }

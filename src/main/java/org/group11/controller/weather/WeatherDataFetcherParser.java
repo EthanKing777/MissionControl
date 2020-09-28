@@ -36,14 +36,21 @@ public class WeatherDataFetcherParser {
     /**
      * Fetches weather data from openweathermap API.
      *
+     * @return WeatherData object with full array of hours if valid lat and lon.
+     * Or weatherData object with empty list of hours.
      * @throws IOException - Throws when can't connect to API.
      */
     public WeatherData fetchWeatherData() throws IOException {
         updateLocation(latitude, longitude);
 
-        String weatherData = downloadWeatherData();
-
-        return parseWeatherData(weatherData);
+        // check lat and loong bounds
+        String weatherData;
+        if ((latitude >= -90 && latitude <= 90) && (longitude >= -180 && longitude <= 180)) {
+            weatherData = downloadWeatherData();
+            return parseWeatherData(weatherData);
+        } else {
+            return new WeatherData(new ArrayList<>());
+        }
     }
 
     /**
