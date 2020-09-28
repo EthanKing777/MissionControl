@@ -22,9 +22,9 @@ public class SimulationDataParser {
 	
 	public SimulationDataParser(File file) {
 		try {
-//			File file = new File("test_1.csv");
+//			File file = new File("Simulation Test Data.csv");
 			Scanner scan = new Scanner (file);
-			headers = new String[14]; //There are 14 headers in the test_1.csv file
+			headers = new String[14]; //There are 14 headers in the Simulation Test Data.csv file
 			totalDataSet = new ArrayList <String> ();
 			this.extractData(scan);
 		} catch (FileNotFoundException e) {
