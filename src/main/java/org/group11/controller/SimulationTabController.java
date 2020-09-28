@@ -1,33 +1,26 @@
 package org.group11.controller;
 
+import javafx.embed.swing.SwingFXUtils;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.SnapshotParameters;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.XYChart;
+import javafx.scene.control.TextArea;
+import javafx.scene.image.WritableImage;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
+import javafx.stage.FileChooser;
+import org.group11.SimulationDataParser;
 
-import java.awt.image.BufferedImage;
+import javax.imageio.ImageIO;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
-
-import javafx.scene.SnapshotParameters;
-import javafx.scene.image.WritableImage;
-import javafx.stage.FileChooser;
-import org.group11.SimulationDataParser;
-
-import javafx.event.ActionEvent;
-import javafx.scene.chart.LineChart;
-import javafx.scene.chart.XYChart;
-import javafx.scene.control.TextArea;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebView;
-import javafx.embed.swing.SwingFXUtils;
-
-import javax.imageio.ImageIO;
 
 
 public class SimulationTabController implements Initializable {
@@ -99,7 +92,7 @@ public class SimulationTabController implements Initializable {
 	 * Populate the Velocity graph by plotting the Total Velocity data of the Rocket Simulation
 	 */
 	private void populateVelocityGraph() throws IOException {
-		XYChart.Series <Number, Number> velocitySeries = new XYChart.Series<Number,Number>();
+		XYChart.Series <Number, Number> velocitySeries = new XYChart.Series<>();
 		
 		//Get the "Time" data
 		List<Number>time = parser.getVariableData("time");
@@ -108,7 +101,7 @@ public class SimulationTabController implements Initializable {
 		
 		//Plot the Velocity for each time stamp. Time goes in the X-Axis and Velocity in the Y=Axis
 		for(int i=0; i<time.size();i++){
-			velocitySeries.getData().add(new XYChart.Data<Number,Number>(time.get(i),totalVelocity.get(i)));
+			velocitySeries.getData().add(new XYChart.Data<>(time.get(i), totalVelocity.get(i)));
 		}
 		
 		velocitySeries.setName("Velocity");
@@ -124,7 +117,7 @@ public class SimulationTabController implements Initializable {
 	 * Populate the Acceleration graph by plotting the Total Acceleration data of the Rocket Simulation
 	 */
 	private void populateAccelerationGraph() throws IOException {
-		XYChart.Series <Number, Number> accelerationSeries = new XYChart.Series<Number,Number>();
+		XYChart.Series <Number, Number> accelerationSeries = new XYChart.Series<>();
 
 		//Get the "Time" data
 		List<Number>time = parser.getVariableData("time");
@@ -133,7 +126,7 @@ public class SimulationTabController implements Initializable {
 		
 		//Plot the acceleration for each time stamp. Time goes in the X-Axis and Acceleration in the Y=Axis
 		for(int i=0; i<time.size();i++){
-			accelerationSeries.getData().add(new XYChart.Data<Number,Number>(time.get(i),totalAcceleration.get(i)));
+			accelerationSeries.getData().add(new XYChart.Data<>(time.get(i), totalAcceleration.get(i)));
 		}
 		
 		accelerationSeries.setName("Acceleration");
@@ -156,7 +149,7 @@ public class SimulationTabController implements Initializable {
 	
 	@Override
   public void initialize(URL url, ResourceBundle rb) {
-    webEngine=webView.getEngine();;
+    webEngine=webView.getEngine();
     //MapBox.setLatLng(-41.285099,174.776001);
     webEngine.load(MapBox.generateApiCall("345" , "610","0"));
     //webEngine.load("https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v11/static/174.776001,-41.285099,14/610x345@2x?access_token=pk.eyJ1IjoiY3ZidXJ0MDgiLCJhIjoiY2tkcDdjaGE5MXprZjJycGR2N2FhN2Q3OSJ9.WHW0WMAG5hF6xhtehdo3EQ");

@@ -61,13 +61,13 @@ public class CreateEditSimulationController implements Initializable {
 	 * A list of all rows in the edit weather table.
 	 * Each row is represented by an instance of {@link PropertyTableModel}.
 	 */
-	private ObservableList<PropertyTableModel> weatherTableProperties = getDefaultWeatherProperties();
+	private final ObservableList<PropertyTableModel> weatherTableProperties = getDefaultWeatherProperties();
 
 	/**
 	 * A list of all rows in the edit simulation table.
 	 * Each row is represented by an instance of {@link PropertyTableModel}.
 	 */
-	private ObservableList<PropertyTableModel> simulationTableProperties = getDefaultSimulationProperties();
+	private final ObservableList<PropertyTableModel> simulationTableProperties = getDefaultSimulationProperties();
 
 
 	/**

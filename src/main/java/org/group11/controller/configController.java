@@ -45,9 +45,10 @@ public class configController {
 		long launchDateEpoch = datePicker.getValue().toEpochSecond(LocalTime.NOON, ZoneOffset.MIN);
 		int launchHour = (int) hours.getValue();
 		int launchMin = (int) mins.getValue();
+//		int launchSec = (int) secs.getValue();
 		launchHour = (launchHour * 60) * 60;
-		int launchTimeSecs = launchHour + launchMin;
-		long LTS = launchTimeSecs;
+//		long LTS = launchHour + launchMin + lanuchSec;
+		long LTS = launchHour + launchMin ;
 		System.out.println(launchDateEpoch + LTS);
 		System.out.println(System.currentTimeMillis()/1000);
 
@@ -67,7 +68,8 @@ public class configController {
 //			stage.setScene(root.getScene());
 
 			Stage stage = new Stage();
-			stage.setScene(new Scene(root));
+		assert root != null;
+		stage.setScene(new Scene(root));
 			stage.show();
 
 

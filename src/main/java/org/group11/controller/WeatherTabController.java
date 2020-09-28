@@ -1,22 +1,20 @@
 package org.group11.controller;
 
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-
+import javafx.fxml.FXML;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.shape.Polygon;
 import javafx.scene.text.Text;
 import org.group11.controller.weather.WeatherDataFetcherParser;
+import org.group11.model.config.configData;
 import org.group11.model.weather.HourlyWeather;
 import org.group11.model.weather.WeatherData;
-import org.group11.model.config.configData;
-import org.group11.controller.configController;
 
-import javafx.fxml.FXML;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
 /**
  * Controller for the weather tab. This controller will
