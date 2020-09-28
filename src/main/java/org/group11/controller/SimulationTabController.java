@@ -3,10 +3,12 @@ package org.group11.controller;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
+import java.io.File;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import javafx.stage.FileChooser;
 import org.group11.SimulationDataParser;
 
 import javafx.event.ActionEvent;
@@ -29,19 +31,22 @@ public class SimulationTabController implements Initializable {
 	@FXML
 	private TextArea milestonesTab;
 	
-  @FXML
-  WebView webView;
+  	@FXML
+ 	WebView webView;
 
   private WebEngine webEngine;
 
 	private SimulationDataParser parser;
 
 	public SimulationTabController() {
-		parser = new SimulationDataParser();
+
 	}
 
 	@FXML
 	public void plotSimulationData(ActionEvent event) {
+		FileChooser fileChooser = new FileChooser();
+		File file = fileChooser.showOpenDialog(milestonesTab.getScene().getWindow());
+		parser = new SimulationDataParser(file);
 
 		//Clear the pane at every press of the button 
 		accelerationChart.getData().clear();
