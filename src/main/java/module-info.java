@@ -6,7 +6,8 @@ module org.group11 {
     requires javafx.web;
     requires javafx.base;
     requires javafx.graphics;
-    
+    requires javafx.swing;
+
     opens org.group11 to javafx.fxml;
     opens org.group11.controller to javafx.fxml;
 

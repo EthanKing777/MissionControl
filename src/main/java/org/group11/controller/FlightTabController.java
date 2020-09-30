@@ -3,8 +3,6 @@ package org.group11.controller;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-
-import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -24,25 +22,9 @@ public class FlightTabController {
 	@FXML private TableColumn<String, String> dataType;
 	@FXML private TableColumn<Double, Double> data;
 
-
-	/**
-	@FXML
-	something to show the map;
-	 * @param flightData
-	 * @param dataType
-	 * @param data
-	 */
-
-	//something needed here to get rocket data.
-
-
 	public FlightTabController() {
-		//something here to take the data from rocket
-		this.flightData = flightData;
-		this.dataType = dataType;
-		this.data = data;
+		//TODO: Rocket Serial parser
 	}
-
 
 	public void initialize(URL url, ResourceBundle rb) {
 		dataType.setCellValueFactory(new PropertyValueFactory<String, String>("data type"));
