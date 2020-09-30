@@ -107,7 +107,7 @@ public class SimulationTabController implements Initializable {
 		velocitySeries.setName("Velocity");
 		velocityChart.setAnimated(false);
 		velocityChart.getData().add(velocitySeries);
-		File velGraph = new File("output/Simulation Data/graphs/Velocity Grpah.png");
+		File velGraph = new File("output/Simulation Data/graphs/Velocity Graph.png");
 		velGraph.createNewFile();
 		WritableImage img = velocityChart.snapshot(new SnapshotParameters(), null);
 		ImageIO.write(SwingFXUtils.fromFXImage(img, null), "PNG", velGraph);
@@ -133,9 +133,9 @@ public class SimulationTabController implements Initializable {
 		accelerationChart.setAnimated(false);
 		accelerationChart.getData().add(accelerationSeries);
 
-		File accGraph = new File("output/Simulation Data/graphs/Acceleration Grpah.png");
+		File accGraph = new File("output/Simulation Data/graphs/Acceleration Graph.png");
 		accGraph.createNewFile();
-		WritableImage img = velocityChart.snapshot(new SnapshotParameters(), null);
+		WritableImage img = accelerationChart.snapshot(new SnapshotParameters(), null);
 		ImageIO.write(SwingFXUtils.fromFXImage(img, null), "PNG", accGraph);
 		updateMap();
 	}
@@ -150,9 +150,7 @@ public class SimulationTabController implements Initializable {
 	@Override
   public void initialize(URL url, ResourceBundle rb) {
     webEngine=webView.getEngine();
-    //MapBox.setLatLng(-41.285099,174.776001);
     webEngine.load(MapBox.generateApiCall("345" , "610","0"));
-    //webEngine.load("https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v11/static/174.776001,-41.285099,14/610x345@2x?access_token=pk.eyJ1IjoiY3ZidXJ0MDgiLCJhIjoiY2tkcDdjaGE5MXprZjJycGR2N2FhN2Q3OSJ9.WHW0WMAG5hF6xhtehdo3EQ");
   }
 
 }
