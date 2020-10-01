@@ -75,6 +75,10 @@ public class CreateEditSimulationController implements Initializable {
 	 */
 	private final ObservableList<PropertyTableModel> simulationTableProperties = getDefaultSimulationProperties();
 
+	/**
+	 * Contains the default rocket property values from the last loaded CSV file.
+	 * Initially empty, until a file is loaded.
+	 */
 	private List<PropertyTableModel> defaultLoadedSimulationProperties = new ArrayList<>();
 
 
@@ -140,7 +144,8 @@ public class CreateEditSimulationController implements Initializable {
 	}
 
 	/**
-	 * Resets all the data in the simulation table.
+	 * Opens a file chooser dialog that allows a CSV file to be selected.
+	 * Parses the CSV file and adds the parsed data into the rocket properties table.
 	 */
 	@FXML
 	public void loadSimulationDataFile() {
@@ -148,7 +153,7 @@ public class CreateEditSimulationController implements Initializable {
 		fileChooser.setTitle("Select a simulation data file...");
 		fileChooser.getExtensionFilters().addAll(
 				new FileChooser.ExtensionFilter("Simulation data file", "*.csv")
-		);
+		); //Limit the files that can be picked to only CSV files
 
 		File file = fileChooser.showOpenDialog(editWeatherTable.getScene().getWindow());
 
@@ -160,6 +165,20 @@ public class CreateEditSimulationController implements Initializable {
 		}
 	}
 
+	/**
+	 * Parses a CSV file containing the rocket properties.
+	 * Item order in the CSV file:
+	 *  Launch rod angle,
+	 *  Launch rod length,
+	 *  Launch rod direction,
+	 *  Launch altitude,
+	 *  Launch latitude,
+	 *  Launch longitude,
+	 *  Maximum launch rod angle,
+	 *  Minimum launch rod angle
+	 * @param file The CSV file to be parsed
+	 * @throws FileNotFoundException Thrown if the given file does not exist on the file system
+	 */
 	public void readSimulationFile(File file) throws FileNotFoundException {
 		Scanner scanner = new Scanner(file);
 
@@ -168,19 +187,19 @@ public class CreateEditSimulationController implements Initializable {
 		String[] headers = {
 				"Launch rod angle", "Launch rod length", "Launch rod direction", "Launch altitude", "Launch latitude",
 				"Launch longitude", "Maximum launch rod angle", "Minimum launch rod angle"
-		};
+		}; //The CSV file headers (in order)
 
 		List<PropertyTableModel> properties = new ArrayList<>();
 		int i = 0;
 
 		while (scanner.hasNext()) {
-			String[] line = scanner.nextLine().split(",");
+			String[] line = scanner.nextLine().split(","); //Properties are seperated with a comma
 
 			if (line[0].startsWith("#")) { //Ignore lines starting with #
 				continue;
 			}
 
-			for (String value : line) {
+			for (String value : line) { //For each property on the current line
 				properties.add(new PropertyTableModel(headers[i], value));
 				i++;
 			}
@@ -188,19 +207,30 @@ public class CreateEditSimulationController implements Initializable {
 
 		simulationTableProperties.clear();
 		simulationTableProperties.addAll(properties);
+
+		// Clone the list and store it in a separate field.
+		// Used to save the default values loaded from the CSV.
 		defaultLoadedSimulationProperties = clonePropertiesList(simulationTableProperties);
 	}
 
+	/**
+	 * Resets the values in the rocket properties table to the default values from the last loaded CSV file.
+	 */
 	public void resetSimulationTable() {
 		simulationTableProperties.clear();
 		simulationTableProperties.addAll(clonePropertiesList(defaultLoadedSimulationProperties));
 	}
 
+	/**
+	 * Performs a deep clone of the given {@literal List<PropertyTableModel>}.
+	 * @param properties The {@link List} to clone.
+	 * @return A deep clone of the given list.
+	 */
 	public List<PropertyTableModel> clonePropertiesList(List<PropertyTableModel> properties) {
 		ArrayList<PropertyTableModel> clonedList = new ArrayList<>();
 
 		for (PropertyTableModel property : properties) {
-			clonedList.add(property.clone());
+			clonedList.add(property.clone()); //Clone each property in the given list and add it to the new list
 		}
 
 		return clonedList;

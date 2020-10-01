@@ -42,4 +42,12 @@ public class PropertyTableModel {
 	public SimpleStringProperty getPropertyValue() {
 		return this.propertyValue;
 	}
+
+	/**
+	 * Clones the current PropertyTableModel instance (deep clone).
+	 * @return The cloned instance.
+	 */
+	public PropertyTableModel clone() {
+		return new PropertyTableModel(propertyId.getValue(), propertyValue.getValue());
+	}
 }
