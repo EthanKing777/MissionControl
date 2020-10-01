@@ -12,7 +12,6 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.web.WebView?>
 
-
 <VBox prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.group11.controller.SimulationTabController">
   <children>
       <AnchorPane prefHeight="108.0" prefWidth="700.0">
@@ -29,8 +28,8 @@
             </Text>
          </children>
         </AnchorPane>
-        <ScrollPane prefHeight="20000.0" prefWidth="700.0">
-          <content>
+        <ScrollPane prefHeight="663.0" prefWidth="638.0">
+         <content>
             <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="1000.0" prefWidth="676.0">
                  <children>
                       <LineChart fx:id="accelerationChart" layoutX="-1.0" prefHeight="450.0" prefWidth="340.0" title="Acceleration">
@@ -57,10 +56,10 @@
                       <TextArea fx:id="milestonesTab" editable="false" layoutX="44.0" layoutY="491.0" prefHeight="65.0" prefWidth="608.0" promptText="Milestones" />
                       <Separator layoutX="346.0" layoutY="-11.0" orientation="VERTICAL" prefHeight="450.0" prefWidth="6.0" />
                       <Separator layoutX="-10.0" layoutY="437.0" prefHeight="4.0" prefWidth="700.0" />
-                  <WebView fx:id ="webView" layoutX="45.0" layoutY="602.0" prefHeight="345.0" prefWidth="610.0" />
+                  <WebView fx:id="webView" layoutX="45.0" layoutY="602.0" prefHeight="345.0" prefWidth="610.0" />
                 </children>
             </AnchorPane>
-        </content>
+         </content>
       </ScrollPane>
   </children>
 </VBox>

@@ -54,6 +54,12 @@
                         <fx:include source="AirspaceMapTab.fxml" />
                     </content></Tab>
 
+                  <!--   ROCKET ARC GRAPH  -->
+                <Tab text="Rocket Arc Graph">
+                    <content>
+                        <fx:include source="RocketArcCopy.fxml" />
+                    </content></Tab>
+
                   </tabs>
         </TabPane>
    </children>
