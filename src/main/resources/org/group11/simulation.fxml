@@ -122,7 +122,8 @@
                               <Label text="Double click a value to modify" BorderPane.alignment="CENTER" />
                            </center>
                         </BorderPane>
-                        <Button onAction="#resetSimulationData" mnemonicParsing="false" prefHeight="25.0" prefWidth="323.0" text="Reset" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Button onAction="#loadSimulationDataFile" mnemonicParsing="false" prefHeight="25.0" prefWidth="323.0" text="Load simulation file..." GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Button onAction="#resetSimulationTable" mnemonicParsing="false" prefHeight="25.0" prefWidth="323.0" text="Reset loaded properties" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                      </children>
                   </GridPane>
                </children>

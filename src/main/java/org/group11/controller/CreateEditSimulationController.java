@@ -75,6 +75,8 @@ public class CreateEditSimulationController implements Initializable {
 	 */
 	private final ObservableList<PropertyTableModel> simulationTableProperties = getDefaultSimulationProperties();
 
+	private List<PropertyTableModel> defaultLoadedSimulationProperties = new ArrayList<>();
+
 
 	/**
 	 * Generates an {@link ObservableList} with the default values for the weather table.
@@ -141,7 +143,7 @@ public class CreateEditSimulationController implements Initializable {
 	 * Resets all the data in the simulation table.
 	 */
 	@FXML
-	public void resetSimulationData() {
+	public void loadSimulationDataFile() {
 		FileChooser fileChooser = new FileChooser();
 		fileChooser.setTitle("Select a simulation data file...");
 		fileChooser.getExtensionFilters().addAll(
@@ -152,13 +154,13 @@ public class CreateEditSimulationController implements Initializable {
 
 		if (file != null) { //Null means no file was selected
 			try {
-				loadSimulationFile(file);
+				readSimulationFile(file);
 			}
 			catch (FileNotFoundException e) {}
 		}
 	}
 
-	public void loadSimulationFile(File file) throws FileNotFoundException {
+	public void readSimulationFile(File file) throws FileNotFoundException {
 		Scanner scanner = new Scanner(file);
 
 		scanner.useDelimiter(",");
@@ -186,7 +188,24 @@ public class CreateEditSimulationController implements Initializable {
 
 		simulationTableProperties.clear();
 		simulationTableProperties.addAll(properties);
+		defaultLoadedSimulationProperties = clonePropertiesList(simulationTableProperties);
 	}
+
+	public void resetSimulationTable() {
+		simulationTableProperties.clear();
+		simulationTableProperties.addAll(clonePropertiesList(defaultLoadedSimulationProperties));
+	}
+
+	public List<PropertyTableModel> clonePropertiesList(List<PropertyTableModel> properties) {
+		ArrayList<PropertyTableModel> clonedList = new ArrayList<>();
+
+		for (PropertyTableModel property : properties) {
+			clonedList.add(property.clone());
+		}
+
+		return clonedList;
+	}
+
 	/**
 	 * Parses the data stored in the table and creates a JSON string with all table properties.
 	 * @return A JSON string with a JSON object for each table.
