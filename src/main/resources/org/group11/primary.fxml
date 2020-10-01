@@ -57,7 +57,7 @@
                   <!--   ROCKET ARC GRAPH  -->
                 <Tab text="Rocket Arc Graph">
                     <content>
-                        <fx:include source="RocketArcCopy.fxml" />
+                        <fx:include source="RocketArc.fxml" />
                     </content></Tab>
 
                   </tabs>

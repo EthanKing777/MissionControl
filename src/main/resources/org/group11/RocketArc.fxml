@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.group11.controller.RocketArcController">
+  <children>
+      <AnchorPane prefHeight="108.0" prefWidth="700.0">
+         <children>
+            <Text layoutX="284.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Simulation Data">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Text>
+            <Text fill="RED" layoutX="529.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Rocket Status: UNARMED" textAlignment="CENTER" wrappingWidth="125.494140625">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Text>
+         </children>
+        </AnchorPane>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="1000.0" prefWidth="676.0">
+           <children>
+                <LineChart fx:id="rocketArcGraph" layoutX="34.0" prefHeight="539.0" prefWidth="638.0" title="Rocket Arc">
+                   <xAxis>
+                      <NumberAxis label="East (m)" lowerBound="-20.0" minorTickCount="10" side="BOTTOM" upperBound="5.0" fx:id="x" />
+                   </xAxis>
+                   <yAxis>
+                      <NumberAxis fx:id="yAxis" label="North (m)" lowerBound="-10.0" side="LEFT" tickLength="1.0" upperBound="2.0" />
+                   </yAxis>
+                </LineChart>
+                <Button layoutX="313.0" layoutY="549.0" mnemonicParsing="false" onAction="#plotSimulationData" text="Populate Graph" textAlignment="CENTER">
+                   <font>
+                      <Font size="10.0" />
+                   </font>
+                </Button>
+          </children>
+      </AnchorPane>
+  </children>
+</VBox>
