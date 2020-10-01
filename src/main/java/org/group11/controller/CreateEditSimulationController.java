@@ -13,10 +13,7 @@ import org.json.simple.JSONObject;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * A controller for the create/edit simulation tab.
@@ -237,6 +234,42 @@ public class CreateEditSimulationController implements Initializable {
 	}
 
 	/**
+	 * Gets the values in the weather properties table as a CSV.
+	 * @return A CSV string containing the weather properties.
+	 */
+	public String getWeatherPropertiesCSV() {
+		String output = "";
+
+		for (int i = 0; i < weatherTableProperties.size(); i++) {
+			output += weatherTableProperties.get(i).getPropertyValue().getValue();
+
+			if (i < weatherTableProperties.size() - 1) { //If the current value is not the last in the list
+				output += ",";
+			}
+		}
+
+		return output;
+	}
+
+	/**
+	 * Gets the values in the rocket properties table as a CSV.
+	 * @return A CSV string containing the rocket properties.
+	 */
+	public String getRocketPropertiesCSV() {
+		String output = "";
+
+		for (int i = 0; i < simulationTableProperties.size(); i++) {
+			output += simulationTableProperties.get(i).getPropertyValue().getValue();
+
+			if (i < simulationTableProperties.size() - 1) { //If the current value is not the last in the list
+				output += ",";
+			}
+		}
+
+		return output;
+	}
+
+	/**
 	 * Parses the data stored in the table and creates a JSON string with all table properties.
 	 * @return A JSON string with a JSON object for each table.
 	 */
@@ -284,8 +317,12 @@ public class CreateEditSimulationController implements Initializable {
 		}
 
 		System.out.println("\n\nJSON output =======================\n");
-
 		System.out.println(getJsonOutput());
+
+
+		System.out.println("\n\nCSV output =======================\n");
+		System.out.println("Weather properties: " + getWeatherPropertiesCSV());
+		System.out.println("Rocket properties: " + getRocketPropertiesCSV());
 
 	}
 }
