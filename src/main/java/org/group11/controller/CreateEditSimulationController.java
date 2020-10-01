@@ -12,6 +12,7 @@ import org.json.simple.JSONObject;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.net.URL;
 import java.util.*;
 
@@ -267,6 +268,29 @@ public class CreateEditSimulationController implements Initializable {
 		}
 
 		return output;
+	}
+
+	/**
+	 * Saves the weather and rocket properties to a single CSV file.
+	 * Uses a save file dialog to allow the user to choose the save location.
+	 * @throws FileNotFoundException
+	 */
+	public void savePropertiesFileCSV() throws FileNotFoundException {
+		FileChooser fileChooser = new FileChooser();
+		fileChooser.setTitle("Select a simulation data file...");
+		fileChooser.getExtensionFilters().addAll(
+				new FileChooser.ExtensionFilter("Simulation data file", "*.csv")
+		); //Limit the files that can be picked to only CSV files
+
+		File file = fileChooser.showSaveDialog(editWeatherTable.getScene().getWindow()); //Show the save file dialog
+
+		if (file != null) { //No save location selected
+			PrintWriter writer = new PrintWriter(file);
+
+			//Write both tables as a single CSV file
+			writer.write(getWeatherPropertiesCSV() + "," + getRocketPropertiesCSV());
+			writer.close();
+		}
 	}
 
 	/**
