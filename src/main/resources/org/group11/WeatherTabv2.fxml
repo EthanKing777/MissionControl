@@ -82,8 +82,7 @@
         <Pane layoutX="8.0" layoutY="543.0" prefHeight="79.0" prefWidth="700.0">
             <children>
                 <Text fill="#616161" layoutX="14.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last updated " />
-                <Text fill="#616161" layoutX="93.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="##" />
-                <Text fill="#616161" layoutX="119.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ago" wrappingWidth="20.203125" />
+                <Text fx:id="lastUpdatedTime" fill="#616161" layoutX="90.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="##" />
                 <Button layoutX="257.0" layoutY="19.0" maxWidth="200.0" mnemonicParsing="false" onAction="#displayWeatherData" prefHeight="35.0" prefWidth="186.0" text="Fetch and Display Weather Data" textAlignment="CENTER" wrapText="true" />
             </children>
         </Pane>

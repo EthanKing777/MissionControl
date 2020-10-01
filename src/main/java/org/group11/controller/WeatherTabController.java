@@ -2,6 +2,8 @@ package org.group11.controller;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -46,6 +48,9 @@ public class WeatherTabController {
     @FXML
     private LineChart<String, Long> windDirectionChart;
 
+    @FXML
+    private Text lastUpdatedTime;
+
 
     // Gives access to the weather data.
     private WeatherData weatherData;
@@ -88,8 +93,6 @@ public class WeatherTabController {
             a.setContentText("Latitude range: -90 - 90\nLongitude range: -180 - 180");
             a.showAndWait();
         } else {
-
-
             System.out.println("Lat: " + getLat() + " Log: " + getLog());
             System.out.println("*********  Start of WeatherTabController Output  ********* \n");
             for (HourlyWeather hourlyWeather : weatherData.getHourlyData()) {
@@ -139,7 +142,9 @@ public class WeatherTabController {
 
             populateWindSpeedChart();
             populateWindDirectionChart();
-            System.out.println("\n *********  End of WeatherTabController Output   **********");
+            //System.out.println("\n *********  End of WeatherTabController Output   **********");
+
+            setLastUpdatedTime();
         }
     }
 
@@ -196,6 +201,14 @@ public class WeatherTabController {
 
         windDirectionChart.setAnimated(false);
         windDirectionChart.getData().add(windDirectionSeries);
+    }
+
+
+    private void setLastUpdatedTime() {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+
+        lastUpdatedTime.setText(dtf.format(now));
     }
 
 
