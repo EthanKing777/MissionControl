@@ -7,10 +7,16 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.stage.FileChooser;
 import org.json.simple.JSONObject;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 
 /**
  * A controller for the create/edit simulation tab.
@@ -136,9 +142,51 @@ public class CreateEditSimulationController implements Initializable {
 	 */
 	@FXML
 	public void resetSimulationData() {
-		this.simulationTableProperties.setAll(getDefaultSimulationProperties());
+		FileChooser fileChooser = new FileChooser();
+		fileChooser.setTitle("Select a simulation data file...");
+		fileChooser.getExtensionFilters().addAll(
+				new FileChooser.ExtensionFilter("Simulation data file", "*.csv")
+		);
+
+		File file = fileChooser.showOpenDialog(editWeatherTable.getScene().getWindow());
+
+		if (file != null) { //Null means no file was selected
+			try {
+				loadSimulationFile(file);
+			}
+			catch (FileNotFoundException e) {}
+		}
 	}
 
+	public void loadSimulationFile(File file) throws FileNotFoundException {
+		Scanner scanner = new Scanner(file);
+
+		scanner.useDelimiter(",");
+
+		String[] headers = {
+				"Launch rod angle", "Launch rod length", "Launch rod direction", "Launch altitude", "Launch latitude",
+				"Launch longitude", "Maximum launch rod angle", "Minimum launch rod angle"
+		};
+
+		List<PropertyTableModel> properties = new ArrayList<>();
+		int i = 0;
+
+		while (scanner.hasNext()) {
+			String[] line = scanner.nextLine().split(",");
+
+			if (line[0].startsWith("#")) { //Ignore lines starting with #
+				continue;
+			}
+
+			for (String value : line) {
+				properties.add(new PropertyTableModel(headers[i], value));
+				i++;
+			}
+		}
+
+		simulationTableProperties.clear();
+		simulationTableProperties.addAll(properties);
+	}
 	/**
 	 * Parses the data stored in the table and creates a JSON string with all table properties.
 	 * @return A JSON string with a JSON object for each table.
