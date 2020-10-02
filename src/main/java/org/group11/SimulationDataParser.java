@@ -80,6 +80,10 @@ public class SimulationDataParser {
 			index = 4;
 		}else if(type.equalsIgnoreCase("total acceleration")) {
 			index = 5;
+		}else if(type.equalsIgnoreCase("latitude")) {
+			index = 12;
+		}else if(type.equalsIgnoreCase("longitude")) {
+			index = 13;
 		}
 
 		for (String s : totalDataSet) {

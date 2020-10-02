@@ -154,12 +154,11 @@ public class SimulationTabController implements Initializable {
 	 * Update the map by generating a new map api call
 	 */
 	public void updateMap() {
-
-		String s = 	GeoJSON();
+		String geoJSON = getGeoJSON();
 		try {
 			webEngine=webView.getEngine();
 			MapBox.setLatLng(-41.285099,174.776001);
-			MapBox.setLandingLocations(URLEncoder.encode(s, StandardCharsets.UTF_8.toString()));
+			MapBox.setLandingLocations(URLEncoder.encode(geoJSON, StandardCharsets.UTF_8.toString())); //URL encoded as per javadoc
 			webEngine.load(MapBox.generateApiCall("345" , "610","8"));
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
@@ -167,46 +166,26 @@ public class SimulationTabController implements Initializable {
 		}
 	}
 
+	/**
+	 * Create a GeoJSON object using the Geo Spatial data of the rocket landing sites
+	 * 
+	 * @return A GeoJSON object 
+	 */
 	@SuppressWarnings("unchecked")
-	private String GeoJSON() {
+	private String getGeoJSON() {
 		String message;
 
-		JSONObject properties = new JSONObject();
+		GeoJSONBuilder geoJSON = new GeoJSONBuilder(parser);
+		JSONObject obj = geoJSON.getGeoJSON();
 
-		JSONObject geometry = new JSONObject();
-		geometry.put("type", "Point");
-		JSONArray coordinates = new JSONArray();
-		coordinates.add(-41.28922560354332);
-		coordinates.add(894.7680180519819);
-		geometry.put("coordinates", coordinates);
-
-		JSONObject json = new JSONObject();
-
-		json.put("type", "FeatureCollection");
-
-		JSONArray array = new JSONArray();
-		JSONObject item = new JSONObject();
-		item.put("type", "Feature");
-		item.put("properties", properties);
-		item.put("geometry", geometry);
-		array.add(item);
-
-		JSONObject item2 = new JSONObject();
-		item2.put("type", "Feature");
-		item2.put("properties", properties);
-		item2.put("geometry", geometry);
-		array.add(item2);
-
-		json.put("features", array);
-
-		message = json.toString();
+		//This is only for printing on the console. Please comment out if needed
+		message = obj.toString();
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		JsonParser jp = new JsonParser();
 		JsonElement je = jp.parse(message);
-
 		System.out.println(gson.toJson(je));
 
-		return message = json.toString();
+		return message;
 	}
 
 	@Override
