@@ -70,7 +70,7 @@ public class SimulationTabController implements Initializable {
 		populateAccelerationGraph();
 		populateVelocityGraph();
 		populateMilestoneTab();
-
+		updateMap();
 	}
 
 	/**
@@ -147,7 +147,6 @@ public class SimulationTabController implements Initializable {
 		accGraph.createNewFile();
 		WritableImage img = accelerationChart.snapshot(new SnapshotParameters(), null);
 		ImageIO.write(SwingFXUtils.fromFXImage(img, null), "PNG", accGraph);
-		updateMap();
 	}
 
 	/**
