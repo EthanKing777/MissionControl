@@ -13,12 +13,22 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.FileChooser;
 import org.group11.SimulationDataParser;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 
 import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -33,11 +43,11 @@ public class SimulationTabController implements Initializable {
 
 	@FXML
 	private TextArea milestonesTab;
-	
-  	@FXML
- 	WebView webView;
 
-  private WebEngine webEngine;
+	@FXML
+	WebView webView;
+
+	private WebEngine webEngine;
 
 	private SimulationDataParser parser;
 
@@ -93,17 +103,17 @@ public class SimulationTabController implements Initializable {
 	 */
 	private void populateVelocityGraph() throws IOException {
 		XYChart.Series <Number, Number> velocitySeries = new XYChart.Series<>();
-		
+
 		//Get the "Time" data
 		List<Number>time = parser.getVariableData("time");
 		//Get the "Total Acceleration" data
 		List<Number>totalVelocity = parser.getVariableData("total velocity");
-		
+
 		//Plot the Velocity for each time stamp. Time goes in the X-Axis and Velocity in the Y=Axis
 		for(int i=0; i<time.size();i++){
 			velocitySeries.getData().add(new XYChart.Data<>(time.get(i), totalVelocity.get(i)));
 		}
-		
+
 		velocitySeries.setName("Velocity");
 		velocityChart.setAnimated(false);
 		velocityChart.getData().add(velocitySeries);
@@ -123,12 +133,12 @@ public class SimulationTabController implements Initializable {
 		List<Number>time = parser.getVariableData("time");
 		//Get the "Total Acceleration" data
 		List<Number>totalAcceleration = parser.getVariableData("total acceleration");
-		
+
 		//Plot the acceleration for each time stamp. Time goes in the X-Axis and Acceleration in the Y=Axis
 		for(int i=0; i<time.size();i++){
 			accelerationSeries.getData().add(new XYChart.Data<>(time.get(i), totalAcceleration.get(i)));
 		}
-		
+
 		accelerationSeries.setName("Acceleration");
 		accelerationChart.setAnimated(false);
 		accelerationChart.getData().add(accelerationSeries);
@@ -139,18 +149,71 @@ public class SimulationTabController implements Initializable {
 		ImageIO.write(SwingFXUtils.fromFXImage(img, null), "PNG", accGraph);
 		updateMap();
 	}
-	
+
 	/**
 	 * Update the map by generating a new map api call
 	 */
 	public void updateMap() {
-	  webEngine.load(MapBox.generateApiCall("345" , "610","12"));
+
+		String s = 	GeoJSON();
+		try {
+			webEngine=webView.getEngine();
+			MapBox.setLatLng(-41.285099,174.776001);
+			MapBox.setLandingLocations(URLEncoder.encode(s, StandardCharsets.UTF_8.toString()));
+			webEngine.load(MapBox.generateApiCall("345" , "610","8"));
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
-	
+
+	@SuppressWarnings("unchecked")
+	private String GeoJSON() {
+		String message;
+
+		JSONObject properties = new JSONObject();
+
+		JSONObject geometry = new JSONObject();
+		geometry.put("type", "Point");
+		JSONArray coordinates = new JSONArray();
+		coordinates.add(-41.28922560354332);
+		coordinates.add(894.7680180519819);
+		geometry.put("coordinates", coordinates);
+
+		JSONObject json = new JSONObject();
+
+		json.put("type", "FeatureCollection");
+
+		JSONArray array = new JSONArray();
+		JSONObject item = new JSONObject();
+		item.put("type", "Feature");
+		item.put("properties", properties);
+		item.put("geometry", geometry);
+		array.add(item);
+
+		JSONObject item2 = new JSONObject();
+		item2.put("type", "Feature");
+		item2.put("properties", properties);
+		item2.put("geometry", geometry);
+		array.add(item2);
+
+		json.put("features", array);
+
+		message = json.toString();
+		Gson gson = new GsonBuilder().setPrettyPrinting().create();
+		JsonParser jp = new JsonParser();
+		JsonElement je = jp.parse(message);
+
+		System.out.println(gson.toJson(je));
+
+		return message = json.toString();
+	}
+
 	@Override
-  public void initialize(URL url, ResourceBundle rb) {
-    webEngine=webView.getEngine();
-    webEngine.load(MapBox.generateApiCall("345" , "610","0"));
-  }
+	public void initialize(URL url, ResourceBundle rb) {
+		webEngine=webView.getEngine();
+		MapBox.setLatLng(-41.285099,174.776001);
+		webEngine.load(MapBox.generateApiCall("345" , "610","9"));
+	}
 
 }
