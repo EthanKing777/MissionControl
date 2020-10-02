@@ -7,10 +7,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.stage.FileChooser;
 import org.json.simple.JSONObject;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.net.URL;
-import java.util.ResourceBundle;
+import java.util.*;
 
 /**
  * A controller for the create/edit simulation tab.
@@ -68,6 +72,12 @@ public class CreateEditSimulationController implements Initializable {
 	 * Each row is represented by an instance of {@link PropertyTableModel}.
 	 */
 	private final ObservableList<PropertyTableModel> simulationTableProperties = getDefaultSimulationProperties();
+
+	/**
+	 * Contains the default rocket property values from the last loaded CSV file.
+	 * Initially empty, until a file is loaded.
+	 */
+	private List<PropertyTableModel> defaultLoadedSimulationProperties = new ArrayList<>();
 
 
 	/**
@@ -132,11 +142,155 @@ public class CreateEditSimulationController implements Initializable {
 	}
 
 	/**
-	 * Resets all the data in the simulation table.
+	 * Opens a file chooser dialog that allows a CSV file to be selected.
+	 * Parses the CSV file and adds the parsed data into the rocket properties table.
 	 */
 	@FXML
-	public void resetSimulationData() {
-		this.simulationTableProperties.setAll(getDefaultSimulationProperties());
+	public void loadSimulationDataFile() {
+		FileChooser fileChooser = new FileChooser();
+		fileChooser.setTitle("Select a simulation data file...");
+		fileChooser.getExtensionFilters().addAll(
+				new FileChooser.ExtensionFilter("Simulation data file", "*.csv")
+		); //Limit the files that can be picked to only CSV files
+
+		File file = fileChooser.showOpenDialog(editWeatherTable.getScene().getWindow());
+
+		if (file != null) { //Null means no file was selected
+			try {
+				readSimulationFile(file);
+			}
+			catch (FileNotFoundException e) {}
+		}
+	}
+
+	/**
+	 * Parses a CSV file containing the rocket properties.
+	 * Item order in the CSV file:
+	 *  Launch rod angle,
+	 *  Launch rod length,
+	 *  Launch rod direction,
+	 *  Launch altitude,
+	 *  Launch latitude,
+	 *  Launch longitude,
+	 *  Maximum launch rod angle,
+	 *  Minimum launch rod angle
+	 * @param file The CSV file to be parsed
+	 * @throws FileNotFoundException Thrown if the given file does not exist on the file system
+	 */
+	public void readSimulationFile(File file) throws FileNotFoundException {
+		Scanner scanner = new Scanner(file);
+
+		scanner.useDelimiter(",");
+
+		String[] headers = {
+				"Launch rod angle", "Launch rod length", "Launch rod direction", "Launch altitude", "Launch latitude",
+				"Launch longitude", "Maximum launch rod angle", "Minimum launch rod angle"
+		}; //The CSV file headers (in order)
+
+		List<PropertyTableModel> properties = new ArrayList<>();
+		int i = 0;
+
+		while (scanner.hasNext()) {
+			String[] line = scanner.nextLine().split(","); //Properties are seperated with a comma
+
+			if (line[0].startsWith("#")) { //Ignore lines starting with #
+				continue;
+			}
+
+			for (String value : line) { //For each property on the current line
+				properties.add(new PropertyTableModel(headers[i], value));
+				i++;
+			}
+		}
+
+		simulationTableProperties.clear();
+		simulationTableProperties.addAll(properties);
+
+		// Clone the list and store it in a separate field.
+		// Used to save the default values loaded from the CSV.
+		defaultLoadedSimulationProperties = clonePropertiesList(simulationTableProperties);
+	}
+
+	/**
+	 * Resets the values in the rocket properties table to the default values from the last loaded CSV file.
+	 */
+	public void resetSimulationTable() {
+		simulationTableProperties.clear();
+		simulationTableProperties.addAll(clonePropertiesList(defaultLoadedSimulationProperties));
+	}
+
+	/**
+	 * Performs a deep clone of the given {@literal List<PropertyTableModel>}.
+	 * @param properties The {@link List} to clone.
+	 * @return A deep clone of the given list.
+	 */
+	public List<PropertyTableModel> clonePropertiesList(List<PropertyTableModel> properties) {
+		ArrayList<PropertyTableModel> clonedList = new ArrayList<>();
+
+		for (PropertyTableModel property : properties) {
+			clonedList.add(property.clone()); //Clone each property in the given list and add it to the new list
+		}
+
+		return clonedList;
+	}
+
+	/**
+	 * Gets the values in the weather properties table as a CSV.
+	 * @return A CSV string containing the weather properties.
+	 */
+	public String getWeatherPropertiesCSV() {
+		String output = "";
+
+		for (int i = 0; i < weatherTableProperties.size(); i++) {
+			output += weatherTableProperties.get(i).getPropertyValue().getValue();
+
+			if (i < weatherTableProperties.size() - 1) { //If the current value is not the last in the list
+				output += ",";
+			}
+		}
+
+		return output;
+	}
+
+	/**
+	 * Gets the values in the rocket properties table as a CSV.
+	 * @return A CSV string containing the rocket properties.
+	 */
+	public String getRocketPropertiesCSV() {
+		String output = "";
+
+		for (int i = 0; i < simulationTableProperties.size(); i++) {
+			output += simulationTableProperties.get(i).getPropertyValue().getValue();
+
+			if (i < simulationTableProperties.size() - 1) { //If the current value is not the last in the list
+				output += ",";
+			}
+		}
+
+		return output;
+	}
+
+	/**
+	 * Saves the weather and rocket properties to a single CSV file.
+	 * Uses a save file dialog to allow the user to choose the save location.
+	 * @throws FileNotFoundException
+	 */
+	public void savePropertiesFileCSV() throws FileNotFoundException {
+		FileChooser fileChooser = new FileChooser();
+		fileChooser.setTitle("Select a simulation data file...");
+		fileChooser.getExtensionFilters().addAll(
+				new FileChooser.ExtensionFilter("Simulation data file", "*.csv")
+		); //Limit the files that can be picked to only CSV files
+
+		File file = fileChooser.showSaveDialog(editWeatherTable.getScene().getWindow()); //Show the save file dialog
+
+		if (file != null) { //No save location selected
+			PrintWriter writer = new PrintWriter(file);
+
+			//Write both tables as a single CSV file
+			writer.write(getWeatherPropertiesCSV() + "," + getRocketPropertiesCSV());
+			writer.close();
+		}
 	}
 
 	/**
@@ -187,8 +341,12 @@ public class CreateEditSimulationController implements Initializable {
 		}
 
 		System.out.println("\n\nJSON output =======================\n");
-
 		System.out.println(getJsonOutput());
+
+
+		System.out.println("\n\nCSV output =======================\n");
+		System.out.println("Weather properties: " + getWeatherPropertiesCSV());
+		System.out.println("Rocket properties: " + getRocketPropertiesCSV());
 
 	}
 }

@@ -122,7 +122,8 @@
                               <Label text="Double click a value to modify" BorderPane.alignment="CENTER" />
                            </center>
                         </BorderPane>
-                        <Button onAction="#resetSimulationData" mnemonicParsing="false" prefHeight="25.0" prefWidth="323.0" text="Reset" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Button onAction="#loadSimulationDataFile" mnemonicParsing="false" prefHeight="25.0" prefWidth="323.0" text="Load simulation file..." GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Button onAction="#resetSimulationTable" mnemonicParsing="false" prefHeight="25.0" prefWidth="323.0" text="Reset loaded properties" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                      </children>
                   </GridPane>
                </children>
@@ -130,8 +131,9 @@
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </padding>
             </VBox>
-            <Button contentDisplay="CENTER" layoutX="43.0" layoutY="410.0" mnemonicParsing="false" onAction="#printSubmitButtonOutput" prefHeight="25.0" prefWidth="615.0" text="Submit" />
-            <Label layoutX="282.0" layoutY="437.0" prefHeight="17.0" prefWidth="151.0" text="(Check console for output)" />
+            <Button contentDisplay="CENTER" layoutX="43.0" layoutY="410.0" mnemonicParsing="false" onAction="#savePropertiesFileCSV" prefHeight="25.0" prefWidth="615.0" text="Save all properties as a CSV" />
+            <Button contentDisplay="CENTER" layoutX="43.0" layoutY="440.0" mnemonicParsing="false" onAction="#printSubmitButtonOutput" prefHeight="25.0" prefWidth="615.0" text="Submit" />
+            <Label layoutX="282.0" layoutY="467.0" prefHeight="17.0" prefWidth="151.0" text="(Check console for output)" />
       </children>
     </AnchorPane>
   </children>
