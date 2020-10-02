@@ -18,7 +18,7 @@ public class MapBox {
   public static String generateApiCall(String width, String height, String zoom) {
     //first return statement to be used when geojson function is added.
     if(LANDINGSITES != null) {
-      return "https://api.mapbox.com/styles/v1/mapbox/geojson("+LANDINGSITES+")/satellite-streets-v11/static/"+LNG+","+LAT+","+zoom+"/"+height+"x"+width+"@2x?access_token="+apiKey;
+      return "https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v11/static/geojson("+LANDINGSITES+")/"+LNG+","+LAT+","+zoom+"/"+height+"x"+width+"@2x?access_token="+apiKey;
     }
     
     return "https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v11/static/"+LNG+","+LAT+","+zoom+"/"+height+"x"+width+"@2x?access_token="+apiKey;
