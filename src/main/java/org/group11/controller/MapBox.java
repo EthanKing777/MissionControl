@@ -5,7 +5,7 @@ public class MapBox {
   private static final String apiKey = "pk.eyJ1IjoiY3ZidXJ0MDgiLCJhIjoiY2tkcDdjaGE5MXprZjJycGR2N2FhN2Q3OSJ9.WHW0WMAG5hF6xhtehdo3EQ";
   private static double LNG = 0;
   private static double LAT = 0;
-  private static String LANDINGSITES = null;
+  private static String LANDINGSITES = "";
   
   // Constructor to be used once issues of parsing data amongst controllers is solved
   
@@ -17,8 +17,8 @@ public class MapBox {
 
   public static String generateApiCall(String width, String height, String zoom) {
     //first return statement to be used when geojson function is added.
-    if(LANDINGSITES != null) {
-      return "https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v11/static/geojson("+LANDINGSITES+")/"+LNG+","+LAT+","+zoom+"/"+height+"x"+width+"@2x?access_token="+apiKey;
+    if(!LANDINGSITES.equals("")) {
+    	return "https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v11/static/geojson("+LANDINGSITES+")/"+LNG+","+LAT+","+zoom+"/"+height+"x"+width+"@2x?access_token="+apiKey;
     }
     
     return "https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v11/static/"+LNG+","+LAT+","+zoom+"/"+height+"x"+width+"@2x?access_token="+apiKey;
