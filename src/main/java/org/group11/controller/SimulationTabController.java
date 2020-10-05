@@ -173,6 +173,8 @@ public class SimulationTabController implements Initializable {
 	@SuppressWarnings("unchecked")
 	private String getGeoJSON() {
 		String message;
+		
+		System.out.println(parser.toString());
 
 		GeoJSONBuilder geoJSON = new GeoJSONBuilder(parser);
 		JSONObject obj = geoJSON.getGeoJSON();
