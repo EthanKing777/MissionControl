@@ -70,7 +70,7 @@ public class RocketArcController{
 			Number north = posNorthOfLaunch.get(i);
 			//Number t = time.get(i);
 			System.out.println(east + " , " + north);
-			rocketArcSeries.getData().add(new XYChart.Data<>(east, north));
+			rocketArcSeries.getData().add(new XYChart.Data<>(north,east));
 		}
 		
 		rocketArcSeries.setName("RocketArc");

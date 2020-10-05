@@ -28,10 +28,10 @@
            <children>
                 <LineChart fx:id="rocketArcGraph" layoutX="34.0" prefHeight="539.0" prefWidth="638.0" title="Rocket Arc">
                    <xAxis>
-                      <NumberAxis label="East (m)" lowerBound="-20.0" minorTickCount="10" side="BOTTOM" upperBound="5.0" fx:id="x" />
+                      <NumberAxis label="North (m)" lowerBound="-11.0" minorTickCount="10" side="BOTTOM" upperBound="3.0" fx:id="x" />
                    </xAxis>
                    <yAxis>
-                      <NumberAxis fx:id="yAxis" label="North (m)" lowerBound="-10.0" side="LEFT" tickLength="1.0" upperBound="2.0" />
+                      <NumberAxis fx:id="yAxis" label="East (m)" lowerBound="-20.5" side="LEFT" tickLength="1.0" upperBound="5.0" />
                    </yAxis>
                 </LineChart>
                 <Button layoutX="313.0" layoutY="549.0" mnemonicParsing="false" onAction="#plotSimulationData" text="Populate Graph" textAlignment="CENTER">
