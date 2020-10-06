@@ -1,8 +1,10 @@
 package org.group11.controller;
 
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 import org.group11.SimulationDataParser;
 import org.json.simple.JSONArray;
@@ -35,6 +37,7 @@ public class GeoJSONBuilder {
 	@SuppressWarnings("unchecked")
 	private void buildJSONstring() {
 		addFeatures();
+		//This will maintain the order 
 		jsonMap.put("type", "FeatureCollection");
 		jsonMap.put("features", features);
 		json.putAll(jsonMap);
@@ -57,9 +60,11 @@ public class GeoJSONBuilder {
 			JSONObject item = new JSONObject();
 			double lat = (double)latitude.get(i);
 			double lon = (double)longitude.get(i);
+			//System.out.println("Adding" + " : " + lat + " - " + lon);
 			item.put("type", "Feature");
 			item.put("properties", addProperties());
 			item.put("geometry", addGeometry(lat, lon));
+			
 			features.add(item);	
 		}
 	}
@@ -84,11 +89,17 @@ public class GeoJSONBuilder {
 	@SuppressWarnings("unchecked")
 	private JSONObject addGeometry(double lat, double lon) {
 		JSONObject geometry = new JSONObject();
-		geometry.put("type", "Point");
 		JSONArray coordinates = new JSONArray();
-		coordinates.add(lat);
+		//When passing coordinates to the GeoJSON array, the longitude is passed before latitude
 		coordinates.add(lon);
+		coordinates.add(lat);
+		//System.out.println("Added : " + coordinates.get(0) + " - "  + coordinates.get(1)+"\n");
+		
+		geometry.put("type", "Point");
 		geometry.put("coordinates", coordinates);
+		
+		//geometry.putAll(jsonMap);
+		
 		return geometry;
 	}
 	

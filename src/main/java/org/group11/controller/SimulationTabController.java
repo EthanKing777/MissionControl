@@ -160,7 +160,7 @@ public class SimulationTabController implements Initializable {
 			MapBox.setLatLng(-41.285099,174.776001);
 			MapBox.setLandingLocations(url); //URL encoded as per javadoc
 			webEngine.load(MapBox.generateApiCall("345" , "610","8"));
-			//System.out.println(url);
+			System.out.println("geojson.io API Call = \n"+"http://geojson.io/#data=data:application/json,"+url);
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -195,5 +195,5 @@ public class SimulationTabController implements Initializable {
 		MapBox.setLatLng(-41.285099,174.776001);
 		webEngine.load(MapBox.generateApiCall("345" , "610","9"));
 	}
-
+	
 }
