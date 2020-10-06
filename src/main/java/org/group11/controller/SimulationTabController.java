@@ -155,10 +155,12 @@ public class SimulationTabController implements Initializable {
 	public void updateMap() {
 		String geoJSON = getGeoJSON();
 		try {
+			String url = URLEncoder.encode(geoJSON, StandardCharsets.UTF_8.toString());
 			webEngine=webView.getEngine();
 			MapBox.setLatLng(-41.285099,174.776001);
-			MapBox.setLandingLocations(URLEncoder.encode(geoJSON, StandardCharsets.UTF_8.toString())); //URL encoded as per javadoc
+			MapBox.setLandingLocations(url); //URL encoded as per javadoc
 			webEngine.load(MapBox.generateApiCall("345" , "610","8"));
+			//System.out.println(url);
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

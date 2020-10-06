@@ -1,6 +1,8 @@
 package org.group11.controller;
 
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.group11.SimulationDataParser;
 import org.json.simple.JSONArray;
@@ -9,6 +11,7 @@ import org.json.simple.JSONObject;
 public class GeoJSONBuilder {
 	
 	private JSONObject json;
+	private Map jsonMap;
 	private JSONArray features;
 	private SimulationDataParser parser;
 
@@ -21,6 +24,7 @@ public class GeoJSONBuilder {
 		this.parser = parser;
 		json = new JSONObject();
 		features = new JSONArray();
+		jsonMap = new LinkedHashMap();
 		buildJSONstring();
 	}
 	
@@ -31,8 +35,9 @@ public class GeoJSONBuilder {
 	@SuppressWarnings("unchecked")
 	private void buildJSONstring() {
 		addFeatures();
-		json.put("type", "FeatureCollection");
-		json.put("features", features);
+		jsonMap.put("type", "FeatureCollection");
+		jsonMap.put("features", features);
+		json.putAll(jsonMap);
 	}
 	
 	/**
