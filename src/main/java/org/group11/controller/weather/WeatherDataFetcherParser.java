@@ -64,7 +64,7 @@ public class WeatherDataFetcherParser {
         try {
             // parse fetched weather data.
             Object obj = new JSONParser().parse(weatherDataString);
-            System.out.println(obj);
+            //System.out.println(obj);
             JSONObject mainObject = (JSONObject) obj;
 
             // Iterate through hourly array and store in WeatherData class.
