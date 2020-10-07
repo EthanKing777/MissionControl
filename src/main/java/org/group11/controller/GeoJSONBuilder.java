@@ -5,6 +5,7 @@ import java.util.List;
 import org.group11.SimulationDataParser;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.group11.flightDataParser;
 
 public class GeoJSONBuilder {
 	
@@ -23,7 +24,7 @@ public class GeoJSONBuilder {
 		features = new JSONArray();
 		buildJSONstring();
 	}
-	
+
 	/**
 	 * Builds a GeoJSON string by adding an "n" number of "features", where "n" equals the number coordinates being plotted
 	 * 
