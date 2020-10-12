@@ -19,6 +19,8 @@
         * 1.2.3 Limitations
         * 1.2.4 Furture Work
 2. User Manual
+    * 2.1 Code Source
+    * 2.2 Project pre-requirments
 3. Testing Documentation
 4. Technical Manual
 
