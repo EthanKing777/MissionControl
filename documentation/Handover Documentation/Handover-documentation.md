@@ -33,6 +33,22 @@ Over the course of the project, a mission control software package was designed 
 
 ## User Manual 
 
+### Software Prerequisite
+
+To run and modify the software package:
+- Java 14+ (JDK)
+- Apache Maven
+- Scene Builder (optional, for editing of *.fxml files)
+
+### Supported Operating Systems
+The software was developed for three primary platforms. In theory, any system capable of running Java 14 should be able to run this software, however, there are no guarantees that it will run as intended.
+- Windows 10
+- Linux (KDE)
+- macOS
+
+### code Source
+LINK TO HANDOVER REPO
+
 ## Testing Documentation
 
 ## Technical Manual
