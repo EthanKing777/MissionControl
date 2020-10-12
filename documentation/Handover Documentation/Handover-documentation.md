@@ -18,6 +18,7 @@
         * 1.2.2 Delivered Service Scope 
         * 1.2.3 Limitations
         * 1.2.4 Furture Work
+        * 1.2.5 Bugs
 2. User Manual
     * 2.1 Code Source
     * 2.2 Project pre-requirments
