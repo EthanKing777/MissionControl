@@ -24,6 +24,10 @@
 
 ## Project Overview 
 
+The initial brief of the mission control software was to develop software capable of displaying information from the Avionics package, from the monte carlo simulation package and also implementing a go/no-go feature for parameter checking and arming the rocket. This was expanded upon to include weather information fetch, display and checking. 
+
+Over the course of the project, a mission control software package was designed and developed that was capable of fetching and displaying the relevant weather information to determine if a lunch should proceed, allowing a user to input and edit simulation parameters, display relevent simulation data/ models, display New Zealand flight zones and displaying information recieved from the Avionics package. 
+
 ## User Manual 
 
 ## Testing Documentation
