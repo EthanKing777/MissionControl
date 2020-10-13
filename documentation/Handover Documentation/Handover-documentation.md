@@ -17,7 +17,7 @@
         * 1.2.1 Original Service Scope 
         * 1.2.2 Delivered Service Scope 
         * 1.2.3 Limitations
-        * 1.2.4 Furture Work
+        * 1.2.4 Future Work
         * 1.2.5 Bugs
 2. User Manual
     * 2.1 code Source
@@ -45,10 +45,20 @@ Avionics package, from the monte carlo simulation package and also implementing 
 checking and arming the rocket. This was expanded upon to include weather information fetch, display and checking. 
 Over the course of the project, a mission control software package was designed and developed that was capable of 
 fetching and displaying the relevant weather information to determine if a lunch should proceed, allowing a user 
-to input and edit simulation parameters, display relevent simulation data/ models, display New Zealand flight zones 
-and displaying information recieved from the Avionics package. 
+to input and edit simulation parameters, display relevant simulation data/ models, display New Zealand flight zones 
+and displaying information received from the Avionics package. 
 
 ### 1.1 Project Objectives
+- Runnable off a laptop
+- Display Rocket Data
+  - Current Rocket State
+  - Current Location 
+  - Current Altitude
+- Go/ No-Go Function
+- Integration with monte carlo simulation package
+- Fetch and display local weather
+- Determine Possible Landing sites
+- Suggest possible launch angle (Suggestion)
 
 ### 1.2 Service Description
 
@@ -85,7 +95,7 @@ The software was developed for three primary platforms. In theory, any system ca
 It is recommended that an IDE is installed for development, future work and bug fixes. The software was developed in a
 range of IDEs and operating system environments. Initial contributors used IntellJ IDEA or Eclipse as IDEs, and used Windows,
 Linux and MacOS as operating systems. The executable JAR file provided in the handover repository can be executed via
-command line/ termninal via [INSERT COMMANDS HERE]. Or via an IDE's run function. We used JavaFX as our graphical library,
+command line/ termnFurtureinal via [INSERT COMMANDS HERE]. Or via an IDE's run function. We used JavaFX as our graphical library,
 as such Scene Builder can be used to edit or preview Scenes without running the code/ editing in an IDE. 
 
 ### 2.5 IDE Usage
