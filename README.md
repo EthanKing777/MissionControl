@@ -32,11 +32,9 @@ To run and modify this software, it is assumed that you have an understanding of
 
 This project follows the standard Maven project structure. Each folder is described below:
 
-- *src*
-  - *main*
-    - *java* - This folder contains all the Java code that the application runs (excluding test cases). All files in this directory are *\*.java* files.
-    - *resources* - This folder contains all non-Java resources required by the software package.
-
-  - *test*
-    - *java* - This folder contains all the test cases for the code located in the *src/main/java* directory. Files in this folder must have the suffix *Test*.
-    - *resources* - This folder contains all the non-Java resources that are required by the tests.
+| **Directory**        | **File types** |**Description**|
+|----------------------|----------------|---------------|
+| *src/main/java*      |    \*.java     |This folder contains all the Java code that the application runs (excluding test cases).|
+| *src/main/resources* | Non-Java files |This folder contains all non-Java resources required by the software package.|
+| *src/test/java*      |    \*.java     |This folder contains all the test cases for the code located in the *src/main/java* directory. Files in this folder must have the suffix *Test*.|
+| *src/test/resources* | Non-Java files |This folder contains all non-Java resources required by the test.|
