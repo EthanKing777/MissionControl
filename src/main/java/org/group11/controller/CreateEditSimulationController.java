@@ -349,4 +349,22 @@ public class CreateEditSimulationController implements Initializable {
 		System.out.println("Rocket properties: " + getRocketPropertiesCSV());
 
 	}
+
+	/**
+	 * Gets a list of all the {@link PropertyTableModel} instances in the weather properties table.
+	 * The returned {@code List} is a deep clone of the internal list.
+	 * @return A {@literal List<PropertyTableModel>} containing the properties of the weather properties table.
+	 */
+	public List<PropertyTableModel> getWeatherTableProperties() {
+		return clonePropertiesList(this.weatherTableProperties);
+	}
+
+	/**
+	 * Gets a list of all the {@link PropertyTableModel} instances in the rocket properties table.
+	 * The returned {@code List} is a deep clone of the internal list.
+	 * @return A {@literal List<PropertyTableModel>} containing the properties of the rocket properties table.
+	 */
+	public List<PropertyTableModel> getSimulationTableProperties() {
+		return clonePropertiesList(this.simulationTableProperties);
+	}
 }
