@@ -65,6 +65,14 @@ and displaying information received from the Avionics package.
 #### 1.2.1 Original Service Scope 
 
 #### 1.2.2 Delivered Service Scope
+ - Configurations Tab
+ - Flight Tab
+ - Create / edit simulations Tab
+ - Simulation Tab
+ - Weather Data Tab / Screen
+ - Airspace NZ Tab
+ - Semi Functional map
+ - Rocket Status
 
 #### 1.2.3 Limitations
 
