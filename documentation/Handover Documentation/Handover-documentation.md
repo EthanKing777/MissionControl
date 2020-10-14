@@ -96,7 +96,7 @@ Once this file is provided, the tab will display a graph for the rocket arc (pat
  ***Note** that the Airspace page is specific to New Zealand airspace and the rules that are displayed on this page are specific to drone flying. While this will give the user an idea of amateur rocket flying in their area, it should not be used as the only check for their flight complying wth New Zeland law. For accurate information of flying rocket in New Zealand, the user should go to https://www.aviation.govt.nz/. For accurate information in other countries, the user should read the Laws and Regulations of that country.
  
  ##### Rocket Status
- The status of the rocket is dispayed on each tab of the application so the user at all times can see what state the rocket is currently in (for safety reasons). The rocket the that the application was built arround could be inn X amount of states. These are ... . The application can be extended however to allowing for different rocket states.
+ The status of the rocket is displayed on each tab of the application so the user at all times can see what state the rocket is currently in (for safety reasons). The rocket that the application was built around could be in 4 different states. These are disabled, armed, unarmed launched. The application can be extended however to allowing for different rocket states.
  
 #### 1.2.3 Limitations
 
