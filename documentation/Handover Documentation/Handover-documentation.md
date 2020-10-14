@@ -131,6 +131,7 @@ allows the user to enter information about the rocket, the launch, and applicati
 Note: All simulation data, milestones, graphs are saved to the output directory for later reference.
 
 #### 2.7.4 Receiving Flight Data
+1) flight data in recieved i as a csv file and then dislayed on flight tab
 
 #### 2.7.5 Using the create/edit simulation tab
 
