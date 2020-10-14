@@ -83,3 +83,15 @@ Although the UI is designed with Scene Builder, the functionality for the UI sti
 | SimulationTab.fxml   | SimulationTabController.java        |
 | WeatherTab.fxml      | WeatherTabController.java           |
 | AirspaceMapTab.fxml  | AirspaceController.java             |
+
+<br />
+
+## Compiling changes
+
+After making any modifications to the software package, the source files must be re-compiled. To compile the application, Maven must be installed on the system. After installing Maven, use the following commands to create a runnable JAR file:
+
+1. Open a terminal in the root directory (the same directory as the *pom.xml* file)
+2. Run `mvn compile` to compile the sources files into binary files
+3. Run `mvn package` to package the binary files into a runnable JAR file
+
+After running the commands above, the JAR file will be created in the *target/* directory.
