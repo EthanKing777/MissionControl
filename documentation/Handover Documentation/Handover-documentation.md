@@ -74,26 +74,25 @@ and displaying information received from the Avionics package.
  
  Finally, in this tab, the user can toggle an automatic switch to the Flight Tab upon launch. Which when toggled on will force the program to switch to the Flight Tab when the rocket is launch removing the hassle of the user having to manually switch. 
  ##### Flight Tab
- The Flight Tab allows the user to track the rockets flight in realativley real time. The data displayed is .....
+ The Flight Tab allows the user to track the rockets flight in realativley real time. The data displayed is ...
 
  ##### Create / Edit Simulation Tab
  The user can go to this tab when they want to create a new flight simulation or edit the current flight simulation.
 
  ##### Simulation Tab
- This tab displays a summary of a simulation at which the user has run and produced.
+This tab displays a summary of a simulation data that can be provided to the program via a CSV file. The CSV file will need to follow a specific format for it to be compatible with the mission control software. This format is:
 
+Time (s),Altitude (m),Vertical velocity (m/s),Vertical acceleration (m/s≤),Total velocity (m/s),Total acceleration (m/s≤),Position East of launch (m),Position North of launch (m),Lateral distance (m),Lateral direction (∞),Lateral velocity (m/s),Lateral acceleration (m/s≤),Latitude (∞),Longitude (∞),Gravitational acceleration (m/s≤),Angle of attack (∞),Roll rate (∞/s),Pitch rate (∞/s),Yaw rate (∞/s),Mass (g),Propellant mass (g),Longitudinal moment of inertia (kg∑m≤),Rotational moment of inertia (kg∑m≤),CP location (cm),CG location (cm),Stability margin calibers (?),Mach number (?),Reynolds number (?),Thrust (N),Drag force (N),Drag coefficient (?),Axial drag coefficient (?),Friction drag coefficient (?),Pressure drag coefficient (?),Base drag coefficient (?),Normal force coefficient (?),Pitch moment coefficient (?),Yaw moment coefficient (?),Side force coefficient (?),Roll moment coefficient (?),Roll forcing coefficient (?),Roll damping coefficient (?),Pitch damping coefficient (?),Reference length (cm),Reference area (cm≤),Vertical orientation (zenith) (∞),Lateral orientation (azimuth) (∞),Wind velocity (m/s),Air temperature (∞C),Air pressure (mbar),Speed of sound (m/s),Simulation time step (s),Computation time (s) 
+
+Once this file is provided, the tab will display a graph for the rocket arc (path) of the simulated flight, a graph for the rocket's velocity throughout the simulated flight and the rocket's acceleration throughout the simulated flight. The tab will also display and satellite image of the launch site with possible landing sites (based on simulations with a standard deviation applied to variables) plotted on the image.
 
  ##### Weather Information Tab / Screen
- The Weather information Tab/Screen can be used to see the locale weather conditions of the provided launch site and launch time.
+ The Weather information Tab/Screen can be used to see the local weather conditions of the provided launch site and launch time. The tab will show the user the current wind direction, the wind direction for the 24 hours, the wind speed for the next 24 hours, the cloud coverage and the wind speed at different altitudes.
  
  ##### Airspace NZ Tab
- If the user is unsure of flight restrictions in the area they wish to launch, they can use this page to get an **idea*** of what air restirctions are in place around them.
+ If the user is unsure of flight restrictions in the area they wish to launch, they can use this page to get an **idea*** of what air restrictions are in place around them. The page displays a map highlighting restricted airspace in New Zealand and has a whole bunch of other information about New Zealand's restricted Air Spaces.
 
-
- ***Note** that the Airspace page is specific to New Zealand airpace and the rules that are displayed on this page are specific to drone flying. While this will give the user and idea of amateur rocket flying in their area, it should not be used as the only check for their flight complying wth New Zeland law. For accurate information of flying rocket in New Zealand the user should go to https://www.aviation.govt.nz/. For accurate information in other countries the user should read the Laws and Regualtions of that country.
- 
- ##### Semi Functional map
- Map kinda work
+ ***Note** that the Airspace page is specific to New Zealand airspace and the rules that are displayed on this page are specific to drone flying. While this will give the user an idea of amateur rocket flying in their area, it should not be used as the only check for their flight complying wth New Zeland law. For accurate information of flying rocket in New Zealand, the user should go to https://www.aviation.govt.nz/. For accurate information in other countries, the user should read the Laws and Regulations of that country.
  
  ##### Rocket Status
  Need more info
