@@ -72,12 +72,13 @@ and displaying information received from the Avionics package.
 
  The Configurations Tab also allows the user to toggle the option to enforce a simulation before launch as a safety feature. Should the user toggle this option on they won't be able to arm and launch their rocket before they have run a simulation on the launch parameters.
  
- Finally, in this tab, the user can toggle an automatic switch to the Flight Tab upon launch. Which when toggled on will force the program to switch to the Flight Tab when the rocket is launch removing the hassle of the user having to manually switch. 
+ Finally, in this tab, the user can toggle an automatic switch to the Flight Tab upon launch. When this is toggled on, the program wil be forced to switch to the Flight Tab when the rocket is launch removing the hassle of the user having to manually switch.
+
  ##### Flight Tab
  The Flight Tab allows the user to track the rockets flight in realativley real time. The data displayed is ...
 
  ##### Create / Edit Simulation Tab
- The user can go to this tab when they want to create a new flight simulation or edit the current flight simulation.
+ The user can go to this tab when they want to create a new flight simulation or edit the current flight simulation. The tab has two tables, a Weather Data table and a Rocket properties table. To which the user can enter details into. For the Rocket Information table, the user can enter the properties of their rocket either manually or they can load in a file with a .csv extension, which will take a simulation file and load the rocket properties from that file into the table. Once the user is happy with the values they can click the "Save all properties as a CSV" which will generate a csv file that can be used with a specific simulation application that extends open rocket.
 
  ##### Simulation Tab
 This tab displays a summary of a simulation data that can be provided to the program via a CSV file. The CSV file will need to follow a specific format for it to be compatible with the mission control software. This format is:
@@ -87,7 +88,7 @@ Time (s),Altitude (m),Vertical velocity (m/s),Vertical acceleration (m/s≤),Tot
 Once this file is provided, the tab will display a graph for the rocket arc (path) of the simulated flight, a graph for the rocket's velocity throughout the simulated flight and the rocket's acceleration throughout the simulated flight. The tab will also display and satellite image of the launch site with possible landing sites (based on simulations with a standard deviation applied to variables) plotted on the image.
 
  ##### Weather Information Tab / Screen
- The Weather information Tab/Screen can be used to see the local weather conditions of the provided launch site and launch time. The tab will show the user the current wind direction, the wind direction for the 24 hours, the wind speed for the next 24 hours, the cloud coverage and the wind speed at different altitudes.
+ The Weather information Tab/Screen can be used to see the local weather conditions of the provided launch site and launch time. The tab will show the user the current wind direction, the wind direction for the 24 hours, the wind speed for the next 24 hours, the cloud coverage and the wind speed at different altitudes. This screen will be brought up automatically in a separate window when the user enters the flight time, location and date into the configuration tab. It is worth noting that the weather API that is used for this screen is only updated every hour, meaning the data is only accurate to the hour.
  
  ##### Airspace NZ Tab
  If the user is unsure of flight restrictions in the area they wish to launch, they can use this page to get an **idea*** of what air restrictions are in place around them. The page displays a map highlighting restricted airspace in New Zealand and has a whole bunch of other information about New Zealand's restricted Air Spaces.
@@ -95,7 +96,7 @@ Once this file is provided, the tab will display a graph for the rocket arc (pat
  ***Note** that the Airspace page is specific to New Zealand airspace and the rules that are displayed on this page are specific to drone flying. While this will give the user an idea of amateur rocket flying in their area, it should not be used as the only check for their flight complying wth New Zeland law. For accurate information of flying rocket in New Zealand, the user should go to https://www.aviation.govt.nz/. For accurate information in other countries, the user should read the Laws and Regulations of that country.
  
  ##### Rocket Status
- Need more info
+ The status of the rocket is dispayed on each tab of the application so the user at all times can see what state the rocket is currently in (for safety reasons). The rocket the that the application was built arround could be inn X amount of states. These are ... . The application can be extended however to allowing for different rocket states.
  
 #### 1.2.3 Limitations
 
