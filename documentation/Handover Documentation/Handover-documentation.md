@@ -65,15 +65,39 @@ and displaying information received from the Avionics package.
 #### 1.2.1 Original Service Scope 
 
 #### 1.2.2 Delivered Service Scope
- - Configurations Tab
- - Flight Tab
- - Create / edit simulations Tab
- - Simulation Tab
- - Weather Data Tab / Screen
- - Airspace NZ Tab
- - Semi Functional map
- - Rocket Status
+ ##### Configurations Tab
+ Configurations Tab allows the user to alter some settings of the Mission Control software. Here the user can set their flight launch date, launch time and launch location in latitude and longitude so that user can:
+ 1. See the weather conditions of the launch site at the launch time
+ 2. See the launch area on a satellite image 
 
+ The Configurations Tab also allows the user to toggle the option to enforce a simulation before launch as a safety feature. Should the user toggle this option on they won't be able to arm and launch their rocket before they have run a simulation on the launch parameters.
+ 
+ Finally, in this tab, the user can toggle an automatic switch to the Flight Tab upon launch. Which when toggled on will force the program to switch to the Flight Tab when the rocket is launch removing the hassle of the user having to manually switch. 
+ ##### Flight Tab
+ The Flight Tab allows the user to track the rockets flight in realativley real time. The data displayed is .....
+
+ ##### Create / Edit Simulation Tab
+ The user can go to this tab when they want to create a new flight simulation or edit the current flight simulation.
+
+ ##### Simulation Tab
+ This tab displays a summary of a simulation at which the user has run and produced.
+
+
+ ##### Weather Information Tab / Screen
+ The Weather information Tab/Screen can be used to see the locale weather conditions of the provided launch site and launch time.
+ 
+ ##### Airspace NZ Tab
+ If the user is unsure of flight restrictions in the area they wish to launch, they can use this page to get an **idea*** of what air restirctions are in place around them.
+
+
+ ***Note** that the Airspace page is specific to New Zealand airpace and the rules that are displayed on this page are specific to drone flying. While this will give the user and idea of amateur rocket flying in their area, it should not be used as the only check for their flight complying wth New Zeland law. For accurate information of flying rocket in New Zealand the user should go to https://www.aviation.govt.nz/. For accurate information in other countries the user should read the Laws and Regualtions of that country.
+ 
+ ##### Semi Functional map
+ Map kinda work
+ 
+ ##### Rocket Status
+ Need more info
+ 
 #### 1.2.3 Limitations
 
 #### 1.2.4 Future Work
