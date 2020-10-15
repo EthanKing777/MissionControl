@@ -79,6 +79,9 @@ and displaying information received from the Avionics package.
     - This function at this stage, accepts only a limited number of parameters. This can easily be extended to suit the requirements of your project. By adding more parameters, you can generate more information which can be used in the launch of your rocket.
     - The Simulation Tab currently plots Acceleration, Velocity, Rocket Arc and Landing Sites. Depending on the requirements of your project, you can display more graphs easily by extending the application.
 
+- Real-Time Flight Data
+    - Real-time flight data can be useful in monitoring the performance of the rocket as well as in debugging. This software contains a Flight Tab, which is a skeleton class for extending this functionality. We have not implemented this  as it was beyond the scope of our project but this software can be extended to implement such a functionality if required. 
+
 
 
 #### 1.2.5 Known Bugs
