@@ -80,6 +80,10 @@ public class SimulationDataParser {
 			index = 4;
 		}else if(type.equalsIgnoreCase("total acceleration")) {
 			index = 5;
+		}else if(type.equalsIgnoreCase("position north of launch")) {
+			index = 7;
+		}else if(type.equalsIgnoreCase("position east of launch")) {
+			index = 6;
 		}else if(type.equalsIgnoreCase("latitude")) {
 			index = 12;
 		}else if(type.equalsIgnoreCase("longitude")) {
@@ -91,6 +95,7 @@ public class SimulationDataParser {
 			variables = s.split(",");
 			//Then get the variable from each line and parse it as a Double
 			selectedVariableData.add(Double.parseDouble(variables[index]));
+			
 		} 
 		
 		return selectedVariableData;

@@ -62,8 +62,8 @@ public class SimulationTabController implements Initializable {
 		parser = new SimulationDataParser(file);
 
 		//Clear the pane at every press of the button 
-		accelerationChart.getData().clear();
-		velocityChart.getData().clear();
+		if(accelerationChart.getData() != null)accelerationChart.getData().clear();
+		if(velocityChart.getData() != null)velocityChart.getData().clear();
 		milestonesTab.clear();
 
 		//Populate the window
