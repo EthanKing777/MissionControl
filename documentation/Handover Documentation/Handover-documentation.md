@@ -99,6 +99,10 @@ Once this file is provided, the tab will display a graph for the rocket arc (pat
  The status of the rocket is displayed on each tab of the application so the user at all times can see what state the rocket is currently in (for safety reasons). The rocket that the application was built around could be in 4 different states. These are disabled, armed, unarmed launched. The application can be extended however to allowing for different rocket states.
  
 #### 1.2.3 Limitations
+##### The limitations of this software:
+- The main application window does not resize. This is due to the technical complications involved with resizing the different components in the window so they are still viewable and usable to the user.
+- Two features of the application require an internet connection. These features include the current weather information and the airspace information. However, the airspace information can be collected before the rocket launch, while the weather information will most likely be needed current.
+- 
 
 #### 1.2.4 Future Work
 
