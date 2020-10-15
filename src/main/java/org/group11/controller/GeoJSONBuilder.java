@@ -1,5 +1,6 @@
 package org.group11.controller;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -53,14 +54,14 @@ public class GeoJSONBuilder {
 	@SuppressWarnings("unchecked")
 	private void addFeatures() {
 		List<Number>time = parser.getVariableData("time");
-		List<Number>latitude = parser.getVariableData("latitude");
-		List<Number>longitude = parser.getVariableData("longitude");
+		List<Double>latitude = parser.getLocationData("latitude");
+		List<Double>longitude = parser.getLocationData("longitude");
 			
 		for(int i=0; i<time.size();i++) {
 			JSONObject item = new JSONObject();
-			double lat = (double)latitude.get(i);
-			double lon = (double)longitude.get(i);
-			//System.out.println("Adding" + " : " + lat + " - " + lon);
+			double lat = latitude.get(i);
+			double lon = longitude.get(i);
+			System.out.println("Adding" + " : " + lat + " - " + lon);
 			item.put("type", "Feature");
 			item.put("properties", addProperties());
 			item.put("geometry", addGeometry(lat, lon));
@@ -91,8 +92,8 @@ public class GeoJSONBuilder {
 		JSONObject geometry = new JSONObject();
 		JSONArray coordinates = new JSONArray();
 		//When passing coordinates to the GeoJSON array, the longitude is passed before latitude
-		coordinates.add(lon);
-		coordinates.add(lat);
+		coordinates.add(BigDecimal.valueOf(lon));
+		coordinates.add(BigDecimal.valueOf(lat));
 		//System.out.println("Added : " + coordinates.get(0) + " - "  + coordinates.get(1)+"\n");
 		
 		geometry.put("type", "Point");

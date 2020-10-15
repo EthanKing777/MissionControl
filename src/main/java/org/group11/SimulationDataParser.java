@@ -95,5 +95,28 @@ public class SimulationDataParser {
 		
 		return selectedVariableData;
 	}
+	
+	
+	public List<Double> getLocationData(String type){
+		String[] variables;
+		List<Double> selectedVariableData = new ArrayList<Double>();
+		int index = -1;
+		
+		//'index' represents the index of the corresponding header in the headers array. 
+		if(type.equalsIgnoreCase("latitude")) {
+			index = 12;
+		}else if(type.equalsIgnoreCase("longitude")) {
+			index = 13;
+		}
+
+		for (String s : totalDataSet) {
+			//Split the single line containing 53 variables into individual variables
+			variables = s.split(",");
+			//Then get the variable from each line and parse it as a Double
+			selectedVariableData.add(Double.parseDouble(variables[index]));
+		} 
+		
+		return selectedVariableData;
+	}
 }
 

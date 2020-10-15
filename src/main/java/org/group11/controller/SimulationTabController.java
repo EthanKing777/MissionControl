@@ -179,7 +179,7 @@ public class SimulationTabController implements Initializable {
 		GeoJSONBuilder geoJSON = new GeoJSONBuilder(parser);
 		JSONObject obj = geoJSON.getGeoJSON();
 
-		//This is only for printing on the console. Please comment out if needed
+		//This is only for printing on the console. Please comment out if not needed
 		message = obj.toString();
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		JsonParser jp = new JsonParser();
