@@ -85,6 +85,9 @@ and displaying information received from the Avionics package.
 - Map Route to the Last Seen Location
     - The last seen location of the rocket is the attribute used to recover a rocket when the user has no access to real-time location data of the rocket. Extending the application such that, a user is given directions from the user's current location to the last seen location of the rocket via an API, will be extrmemely useful in locating a lost rocket. 
 
+- Displaying Landing Sites in a Satelite Map View 
+    - Our software attempts to plot the landing sites of the rocket on a Satelite map, but cannot execute it successfully due to a bug in the code. There is potential for this feature to work if the bug is found and fixed in the future.  
+
 
 
 #### 1.2.5 Known Bugs
