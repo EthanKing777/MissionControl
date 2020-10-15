@@ -69,6 +69,14 @@ and displaying information received from the Avionics package.
 #### 1.2.3 Limitations
 
 #### 1.2.4 Future Work
+- This program can easily be extended further to add useful functionality for model rocket enthusiasts. This software can be used for pre-launch simulations and analysis, flight data analysis and in-flight control of the rocket. Key areas for improvement are discussed in detail below. 
+- Configuring Rocket Arm Functionality 
+    - This functionality can be extended to suit the requirements of a specific project. At the moment, the Arm functionality is not automated i.e does not communicate with the rocket. This can be extended to send and receive signals from the rocket to ensure that the current state of the rocket is always accurate and safe.
+    - There is also potential to add a "kill switch" functionality where the rocket changes to a "safe" state at the press of a button. This will potentially be useful in a scenario where the rocket needs to be turned off immediately and reaching the rocket physically is not viable. 
+
+
+
+
 
 #### 1.2.5 Known Bugs
 - Weather data tab opens in a new window after launch information set via configuration tab. 
