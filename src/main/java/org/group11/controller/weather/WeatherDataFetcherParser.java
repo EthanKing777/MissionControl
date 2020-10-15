@@ -36,14 +36,22 @@ public class WeatherDataFetcherParser {
     /**
      * Fetches weather data from openweathermap API.
      *
+     * @return WeatherData object with full array of hours if valid lat and lon.
+     * Or weatherData object with empty list of hours.
      * @throws IOException - Throws when can't connect to API.
      */
     public WeatherData fetchWeatherData() throws IOException {
         updateLocation(latitude, longitude);
 
-        String weatherData = downloadWeatherData();
+        // check lat and loong bounds
+        String weatherData;
+        if ((latitude >= -90 && latitude <= 90) && (longitude >= -180 && longitude <= 180)) {
+            weatherData = downloadWeatherData();
+            return parseWeatherData(weatherData);
+        } else {
+            return new WeatherData(new ArrayList<>());
+        }
 
-        return parseWeatherData(weatherData);
     }
 
     /**
@@ -56,7 +64,7 @@ public class WeatherDataFetcherParser {
         try {
             // parse fetched weather data.
             Object obj = new JSONParser().parse(weatherDataString);
-            System.out.println(obj);
+            //System.out.println(obj);
             JSONObject mainObject = (JSONObject) obj;
 
             // Iterate through hourly array and store in WeatherData class.
@@ -93,6 +101,12 @@ public class WeatherDataFetcherParser {
         return weatherData;
     }
 
+    /**
+     * Send request to openweathermap and get response.
+     *
+     * @return - Response as a String.
+     * @throws IOException
+     */
     private String downloadWeatherData() throws IOException {
         String requestURL = WEATHER_API + "&lat=" + latitude + "&lon=" + longitude + "&appid=" + API_KEY;
 
@@ -101,6 +115,13 @@ public class WeatherDataFetcherParser {
         return readInputStream(connection.getInputStream());
     }
 
+    /**
+     * Read the api response and store it as a String.
+     *
+     * @param stream - The input stream of the response data.
+     * @return - The response as a String.
+     * @throws IOException
+     */
     private String readInputStream(InputStream stream) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
         StringBuilder output = new StringBuilder();

@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<Pane fx:id="cloudCoveragePrecent" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.group11.controller.WeatherTabController">
+<Pane fx:id="cloudCoveragePrecent" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.group11.controller.WeatherTabController">
     <children>
         <Text layoutX="14.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weather Data">
             <font>
@@ -59,7 +59,7 @@
         </ImageView>
         <Pane layoutY="355.0" prefHeight="200.0" prefWidth="719.0">
             <children>
-                <LineChart fx:id="windSpeedChart" animated="false" layoutX="14.0" layoutY="3.0" prefHeight="194.0" prefWidth="339.0" title="Wind Speed">
+                <LineChart fx:id="windSpeedChart" animated="false" layoutX="14.0" layoutY="3.0" prefHeight="194.0" prefWidth="331.0" title="Wind Speed">
                     <xAxis>
                         <CategoryAxis side="BOTTOM" />
                     </xAxis>
@@ -67,7 +67,7 @@
                         <NumberAxis side="LEFT" />
                     </yAxis>
                 </LineChart>
-                <LineChart fx:id="windDirectionChart" animated="false" layoutX="366.0" layoutY="3.0" prefHeight="194.0" prefWidth="339.0" title="Wind Direction">
+                <LineChart fx:id="windDirectionChart" animated="false" layoutX="350.0" layoutY="3.0" prefHeight="194.0" prefWidth="355.0" title="Wind Direction">
                     <xAxis>
                         <CategoryAxis side="BOTTOM" />
                     </xAxis>
@@ -76,15 +76,15 @@
                     </yAxis>
                 </LineChart>
             <Text fx:id="CompassSouth111" fill="#616161" layoutX="-8.0" layoutY="116.0" rotate="-90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meters/Sec" />
-            <Text fx:id="CompassSouth1111" fill="#616161" layoutX="345.0" layoutY="105.0" rotate="-90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Degress" />
+            <Text fx:id="CompassSouth1111" fill="#616161" layoutX="338.0" layoutY="105.0" rotate="-90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Degress" />
             </children>
         </Pane>
         <Pane layoutX="8.0" layoutY="543.0" prefHeight="79.0" prefWidth="700.0">
             <children>
                 <Text fill="#616161" layoutX="14.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last updated " />
-                <Text fill="#616161" layoutX="93.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="##" />
-                <Text fill="#616161" layoutX="119.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ago" wrappingWidth="20.203125" />
-                <Button layoutX="257.0" layoutY="19.0" maxWidth="200.0" mnemonicParsing="false" onAction="#displayWeatherData" prefHeight="35.0" prefWidth="186.0" text="Fetch and Display Weather Data" textAlignment="CENTER" wrapText="true" />
+                <Text fx:id="lastUpdatedTime" fill="#616161" layoutX="90.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="##" />
+                <Button fx:id="fetchWeatherData" layoutX="257.0" layoutY="-3.0" maxWidth="200.0" mnemonicParsing="false" onAction="#displayWeatherData" prefHeight="35.0" prefWidth="186.0" text="Fetch and Display Weather Data" textAlignment="CENTER" wrapText="true" />
+            <Text layoutX="273.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This may take a few seconds." wrappingWidth="154.79296875" />
             </children>
         </Pane>
       <Text fx:id="CompassSouth12" fill="#616161" layoutX="155.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LAT:" />

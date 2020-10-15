@@ -13,12 +13,22 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.FileChooser;
 import org.group11.SimulationDataParser;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 
 import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -33,11 +43,11 @@ public class SimulationTabController implements Initializable {
 
 	@FXML
 	private TextArea milestonesTab;
-	
-  	@FXML
- 	WebView webView;
 
-  private WebEngine webEngine;
+	@FXML
+	WebView webView;
+
+	private WebEngine webEngine;
 
 	private SimulationDataParser parser;
 
@@ -60,7 +70,7 @@ public class SimulationTabController implements Initializable {
 		populateAccelerationGraph();
 		populateVelocityGraph();
 		populateMilestoneTab();
-
+		updateMap();
 	}
 
 	/**
@@ -93,21 +103,21 @@ public class SimulationTabController implements Initializable {
 	 */
 	private void populateVelocityGraph() throws IOException {
 		XYChart.Series <Number, Number> velocitySeries = new XYChart.Series<>();
-		
+
 		//Get the "Time" data
 		List<Number>time = parser.getVariableData("time");
 		//Get the "Total Acceleration" data
 		List<Number>totalVelocity = parser.getVariableData("total velocity");
-		
+
 		//Plot the Velocity for each time stamp. Time goes in the X-Axis and Velocity in the Y=Axis
 		for(int i=0; i<time.size();i++){
 			velocitySeries.getData().add(new XYChart.Data<>(time.get(i), totalVelocity.get(i)));
 		}
-		
+
 		velocitySeries.setName("Velocity");
 		velocityChart.setAnimated(false);
 		velocityChart.getData().add(velocitySeries);
-		File velGraph = new File("output/Simulation Data/graphs/Velocity Grpah.png");
+		File velGraph = new File("output/Simulation Data/graphs/Velocity Graph.png");
 		velGraph.createNewFile();
 		WritableImage img = velocityChart.snapshot(new SnapshotParameters(), null);
 		ImageIO.write(SwingFXUtils.fromFXImage(img, null), "PNG", velGraph);
@@ -123,36 +133,67 @@ public class SimulationTabController implements Initializable {
 		List<Number>time = parser.getVariableData("time");
 		//Get the "Total Acceleration" data
 		List<Number>totalAcceleration = parser.getVariableData("total acceleration");
-		
+
 		//Plot the acceleration for each time stamp. Time goes in the X-Axis and Acceleration in the Y=Axis
 		for(int i=0; i<time.size();i++){
 			accelerationSeries.getData().add(new XYChart.Data<>(time.get(i), totalAcceleration.get(i)));
 		}
-		
+
 		accelerationSeries.setName("Acceleration");
 		accelerationChart.setAnimated(false);
 		accelerationChart.getData().add(accelerationSeries);
 
-		File accGraph = new File("output/Simulation Data/graphs/Acceleration Grpah.png");
+		File accGraph = new File("output/Simulation Data/graphs/Acceleration Graph.png");
 		accGraph.createNewFile();
-		WritableImage img = velocityChart.snapshot(new SnapshotParameters(), null);
+		WritableImage img = accelerationChart.snapshot(new SnapshotParameters(), null);
 		ImageIO.write(SwingFXUtils.fromFXImage(img, null), "PNG", accGraph);
-		updateMap();
 	}
-	
+
 	/**
 	 * Update the map by generating a new map api call
 	 */
 	public void updateMap() {
-	  webEngine.load(MapBox.generateApiCall("345" , "610","12"));
+		String geoJSON = getGeoJSON();
+		try {
+			webEngine=webView.getEngine();
+			MapBox.setLatLng(-41.285099,174.776001);
+			MapBox.setLandingLocations(URLEncoder.encode(geoJSON, StandardCharsets.UTF_8.toString())); //URL encoded as per javadoc
+			webEngine.load(MapBox.generateApiCall("345" , "610","8"));
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
-	
+
+	/**
+	 * Create a GeoJSON object using the Geo Spatial data of the rocket landing sites
+	 * 
+	 * @return A GeoJSON object 
+	 */
+	@SuppressWarnings("unchecked")
+	private String getGeoJSON() {
+		String message;
+		
+		System.out.println(parser.toString());
+
+		GeoJSONBuilder geoJSON = new GeoJSONBuilder(parser);
+		JSONObject obj = geoJSON.getGeoJSON();
+
+		//This is only for printing on the console. Please comment out if needed
+		message = obj.toString();
+		Gson gson = new GsonBuilder().setPrettyPrinting().create();
+		JsonParser jp = new JsonParser();
+		JsonElement je = jp.parse(message);
+		System.out.println(gson.toJson(je));
+
+		return message;
+	}
+
 	@Override
-  public void initialize(URL url, ResourceBundle rb) {
-    webEngine=webView.getEngine();
-    //MapBox.setLatLng(-41.285099,174.776001);
-    webEngine.load(MapBox.generateApiCall("345" , "610","0"));
-    //webEngine.load("https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v11/static/174.776001,-41.285099,14/610x345@2x?access_token=pk.eyJ1IjoiY3ZidXJ0MDgiLCJhIjoiY2tkcDdjaGE5MXprZjJycGR2N2FhN2Q3OSJ9.WHW0WMAG5hF6xhtehdo3EQ");
-  }
+	public void initialize(URL url, ResourceBundle rb) {
+		webEngine=webView.getEngine();
+		MapBox.setLatLng(-41.285099,174.776001);
+		webEngine.load(MapBox.generateApiCall("345" , "610","9"));
+	}
 
 }

@@ -84,6 +84,10 @@ public class SimulationDataParser {
 			index = 7;
 		}else if(type.equalsIgnoreCase("position east of launch")) {
 			index = 6;
+		}else if(type.equalsIgnoreCase("latitude")) {
+			index = 12;
+		}else if(type.equalsIgnoreCase("longitude")) {
+			index = 13;
 		}
 
 		for (String s : totalDataSet) {
