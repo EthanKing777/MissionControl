@@ -74,7 +74,10 @@ and displaying information received from the Avionics package.
     - This functionality can be extended to suit the requirements of a specific project. At the moment, the Arm functionality is not automated i.e does not communicate with the rocket. This can be extended to send and receive signals from the rocket to ensure that the current state of the rocket is always accurate and safe.
     - There is also potential to add a "kill switch" functionality where the rocket changes to a "safe" state at the press of a button. This will potentially be useful in a scenario where the rocket needs to be turned off immediately and reaching the rocket physically is not viable. 
 
-
+- Create and display Simulations
+    - This feature can be used to create and edit simulations prior to launch. It is an extremely useful feature as it eliminates the need to launch another program in order to view simulation results. These results will be displayed in the Simulation Tab. 
+    - This function at this stage, accepts only a limited number of parameters. This can easily be extended to suit the requirements of your project. By adding more parameters, you can generate more information which can be used in the launch of your rocket.
+    - The Simulation Tab currently plots Acceleration, Velocity, Rocket Arc and Landing Sites. Depending on the requirements of your project, you can display more graphs easily by extending the application.
 
 
 
