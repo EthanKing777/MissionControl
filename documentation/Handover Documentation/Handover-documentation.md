@@ -102,7 +102,6 @@ Once this file is provided, the tab will display a graph for the rocket arc (pat
 ##### The limitations of this software:
 - The main application window does not resize. This is due to the technical complications involved with resizing the different components in the window so they are still viewable and usable to the user.
 - Two features of the application require an internet connection. These features include the current weather information and the airspace information. However, the airspace information can be collected before the rocket launch, while the weather information will most likely be needed current.
-- 
 
 #### 1.2.4 Future Work
 
