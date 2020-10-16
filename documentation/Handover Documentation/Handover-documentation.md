@@ -75,7 +75,7 @@ and displaying information received from the Avionics package.
  Finally, in this tab, the user can toggle an automatic switch to the Flight Tab upon launch. When this is toggled on, the program wil be forced to switch to the Flight Tab when the rocket is launch removing the hassle of the user having to manually switch.
 
  ##### Flight Tab
- The Flight Tab allows the user to track the rockets flight in realativley real time. The data displayed is ...
+ The Flight Tab allows the user to track the rockets flight in realativley real time. The data displayed is in a table on the left side and a pridicted landing site from the simulation team is shown on the other side. the data from the rocket is taken from a .csv file. this is the same for the landing site which takes the .csv file to make the landing site pridiction. The values shown in the flight tab are all that are given from the rocket
 
  ##### Create / Edit Simulation Tab
  The user can go to this tab when they want to create a new flight simulation or edit the current flight simulation. The tab has two tables, a Weather Data table and a Rocket properties table. To which the user can enter details into. For the Rocket Information table, the user can enter the properties of their rocket either manually or they can load in a file with a .csv extension, which will take a simulation file and load the rocket properties from that file into the table. Once the user is happy with the values they can click the "Save all properties as a CSV" which will generate a csv file that can be used with a specific simulation application that extends open rocket.
@@ -126,6 +126,7 @@ Once this file is provided, the tab will display a graph for the rocket arc (pat
 - Weather data tab opens in a new window after launch information set via configuration tab. 
 - URL encoding bug causes negative Longitude values in the GEOjson array to be encoded as 0.
 - Airspace Map does not render on Linux(KDE).
+- the parser for the flight data doesn't work so are just example values shown
 
 ## 2. User Manual 
 ### 2.1 code Source
