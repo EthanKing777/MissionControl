@@ -48,6 +48,18 @@
                   <fx:include source="FlightTab.fxml" />
                </content></Tab>
 
+                <!--   AIRSPACE TAB  -->
+                <Tab text="Airspace Data">
+                    <content>
+                        <fx:include source="AirspaceMapTab.fxml" />
+                    </content></Tab>
+
+                  <!--   ROCKET ARC GRAPH  -->
+                <Tab text="Rocket Arc Graph">
+                    <content>
+                        <fx:include source="RocketArc.fxml" />
+                    </content></Tab>
+
                   </tabs>
         </TabPane>
    </children>

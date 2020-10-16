@@ -18,12 +18,12 @@ public class SimulationDataParser {
 	 */
 	private List <String> totalDataSet;
 	
-	public SimulationDataParser() {
+	public SimulationDataParser(File file) {
 		try {
-			File file = new File("test_1.csv");
+//			File file = new File("Simulation Test Data.csv");
 			Scanner scan = new Scanner (file);
-			headers = new String[14]; //There are 14 headers in the test_1.csv file
-			totalDataSet = new ArrayList <String> ();
+			headers = new String[14]; //There are 14 headers in the Simulation Test Data.csv file
+			totalDataSet = new ArrayList<>();
 			this.extractData(scan);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -55,7 +55,7 @@ public class SimulationDataParser {
 	
 	/**
 	 * Return the list of Headers
-	 * @return
+	 * @return the header list
 	 */
 	public String[] getHeaders() {
 		return this.headers; 
@@ -70,7 +70,7 @@ public class SimulationDataParser {
 	 */
 	public List<Number> getVariableData (String type){
 		String[] variables;
-		List<Number> selectedVariableData = new ArrayList <Number> ();
+		List<Number> selectedVariableData = new ArrayList<>();
 		int index = -1;
 		
 		//'index' represents the index of the corresponding header in the headers array. 
@@ -80,11 +80,43 @@ public class SimulationDataParser {
 			index = 4;
 		}else if(type.equalsIgnoreCase("total acceleration")) {
 			index = 5;
+		}else if(type.equalsIgnoreCase("position north of launch")) {
+			index = 7;
+		}else if(type.equalsIgnoreCase("position east of launch")) {
+			index = 6;
+		}else if(type.equalsIgnoreCase("latitude")) {
+			index = 12;
+		}else if(type.equalsIgnoreCase("longitude")) {
+			index = 13;
 		}
-		
-		for(int i=0; i<totalDataSet.size(); i++) {
+
+		for (String s : totalDataSet) {
 			//Split the single line containing 53 variables into individual variables
-			variables = totalDataSet.get(i).split(",");
+			variables = s.split(",");
+			//Then get the variable from each line and parse it as a Double
+			selectedVariableData.add(Double.parseDouble(variables[index]));
+			
+		} 
+		
+		return selectedVariableData;
+	}
+	
+	
+	public List<Double> getLocationData(String type){
+		String[] variables;
+		List<Double> selectedVariableData = new ArrayList<Double>();
+		int index = -1;
+		
+		//'index' represents the index of the corresponding header in the headers array. 
+		if(type.equalsIgnoreCase("latitude")) {
+			index = 12;
+		}else if(type.equalsIgnoreCase("longitude")) {
+			index = 13;
+		}
+
+		for (String s : totalDataSet) {
+			//Split the single line containing 53 variables into individual variables
+			variables = s.split(",");
 			//Then get the variable from each line and parse it as a Double
 			selectedVariableData.add(Double.parseDouble(variables[index]));
 		} 

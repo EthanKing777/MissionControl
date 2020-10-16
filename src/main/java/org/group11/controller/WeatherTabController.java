@@ -2,6 +2,8 @@ package org.group11.controller;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -11,6 +13,7 @@ import javafx.event.EventHandler;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.shape.Polygon;
 import javafx.scene.text.Text;
 import org.group11.controller.weather.WeatherDataFetcherParser;
@@ -46,6 +49,12 @@ public class WeatherTabController {
     @FXML
     private LineChart<String, Long> windDirectionChart;
 
+    @FXML
+    private Button fetchWeatherData;
+
+    @FXML
+    private Text lastUpdatedTime;
+
 
     // Gives access to the weather data.
     private WeatherData weatherData;
@@ -61,12 +70,11 @@ public class WeatherTabController {
      */
     @FXML
     public boolean getWeatherData() {
-        // NOTE: The lat and lon values will be obtained from a form.
-        // Fetches and parses the weather data.
         WeatherDataFetcherParser wdfp = new WeatherDataFetcherParser(LAT, LOG);
 
         try {
             weatherData = wdfp.fetchWeatherData();
+
             if (weatherData.getHourlyData().size() == 0) {
                 return false;
             } else {
@@ -88,12 +96,10 @@ public class WeatherTabController {
             a.setContentText("Latitude range: -90 - 90\nLongitude range: -180 - 180");
             a.showAndWait();
         } else {
-
-
             System.out.println("Lat: " + getLat() + " Log: " + getLog());
-            System.out.println("*********  Start of WeatherTabController Output  ********* \n");
+            //System.out.println("*********  Start of WeatherTabController Output  ********* \n");
             for (HourlyWeather hourlyWeather : weatherData.getHourlyData()) {
-                System.out.println(hourlyWeather.toString());
+                //System.out.println(hourlyWeather.toString());
             }
             HourlyWeather hourlyWeather = weatherData.getHourlyData().get(0);
             Double windDirDeg = (double) hourlyWeather.getWindDegrees();
@@ -139,7 +145,9 @@ public class WeatherTabController {
 
             populateWindSpeedChart();
             populateWindDirectionChart();
-            System.out.println("\n *********  End of WeatherTabController Output   **********");
+            //System.out.println("\n *********  End of WeatherTabController Output   **********");
+
+            setLastUpdatedTime();
         }
     }
 
@@ -196,6 +204,14 @@ public class WeatherTabController {
 
         windDirectionChart.setAnimated(false);
         windDirectionChart.getData().add(windDirectionSeries);
+    }
+
+
+    private void setLastUpdatedTime() {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+
+        lastUpdatedTime.setText(dtf.format(now));
     }
 
 
