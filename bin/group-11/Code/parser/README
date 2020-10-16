@@ -1,0 +1,4 @@
+To begin with the CSV parser will kept apart from the other pieces of code we 
+are currently working on.The aim for this first interation of the CSV parser is 
+that it's going to take the export from open rocket simulation, parse the 
+information and then display in to the console.

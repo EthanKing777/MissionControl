@@ -155,10 +155,12 @@ public class SimulationTabController implements Initializable {
 	public void updateMap() {
 		String geoJSON = getGeoJSON();
 		try {
+			String url = URLEncoder.encode(geoJSON, StandardCharsets.UTF_8.toString());
 			webEngine=webView.getEngine();
 			MapBox.setLatLng(-41.285099,174.776001);
-			MapBox.setLandingLocations(URLEncoder.encode(geoJSON, StandardCharsets.UTF_8.toString())); //URL encoded as per javadoc
+			MapBox.setLandingLocations(url); //URL encoded as per javadoc
 			webEngine.load(MapBox.generateApiCall("345" , "610","8"));
+			System.out.println("geojson.io API Call = \n"+"http://geojson.io/#data=data:application/json,"+url);
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -179,7 +181,7 @@ public class SimulationTabController implements Initializable {
 		GeoJSONBuilder geoJSON = new GeoJSONBuilder(parser);
 		JSONObject obj = geoJSON.getGeoJSON();
 
-		//This is only for printing on the console. Please comment out if needed
+		//This is only for printing on the console. Please comment out if not needed
 		message = obj.toString();
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		JsonParser jp = new JsonParser();
@@ -195,5 +197,5 @@ public class SimulationTabController implements Initializable {
 		MapBox.setLatLng(-41.285099,174.776001);
 		webEngine.load(MapBox.generateApiCall("345" , "610","9"));
 	}
-
+	
 }

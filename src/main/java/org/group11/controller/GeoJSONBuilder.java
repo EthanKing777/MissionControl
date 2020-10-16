@@ -1,6 +1,11 @@
 package org.group11.controller;
 
+import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 import org.group11.SimulationDataParser;
 import org.json.simple.JSONArray;
@@ -10,6 +15,7 @@ import org.group11.flightDataParser;
 public class GeoJSONBuilder {
 	
 	private JSONObject json;
+	private Map jsonMap;
 	private JSONArray features;
 	private SimulationDataParser parser;
 
@@ -22,6 +28,7 @@ public class GeoJSONBuilder {
 		this.parser = parser;
 		json = new JSONObject();
 		features = new JSONArray();
+		jsonMap = new LinkedHashMap();
 		buildJSONstring();
 	}
 
@@ -32,8 +39,10 @@ public class GeoJSONBuilder {
 	@SuppressWarnings("unchecked")
 	private void buildJSONstring() {
 		addFeatures();
-		json.put("type", "FeatureCollection");
-		json.put("features", features);
+		//This will maintain the order 
+		jsonMap.put("type", "FeatureCollection");
+		jsonMap.put("features", features);
+		json.putAll(jsonMap);
 	}
 	
 	/**
@@ -46,16 +55,18 @@ public class GeoJSONBuilder {
 	@SuppressWarnings("unchecked")
 	private void addFeatures() {
 		List<Number>time = parser.getVariableData("time");
-		List<Number>latitude = parser.getVariableData("latitude");
-		List<Number>longitude = parser.getVariableData("longitude");
+		List<Double>latitude = parser.getLocationData("latitude");
+		List<Double>longitude = parser.getLocationData("longitude");
 			
 		for(int i=0; i<time.size();i++) {
 			JSONObject item = new JSONObject();
-			double lat = (double)latitude.get(i);
-			double lon = (double)longitude.get(i);
+			double lat = latitude.get(i);
+			double lon = longitude.get(i);
+			System.out.println("Adding" + " : " + lat + " - " + lon);
 			item.put("type", "Feature");
 			item.put("properties", addProperties());
 			item.put("geometry", addGeometry(lat, lon));
+			
 			features.add(item);	
 		}
 	}
@@ -80,11 +91,17 @@ public class GeoJSONBuilder {
 	@SuppressWarnings("unchecked")
 	private JSONObject addGeometry(double lat, double lon) {
 		JSONObject geometry = new JSONObject();
-		geometry.put("type", "Point");
 		JSONArray coordinates = new JSONArray();
-		coordinates.add(lat);
-		coordinates.add(lon);
+		//When passing coordinates to the GeoJSON array, the longitude is passed before latitude
+		coordinates.add(BigDecimal.valueOf(lon));
+		coordinates.add(BigDecimal.valueOf(lat));
+		//System.out.println("Added : " + coordinates.get(0) + " - "  + coordinates.get(1)+"\n");
+		
+		geometry.put("type", "Point");
 		geometry.put("coordinates", coordinates);
+		
+		//geometry.putAll(jsonMap);
+		
 		return geometry;
 	}
 	

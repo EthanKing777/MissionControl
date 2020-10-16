@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?scenebuilder-classpath-element ../../../../../../../target/classes?>
+
+<AnchorPane minHeight="10.0" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.group11.controller.PrimaryController">
+   <children>
+        <TabPane prefHeight="700.0" prefWidth="700.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+
+                      <!--  PRE-LAUNCH DASHBOARD TAB  -->
+                <Tab text="Pre-Launch Dashboard">
+               <content>
+                  <fx:include source="prelaunchscreen.fxml" />
+               </content></Tab>
+
+                      <!--   CREATE/EDIT SIMULATION  TAB  -->
+                <Tab text="Create/Edit Simulation">
+               <content>
+                  <fx:include source="simulation.fxml" />
+               </content></Tab>
+
+                      <!--   SIMULATION DATA TAB  -->
+                <Tab text="Simulation Data">
+               <content>
+                  <fx:include source="SimulationTab.fxml" />
+               </content></Tab>
+
+                      <!--   WEATHER INFORMATION TAB  -->
+                <Tab text="Weather Information ">
+               <content>
+                  
+               </content>
+               <content>
+                  <fx:include source="WeatherTab.fxml" />
+               </content></Tab>
+
+                      <!--   FLIGHT DATA TAB  -->
+                <Tab text="Flight Data">
+               <content>
+                  <fx:include source="FlightTab.fxml" />
+               </content></Tab>
+
+                  </tabs>
+        </TabPane>
+   </children>
+</AnchorPane>
