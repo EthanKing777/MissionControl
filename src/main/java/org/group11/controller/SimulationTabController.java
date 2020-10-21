@@ -40,6 +40,9 @@ public class SimulationTabController implements Initializable {
 
 	@FXML
 	private LineChart<Number,Number> velocityChart;
+	
+	@FXML
+	private LineChart<Number,Number> rocketArcGraph;
 
 	@FXML
 	private TextArea milestonesTab;
@@ -64,11 +67,13 @@ public class SimulationTabController implements Initializable {
 		//Clear the pane at every press of the button 
 		if(accelerationChart.getData() != null)accelerationChart.getData().clear();
 		if(velocityChart.getData() != null)velocityChart.getData().clear();
+		if(rocketArcGraph!= null)rocketArcGraph.getData().clear();
 		milestonesTab.clear();
 
 		//Populate the window
 		populateAccelerationGraph();
 		populateVelocityGraph();
+		populateRocketArcGraph();
 		populateMilestoneTab();
 		updateMap();
 	}
@@ -147,6 +152,34 @@ public class SimulationTabController implements Initializable {
 		accGraph.createNewFile();
 		WritableImage img = accelerationChart.snapshot(new SnapshotParameters(), null);
 		ImageIO.write(SwingFXUtils.fromFXImage(img, null), "PNG", accGraph);
+	}
+	
+	/**
+	 * Populate the Rocket Arc graph by plotting the position north and east of launch on the Y and X axis respectively
+	 */
+	private void populateRocketArcGraph() throws IOException {
+		XYChart.Series <Number, Number> rocketArcSeries = new XYChart.Series<>();
+		
+		//Get the "Time" data
+		List<Number>time = parser.getVariableData("time");
+		//Get the "Position North of Launch" data
+		List<Number>posNorthOfLaunch = parser.getVariableData("position north of launch");
+		//Get the "Position North of Launch" data
+		List<Number>posEastOfLaunch = parser.getVariableData("position east of launch");
+		
+		//Plot the rocket for each time stamp. The position north of launch is displayed on the Y axis
+		// and the position east of launch is displayed on the X axis
+		for(int i=0; i<time.size();i++){
+			Number east = posEastOfLaunch.get(i);
+			Number north = posNorthOfLaunch.get(i);
+			//Number t = time.get(i);
+			System.out.println(east + " , " + north);
+			rocketArcSeries.getData().add(new XYChart.Data<>(north,east));
+		}
+		
+		rocketArcSeries.setName("RocketArc");
+		rocketArcGraph.setAnimated(true);
+		rocketArcGraph.getData().add(rocketArcSeries);
 	}
 
 	/**
