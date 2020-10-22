@@ -60,10 +60,10 @@
                   
                   <LineChart fx:id="rocketArcGraph" layoutX="10.0" layoutY="582.0" prefHeight="539.0" prefWidth="638.0" title="Rocket Arc">
                    <xAxis>
-                      <NumberAxis label="North (m)" lowerBound="-11.0" minorTickCount="10" side="BOTTOM" upperBound="3.0" fx:id="x" />
+                      <NumberAxis label="East (m)" lowerBound="-11.0" minorTickCount="10" side="BOTTOM" upperBound="11.0" fx:id="x" />
                    </xAxis>
                    <yAxis>
-                      <NumberAxis fx:id="yAxis" label="East (m)" lowerBound="-20.5" side="LEFT" tickLength="1.0" upperBound="5.0" />
+                      <NumberAxis fx:id="yAxis" label="North (m)" lowerBound="-3.0" side="LEFT" tickLength="1.0" upperBound="3.0" />
                    </yAxis>
                 </LineChart>
                   

@@ -38,8 +38,7 @@ public class RocketArcController{
 	public RocketArcController() {
 	}
 
-	@FXML
-	public void plotSimulationData(ActionEvent event) throws IOException {
+	public void plotRocketArcData() throws IOException {
 		File file = new File ("Simulation Test Data.csv");
 		parser = new SimulationDataParser(file);
 
